@@ -55,7 +55,7 @@ else()
         PATH_SUFFIXES build/crypto build lib64 lib
     )
 
-    if (NOT crypto_LIBRARY)
+    if (NOT EXISTS crypto_LIBRARY)
         if (BUILD_SHARED_LIBS)
             set(crypto_LIBRARY ${crypto_SHARED_LIBRARY})
         else()
