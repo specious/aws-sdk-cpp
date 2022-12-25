@@ -25,72 +25,72 @@ namespace Outposts
 {
 namespace Model
 {
-  class AWS_OUTPOSTS_API GetConnectionResult
+  class GetConnectionResult
   {
   public:
-    GetConnectionResult();
-    GetConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API GetConnectionResult();
+    AWS_OUTPOSTS_API GetConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API GetConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p> The ID of the connection you receive. </p>
+     * <p> The ID of the connection. </p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
     /**
-     * <p> The ID of the connection you receive. </p>
+     * <p> The ID of the connection. </p>
      */
     inline void SetConnectionId(const Aws::String& value) { m_connectionId = value; }
 
     /**
-     * <p> The ID of the connection you receive. </p>
+     * <p> The ID of the connection. </p>
      */
     inline void SetConnectionId(Aws::String&& value) { m_connectionId = std::move(value); }
 
     /**
-     * <p> The ID of the connection you receive. </p>
+     * <p> The ID of the connection. </p>
      */
     inline void SetConnectionId(const char* value) { m_connectionId.assign(value); }
 
     /**
-     * <p> The ID of the connection you receive. </p>
+     * <p> The ID of the connection. </p>
      */
     inline GetConnectionResult& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
     /**
-     * <p> The ID of the connection you receive. </p>
+     * <p> The ID of the connection. </p>
      */
     inline GetConnectionResult& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p> The ID of the connection you receive. </p>
+     * <p> The ID of the connection. </p>
      */
     inline GetConnectionResult& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
 
     /**
-     * <p> Information about a connection. </p>
+     * <p> Information about the connection. </p>
      */
     inline const ConnectionDetails& GetConnectionDetails() const{ return m_connectionDetails; }
 
     /**
-     * <p> Information about a connection. </p>
+     * <p> Information about the connection. </p>
      */
     inline void SetConnectionDetails(const ConnectionDetails& value) { m_connectionDetails = value; }
 
     /**
-     * <p> Information about a connection. </p>
+     * <p> Information about the connection. </p>
      */
     inline void SetConnectionDetails(ConnectionDetails&& value) { m_connectionDetails = std::move(value); }
 
     /**
-     * <p> Information about a connection. </p>
+     * <p> Information about the connection. </p>
      */
     inline GetConnectionResult& WithConnectionDetails(const ConnectionDetails& value) { SetConnectionDetails(value); return *this;}
 
     /**
-     * <p> Information about a connection. </p>
+     * <p> Information about the connection. </p>
      */
     inline GetConnectionResult& WithConnectionDetails(ConnectionDetails&& value) { SetConnectionDetails(std::move(value)); return *this;}
 

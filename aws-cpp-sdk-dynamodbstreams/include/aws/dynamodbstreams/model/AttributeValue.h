@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/AttributeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODBSTREAMS_API AttributeValue
+  class AttributeValue
   {
   public:
-    AttributeValue();
-    AttributeValue(Aws::Utils::Json::JsonView jsonValue);
-    AttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODBSTREAMS_API AttributeValue();
+    AWS_DYNAMODBSTREAMS_API AttributeValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API AttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -556,34 +556,34 @@ namespace Model
   private:
 
     Aws::String m_s;
-    bool m_sHasBeenSet;
+    bool m_sHasBeenSet = false;
 
     Aws::String m_n;
-    bool m_nHasBeenSet;
+    bool m_nHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_b;
-    bool m_bHasBeenSet;
+    bool m_bHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sS;
-    bool m_sSHasBeenSet;
+    bool m_sSHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nS;
-    bool m_nSHasBeenSet;
+    bool m_nSHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::ByteBuffer> m_bS;
-    bool m_bSHasBeenSet;
+    bool m_bSHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_m;
-    bool m_mHasBeenSet;
+    bool m_mHasBeenSet = false;
 
     Aws::Vector<AttributeValue> m_l;
-    bool m_lHasBeenSet;
+    bool m_lHasBeenSet = false;
 
     bool m_nULL;
-    bool m_nULLHasBeenSet;
+    bool m_nULLHasBeenSet = false;
 
     bool m_bOOL;
-    bool m_bOOLHasBeenSet;
+    bool m_bOOLHasBeenSet = false;
   };
 
 } // namespace Model

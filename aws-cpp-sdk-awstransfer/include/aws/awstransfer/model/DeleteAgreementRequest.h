@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSFER_API DeleteAgreementRequest : public TransferRequest
+  class DeleteAgreementRequest : public TransferRequest
   {
   public:
-    DeleteAgreementRequest();
+    AWS_TRANSFER_API DeleteAgreementRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteAgreement"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSFER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -84,52 +84,60 @@ namespace Model
 
 
     /**
-     * <p>The server ID associated with the agreement that you are deleting.</p>
+     * <p>The server identifier associated with the agreement that you are
+     * deleting.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>The server ID associated with the agreement that you are deleting.</p>
+     * <p>The server identifier associated with the agreement that you are
+     * deleting.</p>
      */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
-     * <p>The server ID associated with the agreement that you are deleting.</p>
+     * <p>The server identifier associated with the agreement that you are
+     * deleting.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
-     * <p>The server ID associated with the agreement that you are deleting.</p>
+     * <p>The server identifier associated with the agreement that you are
+     * deleting.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
 
     /**
-     * <p>The server ID associated with the agreement that you are deleting.</p>
+     * <p>The server identifier associated with the agreement that you are
+     * deleting.</p>
      */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
 
     /**
-     * <p>The server ID associated with the agreement that you are deleting.</p>
+     * <p>The server identifier associated with the agreement that you are
+     * deleting.</p>
      */
     inline DeleteAgreementRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>The server ID associated with the agreement that you are deleting.</p>
+     * <p>The server identifier associated with the agreement that you are
+     * deleting.</p>
      */
     inline DeleteAgreementRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>The server ID associated with the agreement that you are deleting.</p>
+     * <p>The server identifier associated with the agreement that you are
+     * deleting.</p>
      */
     inline DeleteAgreementRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 
   private:
 
     Aws::String m_agreementId;
-    bool m_agreementIdHasBeenSet;
+    bool m_agreementIdHasBeenSet = false;
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
   };
 
 } // namespace Model

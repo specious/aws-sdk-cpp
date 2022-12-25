@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetImportJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API DatasetImportJobSummary
+  class DatasetImportJobSummary
   {
   public:
-    DatasetImportJobSummary();
-    DatasetImportJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    DatasetImportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API DatasetImportJobSummary();
+    AWS_PERSONALIZE_API DatasetImportJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API DatasetImportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -341,25 +341,25 @@ namespace Model
   private:
 
     Aws::String m_datasetImportJobArn;
-    bool m_datasetImportJobArnHasBeenSet;
+    bool m_datasetImportJobArnHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     ImportMode m_importMode;
-    bool m_importModeHasBeenSet;
+    bool m_importModeHasBeenSet = false;
   };
 
 } // namespace Model

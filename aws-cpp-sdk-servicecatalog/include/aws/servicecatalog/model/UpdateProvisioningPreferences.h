@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningPreferences">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API UpdateProvisioningPreferences
+  class UpdateProvisioningPreferences
   {
   public:
-    UpdateProvisioningPreferences();
-    UpdateProvisioningPreferences(Aws::Utils::Json::JsonView jsonValue);
-    UpdateProvisioningPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API UpdateProvisioningPreferences();
+    AWS_SERVICECATALOG_API UpdateProvisioningPreferences(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API UpdateProvisioningPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -576,25 +576,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_stackSetAccounts;
-    bool m_stackSetAccountsHasBeenSet;
+    bool m_stackSetAccountsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stackSetRegions;
-    bool m_stackSetRegionsHasBeenSet;
+    bool m_stackSetRegionsHasBeenSet = false;
 
     int m_stackSetFailureToleranceCount;
-    bool m_stackSetFailureToleranceCountHasBeenSet;
+    bool m_stackSetFailureToleranceCountHasBeenSet = false;
 
     int m_stackSetFailureTolerancePercentage;
-    bool m_stackSetFailureTolerancePercentageHasBeenSet;
+    bool m_stackSetFailureTolerancePercentageHasBeenSet = false;
 
     int m_stackSetMaxConcurrencyCount;
-    bool m_stackSetMaxConcurrencyCountHasBeenSet;
+    bool m_stackSetMaxConcurrencyCountHasBeenSet = false;
 
     int m_stackSetMaxConcurrencyPercentage;
-    bool m_stackSetMaxConcurrencyPercentageHasBeenSet;
+    bool m_stackSetMaxConcurrencyPercentageHasBeenSet = false;
 
     StackSetOperationType m_stackSetOperationType;
-    bool m_stackSetOperationTypeHasBeenSet;
+    bool m_stackSetOperationTypeHasBeenSet = false;
   };
 
 } // namespace Model

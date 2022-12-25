@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/LogAnomalyClass">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API LogAnomalyClass
+  class LogAnomalyClass
   {
   public:
-    LogAnomalyClass();
-    LogAnomalyClass(Aws::Utils::Json::JsonView jsonValue);
-    LogAnomalyClass& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API LogAnomalyClass();
+    AWS_DEVOPSGURU_API LogAnomalyClass(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API LogAnomalyClass& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -321,25 +321,25 @@ namespace Model
   private:
 
     Aws::String m_logStreamName;
-    bool m_logStreamNameHasBeenSet;
+    bool m_logStreamNameHasBeenSet = false;
 
     LogAnomalyType m_logAnomalyType;
-    bool m_logAnomalyTypeHasBeenSet;
+    bool m_logAnomalyTypeHasBeenSet = false;
 
     Aws::String m_logAnomalyToken;
-    bool m_logAnomalyTokenHasBeenSet;
+    bool m_logAnomalyTokenHasBeenSet = false;
 
     Aws::String m_logEventId;
-    bool m_logEventIdHasBeenSet;
+    bool m_logEventIdHasBeenSet = false;
 
     Aws::String m_explanation;
-    bool m_explanationHasBeenSet;
+    bool m_explanationHasBeenSet = false;
 
     int m_numberOfLogLinesOccurrences;
-    bool m_numberOfLogLinesOccurrencesHasBeenSet;
+    bool m_numberOfLogLinesOccurrencesHasBeenSet = false;
 
     Aws::Utils::DateTime m_logEventTimestamp;
-    bool m_logEventTimestampHasBeenSet;
+    bool m_logEventTimestampHasBeenSet = false;
   };
 
 } // namespace Model

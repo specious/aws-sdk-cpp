@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_DYNAMODB_API ExportTableToPointInTimeRequest : public DynamoDBRequest
+  class ExportTableToPointInTimeRequest : public DynamoDBRequest
   {
   public:
-    ExportTableToPointInTimeRequest();
+    AWS_DYNAMODB_API ExportTableToPointInTimeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ExportTableToPointInTime"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DYNAMODB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -131,8 +131,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -145,8 +144,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -159,8 +157,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -173,8 +170,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -187,8 +183,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -201,8 +196,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline ExportTableToPointInTimeRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -215,8 +209,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline ExportTableToPointInTimeRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -229,8 +222,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline ExportTableToPointInTimeRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -517,31 +509,31 @@ namespace Model
   private:
 
     Aws::String m_tableArn;
-    bool m_tableArnHasBeenSet;
+    bool m_tableArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_exportTime;
-    bool m_exportTimeHasBeenSet;
+    bool m_exportTimeHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3BucketOwner;
-    bool m_s3BucketOwnerHasBeenSet;
+    bool m_s3BucketOwnerHasBeenSet = false;
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
 
     S3SseAlgorithm m_s3SseAlgorithm;
-    bool m_s3SseAlgorithmHasBeenSet;
+    bool m_s3SseAlgorithmHasBeenSet = false;
 
     Aws::String m_s3SseKmsKeyId;
-    bool m_s3SseKmsKeyIdHasBeenSet;
+    bool m_s3SseKmsKeyIdHasBeenSet = false;
 
     ExportFormat m_exportFormat;
-    bool m_exportFormatHasBeenSet;
+    bool m_exportFormatHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobResourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LabelingJobResourceConfig
+  class LabelingJobResourceConfig
   {
   public:
-    LabelingJobResourceConfig();
-    LabelingJobResourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    LabelingJobResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LabelingJobResourceConfig();
+    AWS_SAGEMAKER_API LabelingJobResourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LabelingJobResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -222,10 +222,10 @@ namespace Model
   private:
 
     Aws::String m_volumeKmsKeyId;
-    bool m_volumeKmsKeyIdHasBeenSet;
+    bool m_volumeKmsKeyIdHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

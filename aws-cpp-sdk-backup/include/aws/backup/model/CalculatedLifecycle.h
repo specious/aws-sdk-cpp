@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CalculatedLifecycle">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API CalculatedLifecycle
+  class CalculatedLifecycle
   {
   public:
-    CalculatedLifecycle();
-    CalculatedLifecycle(Aws::Utils::Json::JsonView jsonValue);
-    CalculatedLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API CalculatedLifecycle();
+    AWS_BACKUP_API CalculatedLifecycle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API CalculatedLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_moveToColdStorageAt;
-    bool m_moveToColdStorageAtHasBeenSet;
+    bool m_moveToColdStorageAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_deleteAt;
-    bool m_deleteAtHasBeenSet;
+    bool m_deleteAtHasBeenSet = false;
   };
 
 } // namespace Model

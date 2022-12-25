@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupSelection">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API BackupSelection
+  class BackupSelection
   {
   public:
-    BackupSelection();
-    BackupSelection(Aws::Utils::Json::JsonView jsonValue);
-    BackupSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API BackupSelection();
+    AWS_BACKUP_API BackupSelection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API BackupSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -515,22 +515,22 @@ namespace Model
   private:
 
     Aws::String m_selectionName;
-    bool m_selectionNameHasBeenSet;
+    bool m_selectionNameHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::Vector<Condition> m_listOfTags;
-    bool m_listOfTagsHasBeenSet;
+    bool m_listOfTagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notResources;
-    bool m_notResourcesHasBeenSet;
+    bool m_notResourcesHasBeenSet = false;
 
     Conditions m_conditions;
-    bool m_conditionsHasBeenSet;
+    bool m_conditionsHasBeenSet = false;
   };
 
 } // namespace Model

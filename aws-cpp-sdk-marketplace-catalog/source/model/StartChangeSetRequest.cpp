@@ -17,7 +17,8 @@ StartChangeSetRequest::StartChangeSetRequest() :
     m_changeSetHasBeenSet(false),
     m_changeSetNameHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_changeSetTagsHasBeenSet(false)
 {
 }
 
@@ -33,7 +34,7 @@ Aws::String StartChangeSetRequest::SerializePayload() const
 
   if(m_changeSetHasBeenSet)
   {
-   Array<JsonValue> changeSetJsonList(m_changeSet.size());
+   Aws::Utils::Array<JsonValue> changeSetJsonList(m_changeSet.size());
    for(unsigned changeSetIndex = 0; changeSetIndex < changeSetJsonList.GetLength(); ++changeSetIndex)
    {
      changeSetJsonList[changeSetIndex].AsObject(m_changeSet[changeSetIndex].Jsonize());
@@ -51,6 +52,17 @@ Aws::String StartChangeSetRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("ClientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_changeSetTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> changeSetTagsJsonList(m_changeSetTags.size());
+   for(unsigned changeSetTagsIndex = 0; changeSetTagsIndex < changeSetTagsJsonList.GetLength(); ++changeSetTagsIndex)
+   {
+     changeSetTagsJsonList[changeSetTagsIndex].AsObject(m_changeSetTags[changeSetTagsIndex].Jsonize());
+   }
+   payload.WithArray("ChangeSetTags", std::move(changeSetTagsJsonList));
 
   }
 

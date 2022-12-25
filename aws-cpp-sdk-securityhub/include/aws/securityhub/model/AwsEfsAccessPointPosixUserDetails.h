@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEfsAccessPointPosixUserDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEfsAccessPointPosixUserDetails
+  class AwsEfsAccessPointPosixUserDetails
   {
   public:
-    AwsEfsAccessPointPosixUserDetails();
-    AwsEfsAccessPointPosixUserDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEfsAccessPointPosixUserDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEfsAccessPointPosixUserDetails();
+    AWS_SECURITYHUB_API AwsEfsAccessPointPosixUserDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEfsAccessPointPosixUserDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_gid;
-    bool m_gidHasBeenSet;
+    bool m_gidHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_secondaryGids;
-    bool m_secondaryGidsHasBeenSet;
+    bool m_secondaryGidsHasBeenSet = false;
 
     Aws::String m_uid;
-    bool m_uidHasBeenSet;
+    bool m_uidHasBeenSet = false;
   };
 
 } // namespace Model

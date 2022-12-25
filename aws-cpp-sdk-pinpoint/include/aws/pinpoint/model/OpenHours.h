@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/OpenHours">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API OpenHours
+  class OpenHours
   {
   public:
-    OpenHours();
-    OpenHours(Aws::Utils::Json::JsonView jsonValue);
-    OpenHours& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API OpenHours();
+    AWS_PINPOINT_API OpenHours(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API OpenHours& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -298,19 +298,19 @@ namespace Model
   private:
 
     Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_eMAIL;
-    bool m_eMAILHasBeenSet;
+    bool m_eMAILHasBeenSet = false;
 
     Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_sMS;
-    bool m_sMSHasBeenSet;
+    bool m_sMSHasBeenSet = false;
 
     Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_pUSH;
-    bool m_pUSHHasBeenSet;
+    bool m_pUSHHasBeenSet = false;
 
     Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_vOICE;
-    bool m_vOICEHasBeenSet;
+    bool m_vOICEHasBeenSet = false;
 
     Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_cUSTOM;
-    bool m_cUSTOMHasBeenSet;
+    bool m_cUSTOMHasBeenSet = false;
   };
 
 } // namespace Model

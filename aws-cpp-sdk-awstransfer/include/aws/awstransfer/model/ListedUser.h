@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListedUser">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API ListedUser
+  class ListedUser
   {
   public:
-    ListedUser();
-    ListedUser(Aws::Utils::Json::JsonView jsonValue);
-    ListedUser& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API ListedUser();
+    AWS_TRANSFER_API ListedUser(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API ListedUser& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -417,22 +417,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_homeDirectory;
-    bool m_homeDirectoryHasBeenSet;
+    bool m_homeDirectoryHasBeenSet = false;
 
     HomeDirectoryType m_homeDirectoryType;
-    bool m_homeDirectoryTypeHasBeenSet;
+    bool m_homeDirectoryTypeHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     int m_sshPublicKeyCount;
-    bool m_sshPublicKeyCountHasBeenSet;
+    bool m_sshPublicKeyCountHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
   };
 
 } // namespace Model

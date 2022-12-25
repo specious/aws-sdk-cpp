@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCH_API PutCompositeAlarmRequest : public CloudWatchRequest
+  class PutCompositeAlarmRequest : public CloudWatchRequest
   {
   public:
-    PutCompositeAlarmRequest();
+    AWS_CLOUDWATCH_API PutCompositeAlarmRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutCompositeAlarm"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -935,37 +935,37 @@ namespace Model
   private:
 
     bool m_actionsEnabled;
-    bool m_actionsEnabledHasBeenSet;
+    bool m_actionsEnabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_alarmActions;
-    bool m_alarmActionsHasBeenSet;
+    bool m_alarmActionsHasBeenSet = false;
 
     Aws::String m_alarmDescription;
-    bool m_alarmDescriptionHasBeenSet;
+    bool m_alarmDescriptionHasBeenSet = false;
 
     Aws::String m_alarmName;
-    bool m_alarmNameHasBeenSet;
+    bool m_alarmNameHasBeenSet = false;
 
     Aws::String m_alarmRule;
-    bool m_alarmRuleHasBeenSet;
+    bool m_alarmRuleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_insufficientDataActions;
-    bool m_insufficientDataActionsHasBeenSet;
+    bool m_insufficientDataActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_oKActions;
-    bool m_oKActionsHasBeenSet;
+    bool m_oKActionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_actionsSuppressor;
-    bool m_actionsSuppressorHasBeenSet;
+    bool m_actionsSuppressorHasBeenSet = false;
 
     int m_actionsSuppressorWaitPeriod;
-    bool m_actionsSuppressorWaitPeriodHasBeenSet;
+    bool m_actionsSuppressorWaitPeriodHasBeenSet = false;
 
     int m_actionsSuppressorExtensionPeriod;
-    bool m_actionsSuppressorExtensionPeriodHasBeenSet;
+    bool m_actionsSuppressorExtensionPeriodHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DataViewDestinationTypeParams">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API DataViewDestinationTypeParams
+  class DataViewDestinationTypeParams
   {
   public:
-    DataViewDestinationTypeParams();
-    DataViewDestinationTypeParams(Aws::Utils::Json::JsonView jsonValue);
-    DataViewDestinationTypeParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API DataViewDestinationTypeParams();
+    AWS_FINSPACEDATA_API DataViewDestinationTypeParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API DataViewDestinationTypeParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -234,13 +234,13 @@ namespace Model
   private:
 
     Aws::String m_destinationType;
-    bool m_destinationTypeHasBeenSet;
+    bool m_destinationTypeHasBeenSet = false;
 
     ExportFileFormat m_s3DestinationExportFileFormat;
-    bool m_s3DestinationExportFileFormatHasBeenSet;
+    bool m_s3DestinationExportFileFormatHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_s3DestinationExportFileFormatOptions;
-    bool m_s3DestinationExportFileFormatOptionsHasBeenSet;
+    bool m_s3DestinationExportFileFormatOptionsHasBeenSet = false;
   };
 
 } // namespace Model

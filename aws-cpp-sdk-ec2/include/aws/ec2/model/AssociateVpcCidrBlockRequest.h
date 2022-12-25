@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API AssociateVpcCidrBlockRequest : public EC2Request
+  class AssociateVpcCidrBlockRequest : public EC2Request
   {
   public:
-    AssociateVpcCidrBlockRequest();
+    AWS_EC2_API AssociateVpcCidrBlockRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssociateVpcCidrBlock"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -524,34 +524,34 @@ namespace Model
   private:
 
     bool m_amazonProvidedIpv6CidrBlock;
-    bool m_amazonProvidedIpv6CidrBlockHasBeenSet;
+    bool m_amazonProvidedIpv6CidrBlockHasBeenSet = false;
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_ipv6CidrBlockNetworkBorderGroup;
-    bool m_ipv6CidrBlockNetworkBorderGroupHasBeenSet;
+    bool m_ipv6CidrBlockNetworkBorderGroupHasBeenSet = false;
 
     Aws::String m_ipv6Pool;
-    bool m_ipv6PoolHasBeenSet;
+    bool m_ipv6PoolHasBeenSet = false;
 
     Aws::String m_ipv6CidrBlock;
-    bool m_ipv6CidrBlockHasBeenSet;
+    bool m_ipv6CidrBlockHasBeenSet = false;
 
     Aws::String m_ipv4IpamPoolId;
-    bool m_ipv4IpamPoolIdHasBeenSet;
+    bool m_ipv4IpamPoolIdHasBeenSet = false;
 
     int m_ipv4NetmaskLength;
-    bool m_ipv4NetmaskLengthHasBeenSet;
+    bool m_ipv4NetmaskLengthHasBeenSet = false;
 
     Aws::String m_ipv6IpamPoolId;
-    bool m_ipv6IpamPoolIdHasBeenSet;
+    bool m_ipv6IpamPoolIdHasBeenSet = false;
 
     int m_ipv6NetmaskLength;
-    bool m_ipv6NetmaskLengthHasBeenSet;
+    bool m_ipv6NetmaskLengthHasBeenSet = false;
   };
 
 } // namespace Model

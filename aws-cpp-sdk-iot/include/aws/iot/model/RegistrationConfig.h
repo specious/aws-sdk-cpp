@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegistrationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API RegistrationConfig
+  class RegistrationConfig
   {
   public:
-    RegistrationConfig();
-    RegistrationConfig(Aws::Utils::Json::JsonView jsonValue);
-    RegistrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API RegistrationConfig();
+    AWS_IOT_API RegistrationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API RegistrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

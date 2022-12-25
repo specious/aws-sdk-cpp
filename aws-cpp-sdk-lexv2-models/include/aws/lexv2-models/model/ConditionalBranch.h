@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ConditionalBranch">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ConditionalBranch
+  class ConditionalBranch
   {
   public:
-    ConditionalBranch();
-    ConditionalBranch(Aws::Utils::Json::JsonView jsonValue);
-    ConditionalBranch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ConditionalBranch();
+    AWS_LEXMODELSV2_API ConditionalBranch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ConditionalBranch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,16 +171,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Condition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     DialogState m_nextStep;
-    bool m_nextStepHasBeenSet;
+    bool m_nextStepHasBeenSet = false;
 
     ResponseSpecification m_response;
-    bool m_responseHasBeenSet;
+    bool m_responseHasBeenSet = false;
   };
 
 } // namespace Model

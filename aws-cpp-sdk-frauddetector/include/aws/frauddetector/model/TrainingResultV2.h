@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/TrainingResultV2">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API TrainingResultV2
+  class TrainingResultV2
   {
   public:
-    TrainingResultV2();
-    TrainingResultV2(Aws::Utils::Json::JsonView jsonValue);
-    TrainingResultV2& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API TrainingResultV2();
+    AWS_FRAUDDETECTOR_API TrainingResultV2(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API TrainingResultV2& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -178,16 +178,16 @@ namespace Model
   private:
 
     DataValidationMetrics m_dataValidationMetrics;
-    bool m_dataValidationMetricsHasBeenSet;
+    bool m_dataValidationMetricsHasBeenSet = false;
 
     TrainingMetricsV2 m_trainingMetricsV2;
-    bool m_trainingMetricsV2HasBeenSet;
+    bool m_trainingMetricsV2HasBeenSet = false;
 
     VariableImportanceMetrics m_variableImportanceMetrics;
-    bool m_variableImportanceMetricsHasBeenSet;
+    bool m_variableImportanceMetricsHasBeenSet = false;
 
     AggregatedVariablesImportanceMetrics m_aggregatedVariablesImportanceMetrics;
-    bool m_aggregatedVariablesImportanceMetricsHasBeenSet;
+    bool m_aggregatedVariablesImportanceMetricsHasBeenSet = false;
   };
 
 } // namespace Model

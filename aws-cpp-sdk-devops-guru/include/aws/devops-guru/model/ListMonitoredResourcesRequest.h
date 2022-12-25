@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_DEVOPSGURU_API ListMonitoredResourcesRequest : public DevOpsGuruRequest
+  class ListMonitoredResourcesRequest : public DevOpsGuruRequest
   {
   public:
-    ListMonitoredResourcesRequest();
+    AWS_DEVOPSGURU_API ListMonitoredResourcesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListMonitoredResources"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -150,13 +150,13 @@ namespace Model
   private:
 
     ListMonitoredResourcesFilters m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

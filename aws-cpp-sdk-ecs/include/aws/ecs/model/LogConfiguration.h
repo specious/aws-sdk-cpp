@@ -62,13 +62,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/LogConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API LogConfiguration
+  class LogConfiguration
   {
   public:
-    LogConfiguration();
-    LogConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API LogConfiguration();
+    AWS_ECS_API LogConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API LogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -401,13 +401,13 @@ namespace Model
   private:
 
     LogDriver m_logDriver;
-    bool m_logDriverHasBeenSet;
+    bool m_logDriverHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<Secret> m_secretOptions;
-    bool m_secretOptionsHasBeenSet;
+    bool m_secretOptionsHasBeenSet = false;
   };
 
 } // namespace Model

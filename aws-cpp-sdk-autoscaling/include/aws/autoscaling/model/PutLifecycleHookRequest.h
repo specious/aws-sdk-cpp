@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUTOSCALING_API PutLifecycleHookRequest : public AutoScalingRequest
+  class PutLifecycleHookRequest : public AutoScalingRequest
   {
   public:
-    PutLifecycleHookRequest();
+    AWS_AUTOSCALING_API PutLifecycleHookRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutLifecycleHook"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUTOSCALING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_AUTOSCALING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -522,28 +522,28 @@ namespace Model
   private:
 
     Aws::String m_lifecycleHookName;
-    bool m_lifecycleHookNameHasBeenSet;
+    bool m_lifecycleHookNameHasBeenSet = false;
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_lifecycleTransition;
-    bool m_lifecycleTransitionHasBeenSet;
+    bool m_lifecycleTransitionHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::String m_notificationTargetARN;
-    bool m_notificationTargetARNHasBeenSet;
+    bool m_notificationTargetARNHasBeenSet = false;
 
     Aws::String m_notificationMetadata;
-    bool m_notificationMetadataHasBeenSet;
+    bool m_notificationMetadataHasBeenSet = false;
 
     int m_heartbeatTimeout;
-    bool m_heartbeatTimeoutHasBeenSet;
+    bool m_heartbeatTimeoutHasBeenSet = false;
 
     Aws::String m_defaultResult;
-    bool m_defaultResultHasBeenSet;
+    bool m_defaultResultHasBeenSet = false;
   };
 
 } // namespace Model

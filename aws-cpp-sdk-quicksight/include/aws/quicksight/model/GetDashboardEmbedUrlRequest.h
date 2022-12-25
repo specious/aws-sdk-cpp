@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_QUICKSIGHT_API GetDashboardEmbedUrlRequest : public QuickSightRequest
+  class GetDashboardEmbedUrlRequest : public QuickSightRequest
   {
   public:
-    GetDashboardEmbedUrlRequest();
+    AWS_QUICKSIGHT_API GetDashboardEmbedUrlRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetDashboardEmbedUrl"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_QUICKSIGHT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -536,34 +536,34 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_dashboardId;
-    bool m_dashboardIdHasBeenSet;
+    bool m_dashboardIdHasBeenSet = false;
 
     EmbeddingIdentityType m_identityType;
-    bool m_identityTypeHasBeenSet;
+    bool m_identityTypeHasBeenSet = false;
 
     long long m_sessionLifetimeInMinutes;
-    bool m_sessionLifetimeInMinutesHasBeenSet;
+    bool m_sessionLifetimeInMinutesHasBeenSet = false;
 
     bool m_undoRedoDisabled;
-    bool m_undoRedoDisabledHasBeenSet;
+    bool m_undoRedoDisabledHasBeenSet = false;
 
     bool m_resetDisabled;
-    bool m_resetDisabledHasBeenSet;
+    bool m_resetDisabledHasBeenSet = false;
 
     bool m_statePersistenceEnabled;
-    bool m_statePersistenceEnabledHasBeenSet;
+    bool m_statePersistenceEnabledHasBeenSet = false;
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalDashboardIds;
-    bool m_additionalDashboardIdsHasBeenSet;
+    bool m_additionalDashboardIdsHasBeenSet = false;
   };
 
 } // namespace Model

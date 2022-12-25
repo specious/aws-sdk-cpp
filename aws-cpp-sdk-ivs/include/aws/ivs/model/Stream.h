@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/Stream">AWS API
    * Reference</a></p>
    */
-  class AWS_IVS_API Stream
+  class Stream
   {
   public:
-    Stream();
-    Stream(Aws::Utils::Json::JsonView jsonValue);
-    Stream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API Stream();
+    AWS_IVS_API Stream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Stream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -318,25 +318,25 @@ namespace Model
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     StreamHealth m_health;
-    bool m_healthHasBeenSet;
+    bool m_healthHasBeenSet = false;
 
     Aws::String m_playbackUrl;
-    bool m_playbackUrlHasBeenSet;
+    bool m_playbackUrlHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     StreamState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     long long m_viewerCount;
-    bool m_viewerCountHasBeenSet;
+    bool m_viewerCountHasBeenSet = false;
   };
 
 } // namespace Model

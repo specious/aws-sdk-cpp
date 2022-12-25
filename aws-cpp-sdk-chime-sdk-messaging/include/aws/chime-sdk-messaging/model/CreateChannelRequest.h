@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIMESDKMESSAGING_API CreateChannelRequest : public ChimeSDKMessagingRequest
+  class CreateChannelRequest : public ChimeSDKMessagingRequest
   {
   public:
-    CreateChannelRequest();
+    AWS_CHIMESDKMESSAGING_API CreateChannelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateChannel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIMESDKMESSAGING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CHIMESDKMESSAGING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -556,40 +556,40 @@ namespace Model
   private:
 
     Aws::String m_appInstanceArn;
-    bool m_appInstanceArnHasBeenSet;
+    bool m_appInstanceArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ChannelMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     ChannelPrivacy m_privacy;
-    bool m_privacyHasBeenSet;
+    bool m_privacyHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_chimeBearer;
-    bool m_chimeBearerHasBeenSet;
+    bool m_chimeBearerHasBeenSet = false;
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_memberArns;
-    bool m_memberArnsHasBeenSet;
+    bool m_memberArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_moderatorArns;
-    bool m_moderatorArnsHasBeenSet;
+    bool m_moderatorArnsHasBeenSet = false;
 
     ElasticChannelConfiguration m_elasticChannelConfiguration;
-    bool m_elasticChannelConfigurationHasBeenSet;
+    bool m_elasticChannelConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSOOIDC_API CreateTokenRequest : public SSOOIDCRequest
+  class CreateTokenRequest : public SSOOIDCRequest
   {
   public:
-    CreateTokenRequest();
+    AWS_SSOOIDC_API CreateTokenRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateToken"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSOOIDC_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -329,10 +329,10 @@ namespace Model
     /**
      * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
      * supported. For more information about the features and limitations of the
-     * current Amazon Web Services SSO OIDC implementation, see <i>Considerations for
-     * Using this Guide</i> in the <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon
-     * Web Services SSO OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
      * access token in the event that the access token is invalid or expired.</p>
      */
     inline const Aws::String& GetRefreshToken() const{ return m_refreshToken; }
@@ -340,10 +340,10 @@ namespace Model
     /**
      * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
      * supported. For more information about the features and limitations of the
-     * current Amazon Web Services SSO OIDC implementation, see <i>Considerations for
-     * Using this Guide</i> in the <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon
-     * Web Services SSO OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
      * access token in the event that the access token is invalid or expired.</p>
      */
     inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
@@ -351,10 +351,10 @@ namespace Model
     /**
      * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
      * supported. For more information about the features and limitations of the
-     * current Amazon Web Services SSO OIDC implementation, see <i>Considerations for
-     * Using this Guide</i> in the <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon
-     * Web Services SSO OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
      * access token in the event that the access token is invalid or expired.</p>
      */
     inline void SetRefreshToken(const Aws::String& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
@@ -362,10 +362,10 @@ namespace Model
     /**
      * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
      * supported. For more information about the features and limitations of the
-     * current Amazon Web Services SSO OIDC implementation, see <i>Considerations for
-     * Using this Guide</i> in the <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon
-     * Web Services SSO OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
      * access token in the event that the access token is invalid or expired.</p>
      */
     inline void SetRefreshToken(Aws::String&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::move(value); }
@@ -373,10 +373,10 @@ namespace Model
     /**
      * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
      * supported. For more information about the features and limitations of the
-     * current Amazon Web Services SSO OIDC implementation, see <i>Considerations for
-     * Using this Guide</i> in the <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon
-     * Web Services SSO OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
      * access token in the event that the access token is invalid or expired.</p>
      */
     inline void SetRefreshToken(const char* value) { m_refreshTokenHasBeenSet = true; m_refreshToken.assign(value); }
@@ -384,10 +384,10 @@ namespace Model
     /**
      * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
      * supported. For more information about the features and limitations of the
-     * current Amazon Web Services SSO OIDC implementation, see <i>Considerations for
-     * Using this Guide</i> in the <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon
-     * Web Services SSO OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
      * access token in the event that the access token is invalid or expired.</p>
      */
     inline CreateTokenRequest& WithRefreshToken(const Aws::String& value) { SetRefreshToken(value); return *this;}
@@ -395,10 +395,10 @@ namespace Model
     /**
      * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
      * supported. For more information about the features and limitations of the
-     * current Amazon Web Services SSO OIDC implementation, see <i>Considerations for
-     * Using this Guide</i> in the <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon
-     * Web Services SSO OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
      * access token in the event that the access token is invalid or expired.</p>
      */
     inline CreateTokenRequest& WithRefreshToken(Aws::String&& value) { SetRefreshToken(std::move(value)); return *this;}
@@ -406,10 +406,10 @@ namespace Model
     /**
      * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
      * supported. For more information about the features and limitations of the
-     * current Amazon Web Services SSO OIDC implementation, see <i>Considerations for
-     * Using this Guide</i> in the <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon
-     * Web Services SSO OIDC API Reference</a>.</p> <p>The token used to obtain an
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The token used to obtain an
      * access token in the event that the access token is invalid or expired.</p>
      */
     inline CreateTokenRequest& WithRefreshToken(const char* value) { SetRefreshToken(value); return *this;}
@@ -521,28 +521,28 @@ namespace Model
   private:
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_clientSecret;
-    bool m_clientSecretHasBeenSet;
+    bool m_clientSecretHasBeenSet = false;
 
     Aws::String m_grantType;
-    bool m_grantTypeHasBeenSet;
+    bool m_grantTypeHasBeenSet = false;
 
     Aws::String m_deviceCode;
-    bool m_deviceCodeHasBeenSet;
+    bool m_deviceCodeHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_refreshToken;
-    bool m_refreshTokenHasBeenSet;
+    bool m_refreshTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_redirectUri;
-    bool m_redirectUriHasBeenSet;
+    bool m_redirectUriHasBeenSet = false;
   };
 
 } // namespace Model

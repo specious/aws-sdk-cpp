@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/CampaignSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API CampaignSummary
+  class CampaignSummary
   {
   public:
-    CampaignSummary();
-    CampaignSummary(Aws::Utils::Json::JsonView jsonValue);
-    CampaignSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API CampaignSummary();
+    AWS_CONNECTCAMPAIGNS_API CampaignSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API CampaignSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -139,16 +139,16 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_connectInstanceId;
-    bool m_connectInstanceIdHasBeenSet;
+    bool m_connectInstanceIdHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

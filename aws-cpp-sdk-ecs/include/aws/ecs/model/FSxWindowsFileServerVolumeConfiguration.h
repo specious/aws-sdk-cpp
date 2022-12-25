@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/FSxWindowsFileServerVolumeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API FSxWindowsFileServerVolumeConfiguration
+  class FSxWindowsFileServerVolumeConfiguration
   {
   public:
-    FSxWindowsFileServerVolumeConfiguration();
-    FSxWindowsFileServerVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FSxWindowsFileServerVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API FSxWindowsFileServerVolumeConfiguration();
+    AWS_ECS_API FSxWindowsFileServerVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API FSxWindowsFileServerVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_rootDirectory;
-    bool m_rootDirectoryHasBeenSet;
+    bool m_rootDirectoryHasBeenSet = false;
 
     FSxWindowsFileServerAuthorizationConfig m_authorizationConfig;
-    bool m_authorizationConfigHasBeenSet;
+    bool m_authorizationConfigHasBeenSet = false;
   };
 
 } // namespace Model

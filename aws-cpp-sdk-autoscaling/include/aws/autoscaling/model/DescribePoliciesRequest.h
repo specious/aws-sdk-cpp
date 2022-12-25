@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUTOSCALING_API DescribePoliciesRequest : public AutoScalingRequest
+  class DescribePoliciesRequest : public AutoScalingRequest
   {
   public:
-    DescribePoliciesRequest();
+    AWS_AUTOSCALING_API DescribePoliciesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribePolicies"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUTOSCALING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_AUTOSCALING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -291,19 +291,19 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyNames;
-    bool m_policyNamesHasBeenSet;
+    bool m_policyNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyTypes;
-    bool m_policyTypesHasBeenSet;
+    bool m_policyTypesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
   };
 
 } // namespace Model

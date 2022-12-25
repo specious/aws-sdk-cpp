@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Secret">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Secret
+  class Secret
   {
   public:
-    Secret();
-    Secret(Aws::Utils::Json::JsonView jsonValue);
-    Secret& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Secret();
+    AWS_ECS_API Secret(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Secret& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -226,10 +226,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_valueFrom;
-    bool m_valueFromHasBeenSet;
+    bool m_valueFromHasBeenSet = false;
   };
 
 } // namespace Model

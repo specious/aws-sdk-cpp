@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/AppliedExtension">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API AppliedExtension
+  class AppliedExtension
   {
   public:
-    AppliedExtension();
-    AppliedExtension(Aws::Utils::Json::JsonView jsonValue);
-    AppliedExtension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API AppliedExtension();
+    AWS_APPCONFIG_API AppliedExtension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API AppliedExtension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -210,16 +210,16 @@ namespace Model
   private:
 
     Aws::String m_extensionId;
-    bool m_extensionIdHasBeenSet;
+    bool m_extensionIdHasBeenSet = false;
 
     Aws::String m_extensionAssociationId;
-    bool m_extensionAssociationIdHasBeenSet;
+    bool m_extensionAssociationIdHasBeenSet = false;
 
     int m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

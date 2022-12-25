@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UsageLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API UsageLimit
+  class UsageLimit
   {
   public:
-    UsageLimit();
-    UsageLimit(Aws::Utils::Json::JsonView jsonValue);
-    UsageLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API UsageLimit();
+    AWS_REDSHIFTSERVERLESS_API UsageLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API UsageLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -315,25 +315,25 @@ namespace Model
   private:
 
     long long m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     UsageLimitBreachAction m_breachAction;
-    bool m_breachActionHasBeenSet;
+    bool m_breachActionHasBeenSet = false;
 
     UsageLimitPeriod m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_usageLimitArn;
-    bool m_usageLimitArnHasBeenSet;
+    bool m_usageLimitArnHasBeenSet = false;
 
     Aws::String m_usageLimitId;
-    bool m_usageLimitIdHasBeenSet;
+    bool m_usageLimitIdHasBeenSet = false;
 
     UsageLimitUsageType m_usageType;
-    bool m_usageTypeHasBeenSet;
+    bool m_usageTypeHasBeenSet = false;
   };
 
 } // namespace Model

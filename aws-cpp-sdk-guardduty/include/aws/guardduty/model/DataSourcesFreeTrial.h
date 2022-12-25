@@ -31,48 +31,48 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DataSourcesFreeTrial">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API DataSourcesFreeTrial
+  class DataSourcesFreeTrial
   {
   public:
-    DataSourcesFreeTrial();
-    DataSourcesFreeTrial(Aws::Utils::Json::JsonView jsonValue);
-    DataSourcesFreeTrial& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API DataSourcesFreeTrial();
+    AWS_GUARDDUTY_API DataSourcesFreeTrial(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API DataSourcesFreeTrial& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Describes whether any AWS CloudTrail management event logs are enabled as
-     * data sources.</p>
+     * <p>Describes whether any Amazon Web Services CloudTrail management event logs
+     * are enabled as data sources.</p>
      */
     inline const DataSourceFreeTrial& GetCloudTrail() const{ return m_cloudTrail; }
 
     /**
-     * <p>Describes whether any AWS CloudTrail management event logs are enabled as
-     * data sources.</p>
+     * <p>Describes whether any Amazon Web Services CloudTrail management event logs
+     * are enabled as data sources.</p>
      */
     inline bool CloudTrailHasBeenSet() const { return m_cloudTrailHasBeenSet; }
 
     /**
-     * <p>Describes whether any AWS CloudTrail management event logs are enabled as
-     * data sources.</p>
+     * <p>Describes whether any Amazon Web Services CloudTrail management event logs
+     * are enabled as data sources.</p>
      */
     inline void SetCloudTrail(const DataSourceFreeTrial& value) { m_cloudTrailHasBeenSet = true; m_cloudTrail = value; }
 
     /**
-     * <p>Describes whether any AWS CloudTrail management event logs are enabled as
-     * data sources.</p>
+     * <p>Describes whether any Amazon Web Services CloudTrail management event logs
+     * are enabled as data sources.</p>
      */
     inline void SetCloudTrail(DataSourceFreeTrial&& value) { m_cloudTrailHasBeenSet = true; m_cloudTrail = std::move(value); }
 
     /**
-     * <p>Describes whether any AWS CloudTrail management event logs are enabled as
-     * data sources.</p>
+     * <p>Describes whether any Amazon Web Services CloudTrail management event logs
+     * are enabled as data sources.</p>
      */
     inline DataSourcesFreeTrial& WithCloudTrail(const DataSourceFreeTrial& value) { SetCloudTrail(value); return *this;}
 
     /**
-     * <p>Describes whether any AWS CloudTrail management event logs are enabled as
-     * data sources.</p>
+     * <p>Describes whether any Amazon Web Services CloudTrail management event logs
+     * are enabled as data sources.</p>
      */
     inline DataSourcesFreeTrial& WithCloudTrail(DataSourceFreeTrial&& value) { SetCloudTrail(std::move(value)); return *this;}
 
@@ -234,22 +234,22 @@ namespace Model
   private:
 
     DataSourceFreeTrial m_cloudTrail;
-    bool m_cloudTrailHasBeenSet;
+    bool m_cloudTrailHasBeenSet = false;
 
     DataSourceFreeTrial m_dnsLogs;
-    bool m_dnsLogsHasBeenSet;
+    bool m_dnsLogsHasBeenSet = false;
 
     DataSourceFreeTrial m_flowLogs;
-    bool m_flowLogsHasBeenSet;
+    bool m_flowLogsHasBeenSet = false;
 
     DataSourceFreeTrial m_s3Logs;
-    bool m_s3LogsHasBeenSet;
+    bool m_s3LogsHasBeenSet = false;
 
     KubernetesDataSourceFreeTrial m_kubernetes;
-    bool m_kubernetesHasBeenSet;
+    bool m_kubernetesHasBeenSet = false;
 
     MalwareProtectionDataSourceFreeTrial m_malwareProtection;
-    bool m_malwareProtectionHasBeenSet;
+    bool m_malwareProtectionHasBeenSet = false;
   };
 
 } // namespace Model

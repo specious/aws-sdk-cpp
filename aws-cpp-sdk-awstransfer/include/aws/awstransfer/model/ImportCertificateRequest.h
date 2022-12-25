@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSFER_API ImportCertificateRequest : public TransferRequest
+  class ImportCertificateRequest : public TransferRequest
   {
   public:
-    ImportCertificateRequest();
+    AWS_TRANSFER_API ImportCertificateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportCertificate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSFER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -354,28 +354,28 @@ namespace Model
   private:
 
     CertificateUsageType m_usage;
-    bool m_usageHasBeenSet;
+    bool m_usageHasBeenSet = false;
 
     Aws::String m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     Aws::String m_certificateChain;
-    bool m_certificateChainHasBeenSet;
+    bool m_certificateChainHasBeenSet = false;
 
     Aws::String m_privateKey;
-    bool m_privateKeyHasBeenSet;
+    bool m_privateKeyHasBeenSet = false;
 
     Aws::Utils::DateTime m_activeDate;
-    bool m_activeDateHasBeenSet;
+    bool m_activeDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_inactiveDate;
-    bool m_inactiveDateHasBeenSet;
+    bool m_inactiveDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

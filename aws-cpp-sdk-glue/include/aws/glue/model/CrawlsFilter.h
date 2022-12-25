@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CrawlsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CrawlsFilter
+  class CrawlsFilter
   {
   public:
-    CrawlsFilter();
-    CrawlsFilter(Aws::Utils::Json::JsonView jsonValue);
-    CrawlsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CrawlsFilter();
+    AWS_GLUE_API CrawlsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CrawlsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -211,13 +211,13 @@ namespace Model
   private:
 
     FieldName m_fieldName;
-    bool m_fieldNameHasBeenSet;
+    bool m_fieldNameHasBeenSet = false;
 
     FilterOperator m_filterOperator;
-    bool m_filterOperatorHasBeenSet;
+    bool m_filterOperatorHasBeenSet = false;
 
     Aws::String m_fieldValue;
-    bool m_fieldValueHasBeenSet;
+    bool m_fieldValueHasBeenSet = false;
   };
 
 } // namespace Model

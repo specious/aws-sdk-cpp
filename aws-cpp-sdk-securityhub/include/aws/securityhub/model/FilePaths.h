@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/FilePaths">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API FilePaths
+  class FilePaths
   {
   public:
-    FilePaths();
-    FilePaths(Aws::Utils::Json::JsonView jsonValue);
-    FilePaths& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API FilePaths();
+    AWS_SECURITYHUB_API FilePaths(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API FilePaths& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
+    bool m_fileNameHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_hash;
-    bool m_hashHasBeenSet;
+    bool m_hashHasBeenSet = false;
   };
 
 } // namespace Model

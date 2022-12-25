@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Principal">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API Principal
+  class Principal
   {
   public:
-    Principal();
-    Principal(Aws::Utils::Json::JsonView jsonValue);
-    Principal& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API Principal();
+    AWS_KENDRA_API Principal(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Principal& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PrincipalType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ReadAccessType m_access;
-    bool m_accessHasBeenSet;
+    bool m_accessHasBeenSet = false;
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
   };
 
 } // namespace Model

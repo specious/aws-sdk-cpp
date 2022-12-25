@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2TransitGatewayDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2TransitGatewayDetails
+  class AwsEc2TransitGatewayDetails
   {
   public:
-    AwsEc2TransitGatewayDetails();
-    AwsEc2TransitGatewayDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2TransitGatewayDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2TransitGatewayDetails();
+    AWS_SECURITYHUB_API AwsEc2TransitGatewayDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2TransitGatewayDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -539,40 +539,40 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_defaultRouteTablePropagation;
-    bool m_defaultRouteTablePropagationHasBeenSet;
+    bool m_defaultRouteTablePropagationHasBeenSet = false;
 
     Aws::String m_autoAcceptSharedAttachments;
-    bool m_autoAcceptSharedAttachmentsHasBeenSet;
+    bool m_autoAcceptSharedAttachmentsHasBeenSet = false;
 
     Aws::String m_defaultRouteTableAssociation;
-    bool m_defaultRouteTableAssociationHasBeenSet;
+    bool m_defaultRouteTableAssociationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_transitGatewayCidrBlocks;
-    bool m_transitGatewayCidrBlocksHasBeenSet;
+    bool m_transitGatewayCidrBlocksHasBeenSet = false;
 
     Aws::String m_associationDefaultRouteTableId;
-    bool m_associationDefaultRouteTableIdHasBeenSet;
+    bool m_associationDefaultRouteTableIdHasBeenSet = false;
 
     Aws::String m_propagationDefaultRouteTableId;
-    bool m_propagationDefaultRouteTableIdHasBeenSet;
+    bool m_propagationDefaultRouteTableIdHasBeenSet = false;
 
     Aws::String m_vpnEcmpSupport;
-    bool m_vpnEcmpSupportHasBeenSet;
+    bool m_vpnEcmpSupportHasBeenSet = false;
 
     Aws::String m_dnsSupport;
-    bool m_dnsSupportHasBeenSet;
+    bool m_dnsSupportHasBeenSet = false;
 
     Aws::String m_multicastSupport;
-    bool m_multicastSupportHasBeenSet;
+    bool m_multicastSupportHasBeenSet = false;
 
     int m_amazonSideAsn;
-    bool m_amazonSideAsnHasBeenSet;
+    bool m_amazonSideAsnHasBeenSet = false;
   };
 
 } // namespace Model

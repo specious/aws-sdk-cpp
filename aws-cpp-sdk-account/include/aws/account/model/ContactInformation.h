@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ContactInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCOUNT_API ContactInformation
+  class ContactInformation
   {
   public:
-    ContactInformation();
-    ContactInformation(Aws::Utils::Json::JsonView jsonValue);
-    ContactInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCOUNT_API ContactInformation();
+    AWS_ACCOUNT_API ContactInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCOUNT_API ContactInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCOUNT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -564,40 +564,40 @@ namespace Model
   private:
 
     Aws::String m_addressLine1;
-    bool m_addressLine1HasBeenSet;
+    bool m_addressLine1HasBeenSet = false;
 
     Aws::String m_addressLine2;
-    bool m_addressLine2HasBeenSet;
+    bool m_addressLine2HasBeenSet = false;
 
     Aws::String m_addressLine3;
-    bool m_addressLine3HasBeenSet;
+    bool m_addressLine3HasBeenSet = false;
 
     Aws::String m_city;
-    bool m_cityHasBeenSet;
+    bool m_cityHasBeenSet = false;
 
     Aws::String m_companyName;
-    bool m_companyNameHasBeenSet;
+    bool m_companyNameHasBeenSet = false;
 
     Aws::String m_countryCode;
-    bool m_countryCodeHasBeenSet;
+    bool m_countryCodeHasBeenSet = false;
 
     Aws::String m_districtOrCounty;
-    bool m_districtOrCountyHasBeenSet;
+    bool m_districtOrCountyHasBeenSet = false;
 
     Aws::String m_fullName;
-    bool m_fullNameHasBeenSet;
+    bool m_fullNameHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_postalCode;
-    bool m_postalCodeHasBeenSet;
+    bool m_postalCodeHasBeenSet = false;
 
     Aws::String m_stateOrRegion;
-    bool m_stateOrRegionHasBeenSet;
+    bool m_stateOrRegionHasBeenSet = false;
 
     Aws::String m_websiteUrl;
-    bool m_websiteUrlHasBeenSet;
+    bool m_websiteUrlHasBeenSet = false;
   };
 
 } // namespace Model

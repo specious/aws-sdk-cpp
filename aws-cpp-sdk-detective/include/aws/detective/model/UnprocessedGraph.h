@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UnprocessedGraph">AWS
    * API Reference</a></p>
    */
-  class AWS_DETECTIVE_API UnprocessedGraph
+  class UnprocessedGraph
   {
   public:
-    UnprocessedGraph();
-    UnprocessedGraph(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessedGraph& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DETECTIVE_API UnprocessedGraph();
+    AWS_DETECTIVE_API UnprocessedGraph(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API UnprocessedGraph& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_graphArn;
-    bool m_graphArnHasBeenSet;
+    bool m_graphArnHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

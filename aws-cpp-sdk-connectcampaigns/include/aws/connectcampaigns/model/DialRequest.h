@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/DialRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API DialRequest
+  class DialRequest
   {
   public:
-    DialRequest();
-    DialRequest(Aws::Utils::Json::JsonView jsonValue);
-    DialRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API DialRequest();
+    AWS_CONNECTCAMPAIGNS_API DialRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API DialRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -150,16 +150,16 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
   };
 
 } // namespace Model

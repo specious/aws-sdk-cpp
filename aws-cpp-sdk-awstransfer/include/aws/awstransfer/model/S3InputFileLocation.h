@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/S3InputFileLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API S3InputFileLocation
+  class S3InputFileLocation
   {
   public:
-    S3InputFileLocation();
-    S3InputFileLocation(Aws::Utils::Json::JsonView jsonValue);
-    S3InputFileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API S3InputFileLocation();
+    AWS_TRANSFER_API S3InputFileLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API S3InputFileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,10 +143,10 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
   };
 
 } // namespace Model

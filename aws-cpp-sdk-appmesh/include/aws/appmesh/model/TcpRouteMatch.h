@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TcpRouteMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API TcpRouteMatch
+  class TcpRouteMatch
   {
   public:
-    TcpRouteMatch();
-    TcpRouteMatch(Aws::Utils::Json::JsonView jsonValue);
-    TcpRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API TcpRouteMatch();
+    AWS_APPMESH_API TcpRouteMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API TcpRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/RoleInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_SSO_API RoleInfo
+  class RoleInfo
   {
   public:
-    RoleInfo();
-    RoleInfo(Aws::Utils::Json::JsonView jsonValue);
-    RoleInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSO_API RoleInfo();
+    AWS_SSO_API RoleInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSO_API RoleInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,52 +80,52 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Web Services account assigned to the user.</p>
+     * <p>The identifier of the AWS account assigned to the user.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The identifier of the Amazon Web Services account assigned to the user.</p>
+     * <p>The identifier of the AWS account assigned to the user.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Web Services account assigned to the user.</p>
+     * <p>The identifier of the AWS account assigned to the user.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The identifier of the Amazon Web Services account assigned to the user.</p>
+     * <p>The identifier of the AWS account assigned to the user.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Web Services account assigned to the user.</p>
+     * <p>The identifier of the AWS account assigned to the user.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Web Services account assigned to the user.</p>
+     * <p>The identifier of the AWS account assigned to the user.</p>
      */
     inline RoleInfo& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Web Services account assigned to the user.</p>
+     * <p>The identifier of the AWS account assigned to the user.</p>
      */
     inline RoleInfo& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Web Services account assigned to the user.</p>
+     * <p>The identifier of the AWS account assigned to the user.</p>
      */
     inline RoleInfo& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
   private:
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

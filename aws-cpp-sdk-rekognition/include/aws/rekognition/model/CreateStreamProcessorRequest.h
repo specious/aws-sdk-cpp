@@ -26,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_REKOGNITION_API CreateStreamProcessorRequest : public RekognitionRequest
+  class CreateStreamProcessorRequest : public RekognitionRequest
   {
   public:
-    CreateStreamProcessorRequest();
+    AWS_REKOGNITION_API CreateStreamProcessorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateStreamProcessor"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REKOGNITION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -646,34 +646,34 @@ namespace Model
   private:
 
     StreamProcessorInput m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     StreamProcessorOutput m_output;
-    bool m_outputHasBeenSet;
+    bool m_outputHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     StreamProcessorSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     StreamProcessorNotificationChannel m_notificationChannel;
-    bool m_notificationChannelHasBeenSet;
+    bool m_notificationChannelHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<RegionOfInterest> m_regionsOfInterest;
-    bool m_regionsOfInterestHasBeenSet;
+    bool m_regionsOfInterestHasBeenSet = false;
 
     StreamProcessorDataSharingPreference m_dataSharingPreference;
-    bool m_dataSharingPreferenceHasBeenSet;
+    bool m_dataSharingPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

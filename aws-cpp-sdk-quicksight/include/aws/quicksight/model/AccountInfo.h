@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccountInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AccountInfo
+  class AccountInfo
   {
   public:
-    AccountInfo();
-    AccountInfo(Aws::Utils::Json::JsonView jsonValue);
-    AccountInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AccountInfo();
+    AWS_QUICKSIGHT_API AccountInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AccountInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -281,19 +281,19 @@ namespace Model
   private:
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Edition m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
 
     Aws::String m_notificationEmail;
-    bool m_notificationEmailHasBeenSet;
+    bool m_notificationEmailHasBeenSet = false;
 
     Aws::String m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
 
     Aws::String m_accountSubscriptionStatus;
-    bool m_accountSubscriptionStatusHasBeenSet;
+    bool m_accountSubscriptionStatusHasBeenSet = false;
   };
 
 } // namespace Model

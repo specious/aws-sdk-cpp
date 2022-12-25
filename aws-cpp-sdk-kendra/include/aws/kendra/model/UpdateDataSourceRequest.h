@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_KENDRA_API UpdateDataSourceRequest : public KendraRequest
+  class UpdateDataSourceRequest : public KendraRequest
   {
   public:
-    UpdateDataSourceRequest();
+    AWS_KENDRA_API UpdateDataSourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,48 +32,48 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDataSource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KENDRA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The identifier of the data source you want to update.</p>
+     * <p>The identifier of the data source connector you want to update.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the data source you want to update.</p>
+     * <p>The identifier of the data source connector you want to update.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The identifier of the data source you want to update.</p>
+     * <p>The identifier of the data source connector you want to update.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier of the data source you want to update.</p>
+     * <p>The identifier of the data source connector you want to update.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the data source you want to update.</p>
+     * <p>The identifier of the data source connector you want to update.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier of the data source you want to update.</p>
+     * <p>The identifier of the data source connector you want to update.</p>
      */
     inline UpdateDataSourceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the data source you want to update.</p>
+     * <p>The identifier of the data source connector you want to update.</p>
      */
     inline UpdateDataSourceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the data source you want to update.</p>
+     * <p>The identifier of the data source connector you want to update.</p>
      */
     inline UpdateDataSourceRequest& WithId(const char* value) { SetId(value); return *this;}
 
@@ -330,64 +330,64 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
     inline UpdateDataSourceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
     inline UpdateDataSourceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
     inline UpdateDataSourceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
@@ -537,34 +537,34 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     DataSourceConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     CustomDocumentEnrichmentConfiguration m_customDocumentEnrichmentConfiguration;
-    bool m_customDocumentEnrichmentConfigurationHasBeenSet;
+    bool m_customDocumentEnrichmentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

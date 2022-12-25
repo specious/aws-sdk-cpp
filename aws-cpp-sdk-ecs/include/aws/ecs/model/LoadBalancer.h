@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/LoadBalancer">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API LoadBalancer
+  class LoadBalancer
   {
   public:
-    LoadBalancer();
-    LoadBalancer(Aws::Utils::Json::JsonView jsonValue);
-    LoadBalancer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API LoadBalancer();
+    AWS_ECS_API LoadBalancer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API LoadBalancer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -386,16 +386,16 @@ namespace Model
   private:
 
     Aws::String m_targetGroupArn;
-    bool m_targetGroupArnHasBeenSet;
+    bool m_targetGroupArnHasBeenSet = false;
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     Aws::String m_containerName;
-    bool m_containerNameHasBeenSet;
+    bool m_containerNameHasBeenSet = false;
 
     int m_containerPort;
-    bool m_containerPortHasBeenSet;
+    bool m_containerPortHasBeenSet = false;
   };
 
 } // namespace Model

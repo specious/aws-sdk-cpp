@@ -5,110 +5,73 @@
 
 #pragma once
 #include <aws/account/Account_EXPORTS.h>
-#include <aws/account/AccountErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/account/model/GetAlternateContactResult.h>
-#include <aws/account/model/GetContactInformationResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/account/AccountServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Account
 {
-
-namespace Model
-{
-        class DeleteAlternateContactRequest;
-        class GetAlternateContactRequest;
-        class GetContactInformationRequest;
-        class PutAlternateContactRequest;
-        class PutContactInformationRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, AccountError> DeleteAlternateContactOutcome;
-        typedef Aws::Utils::Outcome<GetAlternateContactResult, AccountError> GetAlternateContactOutcome;
-        typedef Aws::Utils::Outcome<GetContactInformationResult, AccountError> GetContactInformationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AccountError> PutAlternateContactOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AccountError> PutContactInformationOutcome;
-
-        typedef std::future<DeleteAlternateContactOutcome> DeleteAlternateContactOutcomeCallable;
-        typedef std::future<GetAlternateContactOutcome> GetAlternateContactOutcomeCallable;
-        typedef std::future<GetContactInformationOutcome> GetContactInformationOutcomeCallable;
-        typedef std::future<PutAlternateContactOutcome> PutAlternateContactOutcomeCallable;
-        typedef std::future<PutContactInformationOutcome> PutContactInformationOutcomeCallable;
-} // namespace Model
-
-  class AccountClient;
-
-    typedef std::function<void(const AccountClient*, const Model::DeleteAlternateContactRequest&, const Model::DeleteAlternateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAlternateContactResponseReceivedHandler;
-    typedef std::function<void(const AccountClient*, const Model::GetAlternateContactRequest&, const Model::GetAlternateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAlternateContactResponseReceivedHandler;
-    typedef std::function<void(const AccountClient*, const Model::GetContactInformationRequest&, const Model::GetContactInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactInformationResponseReceivedHandler;
-    typedef std::function<void(const AccountClient*, const Model::PutAlternateContactRequest&, const Model::PutAlternateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAlternateContactResponseReceivedHandler;
-    typedef std::function<void(const AccountClient*, const Model::PutContactInformationRequest&, const Model::PutContactInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutContactInformationResponseReceivedHandler;
-
   /**
    * <p>Operations for Amazon Web Services Account Management</p>
    */
-  class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient
+  class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AccountClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AccountClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AccountClient(const Aws::Account::AccountClientConfiguration& clientConfiguration = Aws::Account::AccountClientConfiguration(),
+                      std::shared_ptr<AccountEndpointProviderBase> endpointProvider = Aws::MakeShared<AccountEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AccountClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AccountClient(const Aws::Auth::AWSCredentials& credentials,
+                      std::shared_ptr<AccountEndpointProviderBase> endpointProvider = Aws::MakeShared<AccountEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Account::AccountClientConfiguration& clientConfiguration = Aws::Account::AccountClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AccountClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      std::shared_ptr<AccountEndpointProviderBase> endpointProvider = Aws::MakeShared<AccountEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Account::AccountClientConfiguration& clientConfiguration = Aws::Account::AccountClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AccountClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AccountClient(const Aws::Auth::AWSCredentials& credentials,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        AccountClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~AccountClient();
-
 
         /**
          * <p>Deletes the specified alternate contact from an Amazon Web Services
@@ -235,17 +198,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<AccountEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DeleteAlternateContactAsyncHelper(const Model::DeleteAlternateContactRequest& request, const DeleteAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAlternateContactAsyncHelper(const Model::GetAlternateContactRequest& request, const GetAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetContactInformationAsyncHelper(const Model::GetContactInformationRequest& request, const GetContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutAlternateContactAsyncHelper(const Model::PutAlternateContactRequest& request, const PutAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutContactInformationAsyncHelper(const Model::PutContactInformationRequest& request, const PutContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AccountClient>;
+      void init(const AccountClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      AccountClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<AccountEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Account

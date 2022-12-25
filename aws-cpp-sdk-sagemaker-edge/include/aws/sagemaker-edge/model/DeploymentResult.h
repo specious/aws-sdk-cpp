@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/DeploymentResult">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKEREDGEMANAGER_API DeploymentResult
+  class DeploymentResult
   {
   public:
-    DeploymentResult();
-    DeploymentResult(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKEREDGEMANAGER_API DeploymentResult();
+    AWS_SAGEMAKEREDGEMANAGER_API DeploymentResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API DeploymentResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -275,22 +275,22 @@ namespace Model
   private:
 
     Aws::String m_deploymentName;
-    bool m_deploymentNameHasBeenSet;
+    bool m_deploymentNameHasBeenSet = false;
 
     Aws::String m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     Aws::String m_deploymentStatusMessage;
-    bool m_deploymentStatusMessageHasBeenSet;
+    bool m_deploymentStatusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_deploymentStartTime;
-    bool m_deploymentStartTimeHasBeenSet;
+    bool m_deploymentStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_deploymentEndTime;
-    bool m_deploymentEndTimeHasBeenSet;
+    bool m_deploymentEndTimeHasBeenSet = false;
 
     Aws::Vector<DeploymentModel> m_deploymentModels;
-    bool m_deploymentModelsHasBeenSet;
+    bool m_deploymentModelsHasBeenSet = false;
   };
 
 } // namespace Model

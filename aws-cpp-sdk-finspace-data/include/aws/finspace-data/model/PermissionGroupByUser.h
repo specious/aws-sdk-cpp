@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/PermissionGroupByUser">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API PermissionGroupByUser
+  class PermissionGroupByUser
   {
   public:
-    PermissionGroupByUser();
-    PermissionGroupByUser(Aws::Utils::Json::JsonView jsonValue);
-    PermissionGroupByUser& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API PermissionGroupByUser();
+    AWS_FINSPACEDATA_API PermissionGroupByUser(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API PermissionGroupByUser& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_permissionGroupId;
-    bool m_permissionGroupIdHasBeenSet;
+    bool m_permissionGroupIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PermissionGroupMembershipStatus m_membershipStatus;
-    bool m_membershipStatusHasBeenSet;
+    bool m_membershipStatusHasBeenSet = false;
   };
 
 } // namespace Model

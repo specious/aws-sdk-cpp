@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateTagSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LaunchTemplateTagSpecification
+  class LaunchTemplateTagSpecification
   {
   public:
-    LaunchTemplateTagSpecification();
-    LaunchTemplateTagSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchTemplateTagSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateTagSpecification();
+    AWS_EC2_API LaunchTemplateTagSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateTagSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

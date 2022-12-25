@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CrossRegionCopyAction">AWS
    * API Reference</a></p>
    */
-  class AWS_DLM_API CrossRegionCopyAction
+  class CrossRegionCopyAction
   {
   public:
-    CrossRegionCopyAction();
-    CrossRegionCopyAction(Aws::Utils::Json::JsonView jsonValue);
-    CrossRegionCopyAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API CrossRegionCopyAction();
+    AWS_DLM_API CrossRegionCopyAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API CrossRegionCopyAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
 
     CrossRegionCopyRetainRule m_retainRule;
-    bool m_retainRuleHasBeenSet;
+    bool m_retainRuleHasBeenSet = false;
   };
 
 } // namespace Model

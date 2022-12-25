@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedAgreement">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API DescribedAgreement
+  class DescribedAgreement
   {
   public:
-    DescribedAgreement();
-    DescribedAgreement(Aws::Utils::Json::JsonView jsonValue);
-    DescribedAgreement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API DescribedAgreement();
+    AWS_TRANSFER_API DescribedAgreement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API DescribedAgreement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -258,83 +258,83 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline const Aws::String& GetLocalProfileId() const{ return m_localProfileId; }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline bool LocalProfileIdHasBeenSet() const { return m_localProfileIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline void SetLocalProfileId(const Aws::String& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = value; }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline void SetLocalProfileId(Aws::String&& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline void SetLocalProfileId(const char* value) { m_localProfileIdHasBeenSet = true; m_localProfileId.assign(value); }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline DescribedAgreement& WithLocalProfileId(const Aws::String& value) { SetLocalProfileId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline DescribedAgreement& WithLocalProfileId(Aws::String&& value) { SetLocalProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline DescribedAgreement& WithLocalProfileId(const char* value) { SetLocalProfileId(value); return *this;}
 
 
     /**
-     * <p>A unique identifier for the partner in the agreement.</p>
+     * <p>A unique identifier for the partner profile used in the agreement.</p>
      */
     inline const Aws::String& GetPartnerProfileId() const{ return m_partnerProfileId; }
 
     /**
-     * <p>A unique identifier for the partner in the agreement.</p>
+     * <p>A unique identifier for the partner profile used in the agreement.</p>
      */
     inline bool PartnerProfileIdHasBeenSet() const { return m_partnerProfileIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the partner in the agreement.</p>
+     * <p>A unique identifier for the partner profile used in the agreement.</p>
      */
     inline void SetPartnerProfileId(const Aws::String& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = value; }
 
     /**
-     * <p>A unique identifier for the partner in the agreement.</p>
+     * <p>A unique identifier for the partner profile used in the agreement.</p>
      */
     inline void SetPartnerProfileId(Aws::String&& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the partner in the agreement.</p>
+     * <p>A unique identifier for the partner profile used in the agreement.</p>
      */
     inline void SetPartnerProfileId(const char* value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId.assign(value); }
 
     /**
-     * <p>A unique identifier for the partner in the agreement.</p>
+     * <p>A unique identifier for the partner profile used in the agreement.</p>
      */
     inline DescribedAgreement& WithPartnerProfileId(const Aws::String& value) { SetPartnerProfileId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the partner in the agreement.</p>
+     * <p>A unique identifier for the partner profile used in the agreement.</p>
      */
     inline DescribedAgreement& WithPartnerProfileId(Aws::String&& value) { SetPartnerProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the partner in the agreement.</p>
+     * <p>A unique identifier for the partner profile used in the agreement.</p>
      */
     inline DescribedAgreement& WithPartnerProfileId(const char* value) { SetPartnerProfileId(value); return *this;}
 
@@ -389,58 +389,122 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline const Aws::String& GetAccessRole() const{ return m_accessRole; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline bool AccessRoleHasBeenSet() const { return m_accessRoleHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline void SetAccessRole(const Aws::String& value) { m_accessRoleHasBeenSet = true; m_accessRole = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline void SetAccessRole(Aws::String&& value) { m_accessRoleHasBeenSet = true; m_accessRole = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline void SetAccessRole(const char* value) { m_accessRoleHasBeenSet = true; m_accessRole.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline DescribedAgreement& WithAccessRole(const Aws::String& value) { SetAccessRole(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline DescribedAgreement& WithAccessRole(Aws::String&& value) { SetAccessRole(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline DescribedAgreement& WithAccessRole(const char* value) { SetAccessRole(value); return *this;}
 
@@ -488,34 +552,34 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_agreementId;
-    bool m_agreementIdHasBeenSet;
+    bool m_agreementIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     AgreementStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::String m_localProfileId;
-    bool m_localProfileIdHasBeenSet;
+    bool m_localProfileIdHasBeenSet = false;
 
     Aws::String m_partnerProfileId;
-    bool m_partnerProfileIdHasBeenSet;
+    bool m_partnerProfileIdHasBeenSet = false;
 
     Aws::String m_baseDirectory;
-    bool m_baseDirectoryHasBeenSet;
+    bool m_baseDirectoryHasBeenSet = false;
 
     Aws::String m_accessRole;
-    bool m_accessRoleHasBeenSet;
+    bool m_accessRoleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

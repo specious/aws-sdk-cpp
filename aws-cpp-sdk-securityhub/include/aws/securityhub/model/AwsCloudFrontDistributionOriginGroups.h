@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginGroups">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroups
+  class AwsCloudFrontDistributionOriginGroups
   {
   public:
-    AwsCloudFrontDistributionOriginGroups();
-    AwsCloudFrontDistributionOriginGroups(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFrontDistributionOriginGroups& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroups();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroups(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroups& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<AwsCloudFrontDistributionOriginGroup> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

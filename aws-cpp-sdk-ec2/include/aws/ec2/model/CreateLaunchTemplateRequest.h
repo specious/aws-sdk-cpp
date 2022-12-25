@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API CreateLaunchTemplateRequest : public EC2Request
+  class CreateLaunchTemplateRequest : public EC2Request
   {
   public:
-    CreateLaunchTemplateRequest();
+    AWS_EC2_API CreateLaunchTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLaunchTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -333,22 +333,22 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_launchTemplateName;
-    bool m_launchTemplateNameHasBeenSet;
+    bool m_launchTemplateNameHasBeenSet = false;
 
     Aws::String m_versionDescription;
-    bool m_versionDescriptionHasBeenSet;
+    bool m_versionDescriptionHasBeenSet = false;
 
     RequestLaunchTemplateData m_launchTemplateData;
-    bool m_launchTemplateDataHasBeenSet;
+    bool m_launchTemplateDataHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

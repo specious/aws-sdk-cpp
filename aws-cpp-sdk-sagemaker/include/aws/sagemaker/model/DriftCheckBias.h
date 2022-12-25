@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DriftCheckBias">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DriftCheckBias
+  class DriftCheckBias
   {
   public:
-    DriftCheckBias();
-    DriftCheckBias(Aws::Utils::Json::JsonView jsonValue);
-    DriftCheckBias& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DriftCheckBias();
+    AWS_SAGEMAKER_API DriftCheckBias(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DriftCheckBias& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     FileSource m_configFile;
-    bool m_configFileHasBeenSet;
+    bool m_configFileHasBeenSet = false;
 
     MetricsSource m_preTrainingConstraints;
-    bool m_preTrainingConstraintsHasBeenSet;
+    bool m_preTrainingConstraintsHasBeenSet = false;
 
     MetricsSource m_postTrainingConstraints;
-    bool m_postTrainingConstraintsHasBeenSet;
+    bool m_postTrainingConstraintsHasBeenSet = false;
   };
 
 } // namespace Model

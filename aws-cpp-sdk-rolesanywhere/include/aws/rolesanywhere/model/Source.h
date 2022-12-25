@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/Source">AWS
    * API Reference</a></p>
    */
-  class AWS_ROLESANYWHERE_API Source
+  class Source
   {
   public:
-    Source();
-    Source(Aws::Utils::Json::JsonView jsonValue);
-    Source& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROLESANYWHERE_API Source();
+    AWS_ROLESANYWHERE_API Source(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API Source& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     SourceData m_sourceData;
-    bool m_sourceDataHasBeenSet;
+    bool m_sourceDataHasBeenSet = false;
 
     TrustAnchorType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

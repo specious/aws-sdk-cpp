@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafRegionalRuleGroupRulesActionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsWafRegionalRuleGroupRulesActionDetails
+  class AwsWafRegionalRuleGroupRulesActionDetails
   {
   public:
-    AwsWafRegionalRuleGroupRulesActionDetails();
-    AwsWafRegionalRuleGroupRulesActionDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsWafRegionalRuleGroupRulesActionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsWafRegionalRuleGroupRulesActionDetails();
+    AWS_SECURITYHUB_API AwsWafRegionalRuleGroupRulesActionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsWafRegionalRuleGroupRulesActionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,7 +113,7 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

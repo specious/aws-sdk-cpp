@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/Choice">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API Choice
+  class Choice
   {
   public:
-    Choice();
-    Choice(Aws::Utils::Json::JsonView jsonValue);
-    Choice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API Choice();
+    AWS_WELLARCHITECTED_API Choice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Choice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -236,22 +236,22 @@ namespace Model
   private:
 
     Aws::String m_choiceId;
-    bool m_choiceIdHasBeenSet;
+    bool m_choiceIdHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ChoiceContent m_helpfulResource;
-    bool m_helpfulResourceHasBeenSet;
+    bool m_helpfulResourceHasBeenSet = false;
 
     ChoiceContent m_improvementPlan;
-    bool m_improvementPlanHasBeenSet;
+    bool m_improvementPlanHasBeenSet = false;
 
     Aws::Vector<AdditionalResources> m_additionalResources;
-    bool m_additionalResourcesHasBeenSet;
+    bool m_additionalResourcesHasBeenSet = false;
   };
 
 } // namespace Model

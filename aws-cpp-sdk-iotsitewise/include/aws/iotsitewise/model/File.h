@@ -28,13 +28,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/File">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API File
+  class File
   {
   public:
-    File();
-    File(Aws::Utils::Json::JsonView jsonValue);
-    File& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API File();
+    AWS_IOTSITEWISE_API File(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API File& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
   };
 
 } // namespace Model

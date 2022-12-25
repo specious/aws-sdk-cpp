@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/JsonBody">AWS API
    * Reference</a></p>
    */
-  class AWS_WAFV2_API JsonBody
+  class JsonBody
   {
   public:
-    JsonBody();
-    JsonBody(Aws::Utils::Json::JsonView jsonValue);
-    JsonBody& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API JsonBody();
+    AWS_WAFV2_API JsonBody(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API JsonBody& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -347,16 +347,16 @@ namespace Model
   private:
 
     JsonMatchPattern m_matchPattern;
-    bool m_matchPatternHasBeenSet;
+    bool m_matchPatternHasBeenSet = false;
 
     JsonMatchScope m_matchScope;
-    bool m_matchScopeHasBeenSet;
+    bool m_matchScopeHasBeenSet = false;
 
     BodyParsingFallbackBehavior m_invalidFallbackBehavior;
-    bool m_invalidFallbackBehaviorHasBeenSet;
+    bool m_invalidFallbackBehaviorHasBeenSet = false;
 
     OversizeHandling m_oversizeHandling;
-    bool m_oversizeHandlingHasBeenSet;
+    bool m_oversizeHandlingHasBeenSet = false;
   };
 
 } // namespace Model

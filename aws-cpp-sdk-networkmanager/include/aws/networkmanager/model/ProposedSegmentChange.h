@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ProposedSegmentChange">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API ProposedSegmentChange
+  class ProposedSegmentChange
   {
   public:
-    ProposedSegmentChange();
-    ProposedSegmentChange(Aws::Utils::Json::JsonView jsonValue);
-    ProposedSegmentChange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API ProposedSegmentChange();
+    AWS_NETWORKMANAGER_API ProposedSegmentChange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API ProposedSegmentChange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     int m_attachmentPolicyRuleNumber;
-    bool m_attachmentPolicyRuleNumberHasBeenSet;
+    bool m_attachmentPolicyRuleNumberHasBeenSet = false;
 
     Aws::String m_segmentName;
-    bool m_segmentNameHasBeenSet;
+    bool m_segmentNameHasBeenSet = false;
   };
 
 } // namespace Model

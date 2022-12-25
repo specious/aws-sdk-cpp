@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEfsAccessPointDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEfsAccessPointDetails
+  class AwsEfsAccessPointDetails
   {
   public:
-    AwsEfsAccessPointDetails();
-    AwsEfsAccessPointDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEfsAccessPointDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEfsAccessPointDetails();
+    AWS_SECURITYHUB_API AwsEfsAccessPointDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEfsAccessPointDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -294,22 +294,22 @@ namespace Model
   private:
 
     Aws::String m_accessPointId;
-    bool m_accessPointIdHasBeenSet;
+    bool m_accessPointIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     AwsEfsAccessPointPosixUserDetails m_posixUser;
-    bool m_posixUserHasBeenSet;
+    bool m_posixUserHasBeenSet = false;
 
     AwsEfsAccessPointRootDirectoryDetails m_rootDirectory;
-    bool m_rootDirectoryHasBeenSet;
+    bool m_rootDirectoryHasBeenSet = false;
   };
 
 } // namespace Model

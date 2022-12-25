@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayRoute">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayRoute
+  class TransitGatewayRoute
   {
   public:
-    TransitGatewayRoute();
-    TransitGatewayRoute(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayRoute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayRoute();
+    AWS_EC2_API TransitGatewayRoute(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayRoute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -272,22 +272,22 @@ namespace Model
   private:
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     Aws::String m_transitGatewayRouteTableAnnouncementId;
-    bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet;
+    bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet = false;
 
     Aws::Vector<TransitGatewayRouteAttachment> m_transitGatewayAttachments;
-    bool m_transitGatewayAttachmentsHasBeenSet;
+    bool m_transitGatewayAttachmentsHasBeenSet = false;
 
     TransitGatewayRouteType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     TransitGatewayRouteState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

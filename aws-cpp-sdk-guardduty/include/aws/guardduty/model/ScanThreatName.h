@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ScanThreatName">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ScanThreatName
+  class ScanThreatName
   {
   public:
-    ScanThreatName();
-    ScanThreatName(Aws::Utils::Json::JsonView jsonValue);
-    ScanThreatName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ScanThreatName();
+    AWS_GUARDDUTY_API ScanThreatName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ScanThreatName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     int m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
 
     Aws::Vector<ScanFilePath> m_filePaths;
-    bool m_filePathsHasBeenSet;
+    bool m_filePathsHasBeenSet = false;
   };
 
 } // namespace Model

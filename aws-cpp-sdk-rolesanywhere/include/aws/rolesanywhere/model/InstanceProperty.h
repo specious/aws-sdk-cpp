@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/InstanceProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_ROLESANYWHERE_API InstanceProperty
+  class InstanceProperty
   {
   public:
-    InstanceProperty();
-    InstanceProperty(Aws::Utils::Json::JsonView jsonValue);
-    InstanceProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROLESANYWHERE_API InstanceProperty();
+    AWS_ROLESANYWHERE_API InstanceProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API InstanceProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -180,13 +180,13 @@ namespace Model
   private:
 
     bool m_failed;
-    bool m_failedHasBeenSet;
+    bool m_failedHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_seenAt;
-    bool m_seenAtHasBeenSet;
+    bool m_seenAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -14,6 +14,7 @@
 #include <aws/glue/model/WorkerType.h>
 #include <aws/glue/model/NotificationProperty.h>
 #include <aws/glue/model/ExecutionClass.h>
+#include <aws/glue/model/SourceControlDetails.h>
 #include <aws/glue/model/CodeGenConfigurationNode.h>
 #include <utility>
 
@@ -37,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Job">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Job
+  class Job
   {
   public:
-    Job();
-    Job(Aws::Utils::Json::JsonView jsonValue);
-    Job& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Job();
+    AWS_GLUE_API Job(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Job& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1196,70 +1197,110 @@ namespace Model
      */
     inline Job& WithExecutionClass(ExecutionClass&& value) { SetExecutionClass(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The details for a source control configuration for a job, allowing
+     * synchronization of job artifacts to or from a remote repository.</p>
+     */
+    inline const SourceControlDetails& GetSourceControlDetails() const{ return m_sourceControlDetails; }
+
+    /**
+     * <p>The details for a source control configuration for a job, allowing
+     * synchronization of job artifacts to or from a remote repository.</p>
+     */
+    inline bool SourceControlDetailsHasBeenSet() const { return m_sourceControlDetailsHasBeenSet; }
+
+    /**
+     * <p>The details for a source control configuration for a job, allowing
+     * synchronization of job artifacts to or from a remote repository.</p>
+     */
+    inline void SetSourceControlDetails(const SourceControlDetails& value) { m_sourceControlDetailsHasBeenSet = true; m_sourceControlDetails = value; }
+
+    /**
+     * <p>The details for a source control configuration for a job, allowing
+     * synchronization of job artifacts to or from a remote repository.</p>
+     */
+    inline void SetSourceControlDetails(SourceControlDetails&& value) { m_sourceControlDetailsHasBeenSet = true; m_sourceControlDetails = std::move(value); }
+
+    /**
+     * <p>The details for a source control configuration for a job, allowing
+     * synchronization of job artifacts to or from a remote repository.</p>
+     */
+    inline Job& WithSourceControlDetails(const SourceControlDetails& value) { SetSourceControlDetails(value); return *this;}
+
+    /**
+     * <p>The details for a source control configuration for a job, allowing
+     * synchronization of job artifacts to or from a remote repository.</p>
+     */
+    inline Job& WithSourceControlDetails(SourceControlDetails&& value) { SetSourceControlDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_logUri;
-    bool m_logUriHasBeenSet;
+    bool m_logUriHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdOn;
-    bool m_createdOnHasBeenSet;
+    bool m_createdOnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedOn;
-    bool m_lastModifiedOnHasBeenSet;
+    bool m_lastModifiedOnHasBeenSet = false;
 
     ExecutionProperty m_executionProperty;
-    bool m_executionPropertyHasBeenSet;
+    bool m_executionPropertyHasBeenSet = false;
 
     JobCommand m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_defaultArguments;
-    bool m_defaultArgumentsHasBeenSet;
+    bool m_defaultArgumentsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_nonOverridableArguments;
-    bool m_nonOverridableArgumentsHasBeenSet;
+    bool m_nonOverridableArgumentsHasBeenSet = false;
 
     ConnectionsList m_connections;
-    bool m_connectionsHasBeenSet;
+    bool m_connectionsHasBeenSet = false;
 
     int m_maxRetries;
-    bool m_maxRetriesHasBeenSet;
+    bool m_maxRetriesHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     double m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     WorkerType m_workerType;
-    bool m_workerTypeHasBeenSet;
+    bool m_workerTypeHasBeenSet = false;
 
     int m_numberOfWorkers;
-    bool m_numberOfWorkersHasBeenSet;
+    bool m_numberOfWorkersHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
-    bool m_securityConfigurationHasBeenSet;
+    bool m_securityConfigurationHasBeenSet = false;
 
     NotificationProperty m_notificationProperty;
-    bool m_notificationPropertyHasBeenSet;
+    bool m_notificationPropertyHasBeenSet = false;
 
     Aws::String m_glueVersion;
-    bool m_glueVersionHasBeenSet;
+    bool m_glueVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, CodeGenConfigurationNode> m_codeGenConfigurationNodes;
-    bool m_codeGenConfigurationNodesHasBeenSet;
+    bool m_codeGenConfigurationNodesHasBeenSet = false;
 
     ExecutionClass m_executionClass;
-    bool m_executionClassHasBeenSet;
+    bool m_executionClassHasBeenSet = false;
+
+    SourceControlDetails m_sourceControlDetails;
+    bool m_sourceControlDetailsHasBeenSet = false;
   };
 
 } // namespace Model

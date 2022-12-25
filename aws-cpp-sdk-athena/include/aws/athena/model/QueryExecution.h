@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/athena/model/StatementType.h>
 #include <aws/athena/model/ResultConfiguration.h>
+#include <aws/athena/model/ResultReuseConfiguration.h>
 #include <aws/athena/model/QueryExecutionContext.h>
 #include <aws/athena/model/QueryExecutionStatus.h>
 #include <aws/athena/model/QueryExecutionStatistics.h>
@@ -36,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API QueryExecution
+  class QueryExecution
   {
   public:
-    QueryExecution();
-    QueryExecution(Aws::Utils::Json::JsonView jsonValue);
-    QueryExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API QueryExecution();
+    AWS_ATHENA_API QueryExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API QueryExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -235,6 +236,37 @@ namespace Model
      * are specified for the workgroup.</p>
      */
     inline QueryExecution& WithResultConfiguration(ResultConfiguration&& value) { SetResultConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the query result reuse behavior that was used for the query.</p>
+     */
+    inline const ResultReuseConfiguration& GetResultReuseConfiguration() const{ return m_resultReuseConfiguration; }
+
+    /**
+     * <p>Specifies the query result reuse behavior that was used for the query.</p>
+     */
+    inline bool ResultReuseConfigurationHasBeenSet() const { return m_resultReuseConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the query result reuse behavior that was used for the query.</p>
+     */
+    inline void SetResultReuseConfiguration(const ResultReuseConfiguration& value) { m_resultReuseConfigurationHasBeenSet = true; m_resultReuseConfiguration = value; }
+
+    /**
+     * <p>Specifies the query result reuse behavior that was used for the query.</p>
+     */
+    inline void SetResultReuseConfiguration(ResultReuseConfiguration&& value) { m_resultReuseConfigurationHasBeenSet = true; m_resultReuseConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the query result reuse behavior that was used for the query.</p>
+     */
+    inline QueryExecution& WithResultReuseConfiguration(const ResultReuseConfiguration& value) { SetResultReuseConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the query result reuse behavior that was used for the query.</p>
+     */
+    inline QueryExecution& WithResultReuseConfiguration(ResultReuseConfiguration&& value) { SetResultReuseConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -480,34 +512,37 @@ namespace Model
   private:
 
     Aws::String m_queryExecutionId;
-    bool m_queryExecutionIdHasBeenSet;
+    bool m_queryExecutionIdHasBeenSet = false;
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     StatementType m_statementType;
-    bool m_statementTypeHasBeenSet;
+    bool m_statementTypeHasBeenSet = false;
 
     ResultConfiguration m_resultConfiguration;
-    bool m_resultConfigurationHasBeenSet;
+    bool m_resultConfigurationHasBeenSet = false;
+
+    ResultReuseConfiguration m_resultReuseConfiguration;
+    bool m_resultReuseConfigurationHasBeenSet = false;
 
     QueryExecutionContext m_queryExecutionContext;
-    bool m_queryExecutionContextHasBeenSet;
+    bool m_queryExecutionContextHasBeenSet = false;
 
     QueryExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     QueryExecutionStatistics m_statistics;
-    bool m_statisticsHasBeenSet;
+    bool m_statisticsHasBeenSet = false;
 
     Aws::String m_workGroup;
-    bool m_workGroupHasBeenSet;
+    bool m_workGroupHasBeenSet = false;
 
     EngineVersion m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_executionParameters;
-    bool m_executionParametersHasBeenSet;
+    bool m_executionParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/InitialResponseSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API InitialResponseSetting
+  class InitialResponseSetting
   {
   public:
-    InitialResponseSetting();
-    InitialResponseSetting(Aws::Utils::Json::JsonView jsonValue);
-    InitialResponseSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API InitialResponseSetting();
+    AWS_LEXMODELSV2_API InitialResponseSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API InitialResponseSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -131,16 +131,16 @@ namespace Model
   private:
 
     ResponseSpecification m_initialResponse;
-    bool m_initialResponseHasBeenSet;
+    bool m_initialResponseHasBeenSet = false;
 
     DialogState m_nextStep;
-    bool m_nextStepHasBeenSet;
+    bool m_nextStepHasBeenSet = false;
 
     ConditionalSpecification m_conditional;
-    bool m_conditionalHasBeenSet;
+    bool m_conditionalHasBeenSet = false;
 
     DialogCodeHookInvocationSetting m_codeHook;
-    bool m_codeHookHasBeenSet;
+    bool m_codeHookHasBeenSet = false;
   };
 
 } // namespace Model

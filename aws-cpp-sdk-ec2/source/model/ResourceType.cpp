@@ -24,6 +24,7 @@ namespace Aws
         static const int client_vpn_endpoint_HASH = HashingUtils::HashString("client-vpn-endpoint");
         static const int customer_gateway_HASH = HashingUtils::HashString("customer-gateway");
         static const int carrier_gateway_HASH = HashingUtils::HashString("carrier-gateway");
+        static const int coip_pool_HASH = HashingUtils::HashString("coip-pool");
         static const int dedicated_host_HASH = HashingUtils::HashString("dedicated-host");
         static const int dhcp_options_HASH = HashingUtils::HashString("dhcp-options");
         static const int egress_only_internet_gateway_HASH = HashingUtils::HashString("egress-only-internet-gateway");
@@ -85,7 +86,9 @@ namespace Aws
         static const int volume_HASH = HashingUtils::HashString("volume");
         static const int vpc_HASH = HashingUtils::HashString("vpc");
         static const int vpc_endpoint_HASH = HashingUtils::HashString("vpc-endpoint");
+        static const int vpc_endpoint_connection_HASH = HashingUtils::HashString("vpc-endpoint-connection");
         static const int vpc_endpoint_service_HASH = HashingUtils::HashString("vpc-endpoint-service");
+        static const int vpc_endpoint_service_permission_HASH = HashingUtils::HashString("vpc-endpoint-service-permission");
         static const int vpc_peering_connection_HASH = HashingUtils::HashString("vpc-peering-connection");
         static const int vpn_connection_HASH = HashingUtils::HashString("vpn-connection");
         static const int vpn_gateway_HASH = HashingUtils::HashString("vpn-gateway");
@@ -93,6 +96,13 @@ namespace Aws
         static const int capacity_reservation_fleet_HASH = HashingUtils::HashString("capacity-reservation-fleet");
         static const int traffic_mirror_filter_rule_HASH = HashingUtils::HashString("traffic-mirror-filter-rule");
         static const int vpc_endpoint_connection_device_type_HASH = HashingUtils::HashString("vpc-endpoint-connection-device-type");
+        static const int verified_access_instance_HASH = HashingUtils::HashString("verified-access-instance");
+        static const int verified_access_group_HASH = HashingUtils::HashString("verified-access-group");
+        static const int verified_access_endpoint_HASH = HashingUtils::HashString("verified-access-endpoint");
+        static const int verified_access_policy_HASH = HashingUtils::HashString("verified-access-policy");
+        static const int verified_access_trust_provider_HASH = HashingUtils::HashString("verified-access-trust-provider");
+        static const int vpn_connection_device_type_HASH = HashingUtils::HashString("vpn-connection-device-type");
+        static const int vpc_block_public_access_exclusion_HASH = HashingUtils::HashString("vpc-block-public-access-exclusion");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -113,6 +123,10 @@ namespace Aws
           else if (hashCode == carrier_gateway_HASH)
           {
             return ResourceType::carrier_gateway;
+          }
+          else if (hashCode == coip_pool_HASH)
+          {
+            return ResourceType::coip_pool;
           }
           else if (hashCode == dedicated_host_HASH)
           {
@@ -358,9 +372,17 @@ namespace Aws
           {
             return ResourceType::vpc_endpoint;
           }
+          else if (hashCode == vpc_endpoint_connection_HASH)
+          {
+            return ResourceType::vpc_endpoint_connection;
+          }
           else if (hashCode == vpc_endpoint_service_HASH)
           {
             return ResourceType::vpc_endpoint_service;
+          }
+          else if (hashCode == vpc_endpoint_service_permission_HASH)
+          {
+            return ResourceType::vpc_endpoint_service_permission;
           }
           else if (hashCode == vpc_peering_connection_HASH)
           {
@@ -390,6 +412,34 @@ namespace Aws
           {
             return ResourceType::vpc_endpoint_connection_device_type;
           }
+          else if (hashCode == verified_access_instance_HASH)
+          {
+            return ResourceType::verified_access_instance;
+          }
+          else if (hashCode == verified_access_group_HASH)
+          {
+            return ResourceType::verified_access_group;
+          }
+          else if (hashCode == verified_access_endpoint_HASH)
+          {
+            return ResourceType::verified_access_endpoint;
+          }
+          else if (hashCode == verified_access_policy_HASH)
+          {
+            return ResourceType::verified_access_policy;
+          }
+          else if (hashCode == verified_access_trust_provider_HASH)
+          {
+            return ResourceType::verified_access_trust_provider;
+          }
+          else if (hashCode == vpn_connection_device_type_HASH)
+          {
+            return ResourceType::vpn_connection_device_type;
+          }
+          else if (hashCode == vpc_block_public_access_exclusion_HASH)
+          {
+            return ResourceType::vpc_block_public_access_exclusion;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -412,6 +462,8 @@ namespace Aws
             return "customer-gateway";
           case ResourceType::carrier_gateway:
             return "carrier-gateway";
+          case ResourceType::coip_pool:
+            return "coip-pool";
           case ResourceType::dedicated_host:
             return "dedicated-host";
           case ResourceType::dhcp_options:
@@ -534,8 +586,12 @@ namespace Aws
             return "vpc";
           case ResourceType::vpc_endpoint:
             return "vpc-endpoint";
+          case ResourceType::vpc_endpoint_connection:
+            return "vpc-endpoint-connection";
           case ResourceType::vpc_endpoint_service:
             return "vpc-endpoint-service";
+          case ResourceType::vpc_endpoint_service_permission:
+            return "vpc-endpoint-service-permission";
           case ResourceType::vpc_peering_connection:
             return "vpc-peering-connection";
           case ResourceType::vpn_connection:
@@ -550,6 +606,20 @@ namespace Aws
             return "traffic-mirror-filter-rule";
           case ResourceType::vpc_endpoint_connection_device_type:
             return "vpc-endpoint-connection-device-type";
+          case ResourceType::verified_access_instance:
+            return "verified-access-instance";
+          case ResourceType::verified_access_group:
+            return "verified-access-group";
+          case ResourceType::verified_access_endpoint:
+            return "verified-access-endpoint";
+          case ResourceType::verified_access_policy:
+            return "verified-access-policy";
+          case ResourceType::verified_access_trust_provider:
+            return "verified-access-trust-provider";
+          case ResourceType::vpn_connection_device_type:
+            return "vpn-connection-device-type";
+          case ResourceType::vpc_block_public_access_exclusion:
+            return "vpc-block-public-access-exclusion";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

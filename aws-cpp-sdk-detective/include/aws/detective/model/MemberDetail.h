@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/MemberDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_DETECTIVE_API MemberDetail
+  class MemberDetail
   {
   public:
-    MemberDetail();
-    MemberDetail(Aws::Utils::Json::JsonView jsonValue);
-    MemberDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DETECTIVE_API MemberDetail();
+    AWS_DETECTIVE_API MemberDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API MemberDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -729,37 +729,37 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_graphArn;
-    bool m_graphArnHasBeenSet;
+    bool m_graphArnHasBeenSet = false;
 
     Aws::String m_administratorId;
-    bool m_administratorIdHasBeenSet;
+    bool m_administratorIdHasBeenSet = false;
 
     MemberStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     MemberDisabledReason m_disabledReason;
-    bool m_disabledReasonHasBeenSet;
+    bool m_disabledReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_invitedTime;
-    bool m_invitedTimeHasBeenSet;
+    bool m_invitedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTime;
-    bool m_updatedTimeHasBeenSet;
+    bool m_updatedTimeHasBeenSet = false;
 
     InvitationType m_invitationType;
-    bool m_invitationTypeHasBeenSet;
+    bool m_invitationTypeHasBeenSet = false;
 
     Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo> m_volumeUsageByDatasourcePackage;
-    bool m_volumeUsageByDatasourcePackageHasBeenSet;
+    bool m_volumeUsageByDatasourcePackageHasBeenSet = false;
 
     Aws::Map<DatasourcePackage, DatasourcePackageIngestState> m_datasourcePackageIngestStates;
-    bool m_datasourcePackageIngestStatesHasBeenSet;
+    bool m_datasourcePackageIngestStatesHasBeenSet = false;
   };
 
 } // namespace Model

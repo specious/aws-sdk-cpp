@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLOBALACCELERATOR_API UpdateCustomRoutingAcceleratorAttributesRequest : public GlobalAcceleratorRequest
+  class UpdateCustomRoutingAcceleratorAttributesRequest : public GlobalAcceleratorRequest
   {
   public:
-    UpdateCustomRoutingAcceleratorAttributesRequest();
+    AWS_GLOBALACCELERATOR_API UpdateCustomRoutingAcceleratorAttributesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateCustomRoutingAcceleratorAttributes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLOBALACCELERATOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLOBALACCELERATOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -268,16 +268,16 @@ namespace Model
   private:
 
     Aws::String m_acceleratorArn;
-    bool m_acceleratorArnHasBeenSet;
+    bool m_acceleratorArnHasBeenSet = false;
 
     bool m_flowLogsEnabled;
-    bool m_flowLogsEnabledHasBeenSet;
+    bool m_flowLogsEnabledHasBeenSet = false;
 
     Aws::String m_flowLogsS3Bucket;
-    bool m_flowLogsS3BucketHasBeenSet;
+    bool m_flowLogsS3BucketHasBeenSet = false;
 
     Aws::String m_flowLogsS3Prefix;
-    bool m_flowLogsS3PrefixHasBeenSet;
+    bool m_flowLogsS3PrefixHasBeenSet = false;
   };
 
 } // namespace Model

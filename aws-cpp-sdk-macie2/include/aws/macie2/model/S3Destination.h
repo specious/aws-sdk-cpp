@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3Destination">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API S3Destination
+  class S3Destination
   {
   public:
-    S3Destination();
-    S3Destination(Aws::Utils::Json::JsonView jsonValue);
-    S3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API S3Destination();
+    AWS_MACIE2_API S3Destination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API S3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -196,13 +196,13 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_keyPrefix;
-    bool m_keyPrefixHasBeenSet;
+    bool m_keyPrefixHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

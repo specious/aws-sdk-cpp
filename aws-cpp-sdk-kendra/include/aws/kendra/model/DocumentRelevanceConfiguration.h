@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentRelevanceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DocumentRelevanceConfiguration
+  class DocumentRelevanceConfiguration
   {
   public:
-    DocumentRelevanceConfiguration();
-    DocumentRelevanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DocumentRelevanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DocumentRelevanceConfiguration();
+    AWS_KENDRA_API DocumentRelevanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DocumentRelevanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Relevance m_relevance;
-    bool m_relevanceHasBeenSet;
+    bool m_relevanceHasBeenSet = false;
   };
 
 } // namespace Model

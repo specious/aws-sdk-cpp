@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ConfluenceSpaceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ConfluenceSpaceConfiguration
+  class ConfluenceSpaceConfiguration
   {
   public:
-    ConfluenceSpaceConfiguration();
-    ConfluenceSpaceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ConfluenceSpaceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ConfluenceSpaceConfiguration();
+    AWS_KENDRA_API ConfluenceSpaceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ConfluenceSpaceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -365,19 +365,19 @@ namespace Model
   private:
 
     bool m_crawlPersonalSpaces;
-    bool m_crawlPersonalSpacesHasBeenSet;
+    bool m_crawlPersonalSpacesHasBeenSet = false;
 
     bool m_crawlArchivedSpaces;
-    bool m_crawlArchivedSpacesHasBeenSet;
+    bool m_crawlArchivedSpacesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includeSpaces;
-    bool m_includeSpacesHasBeenSet;
+    bool m_includeSpacesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeSpaces;
-    bool m_excludeSpacesHasBeenSet;
+    bool m_excludeSpacesHasBeenSet = false;
 
     Aws::Vector<ConfluenceSpaceToIndexFieldMapping> m_spaceFieldMappings;
-    bool m_spaceFieldMappingsHasBeenSet;
+    bool m_spaceFieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

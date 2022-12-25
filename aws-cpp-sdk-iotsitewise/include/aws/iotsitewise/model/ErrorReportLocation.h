@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ErrorReportLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API ErrorReportLocation
+  class ErrorReportLocation
   {
   public:
-    ErrorReportLocation();
-    ErrorReportLocation(Aws::Utils::Json::JsonView jsonValue);
-    ErrorReportLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API ErrorReportLocation();
+    AWS_IOTSITEWISE_API ErrorReportLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API ErrorReportLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,10 +178,10 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
   };
 
 } // namespace Model

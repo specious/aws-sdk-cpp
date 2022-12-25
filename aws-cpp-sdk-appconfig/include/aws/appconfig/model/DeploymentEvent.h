@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeploymentEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API DeploymentEvent
+  class DeploymentEvent
   {
   public:
-    DeploymentEvent();
-    DeploymentEvent(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API DeploymentEvent();
+    AWS_APPCONFIG_API DeploymentEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API DeploymentEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -261,19 +261,19 @@ namespace Model
   private:
 
     DeploymentEventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     TriggeredBy m_triggeredBy;
-    bool m_triggeredByHasBeenSet;
+    bool m_triggeredByHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<ActionInvocation> m_actionInvocations;
-    bool m_actionInvocationsHasBeenSet;
+    bool m_actionInvocationsHasBeenSet = false;
 
     Aws::Utils::DateTime m_occurredAt;
-    bool m_occurredAtHasBeenSet;
+    bool m_occurredAtHasBeenSet = false;
   };
 
 } // namespace Model

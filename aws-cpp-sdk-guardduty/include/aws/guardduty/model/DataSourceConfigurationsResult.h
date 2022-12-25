@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DataSourceConfigurationsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API DataSourceConfigurationsResult
+  class DataSourceConfigurationsResult
   {
   public:
-    DataSourceConfigurationsResult();
-    DataSourceConfigurationsResult(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceConfigurationsResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API DataSourceConfigurationsResult();
+    AWS_GUARDDUTY_API DataSourceConfigurationsResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API DataSourceConfigurationsResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -261,22 +261,22 @@ namespace Model
   private:
 
     CloudTrailConfigurationResult m_cloudTrail;
-    bool m_cloudTrailHasBeenSet;
+    bool m_cloudTrailHasBeenSet = false;
 
     DNSLogsConfigurationResult m_dNSLogs;
-    bool m_dNSLogsHasBeenSet;
+    bool m_dNSLogsHasBeenSet = false;
 
     FlowLogsConfigurationResult m_flowLogs;
-    bool m_flowLogsHasBeenSet;
+    bool m_flowLogsHasBeenSet = false;
 
     S3LogsConfigurationResult m_s3Logs;
-    bool m_s3LogsHasBeenSet;
+    bool m_s3LogsHasBeenSet = false;
 
     KubernetesConfigurationResult m_kubernetes;
-    bool m_kubernetesHasBeenSet;
+    bool m_kubernetesHasBeenSet = false;
 
     MalwareProtectionConfigurationResult m_malwareProtection;
-    bool m_malwareProtectionHasBeenSet;
+    bool m_malwareProtectionHasBeenSet = false;
   };
 
 } // namespace Model

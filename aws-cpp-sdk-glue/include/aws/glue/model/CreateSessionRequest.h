@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSessionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CreateSessionRequest : public GlueRequest
+  class CreateSessionRequest : public GlueRequest
   {
   public:
-    CreateSessionRequest();
+    AWS_GLUE_API CreateSessionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateSession"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -704,49 +704,49 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     SessionCommand m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     int m_idleTimeout;
-    bool m_idleTimeoutHasBeenSet;
+    bool m_idleTimeoutHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_defaultArguments;
-    bool m_defaultArgumentsHasBeenSet;
+    bool m_defaultArgumentsHasBeenSet = false;
 
     ConnectionsList m_connections;
-    bool m_connectionsHasBeenSet;
+    bool m_connectionsHasBeenSet = false;
 
     double m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     int m_numberOfWorkers;
-    bool m_numberOfWorkersHasBeenSet;
+    bool m_numberOfWorkersHasBeenSet = false;
 
     WorkerType m_workerType;
-    bool m_workerTypeHasBeenSet;
+    bool m_workerTypeHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
-    bool m_securityConfigurationHasBeenSet;
+    bool m_securityConfigurationHasBeenSet = false;
 
     Aws::String m_glueVersion;
-    bool m_glueVersionHasBeenSet;
+    bool m_glueVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestOrigin;
-    bool m_requestOriginHasBeenSet;
+    bool m_requestOriginHasBeenSet = false;
   };
 
 } // namespace Model

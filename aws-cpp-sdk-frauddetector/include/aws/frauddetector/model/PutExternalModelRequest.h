@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_FRAUDDETECTOR_API PutExternalModelRequest : public FraudDetectorRequest
+  class PutExternalModelRequest : public FraudDetectorRequest
   {
   public:
-    PutExternalModelRequest();
+    AWS_FRAUDDETECTOR_API PutExternalModelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutExternalModel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FRAUDDETECTOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -216,32 +216,32 @@ namespace Model
 
 
     /**
-     * <p>The model endpoint��s status in Amazon Fraud Detector.</p>
+     * <p>The model endpoint’s status in Amazon Fraud Detector.</p>
      */
     inline const ModelEndpointStatus& GetModelEndpointStatus() const{ return m_modelEndpointStatus; }
 
     /**
-     * <p>The model endpoint��s status in Amazon Fraud Detector.</p>
+     * <p>The model endpoint’s status in Amazon Fraud Detector.</p>
      */
     inline bool ModelEndpointStatusHasBeenSet() const { return m_modelEndpointStatusHasBeenSet; }
 
     /**
-     * <p>The model endpoint��s status in Amazon Fraud Detector.</p>
+     * <p>The model endpoint’s status in Amazon Fraud Detector.</p>
      */
     inline void SetModelEndpointStatus(const ModelEndpointStatus& value) { m_modelEndpointStatusHasBeenSet = true; m_modelEndpointStatus = value; }
 
     /**
-     * <p>The model endpoint��s status in Amazon Fraud Detector.</p>
+     * <p>The model endpoint’s status in Amazon Fraud Detector.</p>
      */
     inline void SetModelEndpointStatus(ModelEndpointStatus&& value) { m_modelEndpointStatusHasBeenSet = true; m_modelEndpointStatus = std::move(value); }
 
     /**
-     * <p>The model endpoint��s status in Amazon Fraud Detector.</p>
+     * <p>The model endpoint’s status in Amazon Fraud Detector.</p>
      */
     inline PutExternalModelRequest& WithModelEndpointStatus(const ModelEndpointStatus& value) { SetModelEndpointStatus(value); return *this;}
 
     /**
-     * <p>The model endpoint��s status in Amazon Fraud Detector.</p>
+     * <p>The model endpoint’s status in Amazon Fraud Detector.</p>
      */
     inline PutExternalModelRequest& WithModelEndpointStatus(ModelEndpointStatus&& value) { SetModelEndpointStatus(std::move(value)); return *this;}
 
@@ -289,25 +289,25 @@ namespace Model
   private:
 
     Aws::String m_modelEndpoint;
-    bool m_modelEndpointHasBeenSet;
+    bool m_modelEndpointHasBeenSet = false;
 
     ModelSource m_modelSource;
-    bool m_modelSourceHasBeenSet;
+    bool m_modelSourceHasBeenSet = false;
 
     Aws::String m_invokeModelEndpointRoleArn;
-    bool m_invokeModelEndpointRoleArnHasBeenSet;
+    bool m_invokeModelEndpointRoleArnHasBeenSet = false;
 
     ModelInputConfiguration m_inputConfiguration;
-    bool m_inputConfigurationHasBeenSet;
+    bool m_inputConfigurationHasBeenSet = false;
 
     ModelOutputConfiguration m_outputConfiguration;
-    bool m_outputConfigurationHasBeenSet;
+    bool m_outputConfigurationHasBeenSet = false;
 
     ModelEndpointStatus m_modelEndpointStatus;
-    bool m_modelEndpointStatusHasBeenSet;
+    bool m_modelEndpointStatusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

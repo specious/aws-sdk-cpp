@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicationStatusType">AWS
    * API Reference</a></p>
    */
-  class AWS_SECRETSMANAGER_API ReplicationStatusType
+  class ReplicationStatusType
   {
   public:
-    ReplicationStatusType();
-    ReplicationStatusType(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationStatusType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECRETSMANAGER_API ReplicationStatusType();
+    AWS_SECRETSMANAGER_API ReplicationStatusType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API ReplicationStatusType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -248,19 +248,19 @@ namespace Model
   private:
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     StatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccessedDate;
-    bool m_lastAccessedDateHasBeenSet;
+    bool m_lastAccessedDateHasBeenSet = false;
   };
 
 } // namespace Model

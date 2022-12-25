@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/MatchItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API MatchItem
+  class MatchItem
   {
   public:
-    MatchItem();
-    MatchItem(Aws::Utils::Json::JsonView jsonValue);
-    MatchItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API MatchItem();
+    AWS_CUSTOMERPROFILES_API MatchItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API MatchItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_matchId;
-    bool m_matchIdHasBeenSet;
+    bool m_matchIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_profileIds;
-    bool m_profileIdsHasBeenSet;
+    bool m_profileIdsHasBeenSet = false;
 
     double m_confidenceScore;
-    bool m_confidenceScoreHasBeenSet;
+    bool m_confidenceScoreHasBeenSet = false;
   };
 
 } // namespace Model

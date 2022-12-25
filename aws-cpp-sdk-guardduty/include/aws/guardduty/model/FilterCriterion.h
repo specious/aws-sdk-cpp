@@ -26,17 +26,20 @@ namespace Model
 
   /**
    * <p>Represents a condition that when matched will be added to the response of the
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * operation. Irrespective of using any filter criteria, an administrator account
+   * can view the scan entries for all of its member accounts. However, each member
+   * account can view the scan entries only for their own account.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/FilterCriterion">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API FilterCriterion
+  class FilterCriterion
   {
   public:
-    FilterCriterion();
-    FilterCriterion(Aws::Utils::Json::JsonView jsonValue);
-    FilterCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API FilterCriterion();
+    AWS_GUARDDUTY_API FilterCriterion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API FilterCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +112,10 @@ namespace Model
   private:
 
     CriterionKey m_criterionKey;
-    bool m_criterionKeyHasBeenSet;
+    bool m_criterionKeyHasBeenSet = false;
 
     FilterCondition m_filterCondition;
-    bool m_filterConditionHasBeenSet;
+    bool m_filterConditionHasBeenSet = false;
   };
 
 } // namespace Model

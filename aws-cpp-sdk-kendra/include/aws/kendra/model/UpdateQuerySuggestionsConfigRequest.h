@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KENDRA_API UpdateQuerySuggestionsConfigRequest : public KendraRequest
+  class UpdateQuerySuggestionsConfigRequest : public KendraRequest
   {
   public:
-    UpdateQuerySuggestionsConfigRequest();
+    AWS_KENDRA_API UpdateQuerySuggestionsConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateQuerySuggestionsConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KENDRA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -299,22 +299,22 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Mode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     int m_queryLogLookBackWindowInDays;
-    bool m_queryLogLookBackWindowInDaysHasBeenSet;
+    bool m_queryLogLookBackWindowInDaysHasBeenSet = false;
 
     bool m_includeQueriesWithoutUserInformation;
-    bool m_includeQueriesWithoutUserInformationHasBeenSet;
+    bool m_includeQueriesWithoutUserInformationHasBeenSet = false;
 
     int m_minimumNumberOfQueryingUsers;
-    bool m_minimumNumberOfQueryingUsersHasBeenSet;
+    bool m_minimumNumberOfQueryingUsersHasBeenSet = false;
 
     int m_minimumQueryCount;
-    bool m_minimumQueryCountHasBeenSet;
+    bool m_minimumQueryCountHasBeenSet = false;
   };
 
 } // namespace Model

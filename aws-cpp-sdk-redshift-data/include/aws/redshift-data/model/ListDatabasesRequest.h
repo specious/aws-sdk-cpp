@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API ListDatabasesRequest : public RedshiftDataAPIServiceRequest
+  class ListDatabasesRequest : public RedshiftDataAPIServiceRequest
   {
   public:
-    ListDatabasesRequest();
+    AWS_REDSHIFTDATAAPISERVICE_API ListDatabasesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDatabases"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -399,25 +399,25 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_dbUser;
-    bool m_dbUserHasBeenSet;
+    bool m_dbUserHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     Aws::String m_workgroupName;
-    bool m_workgroupNameHasBeenSet;
+    bool m_workgroupNameHasBeenSet = false;
   };
 
 } // namespace Model

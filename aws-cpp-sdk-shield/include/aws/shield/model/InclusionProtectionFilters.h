@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/InclusionProtectionFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API InclusionProtectionFilters
+  class InclusionProtectionFilters
   {
   public:
-    InclusionProtectionFilters();
-    InclusionProtectionFilters(Aws::Utils::Json::JsonView jsonValue);
-    InclusionProtectionFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API InclusionProtectionFilters();
+    AWS_SHIELD_API InclusionProtectionFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API InclusionProtectionFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -188,13 +188,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_resourceArns;
-    bool m_resourceArnsHasBeenSet;
+    bool m_resourceArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_protectionNames;
-    bool m_protectionNamesHasBeenSet;
+    bool m_protectionNamesHasBeenSet = false;
 
     Aws::Vector<ProtectedResourceType> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,18 +25,18 @@ namespace Model
 
   /**
    * <p>Specifies the name and path of a customer managed policy. You must have an
-   * IAM policy that matches the name and path in each Amazon Web Services account
-   * where you want to deploy your permission set.</p><p><h3>See Also:</h3>   <a
+   * IAM policy that matches the name and path in each AWS account where you want to
+   * deploy your permission set.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CustomerManagedPolicyReference">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOADMIN_API CustomerManagedPolicyReference
+  class CustomerManagedPolicyReference
   {
   public:
-    CustomerManagedPolicyReference();
-    CustomerManagedPolicyReference(Aws::Utils::Json::JsonView jsonValue);
-    CustomerManagedPolicyReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOADMIN_API CustomerManagedPolicyReference();
+    AWS_SSOADMIN_API CustomerManagedPolicyReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API CustomerManagedPolicyReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -93,7 +93,7 @@ namespace Model
      * want to deploy your permission set. The default is <code>/</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -102,7 +102,7 @@ namespace Model
      * want to deploy your permission set. The default is <code>/</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
@@ -111,7 +111,7 @@ namespace Model
      * want to deploy your permission set. The default is <code>/</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -120,7 +120,7 @@ namespace Model
      * want to deploy your permission set. The default is <code>/</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
@@ -129,7 +129,7 @@ namespace Model
      * want to deploy your permission set. The default is <code>/</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
@@ -138,7 +138,7 @@ namespace Model
      * want to deploy your permission set. The default is <code>/</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CustomerManagedPolicyReference& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
@@ -147,7 +147,7 @@ namespace Model
      * want to deploy your permission set. The default is <code>/</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CustomerManagedPolicyReference& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
@@ -156,17 +156,17 @@ namespace Model
      * want to deploy your permission set. The default is <code>/</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CustomerManagedPolicyReference& WithPath(const char* value) { SetPath(value); return *this;}
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

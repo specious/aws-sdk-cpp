@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/PostFulfillmentStatusSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API PostFulfillmentStatusSpecification
+  class PostFulfillmentStatusSpecification
   {
   public:
-    PostFulfillmentStatusSpecification();
-    PostFulfillmentStatusSpecification(Aws::Utils::Json::JsonView jsonValue);
-    PostFulfillmentStatusSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API PostFulfillmentStatusSpecification();
+    AWS_LEXMODELSV2_API PostFulfillmentStatusSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API PostFulfillmentStatusSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -335,31 +335,31 @@ namespace Model
   private:
 
     ResponseSpecification m_successResponse;
-    bool m_successResponseHasBeenSet;
+    bool m_successResponseHasBeenSet = false;
 
     ResponseSpecification m_failureResponse;
-    bool m_failureResponseHasBeenSet;
+    bool m_failureResponseHasBeenSet = false;
 
     ResponseSpecification m_timeoutResponse;
-    bool m_timeoutResponseHasBeenSet;
+    bool m_timeoutResponseHasBeenSet = false;
 
     DialogState m_successNextStep;
-    bool m_successNextStepHasBeenSet;
+    bool m_successNextStepHasBeenSet = false;
 
     ConditionalSpecification m_successConditional;
-    bool m_successConditionalHasBeenSet;
+    bool m_successConditionalHasBeenSet = false;
 
     DialogState m_failureNextStep;
-    bool m_failureNextStepHasBeenSet;
+    bool m_failureNextStepHasBeenSet = false;
 
     ConditionalSpecification m_failureConditional;
-    bool m_failureConditionalHasBeenSet;
+    bool m_failureConditionalHasBeenSet = false;
 
     DialogState m_timeoutNextStep;
-    bool m_timeoutNextStepHasBeenSet;
+    bool m_timeoutNextStepHasBeenSet = false;
 
     ConditionalSpecification m_timeoutConditional;
-    bool m_timeoutConditionalHasBeenSet;
+    bool m_timeoutConditionalHasBeenSet = false;
   };
 
 } // namespace Model

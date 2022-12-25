@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpGatewayRouteMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HttpGatewayRouteMatch
+  class HttpGatewayRouteMatch
   {
   public:
-    HttpGatewayRouteMatch();
-    HttpGatewayRouteMatch(Aws::Utils::Json::JsonView jsonValue);
-    HttpGatewayRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HttpGatewayRouteMatch();
+    AWS_APPMESH_API HttpGatewayRouteMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HttpGatewayRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -323,25 +323,25 @@ namespace Model
   private:
 
     Aws::Vector<HttpGatewayRouteHeader> m_headers;
-    bool m_headersHasBeenSet;
+    bool m_headersHasBeenSet = false;
 
     GatewayRouteHostnameMatch m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     HttpMethod m_method;
-    bool m_methodHasBeenSet;
+    bool m_methodHasBeenSet = false;
 
     HttpPathMatch m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::Vector<HttpQueryParameter> m_queryParameters;
-    bool m_queryParametersHasBeenSet;
+    bool m_queryParametersHasBeenSet = false;
   };
 
 } // namespace Model

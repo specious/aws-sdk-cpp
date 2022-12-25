@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/LifecycleHookSpecification.h>
 #include <aws/autoscaling/model/Tag.h>
+#include <aws/autoscaling/model/TrafficSourceIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -23,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUTOSCALING_API CreateAutoScalingGroupRequest : public AutoScalingRequest
+  class CreateAutoScalingGroupRequest : public AutoScalingRequest
   {
   public:
-    CreateAutoScalingGroupRequest();
+    AWS_AUTOSCALING_API CreateAutoScalingGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,58 +35,74 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAutoScalingGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUTOSCALING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_AUTOSCALING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline CreateAutoScalingGroupRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline CreateAutoScalingGroupRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Auto Scaling group. This name must be unique per Region per
-     * account.</p>
+     * account.</p> <p>The name can contain any ASCII character 33 to 126 including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     *  <p>You cannot use a colon (:) in the name.</p> 
      */
     inline CreateAutoScalingGroupRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
@@ -249,8 +266,7 @@ namespace Model
 
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -258,8 +274,7 @@ namespace Model
     inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -267,8 +282,7 @@ namespace Model
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -276,8 +290,7 @@ namespace Model
     inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -285,8 +298,7 @@ namespace Model
     inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -294,8 +306,7 @@ namespace Model
     inline CreateAutoScalingGroupRequest& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -699,10 +710,10 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
-     * Auto Scaling group. Instances are registered as targets with the target groups.
-     * The target groups receive incoming traffic and route requests to one or more
-     * registered targets. For more information, see <a
+     * <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups
+     * to associate with the Auto Scaling group. Instances are registered as targets
+     * with the target groups. The target groups receive incoming traffic and route
+     * requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
      * Elastic Load Balancing to distribute traffic across the instances in your Auto
      * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -710,10 +721,10 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetTargetGroupARNs() const{ return m_targetGroupARNs; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
-     * Auto Scaling group. Instances are registered as targets with the target groups.
-     * The target groups receive incoming traffic and route requests to one or more
-     * registered targets. For more information, see <a
+     * <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups
+     * to associate with the Auto Scaling group. Instances are registered as targets
+     * with the target groups. The target groups receive incoming traffic and route
+     * requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
      * Elastic Load Balancing to distribute traffic across the instances in your Auto
      * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -721,10 +732,10 @@ namespace Model
     inline bool TargetGroupARNsHasBeenSet() const { return m_targetGroupARNsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
-     * Auto Scaling group. Instances are registered as targets with the target groups.
-     * The target groups receive incoming traffic and route requests to one or more
-     * registered targets. For more information, see <a
+     * <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups
+     * to associate with the Auto Scaling group. Instances are registered as targets
+     * with the target groups. The target groups receive incoming traffic and route
+     * requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
      * Elastic Load Balancing to distribute traffic across the instances in your Auto
      * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -732,10 +743,10 @@ namespace Model
     inline void SetTargetGroupARNs(const Aws::Vector<Aws::String>& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
-     * Auto Scaling group. Instances are registered as targets with the target groups.
-     * The target groups receive incoming traffic and route requests to one or more
-     * registered targets. For more information, see <a
+     * <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups
+     * to associate with the Auto Scaling group. Instances are registered as targets
+     * with the target groups. The target groups receive incoming traffic and route
+     * requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
      * Elastic Load Balancing to distribute traffic across the instances in your Auto
      * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -743,10 +754,10 @@ namespace Model
     inline void SetTargetGroupARNs(Aws::Vector<Aws::String>&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
-     * Auto Scaling group. Instances are registered as targets with the target groups.
-     * The target groups receive incoming traffic and route requests to one or more
-     * registered targets. For more information, see <a
+     * <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups
+     * to associate with the Auto Scaling group. Instances are registered as targets
+     * with the target groups. The target groups receive incoming traffic and route
+     * requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
      * Elastic Load Balancing to distribute traffic across the instances in your Auto
      * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -754,10 +765,10 @@ namespace Model
     inline CreateAutoScalingGroupRequest& WithTargetGroupARNs(const Aws::Vector<Aws::String>& value) { SetTargetGroupARNs(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
-     * Auto Scaling group. Instances are registered as targets with the target groups.
-     * The target groups receive incoming traffic and route requests to one or more
-     * registered targets. For more information, see <a
+     * <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups
+     * to associate with the Auto Scaling group. Instances are registered as targets
+     * with the target groups. The target groups receive incoming traffic and route
+     * requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
      * Elastic Load Balancing to distribute traffic across the instances in your Auto
      * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -765,10 +776,10 @@ namespace Model
     inline CreateAutoScalingGroupRequest& WithTargetGroupARNs(Aws::Vector<Aws::String>&& value) { SetTargetGroupARNs(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
-     * Auto Scaling group. Instances are registered as targets with the target groups.
-     * The target groups receive incoming traffic and route requests to one or more
-     * registered targets. For more information, see <a
+     * <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups
+     * to associate with the Auto Scaling group. Instances are registered as targets
+     * with the target groups. The target groups receive incoming traffic and route
+     * requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
      * Elastic Load Balancing to distribute traffic across the instances in your Auto
      * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -776,10 +787,10 @@ namespace Model
     inline CreateAutoScalingGroupRequest& AddTargetGroupARNs(const Aws::String& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
-     * Auto Scaling group. Instances are registered as targets with the target groups.
-     * The target groups receive incoming traffic and route requests to one or more
-     * registered targets. For more information, see <a
+     * <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups
+     * to associate with the Auto Scaling group. Instances are registered as targets
+     * with the target groups. The target groups receive incoming traffic and route
+     * requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
      * Elastic Load Balancing to distribute traffic across the instances in your Auto
      * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -787,10 +798,10 @@ namespace Model
     inline CreateAutoScalingGroupRequest& AddTargetGroupARNs(Aws::String&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
-     * Auto Scaling group. Instances are registered as targets with the target groups.
-     * The target groups receive incoming traffic and route requests to one or more
-     * registered targets. For more information, see <a
+     * <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups
+     * to associate with the Auto Scaling group. Instances are registered as targets
+     * with the target groups. The target groups receive incoming traffic and route
+     * requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
      * Elastic Load Balancing to distribute traffic across the instances in your Auto
      * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -799,98 +810,106 @@ namespace Model
 
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
-     * Scaling group to use load balancer (ELB) health checks, it considers the
-     * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks. For more information, see <a
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
+     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
+     * health check type is reserved for use with VPC Lattice, which is in preview
+     * release and is subject to change.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
-     * Scaling group to use load balancer (ELB) health checks, it considers the
-     * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks. For more information, see <a
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
+     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
+     * health check type is reserved for use with VPC Lattice, which is in preview
+     * release and is subject to change.</p>
      */
     inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
-     * Scaling group to use load balancer (ELB) health checks, it considers the
-     * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks. For more information, see <a
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
+     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
+     * health check type is reserved for use with VPC Lattice, which is in preview
+     * release and is subject to change.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
-     * Scaling group to use load balancer (ELB) health checks, it considers the
-     * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks. For more information, see <a
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
+     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
+     * health check type is reserved for use with VPC Lattice, which is in preview
+     * release and is subject to change.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = std::move(value); }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
-     * Scaling group to use load balancer (ELB) health checks, it considers the
-     * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks. For more information, see <a
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
+     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
+     * health check type is reserved for use with VPC Lattice, which is in preview
+     * release and is subject to change.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
-     * Scaling group to use load balancer (ELB) health checks, it considers the
-     * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks. For more information, see <a
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
+     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
+     * health check type is reserved for use with VPC Lattice, which is in preview
+     * release and is subject to change.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
-     * Scaling group to use load balancer (ELB) health checks, it considers the
-     * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks. For more information, see <a
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
+     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
+     * health check type is reserved for use with VPC Lattice, which is in preview
+     * release and is subject to change.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(std::move(value)); return *this;}
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
-     * Scaling group to use load balancer (ELB) health checks, it considers the
-     * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks. For more information, see <a
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
+     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
+     * health check type is reserved for use with VPC Lattice, which is in preview
+     * release and is subject to change.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 
@@ -898,52 +917,48 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
      * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed Elastic Load Balancing or custom health
-     * check. This is useful if your instances do not immediately pass these health
-     * checks after they enter the <code>InService</code> state. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Default: <code>0</code> seconds</p>
+     * marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the
+     * <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p> <p>Default: <code>0</code> seconds</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
      * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed Elastic Load Balancing or custom health
-     * check. This is useful if your instances do not immediately pass these health
-     * checks after they enter the <code>InService</code> state. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Default: <code>0</code> seconds</p>
+     * marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the
+     * <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p> <p>Default: <code>0</code> seconds</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
      * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed Elastic Load Balancing or custom health
-     * check. This is useful if your instances do not immediately pass these health
-     * checks after they enter the <code>InService</code> state. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Default: <code>0</code> seconds</p>
+     * marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the
+     * <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p> <p>Default: <code>0</code> seconds</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
      * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed Elastic Load Balancing or custom health
-     * check. This is useful if your instances do not immediately pass these health
-     * checks after they enter the <code>InService</code> state. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Default: <code>0</code> seconds</p>
+     * marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the
+     * <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p> <p>Default: <code>0</code> seconds</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 
@@ -1841,85 +1856,185 @@ namespace Model
      */
     inline CreateAutoScalingGroupRequest& WithDefaultInstanceWarmup(int value) { SetDefaultInstanceWarmup(value); return *this;}
 
+
+    /**
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of one or more
+     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
+     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
+     * registers the running instances with the attached target groups. The target
+     * groups receive incoming traffic and route requests to one or more registered
+     * targets.</p>
+     */
+    inline const Aws::Vector<TrafficSourceIdentifier>& GetTrafficSources() const{ return m_trafficSources; }
+
+    /**
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of one or more
+     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
+     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
+     * registers the running instances with the attached target groups. The target
+     * groups receive incoming traffic and route requests to one or more registered
+     * targets.</p>
+     */
+    inline bool TrafficSourcesHasBeenSet() const { return m_trafficSourcesHasBeenSet; }
+
+    /**
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of one or more
+     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
+     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
+     * registers the running instances with the attached target groups. The target
+     * groups receive incoming traffic and route requests to one or more registered
+     * targets.</p>
+     */
+    inline void SetTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = value; }
+
+    /**
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of one or more
+     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
+     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
+     * registers the running instances with the attached target groups. The target
+     * groups receive incoming traffic and route requests to one or more registered
+     * targets.</p>
+     */
+    inline void SetTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = std::move(value); }
+
+    /**
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of one or more
+     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
+     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
+     * registers the running instances with the attached target groups. The target
+     * groups receive incoming traffic and route requests to one or more registered
+     * targets.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { SetTrafficSources(value); return *this;}
+
+    /**
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of one or more
+     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
+     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
+     * registers the running instances with the attached target groups. The target
+     * groups receive incoming traffic and route requests to one or more registered
+     * targets.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { SetTrafficSources(std::move(value)); return *this;}
+
+    /**
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of one or more
+     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
+     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
+     * registers the running instances with the attached target groups. The target
+     * groups receive incoming traffic and route requests to one or more registered
+     * targets.</p>
+     */
+    inline CreateAutoScalingGroupRequest& AddTrafficSources(const TrafficSourceIdentifier& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(value); return *this; }
+
+    /**
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of one or more
+     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
+     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
+     * registers the running instances with the attached target groups. The target
+     * groups receive incoming traffic and route requests to one or more registered
+     * targets.</p>
+     */
+    inline CreateAutoScalingGroupRequest& AddTrafficSources(TrafficSourceIdentifier&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_launchConfigurationName;
-    bool m_launchConfigurationNameHasBeenSet;
+    bool m_launchConfigurationNameHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     MixedInstancesPolicy m_mixedInstancesPolicy;
-    bool m_mixedInstancesPolicyHasBeenSet;
+    bool m_mixedInstancesPolicyHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     int m_maxSize;
-    bool m_maxSizeHasBeenSet;
+    bool m_maxSizeHasBeenSet = false;
 
     int m_desiredCapacity;
-    bool m_desiredCapacityHasBeenSet;
+    bool m_desiredCapacityHasBeenSet = false;
 
     int m_defaultCooldown;
-    bool m_defaultCooldownHasBeenSet;
+    bool m_defaultCooldownHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_loadBalancerNames;
-    bool m_loadBalancerNamesHasBeenSet;
+    bool m_loadBalancerNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetGroupARNs;
-    bool m_targetGroupARNsHasBeenSet;
+    bool m_targetGroupARNsHasBeenSet = false;
 
     Aws::String m_healthCheckType;
-    bool m_healthCheckTypeHasBeenSet;
+    bool m_healthCheckTypeHasBeenSet = false;
 
     int m_healthCheckGracePeriod;
-    bool m_healthCheckGracePeriodHasBeenSet;
+    bool m_healthCheckGracePeriodHasBeenSet = false;
 
     Aws::String m_placementGroup;
-    bool m_placementGroupHasBeenSet;
+    bool m_placementGroupHasBeenSet = false;
 
     Aws::String m_vPCZoneIdentifier;
-    bool m_vPCZoneIdentifierHasBeenSet;
+    bool m_vPCZoneIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_terminationPolicies;
-    bool m_terminationPoliciesHasBeenSet;
+    bool m_terminationPoliciesHasBeenSet = false;
 
     bool m_newInstancesProtectedFromScaleIn;
-    bool m_newInstancesProtectedFromScaleInHasBeenSet;
+    bool m_newInstancesProtectedFromScaleInHasBeenSet = false;
 
     bool m_capacityRebalance;
-    bool m_capacityRebalanceHasBeenSet;
+    bool m_capacityRebalanceHasBeenSet = false;
 
     Aws::Vector<LifecycleHookSpecification> m_lifecycleHookSpecificationList;
-    bool m_lifecycleHookSpecificationListHasBeenSet;
+    bool m_lifecycleHookSpecificationListHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_serviceLinkedRoleARN;
-    bool m_serviceLinkedRoleARNHasBeenSet;
+    bool m_serviceLinkedRoleARNHasBeenSet = false;
 
     int m_maxInstanceLifetime;
-    bool m_maxInstanceLifetimeHasBeenSet;
+    bool m_maxInstanceLifetimeHasBeenSet = false;
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     Aws::String m_desiredCapacityType;
-    bool m_desiredCapacityTypeHasBeenSet;
+    bool m_desiredCapacityTypeHasBeenSet = false;
 
     int m_defaultInstanceWarmup;
-    bool m_defaultInstanceWarmupHasBeenSet;
+    bool m_defaultInstanceWarmupHasBeenSet = false;
+
+    Aws::Vector<TrafficSourceIdentifier> m_trafficSources;
+    bool m_trafficSourcesHasBeenSet = false;
   };
 
 } // namespace Model

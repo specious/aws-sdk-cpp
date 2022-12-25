@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotCaptureSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotCaptureSetting
+  class SlotCaptureSetting
   {
   public:
-    SlotCaptureSetting();
-    SlotCaptureSetting(Aws::Utils::Json::JsonView jsonValue);
-    SlotCaptureSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotCaptureSetting();
+    AWS_LEXMODELSV2_API SlotCaptureSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotCaptureSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -292,28 +292,28 @@ namespace Model
   private:
 
     ResponseSpecification m_captureResponse;
-    bool m_captureResponseHasBeenSet;
+    bool m_captureResponseHasBeenSet = false;
 
     DialogState m_captureNextStep;
-    bool m_captureNextStepHasBeenSet;
+    bool m_captureNextStepHasBeenSet = false;
 
     ConditionalSpecification m_captureConditional;
-    bool m_captureConditionalHasBeenSet;
+    bool m_captureConditionalHasBeenSet = false;
 
     ResponseSpecification m_failureResponse;
-    bool m_failureResponseHasBeenSet;
+    bool m_failureResponseHasBeenSet = false;
 
     DialogState m_failureNextStep;
-    bool m_failureNextStepHasBeenSet;
+    bool m_failureNextStepHasBeenSet = false;
 
     ConditionalSpecification m_failureConditional;
-    bool m_failureConditionalHasBeenSet;
+    bool m_failureConditionalHasBeenSet = false;
 
     DialogCodeHookInvocationSetting m_codeHook;
-    bool m_codeHookHasBeenSet;
+    bool m_codeHookHasBeenSet = false;
 
     ElicitationCodeHookInvocationSetting m_elicitationCodeHook;
-    bool m_elicitationCodeHookHasBeenSet;
+    bool m_elicitationCodeHookHasBeenSet = false;
   };
 
 } // namespace Model

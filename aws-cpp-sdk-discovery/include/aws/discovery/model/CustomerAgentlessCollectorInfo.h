@@ -21,13 +21,13 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-  class AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentlessCollectorInfo
+  class CustomerAgentlessCollectorInfo
   {
   public:
-    CustomerAgentlessCollectorInfo();
-    CustomerAgentlessCollectorInfo(Aws::Utils::Json::JsonView jsonValue);
-    CustomerAgentlessCollectorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentlessCollectorInfo();
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentlessCollectorInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentlessCollectorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -123,25 +123,25 @@ namespace Model
   private:
 
     int m_activeAgentlessCollectors;
-    bool m_activeAgentlessCollectorsHasBeenSet;
+    bool m_activeAgentlessCollectorsHasBeenSet = false;
 
     int m_healthyAgentlessCollectors;
-    bool m_healthyAgentlessCollectorsHasBeenSet;
+    bool m_healthyAgentlessCollectorsHasBeenSet = false;
 
     int m_denyListedAgentlessCollectors;
-    bool m_denyListedAgentlessCollectorsHasBeenSet;
+    bool m_denyListedAgentlessCollectorsHasBeenSet = false;
 
     int m_shutdownAgentlessCollectors;
-    bool m_shutdownAgentlessCollectorsHasBeenSet;
+    bool m_shutdownAgentlessCollectorsHasBeenSet = false;
 
     int m_unhealthyAgentlessCollectors;
-    bool m_unhealthyAgentlessCollectorsHasBeenSet;
+    bool m_unhealthyAgentlessCollectorsHasBeenSet = false;
 
     int m_totalAgentlessCollectors;
-    bool m_totalAgentlessCollectorsHasBeenSet;
+    bool m_totalAgentlessCollectorsHasBeenSet = false;
 
     int m_unknownAgentlessCollectors;
-    bool m_unknownAgentlessCollectorsHasBeenSet;
+    bool m_unknownAgentlessCollectorsHasBeenSet = false;
   };
 
 } // namespace Model

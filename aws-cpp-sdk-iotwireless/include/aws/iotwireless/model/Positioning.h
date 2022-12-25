@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/Positioning">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API Positioning
+  class Positioning
   {
   public:
-    Positioning();
-    Positioning(Aws::Utils::Json::JsonView jsonValue);
-    Positioning& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API Positioning();
+    AWS_IOTWIRELESS_API Positioning(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Positioning& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -76,13 +76,13 @@ namespace Model
   private:
 
     int m_clockSync;
-    bool m_clockSyncHasBeenSet;
+    bool m_clockSyncHasBeenSet = false;
 
     int m_stream;
-    bool m_streamHasBeenSet;
+    bool m_streamHasBeenSet = false;
 
     int m_gnss;
-    bool m_gnssHasBeenSet;
+    bool m_gnssHasBeenSet = false;
   };
 
 } // namespace Model

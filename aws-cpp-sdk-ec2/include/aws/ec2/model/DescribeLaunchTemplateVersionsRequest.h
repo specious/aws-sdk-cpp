@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API DescribeLaunchTemplateVersionsRequest : public EC2Request
+  class DescribeLaunchTemplateVersionsRequest : public EC2Request
   {
   public:
-    DescribeLaunchTemplateVersionsRequest();
+    AWS_EC2_API DescribeLaunchTemplateVersionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeLaunchTemplateVersions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -707,31 +707,31 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_launchTemplateId;
-    bool m_launchTemplateIdHasBeenSet;
+    bool m_launchTemplateIdHasBeenSet = false;
 
     Aws::String m_launchTemplateName;
-    bool m_launchTemplateNameHasBeenSet;
+    bool m_launchTemplateNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versions;
-    bool m_versionsHasBeenSet;
+    bool m_versionsHasBeenSet = false;
 
     Aws::String m_minVersion;
-    bool m_minVersionHasBeenSet;
+    bool m_minVersionHasBeenSet = false;
 
     Aws::String m_maxVersion;
-    bool m_maxVersionHasBeenSet;
+    bool m_maxVersionHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/Network">AWS
    * API Reference</a></p>
    */
-  class AWS_PRIVATENETWORKS_API Network
+  class Network
   {
   public:
-    Network();
-    Network(Aws::Utils::Json::JsonView jsonValue);
-    Network& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRIVATENETWORKS_API Network();
+    AWS_PRIVATENETWORKS_API Network(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Network& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -267,22 +267,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_networkArn;
-    bool m_networkArnHasBeenSet;
+    bool m_networkArnHasBeenSet = false;
 
     Aws::String m_networkName;
-    bool m_networkNameHasBeenSet;
+    bool m_networkNameHasBeenSet = false;
 
     NetworkStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

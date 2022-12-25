@@ -25,25 +25,25 @@ namespace Model
 {
 
   /**
-   * <p>Describes a mixed instances policy. A mixed instances policy contains the
-   * instance types that Amazon EC2 Auto Scaling can launch and other information
-   * that Amazon EC2 Auto Scaling can use to launch instances and help optimize your
-   * costs. For more information, see <a
+   * <p>Use this structure to launch multiple instance types and On-Demand Instances
+   * and Spot Instances within a single Auto Scaling group.</p> <p>A mixed instances
+   * policy contains information that Amazon EC2 Auto Scaling can use to launch
+   * instances and help optimize your costs. For more information, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
    * Scaling groups with multiple instance types and purchase options</a> in the
    * <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MixedInstancesPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API MixedInstancesPolicy
+  class MixedInstancesPolicy
   {
   public:
-    MixedInstancesPolicy();
-    MixedInstancesPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MixedInstancesPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MixedInstancesPolicy();
+    AWS_AUTOSCALING_API MixedInstancesPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MixedInstancesPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     LaunchTemplate m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     InstancesDistribution m_instancesDistribution;
-    bool m_instancesDistributionHasBeenSet;
+    bool m_instancesDistributionHasBeenSet = false;
   };
 
 } // namespace Model

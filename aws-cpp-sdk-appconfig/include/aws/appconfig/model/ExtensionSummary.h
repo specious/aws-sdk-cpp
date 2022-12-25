@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ExtensionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API ExtensionSummary
+  class ExtensionSummary
   {
   public:
-    ExtensionSummary();
-    ExtensionSummary(Aws::Utils::Json::JsonView jsonValue);
-    ExtensionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API ExtensionSummary();
+    AWS_APPCONFIG_API ExtensionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API ExtensionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -225,19 +225,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

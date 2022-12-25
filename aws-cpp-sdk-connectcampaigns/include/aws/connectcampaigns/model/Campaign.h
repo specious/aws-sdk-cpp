@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/Campaign">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API Campaign
+  class Campaign
   {
   public:
-    Campaign();
-    Campaign(Aws::Utils::Json::JsonView jsonValue);
-    Campaign& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API Campaign();
+    AWS_CONNECTCAMPAIGNS_API Campaign(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Campaign& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -220,25 +220,25 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_connectInstanceId;
-    bool m_connectInstanceIdHasBeenSet;
+    bool m_connectInstanceIdHasBeenSet = false;
 
     DialerConfig m_dialerConfig;
-    bool m_dialerConfigHasBeenSet;
+    bool m_dialerConfigHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     OutboundCallConfig m_outboundCallConfig;
-    bool m_outboundCallConfigHasBeenSet;
+    bool m_outboundCallConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

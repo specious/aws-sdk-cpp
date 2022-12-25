@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ConditionalSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ConditionalSpecification
+  class ConditionalSpecification
   {
   public:
-    ConditionalSpecification();
-    ConditionalSpecification(Aws::Utils::Json::JsonView jsonValue);
-    ConditionalSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ConditionalSpecification();
+    AWS_LEXMODELSV2_API ConditionalSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ConditionalSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
 
     Aws::Vector<ConditionalBranch> m_conditionalBranches;
-    bool m_conditionalBranchesHasBeenSet;
+    bool m_conditionalBranchesHasBeenSet = false;
 
     DefaultConditionalBranch m_defaultBranch;
-    bool m_defaultBranchHasBeenSet;
+    bool m_defaultBranchHasBeenSet = false;
   };
 
 } // namespace Model

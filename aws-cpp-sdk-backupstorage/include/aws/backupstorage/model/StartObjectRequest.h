@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUPSTORAGE_API StartObjectRequest : public BackupStorageRequest
+  class StartObjectRequest : public BackupStorageRequest
   {
   public:
-    StartObjectRequest();
+    AWS_BACKUPSTORAGE_API StartObjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartObject"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUPSTORAGE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -137,13 +137,13 @@ namespace Model
   private:
 
     Aws::String m_backupJobId;
-    bool m_backupJobIdHasBeenSet;
+    bool m_backupJobIdHasBeenSet = false;
 
     Aws::String m_objectName;
-    bool m_objectNameHasBeenSet;
+    bool m_objectNameHasBeenSet = false;
 
     bool m_throwOnDuplicate;
-    bool m_throwOnDuplicateHasBeenSet;
+    bool m_throwOnDuplicateHasBeenSet = false;
   };
 
 } // namespace Model

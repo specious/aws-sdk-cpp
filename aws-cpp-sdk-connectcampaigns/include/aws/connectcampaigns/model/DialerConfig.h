@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/DialerConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API DialerConfig
+  class DialerConfig
   {
   public:
-    DialerConfig();
-    DialerConfig(Aws::Utils::Json::JsonView jsonValue);
-    DialerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API DialerConfig();
+    AWS_CONNECTCAMPAIGNS_API DialerConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API DialerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -78,10 +78,10 @@ namespace Model
   private:
 
     PredictiveDialerConfig m_predictiveDialerConfig;
-    bool m_predictiveDialerConfigHasBeenSet;
+    bool m_predictiveDialerConfigHasBeenSet = false;
 
     ProgressiveDialerConfig m_progressiveDialerConfig;
-    bool m_progressiveDialerConfigHasBeenSet;
+    bool m_progressiveDialerConfigHasBeenSet = false;
   };
 
 } // namespace Model

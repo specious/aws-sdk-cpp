@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/OpenHoursRule">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API OpenHoursRule
+  class OpenHoursRule
   {
   public:
-    OpenHoursRule();
-    OpenHoursRule(Aws::Utils::Json::JsonView jsonValue);
-    OpenHoursRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API OpenHoursRule();
+    AWS_PINPOINT_API OpenHoursRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API OpenHoursRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

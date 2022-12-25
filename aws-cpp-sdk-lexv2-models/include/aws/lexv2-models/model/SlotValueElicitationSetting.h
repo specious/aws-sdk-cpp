@@ -30,18 +30,18 @@ namespace Model
 {
 
   /**
-   * <p>Settings that you can use for eliciting a slot value.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies the elicitation setting details for constituent sub slots of a
+   * composite slot.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotValueElicitationSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotValueElicitationSetting
+  class SlotValueElicitationSetting
   {
   public:
-    SlotValueElicitationSetting();
-    SlotValueElicitationSetting(Aws::Utils::Json::JsonView jsonValue);
-    SlotValueElicitationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotValueElicitationSetting();
+    AWS_LEXMODELSV2_API SlotValueElicitationSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotValueElicitationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -272,22 +272,22 @@ namespace Model
   private:
 
     SlotDefaultValueSpecification m_defaultValueSpecification;
-    bool m_defaultValueSpecificationHasBeenSet;
+    bool m_defaultValueSpecificationHasBeenSet = false;
 
     SlotConstraint m_slotConstraint;
-    bool m_slotConstraintHasBeenSet;
+    bool m_slotConstraintHasBeenSet = false;
 
     PromptSpecification m_promptSpecification;
-    bool m_promptSpecificationHasBeenSet;
+    bool m_promptSpecificationHasBeenSet = false;
 
     Aws::Vector<SampleUtterance> m_sampleUtterances;
-    bool m_sampleUtterancesHasBeenSet;
+    bool m_sampleUtterancesHasBeenSet = false;
 
     WaitAndContinueSpecification m_waitAndContinueSpecification;
-    bool m_waitAndContinueSpecificationHasBeenSet;
+    bool m_waitAndContinueSpecificationHasBeenSet = false;
 
     SlotCaptureSetting m_slotCaptureSetting;
-    bool m_slotCaptureSettingHasBeenSet;
+    bool m_slotCaptureSettingHasBeenSet = false;
   };
 
 } // namespace Model

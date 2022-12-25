@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUPSTORAGE_API PutObjectRequest : public StreamingBackupStorageRequest
+  class PutObjectRequest : public StreamingBackupStorageRequest
   {
   public:
-    PutObjectRequest();
+    AWS_BACKUPSTORAGE_API PutObjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutObject"; }
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_BACKUPSTORAGE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    bool SignBody() const override { return false; }
+    AWS_BACKUPSTORAGE_API bool SignBody() const override { return false; }
 
 
     /**
@@ -369,32 +369,32 @@ namespace Model
   private:
 
     Aws::String m_backupJobId;
-    bool m_backupJobIdHasBeenSet;
+    bool m_backupJobIdHasBeenSet = false;
 
     Aws::String m_objectName;
-    bool m_objectNameHasBeenSet;
+    bool m_objectNameHasBeenSet = false;
 
     Aws::String m_metadataString;
-    bool m_metadataStringHasBeenSet;
+    bool m_metadataStringHasBeenSet = false;
 
 
     long long m_inlineChunkLength;
-    bool m_inlineChunkLengthHasBeenSet;
+    bool m_inlineChunkLengthHasBeenSet = false;
 
     Aws::String m_inlineChunkChecksum;
-    bool m_inlineChunkChecksumHasBeenSet;
+    bool m_inlineChunkChecksumHasBeenSet = false;
 
     Aws::String m_inlineChunkChecksumAlgorithm;
-    bool m_inlineChunkChecksumAlgorithmHasBeenSet;
+    bool m_inlineChunkChecksumAlgorithmHasBeenSet = false;
 
     Aws::String m_objectChecksum;
-    bool m_objectChecksumHasBeenSet;
+    bool m_objectChecksumHasBeenSet = false;
 
     SummaryChecksumAlgorithm m_objectChecksumAlgorithm;
-    bool m_objectChecksumAlgorithmHasBeenSet;
+    bool m_objectChecksumAlgorithmHasBeenSet = false;
 
     bool m_throwOnDuplicate;
-    bool m_throwOnDuplicateHasBeenSet;
+    bool m_throwOnDuplicateHasBeenSet = false;
   };
 
 } // namespace Model

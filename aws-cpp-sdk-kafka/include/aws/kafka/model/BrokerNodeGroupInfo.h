@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BrokerNodeGroupInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API BrokerNodeGroupInfo
+  class BrokerNodeGroupInfo
   {
   public:
-    BrokerNodeGroupInfo();
-    BrokerNodeGroupInfo(Aws::Utils::Json::JsonView jsonValue);
-    BrokerNodeGroupInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API BrokerNodeGroupInfo();
+    AWS_KAFKA_API BrokerNodeGroupInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API BrokerNodeGroupInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -488,22 +488,22 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
   private:
 
     BrokerAZDistribution m_brokerAZDistribution;
-    bool m_brokerAZDistributionHasBeenSet;
+    bool m_brokerAZDistributionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clientSubnets;
-    bool m_clientSubnetsHasBeenSet;
+    bool m_clientSubnetsHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     StorageInfo m_storageInfo;
-    bool m_storageInfoHasBeenSet;
+    bool m_storageInfoHasBeenSet = false;
 
     ConnectivityInfo m_connectivityInfo;
-    bool m_connectivityInfoHasBeenSet;
+    bool m_connectivityInfoHasBeenSet = false;
   };
 
 } // namespace Model

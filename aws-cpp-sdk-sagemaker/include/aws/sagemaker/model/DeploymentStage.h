@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeploymentStage">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DeploymentStage
+  class DeploymentStage
   {
   public:
-    DeploymentStage();
-    DeploymentStage(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentStage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DeploymentStage();
+    AWS_SAGEMAKER_API DeploymentStage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DeploymentStage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     DeviceSelectionConfig m_deviceSelectionConfig;
-    bool m_deviceSelectionConfigHasBeenSet;
+    bool m_deviceSelectionConfigHasBeenSet = false;
 
     EdgeDeploymentConfig m_deploymentConfig;
-    bool m_deploymentConfigHasBeenSet;
+    bool m_deploymentConfigHasBeenSet = false;
   };
 
 } // namespace Model

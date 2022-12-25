@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DnsServiceDiscovery">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API DnsServiceDiscovery
+  class DnsServiceDiscovery
   {
   public:
-    DnsServiceDiscovery();
-    DnsServiceDiscovery(Aws::Utils::Json::JsonView jsonValue);
-    DnsServiceDiscovery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API DnsServiceDiscovery();
+    AWS_APPMESH_API DnsServiceDiscovery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API DnsServiceDiscovery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     IpPreference m_ipPreference;
-    bool m_ipPreferenceHasBeenSet;
+    bool m_ipPreferenceHasBeenSet = false;
 
     DnsResponseType m_responseType;
-    bool m_responseTypeHasBeenSet;
+    bool m_responseTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/IncidentTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API IncidentTemplate
+  class IncidentTemplate
   {
   public:
-    IncidentTemplate();
-    IncidentTemplate(Aws::Utils::Json::JsonView jsonValue);
-    IncidentTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API IncidentTemplate();
+    AWS_SSMINCIDENTS_API IncidentTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API IncidentTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,80 +112,93 @@ namespace Model
 
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action.</p>
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetIncidentTags() const{ return m_incidentTags; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action.</p>
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident.</p>
      */
     inline bool IncidentTagsHasBeenSet() const { return m_incidentTagsHasBeenSet; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action.</p>
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident.</p>
      */
     inline void SetIncidentTags(const Aws::Map<Aws::String, Aws::String>& value) { m_incidentTagsHasBeenSet = true; m_incidentTags = value; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action.</p>
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident.</p>
      */
     inline void SetIncidentTags(Aws::Map<Aws::String, Aws::String>&& value) { m_incidentTagsHasBeenSet = true; m_incidentTags = std::move(value); }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action.</p>
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident.</p>
      */
     inline IncidentTemplate& WithIncidentTags(const Aws::Map<Aws::String, Aws::String>& value) { SetIncidentTags(value); return *this;}
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action.</p>
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident.</p>
      */
     inline IncidentTemplate& WithIncidentTags(Aws::Map<Aws::String, Aws::String>&& value) { SetIncidentTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action.</p>
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident.</p>
      */
     inline IncidentTemplate& AddIncidentTags(const Aws::String& key, const Aws::String& value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(key, value); return *this; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action.</p>
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident.</p>
      */
     inline IncidentTemplate& AddIncidentTags(Aws::String&& key, const Aws::String& value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action.</p>
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident.</p>
      */
     inline IncidentTemplate& AddIncidentTags(const Aws::String& key, Aws::String&& value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action.</p>
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident.</p>
      */
     inline IncidentTemplate& AddIncidentTags(Aws::String&& key, Aws::String&& value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action.</p>
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident.</p>
      */
     inline IncidentTemplate& AddIncidentTags(const char* key, Aws::String&& value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action.</p>
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident.</p>
      */
     inline IncidentTemplate& AddIncidentTags(Aws::String&& key, const char* value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action.</p>
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident.</p>
      */
     inline IncidentTemplate& AddIncidentTags(const char* key, const char* value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(key, value); return *this; }
 
@@ -331,22 +344,22 @@ namespace Model
   private:
 
     Aws::String m_dedupeString;
-    bool m_dedupeStringHasBeenSet;
+    bool m_dedupeStringHasBeenSet = false;
 
     int m_impact;
-    bool m_impactHasBeenSet;
+    bool m_impactHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_incidentTags;
-    bool m_incidentTagsHasBeenSet;
+    bool m_incidentTagsHasBeenSet = false;
 
     Aws::Vector<NotificationTargetItem> m_notificationTargets;
-    bool m_notificationTargetsHasBeenSet;
+    bool m_notificationTargetsHasBeenSet = false;
 
     Aws::String m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
   };
 
 } // namespace Model

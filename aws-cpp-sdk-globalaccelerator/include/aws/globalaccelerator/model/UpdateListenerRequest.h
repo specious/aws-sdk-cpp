@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLOBALACCELERATOR_API UpdateListenerRequest : public GlobalAcceleratorRequest
+  class UpdateListenerRequest : public GlobalAcceleratorRequest
   {
   public:
-    UpdateListenerRequest();
+    AWS_GLOBALACCELERATOR_API UpdateListenerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateListener"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLOBALACCELERATOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLOBALACCELERATOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -282,16 +282,16 @@ namespace Model
   private:
 
     Aws::String m_listenerArn;
-    bool m_listenerArnHasBeenSet;
+    bool m_listenerArnHasBeenSet = false;
 
     Aws::Vector<PortRange> m_portRanges;
-    bool m_portRangesHasBeenSet;
+    bool m_portRangesHasBeenSet = false;
 
     Protocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     ClientAffinity m_clientAffinity;
-    bool m_clientAffinityHasBeenSet;
+    bool m_clientAffinityHasBeenSet = false;
   };
 
 } // namespace Model

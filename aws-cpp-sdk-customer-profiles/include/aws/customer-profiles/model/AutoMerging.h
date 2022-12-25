@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AutoMerging">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API AutoMerging
+  class AutoMerging
   {
   public:
-    AutoMerging();
-    AutoMerging(Aws::Utils::Json::JsonView jsonValue);
-    AutoMerging& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API AutoMerging();
+    AWS_CUSTOMERPROFILES_API AutoMerging(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API AutoMerging& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,16 +183,16 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Consolidation m_consolidation;
-    bool m_consolidationHasBeenSet;
+    bool m_consolidationHasBeenSet = false;
 
     ConflictResolution m_conflictResolution;
-    bool m_conflictResolutionHasBeenSet;
+    bool m_conflictResolutionHasBeenSet = false;
 
     double m_minAllowedConfidenceScoreForMerging;
-    bool m_minAllowedConfidenceScoreForMergingHasBeenSet;
+    bool m_minAllowedConfidenceScoreForMergingHasBeenSet = false;
   };
 
 } // namespace Model

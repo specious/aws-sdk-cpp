@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_KENDRA_API CreateDataSourceRequest : public KendraRequest
+  class CreateDataSourceRequest : public KendraRequest
   {
   public:
-    CreateDataSourceRequest();
+    AWS_KENDRA_API CreateDataSourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDataSource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KENDRA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -398,8 +398,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -409,8 +409,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -420,8 +420,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -431,8 +431,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -442,8 +442,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -453,8 +453,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -464,8 +464,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -475,8 +475,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -743,40 +743,40 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     DataSourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     DataSourceConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     CustomDocumentEnrichmentConfiguration m_customDocumentEnrichmentConfiguration;
-    bool m_customDocumentEnrichmentConfigurationHasBeenSet;
+    bool m_customDocumentEnrichmentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

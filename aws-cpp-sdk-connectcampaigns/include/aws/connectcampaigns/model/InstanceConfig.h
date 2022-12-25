@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/InstanceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API InstanceConfig
+  class InstanceConfig
   {
   public:
-    InstanceConfig();
-    InstanceConfig(Aws::Utils::Json::JsonView jsonValue);
-    InstanceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API InstanceConfig();
+    AWS_CONNECTCAMPAIGNS_API InstanceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API InstanceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -109,13 +109,13 @@ namespace Model
   private:
 
     Aws::String m_connectInstanceId;
-    bool m_connectInstanceIdHasBeenSet;
+    bool m_connectInstanceIdHasBeenSet = false;
 
     EncryptionConfig m_encryptionConfig;
-    bool m_encryptionConfigHasBeenSet;
+    bool m_encryptionConfigHasBeenSet = false;
 
     Aws::String m_serviceLinkedRoleArn;
-    bool m_serviceLinkedRoleArnHasBeenSet;
+    bool m_serviceLinkedRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

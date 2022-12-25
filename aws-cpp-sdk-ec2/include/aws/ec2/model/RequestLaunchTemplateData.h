@@ -52,15 +52,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestLaunchTemplateData">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API RequestLaunchTemplateData
+  class RequestLaunchTemplateData
   {
   public:
-    RequestLaunchTemplateData();
-    RequestLaunchTemplateData(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RequestLaunchTemplateData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API RequestLaunchTemplateData();
+    AWS_EC2_API RequestLaunchTemplateData(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API RequestLaunchTemplateData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -339,7 +339,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
@@ -348,7 +348,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -357,7 +357,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
@@ -366,7 +366,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
@@ -375,7 +375,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
@@ -384,7 +384,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
@@ -1539,7 +1539,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline const InstanceRequirementsRequest& GetInstanceRequirements() const{ return m_instanceRequirements; }
 
@@ -1547,7 +1547,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
 
@@ -1555,7 +1555,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline void SetInstanceRequirements(const InstanceRequirementsRequest& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
 
@@ -1563,7 +1563,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline void SetInstanceRequirements(InstanceRequirementsRequest&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
 
@@ -1571,7 +1571,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceRequirements(const InstanceRequirementsRequest& value) { SetInstanceRequirements(value); return *this;}
 
@@ -1579,7 +1579,7 @@ namespace Model
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
      * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceTypes</code>.</p>
+     * <code>InstanceType</code>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceRequirements(InstanceRequirementsRequest&& value) { SetInstanceRequirements(std::move(value)); return *this;}
 
@@ -1687,97 +1687,97 @@ namespace Model
   private:
 
     Aws::String m_kernelId;
-    bool m_kernelIdHasBeenSet;
+    bool m_kernelIdHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     LaunchTemplateIamInstanceProfileSpecificationRequest m_iamInstanceProfile;
-    bool m_iamInstanceProfileHasBeenSet;
+    bool m_iamInstanceProfileHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateBlockDeviceMappingRequest> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     LaunchTemplatesMonitoringRequest m_monitoring;
-    bool m_monitoringHasBeenSet;
+    bool m_monitoringHasBeenSet = false;
 
     LaunchTemplatePlacementRequest m_placement;
-    bool m_placementHasBeenSet;
+    bool m_placementHasBeenSet = false;
 
     Aws::String m_ramDiskId;
-    bool m_ramDiskIdHasBeenSet;
+    bool m_ramDiskIdHasBeenSet = false;
 
     bool m_disableApiTermination;
-    bool m_disableApiTerminationHasBeenSet;
+    bool m_disableApiTerminationHasBeenSet = false;
 
     ShutdownBehavior m_instanceInitiatedShutdownBehavior;
-    bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
+    bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
     Aws::String m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateTagSpecificationRequest> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     Aws::Vector<ElasticGpuSpecification> m_elasticGpuSpecifications;
-    bool m_elasticGpuSpecificationsHasBeenSet;
+    bool m_elasticGpuSpecificationsHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateElasticInferenceAccelerator> m_elasticInferenceAccelerators;
-    bool m_elasticInferenceAcceleratorsHasBeenSet;
+    bool m_elasticInferenceAcceleratorsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     LaunchTemplateInstanceMarketOptionsRequest m_instanceMarketOptions;
-    bool m_instanceMarketOptionsHasBeenSet;
+    bool m_instanceMarketOptionsHasBeenSet = false;
 
     CreditSpecificationRequest m_creditSpecification;
-    bool m_creditSpecificationHasBeenSet;
+    bool m_creditSpecificationHasBeenSet = false;
 
     LaunchTemplateCpuOptionsRequest m_cpuOptions;
-    bool m_cpuOptionsHasBeenSet;
+    bool m_cpuOptionsHasBeenSet = false;
 
     LaunchTemplateCapacityReservationSpecificationRequest m_capacityReservationSpecification;
-    bool m_capacityReservationSpecificationHasBeenSet;
+    bool m_capacityReservationSpecificationHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateLicenseConfigurationRequest> m_licenseSpecifications;
-    bool m_licenseSpecificationsHasBeenSet;
+    bool m_licenseSpecificationsHasBeenSet = false;
 
     LaunchTemplateHibernationOptionsRequest m_hibernationOptions;
-    bool m_hibernationOptionsHasBeenSet;
+    bool m_hibernationOptionsHasBeenSet = false;
 
     LaunchTemplateInstanceMetadataOptionsRequest m_metadataOptions;
-    bool m_metadataOptionsHasBeenSet;
+    bool m_metadataOptionsHasBeenSet = false;
 
     LaunchTemplateEnclaveOptionsRequest m_enclaveOptions;
-    bool m_enclaveOptionsHasBeenSet;
+    bool m_enclaveOptionsHasBeenSet = false;
 
     InstanceRequirementsRequest m_instanceRequirements;
-    bool m_instanceRequirementsHasBeenSet;
+    bool m_instanceRequirementsHasBeenSet = false;
 
     LaunchTemplatePrivateDnsNameOptionsRequest m_privateDnsNameOptions;
-    bool m_privateDnsNameOptionsHasBeenSet;
+    bool m_privateDnsNameOptionsHasBeenSet = false;
 
     LaunchTemplateInstanceMaintenanceOptionsRequest m_maintenanceOptions;
-    bool m_maintenanceOptionsHasBeenSet;
+    bool m_maintenanceOptionsHasBeenSet = false;
 
     bool m_disableApiStop;
-    bool m_disableApiStopHasBeenSet;
+    bool m_disableApiStopHasBeenSet = false;
   };
 
 } // namespace Model

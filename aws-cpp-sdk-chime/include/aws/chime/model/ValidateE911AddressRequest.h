@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIME_API ValidateE911AddressRequest : public ChimeRequest
+  class ValidateE911AddressRequest : public ChimeRequest
   {
   public:
-    ValidateE911AddressRequest();
+    AWS_CHIME_API ValidateE911AddressRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ValidateE911Address"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -321,25 +321,25 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_streetNumber;
-    bool m_streetNumberHasBeenSet;
+    bool m_streetNumberHasBeenSet = false;
 
     Aws::String m_streetInfo;
-    bool m_streetInfoHasBeenSet;
+    bool m_streetInfoHasBeenSet = false;
 
     Aws::String m_city;
-    bool m_cityHasBeenSet;
+    bool m_cityHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
 
     Aws::String m_postalCode;
-    bool m_postalCodeHasBeenSet;
+    bool m_postalCodeHasBeenSet = false;
   };
 
 } // namespace Model

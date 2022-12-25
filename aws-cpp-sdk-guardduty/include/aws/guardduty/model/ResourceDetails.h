@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ResourceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ResourceDetails
+  class ResourceDetails
   {
   public:
-    ResourceDetails();
-    ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ResourceDetails();
+    AWS_GUARDDUTY_API ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet;
+    bool m_instanceArnHasBeenSet = false;
   };
 
 } // namespace Model

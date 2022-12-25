@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IVS_API CreateStreamKeyRequest : public IVSRequest
+  class CreateStreamKeyRequest : public IVSRequest
   {
   public:
-    CreateStreamKeyRequest();
+    AWS_IVS_API CreateStreamKeyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateStreamKey"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IVS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -207,10 +207,10 @@ namespace Model
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CapacityUsageSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API CapacityUsageSummary
+  class CapacityUsageSummary
   {
   public:
-    CapacityUsageSummary();
-    CapacityUsageSummary(Aws::Utils::Json::JsonView jsonValue);
-    CapacityUsageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API CapacityUsageSummary();
+    AWS_NETWORKFIREWALL_API CapacityUsageSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API CapacityUsageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     CIDRSummary m_cIDRs;
-    bool m_cIDRsHasBeenSet;
+    bool m_cIDRsHasBeenSet = false;
   };
 
 } // namespace Model

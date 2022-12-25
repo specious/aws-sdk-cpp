@@ -29,32 +29,32 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ProvisioningTemplateVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ProvisioningTemplateVersionSummary
+  class ProvisioningTemplateVersionSummary
   {
   public:
-    ProvisioningTemplateVersionSummary();
-    ProvisioningTemplateVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    ProvisioningTemplateVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ProvisioningTemplateVersionSummary();
+    AWS_IOT_API ProvisioningTemplateVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ProvisioningTemplateVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The ID of the fleet privisioning template version.</p>
+     * <p>The ID of the fleet provisioning template version.</p>
      */
     inline int GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>The ID of the fleet privisioning template version.</p>
+     * <p>The ID of the fleet provisioning template version.</p>
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
-     * <p>The ID of the fleet privisioning template version.</p>
+     * <p>The ID of the fleet provisioning template version.</p>
      */
     inline void SetVersionId(int value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>The ID of the fleet privisioning template version.</p>
+     * <p>The ID of the fleet provisioning template version.</p>
      */
     inline ProvisioningTemplateVersionSummary& WithVersionId(int value) { SetVersionId(value); return *this;}
 
@@ -117,13 +117,13 @@ namespace Model
   private:
 
     int m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     bool m_isDefaultVersion;
-    bool m_isDefaultVersionHasBeenSet;
+    bool m_isDefaultVersionHasBeenSet = false;
   };
 
 } // namespace Model

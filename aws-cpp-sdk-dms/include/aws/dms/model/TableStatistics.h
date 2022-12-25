@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TableStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API TableStatistics
+  class TableStatistics
   {
   public:
-    TableStatistics();
-    TableStatistics(Aws::Utils::Json::JsonView jsonValue);
-    TableStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API TableStatistics();
+    AWS_DATABASEMIGRATIONSERVICE_API TableStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API TableStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -207,6 +207,94 @@ namespace Model
      * your tables.</p>
      */
     inline TableStatistics& WithDdls(long long value) { SetDdls(value); return *this;}
+
+
+    /**
+     * <p>The number of insert actions applied on a target table.</p>
+     */
+    inline long long GetAppliedInserts() const{ return m_appliedInserts; }
+
+    /**
+     * <p>The number of insert actions applied on a target table.</p>
+     */
+    inline bool AppliedInsertsHasBeenSet() const { return m_appliedInsertsHasBeenSet; }
+
+    /**
+     * <p>The number of insert actions applied on a target table.</p>
+     */
+    inline void SetAppliedInserts(long long value) { m_appliedInsertsHasBeenSet = true; m_appliedInserts = value; }
+
+    /**
+     * <p>The number of insert actions applied on a target table.</p>
+     */
+    inline TableStatistics& WithAppliedInserts(long long value) { SetAppliedInserts(value); return *this;}
+
+
+    /**
+     * <p>The number of delete actions applied on a target table.</p>
+     */
+    inline long long GetAppliedDeletes() const{ return m_appliedDeletes; }
+
+    /**
+     * <p>The number of delete actions applied on a target table.</p>
+     */
+    inline bool AppliedDeletesHasBeenSet() const { return m_appliedDeletesHasBeenSet; }
+
+    /**
+     * <p>The number of delete actions applied on a target table.</p>
+     */
+    inline void SetAppliedDeletes(long long value) { m_appliedDeletesHasBeenSet = true; m_appliedDeletes = value; }
+
+    /**
+     * <p>The number of delete actions applied on a target table.</p>
+     */
+    inline TableStatistics& WithAppliedDeletes(long long value) { SetAppliedDeletes(value); return *this;}
+
+
+    /**
+     * <p>The number of update actions applied on a target table.</p>
+     */
+    inline long long GetAppliedUpdates() const{ return m_appliedUpdates; }
+
+    /**
+     * <p>The number of update actions applied on a target table.</p>
+     */
+    inline bool AppliedUpdatesHasBeenSet() const { return m_appliedUpdatesHasBeenSet; }
+
+    /**
+     * <p>The number of update actions applied on a target table.</p>
+     */
+    inline void SetAppliedUpdates(long long value) { m_appliedUpdatesHasBeenSet = true; m_appliedUpdates = value; }
+
+    /**
+     * <p>The number of update actions applied on a target table.</p>
+     */
+    inline TableStatistics& WithAppliedUpdates(long long value) { SetAppliedUpdates(value); return *this;}
+
+
+    /**
+     * <p>The number of data definition language (DDL) statements used to build and
+     * modify the structure of your tables applied on the target.</p>
+     */
+    inline long long GetAppliedDdls() const{ return m_appliedDdls; }
+
+    /**
+     * <p>The number of data definition language (DDL) statements used to build and
+     * modify the structure of your tables applied on the target.</p>
+     */
+    inline bool AppliedDdlsHasBeenSet() const { return m_appliedDdlsHasBeenSet; }
+
+    /**
+     * <p>The number of data definition language (DDL) statements used to build and
+     * modify the structure of your tables applied on the target.</p>
+     */
+    inline void SetAppliedDdls(long long value) { m_appliedDdlsHasBeenSet = true; m_appliedDdls = value; }
+
+    /**
+     * <p>The number of data definition language (DDL) statements used to build and
+     * modify the structure of your tables applied on the target.</p>
+     */
+    inline TableStatistics& WithAppliedDdls(long long value) { SetAppliedDdls(value); return *this;}
 
 
     /**
@@ -722,61 +810,73 @@ namespace Model
   private:
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     long long m_inserts;
-    bool m_insertsHasBeenSet;
+    bool m_insertsHasBeenSet = false;
 
     long long m_deletes;
-    bool m_deletesHasBeenSet;
+    bool m_deletesHasBeenSet = false;
 
     long long m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
 
     long long m_ddls;
-    bool m_ddlsHasBeenSet;
+    bool m_ddlsHasBeenSet = false;
+
+    long long m_appliedInserts;
+    bool m_appliedInsertsHasBeenSet = false;
+
+    long long m_appliedDeletes;
+    bool m_appliedDeletesHasBeenSet = false;
+
+    long long m_appliedUpdates;
+    bool m_appliedUpdatesHasBeenSet = false;
+
+    long long m_appliedDdls;
+    bool m_appliedDdlsHasBeenSet = false;
 
     long long m_fullLoadRows;
-    bool m_fullLoadRowsHasBeenSet;
+    bool m_fullLoadRowsHasBeenSet = false;
 
     long long m_fullLoadCondtnlChkFailedRows;
-    bool m_fullLoadCondtnlChkFailedRowsHasBeenSet;
+    bool m_fullLoadCondtnlChkFailedRowsHasBeenSet = false;
 
     long long m_fullLoadErrorRows;
-    bool m_fullLoadErrorRowsHasBeenSet;
+    bool m_fullLoadErrorRowsHasBeenSet = false;
 
     Aws::Utils::DateTime m_fullLoadStartTime;
-    bool m_fullLoadStartTimeHasBeenSet;
+    bool m_fullLoadStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_fullLoadEndTime;
-    bool m_fullLoadEndTimeHasBeenSet;
+    bool m_fullLoadEndTimeHasBeenSet = false;
 
     bool m_fullLoadReloaded;
-    bool m_fullLoadReloadedHasBeenSet;
+    bool m_fullLoadReloadedHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     Aws::String m_tableState;
-    bool m_tableStateHasBeenSet;
+    bool m_tableStateHasBeenSet = false;
 
     long long m_validationPendingRecords;
-    bool m_validationPendingRecordsHasBeenSet;
+    bool m_validationPendingRecordsHasBeenSet = false;
 
     long long m_validationFailedRecords;
-    bool m_validationFailedRecordsHasBeenSet;
+    bool m_validationFailedRecordsHasBeenSet = false;
 
     long long m_validationSuspendedRecords;
-    bool m_validationSuspendedRecordsHasBeenSet;
+    bool m_validationSuspendedRecordsHasBeenSet = false;
 
     Aws::String m_validationState;
-    bool m_validationStateHasBeenSet;
+    bool m_validationStateHasBeenSet = false;
 
     Aws::String m_validationStateDetails;
-    bool m_validationStateDetailsHasBeenSet;
+    bool m_validationStateDetailsHasBeenSet = false;
   };
 
 } // namespace Model

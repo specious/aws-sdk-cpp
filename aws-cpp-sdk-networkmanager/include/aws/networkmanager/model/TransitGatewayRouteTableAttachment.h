@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/TransitGatewayRouteTableAttachment">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API TransitGatewayRouteTableAttachment
+  class TransitGatewayRouteTableAttachment
   {
   public:
-    TransitGatewayRouteTableAttachment();
-    TransitGatewayRouteTableAttachment(Aws::Utils::Json::JsonView jsonValue);
-    TransitGatewayRouteTableAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API TransitGatewayRouteTableAttachment();
+    AWS_NETWORKMANAGER_API TransitGatewayRouteTableAttachment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API TransitGatewayRouteTableAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Attachment m_attachment;
-    bool m_attachmentHasBeenSet;
+    bool m_attachmentHasBeenSet = false;
 
     Aws::String m_peeringId;
-    bool m_peeringIdHasBeenSet;
+    bool m_peeringIdHasBeenSet = false;
 
     Aws::String m_transitGatewayRouteTableArn;
-    bool m_transitGatewayRouteTableArnHasBeenSet;
+    bool m_transitGatewayRouteTableArnHasBeenSet = false;
   };
 
 } // namespace Model

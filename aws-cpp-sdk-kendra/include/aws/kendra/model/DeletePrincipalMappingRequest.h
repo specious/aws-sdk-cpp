@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KENDRA_API DeletePrincipalMappingRequest : public KendraRequest
+  class DeletePrincipalMappingRequest : public KendraRequest
   {
   public:
-    DeletePrincipalMappingRequest();
+    AWS_KENDRA_API DeletePrincipalMappingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeletePrincipalMapping"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KENDRA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -280,16 +280,16 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     long long m_orderingId;
-    bool m_orderingIdHasBeenSet;
+    bool m_orderingIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKMAIL_API CreateAvailabilityConfigurationRequest : public WorkMailRequest
+  class CreateAvailabilityConfigurationRequest : public WorkMailRequest
   {
   public:
-    CreateAvailabilityConfigurationRequest();
+    AWS_WORKMAIL_API CreateAvailabilityConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAvailabilityConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKMAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -87,49 +87,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon WorkMail organization for which the
+     * <p>The WorkMail organization for which the
      * <code>AvailabilityConfiguration</code> will be created.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
 
     /**
-     * <p>The Amazon WorkMail organization for which the
+     * <p>The WorkMail organization for which the
      * <code>AvailabilityConfiguration</code> will be created.</p>
      */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
-     * <p>The Amazon WorkMail organization for which the
+     * <p>The WorkMail organization for which the
      * <code>AvailabilityConfiguration</code> will be created.</p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
-     * <p>The Amazon WorkMail organization for which the
+     * <p>The WorkMail organization for which the
      * <code>AvailabilityConfiguration</code> will be created.</p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
 
     /**
-     * <p>The Amazon WorkMail organization for which the
+     * <p>The WorkMail organization for which the
      * <code>AvailabilityConfiguration</code> will be created.</p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
 
     /**
-     * <p>The Amazon WorkMail organization for which the
+     * <p>The WorkMail organization for which the
      * <code>AvailabilityConfiguration</code> will be created.</p>
      */
     inline CreateAvailabilityConfigurationRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization for which the
+     * <p>The WorkMail organization for which the
      * <code>AvailabilityConfiguration</code> will be created.</p>
      */
     inline CreateAvailabilityConfigurationRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization for which the
+     * <p>The WorkMail organization for which the
      * <code>AvailabilityConfiguration</code> will be created.</p>
      */
     inline CreateAvailabilityConfigurationRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
@@ -264,19 +264,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     EwsAvailabilityProvider m_ewsProvider;
-    bool m_ewsProviderHasBeenSet;
+    bool m_ewsProviderHasBeenSet = false;
 
     LambdaAvailabilityProvider m_lambdaProvider;
-    bool m_lambdaProviderHasBeenSet;
+    bool m_lambdaProviderHasBeenSet = false;
   };
 
 } // namespace Model

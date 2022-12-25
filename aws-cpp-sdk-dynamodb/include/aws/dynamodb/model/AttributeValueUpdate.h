@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AttributeValueUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API AttributeValueUpdate
+  class AttributeValueUpdate
   {
   public:
-    AttributeValueUpdate();
-    AttributeValueUpdate(Aws::Utils::Json::JsonView jsonValue);
-    AttributeValueUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API AttributeValueUpdate();
+    AWS_DYNAMODB_API AttributeValueUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API AttributeValueUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -428,10 +428,10 @@ namespace Model
   private:
 
     AttributeValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     AttributeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

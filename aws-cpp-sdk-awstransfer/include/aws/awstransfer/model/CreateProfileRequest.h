@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSFER_API CreateProfileRequest : public TransferRequest
+  class CreateProfileRequest : public TransferRequest
   {
   public:
-    CreateProfileRequest();
+    AWS_TRANSFER_API CreateProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,86 +32,86 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSFER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in
-     * the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For
-     * inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages
-     * sent from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
      * header for the AS2 messages sent to the partner using the
      * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline const Aws::String& GetAs2Id() const{ return m_as2Id; }
 
     /**
-     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in
-     * the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For
-     * inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages
-     * sent from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
      * header for the AS2 messages sent to the partner using the
      * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline bool As2IdHasBeenSet() const { return m_as2IdHasBeenSet; }
 
     /**
-     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in
-     * the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For
-     * inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages
-     * sent from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
      * header for the AS2 messages sent to the partner using the
      * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline void SetAs2Id(const Aws::String& value) { m_as2IdHasBeenSet = true; m_as2Id = value; }
 
     /**
-     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in
-     * the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For
-     * inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages
-     * sent from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
      * header for the AS2 messages sent to the partner using the
      * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline void SetAs2Id(Aws::String&& value) { m_as2IdHasBeenSet = true; m_as2Id = std::move(value); }
 
     /**
-     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in
-     * the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For
-     * inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages
-     * sent from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
      * header for the AS2 messages sent to the partner using the
      * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline void SetAs2Id(const char* value) { m_as2IdHasBeenSet = true; m_as2Id.assign(value); }
 
     /**
-     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in
-     * the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For
-     * inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages
-     * sent from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
      * header for the AS2 messages sent to the partner using the
      * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline CreateProfileRequest& WithAs2Id(const Aws::String& value) { SetAs2Id(value); return *this;}
 
     /**
-     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in
-     * the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For
-     * inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages
-     * sent from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
      * header for the AS2 messages sent to the partner using the
      * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline CreateProfileRequest& WithAs2Id(Aws::String&& value) { SetAs2Id(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in
-     * the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For
-     * inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages
-     * sent from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
      * header for the AS2 messages sent to the partner using the
      * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
@@ -119,44 +119,56 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether to list only <code>LOCAL</code> type profiles or only
-     * <code>PARTNER</code> type profiles. If not supplied in the request, the command
-     * lists all types of profiles.</p>
+     * <p>Determines the type of profile to create:</p> <ul> <li> <p>Specify
+     * <code>LOCAL</code> to create a local profile. A local profile represents the
+     * AS2-enabled Transfer Family server organization or party.</p> </li> <li>
+     * <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile
+     * represents a remote organization, external to Transfer Family.</p> </li> </ul>
      */
     inline const ProfileType& GetProfileType() const{ return m_profileType; }
 
     /**
-     * <p>Indicates whether to list only <code>LOCAL</code> type profiles or only
-     * <code>PARTNER</code> type profiles. If not supplied in the request, the command
-     * lists all types of profiles.</p>
+     * <p>Determines the type of profile to create:</p> <ul> <li> <p>Specify
+     * <code>LOCAL</code> to create a local profile. A local profile represents the
+     * AS2-enabled Transfer Family server organization or party.</p> </li> <li>
+     * <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile
+     * represents a remote organization, external to Transfer Family.</p> </li> </ul>
      */
     inline bool ProfileTypeHasBeenSet() const { return m_profileTypeHasBeenSet; }
 
     /**
-     * <p>Indicates whether to list only <code>LOCAL</code> type profiles or only
-     * <code>PARTNER</code> type profiles. If not supplied in the request, the command
-     * lists all types of profiles.</p>
+     * <p>Determines the type of profile to create:</p> <ul> <li> <p>Specify
+     * <code>LOCAL</code> to create a local profile. A local profile represents the
+     * AS2-enabled Transfer Family server organization or party.</p> </li> <li>
+     * <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile
+     * represents a remote organization, external to Transfer Family.</p> </li> </ul>
      */
     inline void SetProfileType(const ProfileType& value) { m_profileTypeHasBeenSet = true; m_profileType = value; }
 
     /**
-     * <p>Indicates whether to list only <code>LOCAL</code> type profiles or only
-     * <code>PARTNER</code> type profiles. If not supplied in the request, the command
-     * lists all types of profiles.</p>
+     * <p>Determines the type of profile to create:</p> <ul> <li> <p>Specify
+     * <code>LOCAL</code> to create a local profile. A local profile represents the
+     * AS2-enabled Transfer Family server organization or party.</p> </li> <li>
+     * <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile
+     * represents a remote organization, external to Transfer Family.</p> </li> </ul>
      */
     inline void SetProfileType(ProfileType&& value) { m_profileTypeHasBeenSet = true; m_profileType = std::move(value); }
 
     /**
-     * <p>Indicates whether to list only <code>LOCAL</code> type profiles or only
-     * <code>PARTNER</code> type profiles. If not supplied in the request, the command
-     * lists all types of profiles.</p>
+     * <p>Determines the type of profile to create:</p> <ul> <li> <p>Specify
+     * <code>LOCAL</code> to create a local profile. A local profile represents the
+     * AS2-enabled Transfer Family server organization or party.</p> </li> <li>
+     * <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile
+     * represents a remote organization, external to Transfer Family.</p> </li> </ul>
      */
     inline CreateProfileRequest& WithProfileType(const ProfileType& value) { SetProfileType(value); return *this;}
 
     /**
-     * <p>Indicates whether to list only <code>LOCAL</code> type profiles or only
-     * <code>PARTNER</code> type profiles. If not supplied in the request, the command
-     * lists all types of profiles.</p>
+     * <p>Determines the type of profile to create:</p> <ul> <li> <p>Specify
+     * <code>LOCAL</code> to create a local profile. A local profile represents the
+     * AS2-enabled Transfer Family server organization or party.</p> </li> <li>
+     * <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile
+     * represents a remote organization, external to Transfer Family.</p> </li> </ul>
      */
     inline CreateProfileRequest& WithProfileType(ProfileType&& value) { SetProfileType(std::move(value)); return *this;}
 
@@ -259,16 +271,16 @@ namespace Model
   private:
 
     Aws::String m_as2Id;
-    bool m_as2IdHasBeenSet;
+    bool m_as2IdHasBeenSet = false;
 
     ProfileType m_profileType;
-    bool m_profileTypeHasBeenSet;
+    bool m_profileTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_certificateIds;
-    bool m_certificateIdsHasBeenSet;
+    bool m_certificateIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

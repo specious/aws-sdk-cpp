@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/WorkflowRunStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API WorkflowRunStatistics
+  class WorkflowRunStatistics
   {
   public:
-    WorkflowRunStatistics();
-    WorkflowRunStatistics(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowRunStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API WorkflowRunStatistics();
+    AWS_GLUE_API WorkflowRunStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API WorkflowRunStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,28 +206,28 @@ namespace Model
   private:
 
     int m_totalActions;
-    bool m_totalActionsHasBeenSet;
+    bool m_totalActionsHasBeenSet = false;
 
     int m_timeoutActions;
-    bool m_timeoutActionsHasBeenSet;
+    bool m_timeoutActionsHasBeenSet = false;
 
     int m_failedActions;
-    bool m_failedActionsHasBeenSet;
+    bool m_failedActionsHasBeenSet = false;
 
     int m_stoppedActions;
-    bool m_stoppedActionsHasBeenSet;
+    bool m_stoppedActionsHasBeenSet = false;
 
     int m_succeededActions;
-    bool m_succeededActionsHasBeenSet;
+    bool m_succeededActionsHasBeenSet = false;
 
     int m_runningActions;
-    bool m_runningActionsHasBeenSet;
+    bool m_runningActionsHasBeenSet = false;
 
     int m_erroredActions;
-    bool m_erroredActionsHasBeenSet;
+    bool m_erroredActionsHasBeenSet = false;
 
     int m_waitingActions;
-    bool m_waitingActionsHasBeenSet;
+    bool m_waitingActionsHasBeenSet = false;
   };
 
 } // namespace Model

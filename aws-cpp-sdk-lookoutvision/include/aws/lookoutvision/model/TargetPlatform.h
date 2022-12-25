@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/TargetPlatform">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API TargetPlatform
+  class TargetPlatform
   {
   public:
-    TargetPlatform();
-    TargetPlatform(Aws::Utils::Json::JsonView jsonValue);
-    TargetPlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API TargetPlatform();
+    AWS_LOOKOUTFORVISION_API TargetPlatform(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API TargetPlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,13 +213,13 @@ namespace Model
   private:
 
     TargetPlatformOs m_os;
-    bool m_osHasBeenSet;
+    bool m_osHasBeenSet = false;
 
     TargetPlatformArch m_arch;
-    bool m_archHasBeenSet;
+    bool m_archHasBeenSet = false;
 
     TargetPlatformAccelerator m_accelerator;
-    bool m_acceleratorHasBeenSet;
+    bool m_acceleratorHasBeenSet = false;
   };
 
 } // namespace Model

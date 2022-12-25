@@ -35,12 +35,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DescribeIndexResult
+  class DescribeIndexResult
   {
   public:
-    DescribeIndexResult();
-    DescribeIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeIndexResult();
+    AWS_KENDRA_API DescribeIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -593,31 +593,36 @@ namespace Model
 
     /**
      * <p>Whether you have enabled the configuration for fetching access levels of
-     * groups and users from an Amazon Web Services Single Sign On identity source.</p>
+     * groups and users from an IAM Identity Center (successor to Single Sign-On)
+     * identity source.</p>
      */
     inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
 
     /**
      * <p>Whether you have enabled the configuration for fetching access levels of
-     * groups and users from an Amazon Web Services Single Sign On identity source.</p>
+     * groups and users from an IAM Identity Center (successor to Single Sign-On)
+     * identity source.</p>
      */
     inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfiguration = value; }
 
     /**
      * <p>Whether you have enabled the configuration for fetching access levels of
-     * groups and users from an Amazon Web Services Single Sign On identity source.</p>
+     * groups and users from an IAM Identity Center (successor to Single Sign-On)
+     * identity source.</p>
      */
     inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfiguration = std::move(value); }
 
     /**
      * <p>Whether you have enabled the configuration for fetching access levels of
-     * groups and users from an Amazon Web Services Single Sign On identity source.</p>
+     * groups and users from an IAM Identity Center (successor to Single Sign-On)
+     * identity source.</p>
      */
     inline DescribeIndexResult& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
 
     /**
      * <p>Whether you have enabled the configuration for fetching access levels of
-     * groups and users from an Amazon Web Services Single Sign On identity source.</p>
+     * groups and users from an IAM Identity Center (successor to Single Sign-On)
+     * identity source.</p>
      */
     inline DescribeIndexResult& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
 

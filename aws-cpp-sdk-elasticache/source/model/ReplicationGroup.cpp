@@ -56,7 +56,11 @@ ReplicationGroup::ReplicationGroup() :
     m_dataTiering(DataTieringStatus::NOT_SET),
     m_dataTieringHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false)
+    m_autoMinorVersionUpgradeHasBeenSet(false),
+    m_networkType(NetworkType::NOT_SET),
+    m_networkTypeHasBeenSet(false),
+    m_ipDiscovery(IpDiscovery::NOT_SET),
+    m_ipDiscoveryHasBeenSet(false)
 {
 }
 
@@ -96,7 +100,11 @@ ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode) :
     m_dataTiering(DataTieringStatus::NOT_SET),
     m_dataTieringHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false)
+    m_autoMinorVersionUpgradeHasBeenSet(false),
+    m_networkType(NetworkType::NOT_SET),
+    m_networkTypeHasBeenSet(false),
+    m_ipDiscovery(IpDiscovery::NOT_SET),
+    m_ipDiscoveryHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -218,7 +226,7 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
     XmlNode authTokenLastModifiedDateNode = resultNode.FirstChild("AuthTokenLastModifiedDate");
     if(!authTokenLastModifiedDateNode.IsNull())
     {
-      m_authTokenLastModifiedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenLastModifiedDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_authTokenLastModifiedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenLastModifiedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_authTokenLastModifiedDateHasBeenSet = true;
     }
     XmlNode transitEncryptionEnabledNode = resultNode.FirstChild("TransitEncryptionEnabled");
@@ -284,7 +292,7 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
     XmlNode replicationGroupCreateTimeNode = resultNode.FirstChild("ReplicationGroupCreateTime");
     if(!replicationGroupCreateTimeNode.IsNull())
     {
-      m_replicationGroupCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_replicationGroupCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_replicationGroupCreateTimeHasBeenSet = true;
     }
     XmlNode dataTieringNode = resultNode.FirstChild("DataTiering");
@@ -298,6 +306,18 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
     {
       m_autoMinorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoMinorVersionUpgradeNode.GetText()).c_str()).c_str());
       m_autoMinorVersionUpgradeHasBeenSet = true;
+    }
+    XmlNode networkTypeNode = resultNode.FirstChild("NetworkType");
+    if(!networkTypeNode.IsNull())
+    {
+      m_networkType = NetworkTypeMapper::GetNetworkTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText()).c_str()).c_str());
+      m_networkTypeHasBeenSet = true;
+    }
+    XmlNode ipDiscoveryNode = resultNode.FirstChild("IpDiscovery");
+    if(!ipDiscoveryNode.IsNull())
+    {
+      m_ipDiscovery = IpDiscoveryMapper::GetIpDiscoveryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipDiscoveryNode.GetText()).c_str()).c_str());
+      m_ipDiscoveryHasBeenSet = true;
     }
   }
 
@@ -404,7 +424,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_authTokenLastModifiedDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AuthTokenLastModifiedDate=" << StringUtils::URLEncode(m_authTokenLastModifiedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".AuthTokenLastModifiedDate=" << StringUtils::URLEncode(m_authTokenLastModifiedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_transitEncryptionEnabledHasBeenSet)
@@ -458,7 +478,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_replicationGroupCreateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReplicationGroupCreateTime=" << StringUtils::URLEncode(m_replicationGroupCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ReplicationGroupCreateTime=" << StringUtils::URLEncode(m_replicationGroupCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_dataTieringHasBeenSet)
@@ -469,6 +489,16 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkType=" << NetworkTypeMapper::GetNameForNetworkType(m_networkType) << "&";
+  }
+
+  if(m_ipDiscoveryHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
   }
 
 }
@@ -557,7 +587,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_authTokenLastModifiedDateHasBeenSet)
   {
-      oStream << location << ".AuthTokenLastModifiedDate=" << StringUtils::URLEncode(m_authTokenLastModifiedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".AuthTokenLastModifiedDate=" << StringUtils::URLEncode(m_authTokenLastModifiedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_transitEncryptionEnabledHasBeenSet)
   {
@@ -603,7 +633,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_replicationGroupCreateTimeHasBeenSet)
   {
-      oStream << location << ".ReplicationGroupCreateTime=" << StringUtils::URLEncode(m_replicationGroupCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ReplicationGroupCreateTime=" << StringUtils::URLEncode(m_replicationGroupCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_dataTieringHasBeenSet)
   {
@@ -612,6 +642,14 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
       oStream << location << ".AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
+  }
+  if(m_networkTypeHasBeenSet)
+  {
+      oStream << location << ".NetworkType=" << NetworkTypeMapper::GetNameForNetworkType(m_networkType) << "&";
+  }
+  if(m_ipDiscoveryHasBeenSet)
+  {
+      oStream << location << ".IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
   }
 }
 

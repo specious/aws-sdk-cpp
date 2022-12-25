@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/GroupSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API GroupSummary
+  class GroupSummary
   {
   public:
-    GroupSummary();
-    GroupSummary(Aws::Utils::Json::JsonView jsonValue);
-    GroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API GroupSummary();
+    AWS_SYNTHETICS_API GroupSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API GroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

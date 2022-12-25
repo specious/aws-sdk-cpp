@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ScheduledSplitConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API ScheduledSplitConfig
+  class ScheduledSplitConfig
   {
   public:
-    ScheduledSplitConfig();
-    ScheduledSplitConfig(Aws::Utils::Json::JsonView jsonValue);
-    ScheduledSplitConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API ScheduledSplitConfig();
+    AWS_CLOUDWATCHEVIDENTLY_API ScheduledSplitConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API ScheduledSplitConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -292,13 +292,13 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, long long> m_groupWeights;
-    bool m_groupWeightsHasBeenSet;
+    bool m_groupWeightsHasBeenSet = false;
 
     Aws::Vector<SegmentOverride> m_segmentOverrides;
-    bool m_segmentOverridesHasBeenSet;
+    bool m_segmentOverridesHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

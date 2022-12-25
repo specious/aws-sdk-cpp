@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2VpcPeeringConnectionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionDetails
+  class AwsEc2VpcPeeringConnectionDetails
   {
   public:
-    AwsEc2VpcPeeringConnectionDetails();
-    AwsEc2VpcPeeringConnectionDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2VpcPeeringConnectionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionDetails();
+    AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -218,19 +218,19 @@ namespace Model
   private:
 
     AwsEc2VpcPeeringConnectionVpcInfoDetails m_accepterVpcInfo;
-    bool m_accepterVpcInfoHasBeenSet;
+    bool m_accepterVpcInfoHasBeenSet = false;
 
     Aws::String m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     AwsEc2VpcPeeringConnectionVpcInfoDetails m_requesterVpcInfo;
-    bool m_requesterVpcInfoHasBeenSet;
+    bool m_requesterVpcInfoHasBeenSet = false;
 
     AwsEc2VpcPeeringConnectionStatusDetails m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
+    bool m_vpcPeeringConnectionIdHasBeenSet = false;
   };
 
 } // namespace Model

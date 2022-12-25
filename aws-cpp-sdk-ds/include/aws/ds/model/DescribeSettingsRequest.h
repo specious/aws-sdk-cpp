@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_DIRECTORYSERVICE_API DescribeSettingsRequest : public DirectoryServiceRequest
+  class DescribeSettingsRequest : public DirectoryServiceRequest
   {
   public:
-    DescribeSettingsRequest();
+    AWS_DIRECTORYSERVICE_API DescribeSettingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeSettings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DIRECTORYSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     DirectoryConfigurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DriftCheckModelQuality">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DriftCheckModelQuality
+  class DriftCheckModelQuality
   {
   public:
-    DriftCheckModelQuality();
-    DriftCheckModelQuality(Aws::Utils::Json::JsonView jsonValue);
-    DriftCheckModelQuality& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DriftCheckModelQuality();
+    AWS_SAGEMAKER_API DriftCheckModelQuality(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DriftCheckModelQuality& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     MetricsSource m_statistics;
-    bool m_statisticsHasBeenSet;
+    bool m_statisticsHasBeenSet = false;
 
     MetricsSource m_constraints;
-    bool m_constraintsHasBeenSet;
+    bool m_constraintsHasBeenSet = false;
   };
 
 } // namespace Model

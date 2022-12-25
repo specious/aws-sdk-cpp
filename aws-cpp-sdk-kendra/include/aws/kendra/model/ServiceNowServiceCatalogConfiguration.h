@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ServiceNowServiceCatalogConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ServiceNowServiceCatalogConfiguration
+  class ServiceNowServiceCatalogConfiguration
   {
   public:
-    ServiceNowServiceCatalogConfiguration();
-    ServiceNowServiceCatalogConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ServiceNowServiceCatalogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ServiceNowServiceCatalogConfiguration();
+    AWS_KENDRA_API ServiceNowServiceCatalogConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ServiceNowServiceCatalogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -424,22 +424,22 @@ namespace Model
   private:
 
     bool m_crawlAttachments;
-    bool m_crawlAttachmentsHasBeenSet;
+    bool m_crawlAttachmentsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includeAttachmentFilePatterns;
-    bool m_includeAttachmentFilePatternsHasBeenSet;
+    bool m_includeAttachmentFilePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeAttachmentFilePatterns;
-    bool m_excludeAttachmentFilePatternsHasBeenSet;
+    bool m_excludeAttachmentFilePatternsHasBeenSet = false;
 
     Aws::String m_documentDataFieldName;
-    bool m_documentDataFieldNameHasBeenSet;
+    bool m_documentDataFieldNameHasBeenSet = false;
 
     Aws::String m_documentTitleFieldName;
-    bool m_documentTitleFieldNameHasBeenSet;
+    bool m_documentTitleFieldNameHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

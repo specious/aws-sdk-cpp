@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ConnectPeer">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API ConnectPeer
+  class ConnectPeer
   {
   public:
-    ConnectPeer();
-    ConnectPeer(Aws::Utils::Json::JsonView jsonValue);
-    ConnectPeer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API ConnectPeer();
+    AWS_NETWORKMANAGER_API ConnectPeer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API ConnectPeer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -342,28 +342,28 @@ namespace Model
   private:
 
     Aws::String m_coreNetworkId;
-    bool m_coreNetworkIdHasBeenSet;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     Aws::String m_connectAttachmentId;
-    bool m_connectAttachmentIdHasBeenSet;
+    bool m_connectAttachmentIdHasBeenSet = false;
 
     Aws::String m_connectPeerId;
-    bool m_connectPeerIdHasBeenSet;
+    bool m_connectPeerIdHasBeenSet = false;
 
     Aws::String m_edgeLocation;
-    bool m_edgeLocationHasBeenSet;
+    bool m_edgeLocationHasBeenSet = false;
 
     ConnectPeerState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ConnectPeerConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

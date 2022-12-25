@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListedExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API ListedExecution
+  class ListedExecution
   {
   public:
-    ListedExecution();
-    ListedExecution(Aws::Utils::Json::JsonView jsonValue);
-    ListedExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API ListedExecution();
+    AWS_TRANSFER_API ListedExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API ListedExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_executionId;
-    bool m_executionIdHasBeenSet;
+    bool m_executionIdHasBeenSet = false;
 
     FileLocation m_initialFileLocation;
-    bool m_initialFileLocationHasBeenSet;
+    bool m_initialFileLocationHasBeenSet = false;
 
     ServiceMetadata m_serviceMetadata;
-    bool m_serviceMetadataHasBeenSet;
+    bool m_serviceMetadataHasBeenSet = false;
 
     ExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/EndpointDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API EndpointDescription
+  class EndpointDescription
   {
   public:
-    EndpointDescription();
-    EndpointDescription(Aws::Utils::Json::JsonView jsonValue);
-    EndpointDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API EndpointDescription();
+    AWS_GLOBALACCELERATOR_API EndpointDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API EndpointDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -304,19 +304,19 @@ namespace Model
   private:
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     int m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
 
     HealthState m_healthState;
-    bool m_healthStateHasBeenSet;
+    bool m_healthStateHasBeenSet = false;
 
     Aws::String m_healthReason;
-    bool m_healthReasonHasBeenSet;
+    bool m_healthReasonHasBeenSet = false;
 
     bool m_clientIPPreservationEnabled;
-    bool m_clientIPPreservationEnabledHasBeenSet;
+    bool m_clientIPPreservationEnabledHasBeenSet = false;
   };
 
 } // namespace Model

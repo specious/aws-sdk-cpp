@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Projection">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API Projection
+  class Projection
   {
   public:
-    Projection();
-    Projection(Aws::Utils::Json::JsonView jsonValue);
-    Projection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API Projection();
+    AWS_DYNAMODB_API Projection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Projection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,10 +186,10 @@ namespace Model
   private:
 
     ProjectionType m_projectionType;
-    bool m_projectionTypeHasBeenSet;
+    bool m_projectionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nonKeyAttributes;
-    bool m_nonKeyAttributesHasBeenSet;
+    bool m_nonKeyAttributesHasBeenSet = false;
   };
 
 } // namespace Model

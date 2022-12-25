@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DefaultConditionalBranch">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API DefaultConditionalBranch
+  class DefaultConditionalBranch
   {
   public:
-    DefaultConditionalBranch();
-    DefaultConditionalBranch(Aws::Utils::Json::JsonView jsonValue);
-    DefaultConditionalBranch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API DefaultConditionalBranch();
+    AWS_LEXMODELSV2_API DefaultConditionalBranch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API DefaultConditionalBranch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     DialogState m_nextStep;
-    bool m_nextStepHasBeenSet;
+    bool m_nextStepHasBeenSet = false;
 
     ResponseSpecification m_response;
-    bool m_responseHasBeenSet;
+    bool m_responseHasBeenSet = false;
   };
 
 } // namespace Model

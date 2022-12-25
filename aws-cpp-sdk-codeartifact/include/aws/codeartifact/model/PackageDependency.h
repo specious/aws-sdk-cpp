@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PackageDependency">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API PackageDependency
+  class PackageDependency
   {
   public:
-    PackageDependency();
-    PackageDependency(Aws::Utils::Json::JsonView jsonValue);
-    PackageDependency& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API PackageDependency();
+    AWS_CODEARTIFACT_API PackageDependency(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API PackageDependency& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -291,16 +291,16 @@ namespace Model
   private:
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_package;
-    bool m_packageHasBeenSet;
+    bool m_packageHasBeenSet = false;
 
     Aws::String m_dependencyType;
-    bool m_dependencyTypeHasBeenSet;
+    bool m_dependencyTypeHasBeenSet = false;
 
     Aws::String m_versionRequirement;
-    bool m_versionRequirementHasBeenSet;
+    bool m_versionRequirementHasBeenSet = false;
   };
 
 } // namespace Model

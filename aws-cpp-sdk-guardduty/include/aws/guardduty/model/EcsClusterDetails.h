@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EcsClusterDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API EcsClusterDetails
+  class EcsClusterDetails
   {
   public:
-    EcsClusterDetails();
-    EcsClusterDetails(Aws::Utils::Json::JsonView jsonValue);
-    EcsClusterDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API EcsClusterDetails();
+    AWS_GUARDDUTY_API EcsClusterDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API EcsClusterDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -305,28 +305,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_activeServicesCount;
-    bool m_activeServicesCountHasBeenSet;
+    bool m_activeServicesCountHasBeenSet = false;
 
     int m_registeredContainerInstancesCount;
-    bool m_registeredContainerInstancesCountHasBeenSet;
+    bool m_registeredContainerInstancesCountHasBeenSet = false;
 
     int m_runningTasksCount;
-    bool m_runningTasksCountHasBeenSet;
+    bool m_runningTasksCountHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     EcsTaskDetails m_taskDetails;
-    bool m_taskDetailsHasBeenSet;
+    bool m_taskDetailsHasBeenSet = false;
   };
 
 } // namespace Model

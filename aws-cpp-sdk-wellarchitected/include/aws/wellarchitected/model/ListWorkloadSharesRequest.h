@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListWorkloadSharesInput">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API ListWorkloadSharesRequest : public WellArchitectedRequest
+  class ListWorkloadSharesRequest : public WellArchitectedRequest
   {
   public:
-    ListWorkloadSharesRequest();
+    AWS_WELLARCHITECTED_API ListWorkloadSharesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListWorkloadShares"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_WELLARCHITECTED_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     
@@ -68,50 +68,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the workload is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the workload is shared.</p>
      */
     inline const Aws::String& GetSharedWithPrefix() const{ return m_sharedWithPrefix; }
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the workload is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the workload is shared.</p>
      */
     inline bool SharedWithPrefixHasBeenSet() const { return m_sharedWithPrefixHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the workload is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the workload is shared.</p>
      */
     inline void SetSharedWithPrefix(const Aws::String& value) { m_sharedWithPrefixHasBeenSet = true; m_sharedWithPrefix = value; }
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the workload is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the workload is shared.</p>
      */
     inline void SetSharedWithPrefix(Aws::String&& value) { m_sharedWithPrefixHasBeenSet = true; m_sharedWithPrefix = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the workload is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the workload is shared.</p>
      */
     inline void SetSharedWithPrefix(const char* value) { m_sharedWithPrefixHasBeenSet = true; m_sharedWithPrefix.assign(value); }
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the workload is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the workload is shared.</p>
      */
     inline ListWorkloadSharesRequest& WithSharedWithPrefix(const Aws::String& value) { SetSharedWithPrefix(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the workload is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the workload is shared.</p>
      */
     inline ListWorkloadSharesRequest& WithSharedWithPrefix(Aws::String&& value) { SetSharedWithPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID or IAM role with which the workload is
-     * shared.</p>
+     * <p>The Amazon Web Services account ID, IAM role, organization ID, or
+     * organizational unit (OU) ID with which the workload is shared.</p>
      */
     inline ListWorkloadSharesRequest& WithSharedWithPrefix(const char* value) { SetSharedWithPrefix(value); return *this;}
 
@@ -183,19 +183,19 @@ namespace Model
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_sharedWithPrefix;
-    bool m_sharedWithPrefixHasBeenSet;
+    bool m_sharedWithPrefixHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     ShareStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

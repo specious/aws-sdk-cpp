@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/Extensions">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API Extensions
+  class Extensions
   {
   public:
-    Extensions();
-    Extensions(Aws::Utils::Json::JsonView jsonValue);
-    Extensions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API Extensions();
+    AWS_ACMPCA_API Extensions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Extensions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -332,19 +332,19 @@ namespace Model
   private:
 
     Aws::Vector<PolicyInformation> m_certificatePolicies;
-    bool m_certificatePoliciesHasBeenSet;
+    bool m_certificatePoliciesHasBeenSet = false;
 
     Aws::Vector<ExtendedKeyUsage> m_extendedKeyUsage;
-    bool m_extendedKeyUsageHasBeenSet;
+    bool m_extendedKeyUsageHasBeenSet = false;
 
     KeyUsage m_keyUsage;
-    bool m_keyUsageHasBeenSet;
+    bool m_keyUsageHasBeenSet = false;
 
     Aws::Vector<GeneralName> m_subjectAlternativeNames;
-    bool m_subjectAlternativeNamesHasBeenSet;
+    bool m_subjectAlternativeNamesHasBeenSet = false;
 
     Aws::Vector<CustomExtension> m_customExtensions;
-    bool m_customExtensionsHasBeenSet;
+    bool m_customExtensionsHasBeenSet = false;
   };
 
 } // namespace Model

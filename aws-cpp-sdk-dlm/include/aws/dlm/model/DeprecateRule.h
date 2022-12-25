@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/DeprecateRule">AWS
    * API Reference</a></p>
    */
-  class AWS_DLM_API DeprecateRule
+  class DeprecateRule
   {
   public:
-    DeprecateRule();
-    DeprecateRule(Aws::Utils::Json::JsonView jsonValue);
-    DeprecateRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API DeprecateRule();
+    AWS_DLM_API DeprecateRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API DeprecateRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     RetentionIntervalUnitValues m_intervalUnit;
-    bool m_intervalUnitHasBeenSet;
+    bool m_intervalUnitHasBeenSet = false;
   };
 
 } // namespace Model

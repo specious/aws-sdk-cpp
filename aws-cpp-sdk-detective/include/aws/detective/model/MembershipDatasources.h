@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/MembershipDatasources">AWS
    * API Reference</a></p>
    */
-  class AWS_DETECTIVE_API MembershipDatasources
+  class MembershipDatasources
   {
   public:
-    MembershipDatasources();
-    MembershipDatasources(Aws::Utils::Json::JsonView jsonValue);
-    MembershipDatasources& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DETECTIVE_API MembershipDatasources();
+    AWS_DETECTIVE_API MembershipDatasources(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API MembershipDatasources& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_graphArn;
-    bool m_graphArnHasBeenSet;
+    bool m_graphArnHasBeenSet = false;
 
     Aws::Map<DatasourcePackage, Aws::Map<DatasourcePackageIngestState, TimestampForCollection>> m_datasourcePackageIngestHistory;
-    bool m_datasourcePackageIngestHistoryHasBeenSet;
+    bool m_datasourcePackageIngestHistoryHasBeenSet = false;
   };
 
 } // namespace Model

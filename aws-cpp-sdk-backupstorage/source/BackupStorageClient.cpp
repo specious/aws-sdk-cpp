@@ -16,10 +16,11 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/backupstorage/BackupStorageClient.h>
-#include <aws/backupstorage/BackupStorageEndpoint.h>
 #include <aws/backupstorage/BackupStorageErrorMarshaller.h>
+#include <aws/backupstorage/BackupStorageEndpointProvider.h>
 #include <aws/backupstorage/model/DeleteObjectRequest.h>
 #include <aws/backupstorage/model/GetChunkRequest.h>
 #include <aws/backupstorage/model/GetObjectMetadataRequest.h>
@@ -37,74 +38,129 @@ using namespace Aws::BackupStorage;
 using namespace Aws::BackupStorage::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-static const char* SERVICE_NAME = "backup-storage";
-static const char* ALLOCATION_TAG = "BackupStorageClient";
+const char* BackupStorageClient::SERVICE_NAME = "backup-storage";
+const char* BackupStorageClient::ALLOCATION_TAG = "BackupStorageClient";
 
-
-BackupStorageClient::BackupStorageClient(const Client::ClientConfiguration& clientConfiguration) :
+BackupStorageClient::BackupStorageClient(const BackupStorage::BackupStorageClientConfiguration& clientConfiguration,
+                                         std::shared_ptr<BackupStorageEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
-BackupStorageClient::BackupStorageClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+BackupStorageClient::BackupStorageClient(const AWSCredentials& credentials,
+                                         std::shared_ptr<BackupStorageEndpointProviderBase> endpointProvider,
+                                         const BackupStorage::BackupStorageClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 BackupStorageClient::BackupStorageClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                         std::shared_ptr<BackupStorageEndpointProviderBase> endpointProvider,
+                                         const BackupStorage::BackupStorageClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
+    /* Legacy constructors due deprecation */
+  BackupStorageClient::BackupStorageClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<BackupStorageEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
+}
+
+BackupStorageClient::BackupStorageClient(const AWSCredentials& credentials,
+                                         const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<BackupStorageEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
+}
+
+BackupStorageClient::BackupStorageClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                         const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<BackupStorageEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
+}
+
+    /* End of legacy constructors due deprecation */
 BackupStorageClient::~BackupStorageClient()
 {
 }
 
-void BackupStorageClient::init(const Client::ClientConfiguration& config)
+std::shared_ptr<BackupStorageEndpointProviderBase>& BackupStorageClient::accessEndpointProvider()
 {
-  SetServiceClientName("BackupStorage");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + BackupStorageEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  return m_endpointProvider;
+}
+
+void BackupStorageClient::init(const BackupStorage::BackupStorageClientConfiguration& config)
+{
+  AWSClient::SetServiceClientName("BackupStorage");
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
 }
 
 void BackupStorageClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
 DeleteObjectOutcome BackupStorageClient::DeleteObject(const DeleteObjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupJobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteObject", "Required field: BackupJobId, is not set");
@@ -115,12 +171,13 @@ DeleteObjectOutcome BackupStorageClient::DeleteObject(const DeleteObjectRequest&
     AWS_LOGSTREAM_ERROR("DeleteObject", "Required field: ObjectName, is not set");
     return DeleteObjectOutcome(Aws::Client::AWSError<BackupStorageErrors>(BackupStorageErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backup-jobs/");
-  uri.AddPathSegment(request.GetBackupJobId());
-  uri.AddPathSegments("/object/");
-  uri.AddPathSegment(request.GetObjectName());
-  return DeleteObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backup-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupJobId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/object/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectName());
+  return DeleteObjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteObjectOutcomeCallable BackupStorageClient::DeleteObjectCallable(const DeleteObjectRequest& request) const
@@ -133,16 +190,15 @@ DeleteObjectOutcomeCallable BackupStorageClient::DeleteObjectCallable(const Dele
 
 void BackupStorageClient::DeleteObjectAsync(const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteObjectAsyncHelper( request, handler, context ); } );
-}
-
-void BackupStorageClient::DeleteObjectAsyncHelper(const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteObject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteObject(request), context);
+    } );
 }
 
 GetChunkOutcome BackupStorageClient::GetChunk(const GetChunkRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChunk, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StorageJobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetChunk", "Required field: StorageJobId, is not set");
@@ -153,12 +209,13 @@ GetChunkOutcome BackupStorageClient::GetChunk(const GetChunkRequest& request) co
     AWS_LOGSTREAM_ERROR("GetChunk", "Required field: ChunkToken, is not set");
     return GetChunkOutcome(Aws::Client::AWSError<BackupStorageErrors>(BackupStorageErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChunkToken]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restore-jobs/");
-  uri.AddPathSegment(request.GetStorageJobId());
-  uri.AddPathSegments("/chunk/");
-  uri.AddPathSegment(request.GetChunkToken());
-  return GetChunkOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetChunk, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/restore-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageJobId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/chunk/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChunkToken());
+  return GetChunkOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetChunkOutcomeCallable BackupStorageClient::GetChunkCallable(const GetChunkRequest& request) const
@@ -171,16 +228,15 @@ GetChunkOutcomeCallable BackupStorageClient::GetChunkCallable(const GetChunkRequ
 
 void BackupStorageClient::GetChunkAsync(const GetChunkRequest& request, const GetChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChunkAsyncHelper( request, handler, context ); } );
-}
-
-void BackupStorageClient::GetChunkAsyncHelper(const GetChunkRequest& request, const GetChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetChunk(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetChunk(request), context);
+    } );
 }
 
 GetObjectMetadataOutcome BackupStorageClient::GetObjectMetadata(const GetObjectMetadataRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StorageJobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetObjectMetadata", "Required field: StorageJobId, is not set");
@@ -191,13 +247,14 @@ GetObjectMetadataOutcome BackupStorageClient::GetObjectMetadata(const GetObjectM
     AWS_LOGSTREAM_ERROR("GetObjectMetadata", "Required field: ObjectToken, is not set");
     return GetObjectMetadataOutcome(Aws::Client::AWSError<BackupStorageErrors>(BackupStorageErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectToken]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restore-jobs/");
-  uri.AddPathSegment(request.GetStorageJobId());
-  uri.AddPathSegments("/object/");
-  uri.AddPathSegment(request.GetObjectToken());
-  uri.AddPathSegments("/metadata");
-  return GetObjectMetadataOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetObjectMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/restore-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageJobId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/object/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectToken());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
+  return GetObjectMetadataOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetObjectMetadataOutcomeCallable BackupStorageClient::GetObjectMetadataCallable(const GetObjectMetadataRequest& request) const
@@ -210,16 +267,15 @@ GetObjectMetadataOutcomeCallable BackupStorageClient::GetObjectMetadataCallable(
 
 void BackupStorageClient::GetObjectMetadataAsync(const GetObjectMetadataRequest& request, const GetObjectMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetObjectMetadataAsyncHelper( request, handler, context ); } );
-}
-
-void BackupStorageClient::GetObjectMetadataAsyncHelper(const GetObjectMetadataRequest& request, const GetObjectMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetObjectMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetObjectMetadata(request), context);
+    } );
 }
 
 ListChunksOutcome BackupStorageClient::ListChunks(const ListChunksRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChunks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StorageJobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListChunks", "Required field: StorageJobId, is not set");
@@ -230,13 +286,14 @@ ListChunksOutcome BackupStorageClient::ListChunks(const ListChunksRequest& reque
     AWS_LOGSTREAM_ERROR("ListChunks", "Required field: ObjectToken, is not set");
     return ListChunksOutcome(Aws::Client::AWSError<BackupStorageErrors>(BackupStorageErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectToken]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restore-jobs/");
-  uri.AddPathSegment(request.GetStorageJobId());
-  uri.AddPathSegments("/chunks/");
-  uri.AddPathSegment(request.GetObjectToken());
-  uri.AddPathSegments("/list");
-  return ListChunksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChunks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/restore-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageJobId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/chunks/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectToken());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/list");
+  return ListChunksOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChunksOutcomeCallable BackupStorageClient::ListChunksCallable(const ListChunksRequest& request) const
@@ -249,26 +306,26 @@ ListChunksOutcomeCallable BackupStorageClient::ListChunksCallable(const ListChun
 
 void BackupStorageClient::ListChunksAsync(const ListChunksRequest& request, const ListChunksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChunksAsyncHelper( request, handler, context ); } );
-}
-
-void BackupStorageClient::ListChunksAsyncHelper(const ListChunksRequest& request, const ListChunksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChunks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChunks(request), context);
+    } );
 }
 
 ListObjectsOutcome BackupStorageClient::ListObjects(const ListObjectsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListObjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StorageJobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListObjects", "Required field: StorageJobId, is not set");
     return ListObjectsOutcome(Aws::Client::AWSError<BackupStorageErrors>(BackupStorageErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StorageJobId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restore-jobs/");
-  uri.AddPathSegment(request.GetStorageJobId());
-  uri.AddPathSegments("/objects/list");
-  return ListObjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListObjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/restore-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageJobId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/objects/list");
+  return ListObjectsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListObjectsOutcomeCallable BackupStorageClient::ListObjectsCallable(const ListObjectsRequest& request) const
@@ -281,16 +338,15 @@ ListObjectsOutcomeCallable BackupStorageClient::ListObjectsCallable(const ListOb
 
 void BackupStorageClient::ListObjectsAsync(const ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListObjectsAsyncHelper( request, handler, context ); } );
-}
-
-void BackupStorageClient::ListObjectsAsyncHelper(const ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListObjects(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListObjects(request), context);
+    } );
 }
 
 NotifyObjectCompleteOutcome BackupStorageClient::NotifyObjectComplete(const NotifyObjectCompleteRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, NotifyObjectComplete, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupJobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("NotifyObjectComplete", "Required field: BackupJobId, is not set");
@@ -311,13 +367,14 @@ NotifyObjectCompleteOutcome BackupStorageClient::NotifyObjectComplete(const Noti
     AWS_LOGSTREAM_ERROR("NotifyObjectComplete", "Required field: ObjectChecksumAlgorithm, is not set");
     return NotifyObjectCompleteOutcome(Aws::Client::AWSError<BackupStorageErrors>(BackupStorageErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectChecksumAlgorithm]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backup-jobs/");
-  uri.AddPathSegment(request.GetBackupJobId());
-  uri.AddPathSegments("/object/");
-  uri.AddPathSegment(request.GetUploadId());
-  uri.AddPathSegments("/complete");
-  return NotifyObjectCompleteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, NotifyObjectComplete, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backup-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupJobId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/object/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUploadId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/complete");
+  return NotifyObjectCompleteOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 NotifyObjectCompleteOutcomeCallable BackupStorageClient::NotifyObjectCompleteCallable(const NotifyObjectCompleteRequest& request) const
@@ -330,16 +387,15 @@ NotifyObjectCompleteOutcomeCallable BackupStorageClient::NotifyObjectCompleteCal
 
 void BackupStorageClient::NotifyObjectCompleteAsync(const NotifyObjectCompleteRequest& request, const NotifyObjectCompleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->NotifyObjectCompleteAsyncHelper( request, handler, context ); } );
-}
-
-void BackupStorageClient::NotifyObjectCompleteAsyncHelper(const NotifyObjectCompleteRequest& request, const NotifyObjectCompleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, NotifyObjectComplete(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, NotifyObjectComplete(request), context);
+    } );
 }
 
 PutChunkOutcome BackupStorageClient::PutChunk(const PutChunkRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutChunk, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupJobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutChunk", "Required field: BackupJobId, is not set");
@@ -370,13 +426,14 @@ PutChunkOutcome BackupStorageClient::PutChunk(const PutChunkRequest& request) co
     AWS_LOGSTREAM_ERROR("PutChunk", "Required field: ChecksumAlgorithm, is not set");
     return PutChunkOutcome(Aws::Client::AWSError<BackupStorageErrors>(BackupStorageErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChecksumAlgorithm]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backup-jobs/");
-  uri.AddPathSegment(request.GetBackupJobId());
-  uri.AddPathSegments("/chunk/");
-  uri.AddPathSegment(request.GetUploadId());
-  uri.AddPathSegment(request.GetChunkIndex());
-  return PutChunkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutChunk, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backup-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupJobId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/chunk/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUploadId());
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChunkIndex());
+  return PutChunkOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutChunkOutcomeCallable BackupStorageClient::PutChunkCallable(const PutChunkRequest& request) const
@@ -389,16 +446,15 @@ PutChunkOutcomeCallable BackupStorageClient::PutChunkCallable(const PutChunkRequ
 
 void BackupStorageClient::PutChunkAsync(const PutChunkRequest& request, const PutChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutChunkAsyncHelper( request, handler, context ); } );
-}
-
-void BackupStorageClient::PutChunkAsyncHelper(const PutChunkRequest& request, const PutChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutChunk(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutChunk(request), context);
+    } );
 }
 
 PutObjectOutcome BackupStorageClient::PutObject(const PutObjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupJobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutObject", "Required field: BackupJobId, is not set");
@@ -409,13 +465,14 @@ PutObjectOutcome BackupStorageClient::PutObject(const PutObjectRequest& request)
     AWS_LOGSTREAM_ERROR("PutObject", "Required field: ObjectName, is not set");
     return PutObjectOutcome(Aws::Client::AWSError<BackupStorageErrors>(BackupStorageErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backup-jobs/");
-  uri.AddPathSegment(request.GetBackupJobId());
-  uri.AddPathSegments("/object/");
-  uri.AddPathSegment(request.GetObjectName());
-  uri.AddPathSegments("/put-object");
-  return PutObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backup-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupJobId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/object/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/put-object");
+  return PutObjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutObjectOutcomeCallable BackupStorageClient::PutObjectCallable(const PutObjectRequest& request) const
@@ -428,16 +485,15 @@ PutObjectOutcomeCallable BackupStorageClient::PutObjectCallable(const PutObjectR
 
 void BackupStorageClient::PutObjectAsync(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutObjectAsyncHelper( request, handler, context ); } );
-}
-
-void BackupStorageClient::PutObjectAsyncHelper(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutObject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutObject(request), context);
+    } );
 }
 
 StartObjectOutcome BackupStorageClient::StartObject(const StartObjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupJobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartObject", "Required field: BackupJobId, is not set");
@@ -448,12 +504,13 @@ StartObjectOutcome BackupStorageClient::StartObject(const StartObjectRequest& re
     AWS_LOGSTREAM_ERROR("StartObject", "Required field: ObjectName, is not set");
     return StartObjectOutcome(Aws::Client::AWSError<BackupStorageErrors>(BackupStorageErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backup-jobs/");
-  uri.AddPathSegment(request.GetBackupJobId());
-  uri.AddPathSegments("/object/");
-  uri.AddPathSegment(request.GetObjectName());
-  return StartObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backup-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupJobId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/object/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectName());
+  return StartObjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartObjectOutcomeCallable BackupStorageClient::StartObjectCallable(const StartObjectRequest& request) const
@@ -466,11 +523,9 @@ StartObjectOutcomeCallable BackupStorageClient::StartObjectCallable(const StartO
 
 void BackupStorageClient::StartObjectAsync(const StartObjectRequest& request, const StartObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartObjectAsyncHelper( request, handler, context ); } );
-}
-
-void BackupStorageClient::StartObjectAsyncHelper(const StartObjectRequest& request, const StartObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartObject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartObject(request), context);
+    } );
 }
 

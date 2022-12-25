@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_REKOGNITION_API DeleteProjectPolicyRequest : public RekognitionRequest
+  class DeleteProjectPolicyRequest : public RekognitionRequest
   {
   public:
-    DeleteProjectPolicyRequest();
+    AWS_REKOGNITION_API DeleteProjectPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteProjectPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REKOGNITION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policyRevisionId;
-    bool m_policyRevisionIdHasBeenSet;
+    bool m_policyRevisionIdHasBeenSet = false;
   };
 
 } // namespace Model

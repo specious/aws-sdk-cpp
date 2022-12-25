@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AcceleratorAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API AcceleratorAttributes
+  class AcceleratorAttributes
   {
   public:
-    AcceleratorAttributes();
-    AcceleratorAttributes(Aws::Utils::Json::JsonView jsonValue);
-    AcceleratorAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API AcceleratorAttributes();
+    AWS_GLOBALACCELERATOR_API AcceleratorAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API AcceleratorAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -214,13 +214,13 @@ namespace Model
   private:
 
     bool m_flowLogsEnabled;
-    bool m_flowLogsEnabledHasBeenSet;
+    bool m_flowLogsEnabledHasBeenSet = false;
 
     Aws::String m_flowLogsS3Bucket;
-    bool m_flowLogsS3BucketHasBeenSet;
+    bool m_flowLogsS3BucketHasBeenSet = false;
 
     Aws::String m_flowLogsS3Prefix;
-    bool m_flowLogsS3PrefixHasBeenSet;
+    bool m_flowLogsS3PrefixHasBeenSet = false;
   };
 
 } // namespace Model

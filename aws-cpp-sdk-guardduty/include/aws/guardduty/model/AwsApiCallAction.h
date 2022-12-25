@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AwsApiCallAction">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API AwsApiCallAction
+  class AwsApiCallAction
   {
   public:
-    AwsApiCallAction();
-    AwsApiCallAction(Aws::Utils::Json::JsonView jsonValue);
-    AwsApiCallAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API AwsApiCallAction();
+    AWS_GUARDDUTY_API AwsApiCallAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API AwsApiCallAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -432,31 +432,31 @@ namespace Model
   private:
 
     Aws::String m_api;
-    bool m_apiHasBeenSet;
+    bool m_apiHasBeenSet = false;
 
     Aws::String m_callerType;
-    bool m_callerTypeHasBeenSet;
+    bool m_callerTypeHasBeenSet = false;
 
     DomainDetails m_domainDetails;
-    bool m_domainDetailsHasBeenSet;
+    bool m_domainDetailsHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_userAgent;
-    bool m_userAgentHasBeenSet;
+    bool m_userAgentHasBeenSet = false;
 
     RemoteIpDetails m_remoteIpDetails;
-    bool m_remoteIpDetailsHasBeenSet;
+    bool m_remoteIpDetailsHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     RemoteAccountDetails m_remoteAccountDetails;
-    bool m_remoteAccountDetailsHasBeenSet;
+    bool m_remoteAccountDetailsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_affectedResources;
-    bool m_affectedResourcesHasBeenSet;
+    bool m_affectedResourcesHasBeenSet = false;
   };
 
 } // namespace Model

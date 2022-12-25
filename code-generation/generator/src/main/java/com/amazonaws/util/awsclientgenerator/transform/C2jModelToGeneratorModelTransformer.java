@@ -10,6 +10,9 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Error;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.*;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerationFailedException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang.WordUtils;
 
 import java.util.*;
@@ -121,6 +124,22 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.getMetadata().setHasEndpointDiscoveryTrait(hasEndpointDiscoveryTrait && !endpointOperationName.isEmpty());
         serviceModel.getMetadata().setRequireEndpointDiscovery(requireEndpointDiscovery);
         serviceModel.getMetadata().setEndpointOperationName(endpointOperationName);
+        serviceModel.getMetadata().setAwsQueryCompatible(c2jServiceModel.getMetadata().getAwsQueryCompatible() != null);
+
+        if (c2jServiceModel.getEndpointRules() != null) {
+            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode jsonNode = null;
+            String shortenedRules = c2jServiceModel.getEndpointRules();
+            try {
+                jsonNode = objectMapper.readValue(shortenedRules, JsonNode.class);
+            } catch (JsonProcessingException e) {
+                System.err.println("Unable to parse endpoint rules as a json: " + e.getMessage());
+            }
+            shortenedRules = jsonNode.toString();
+            serviceModel.setEndpointRules(shortenedRules);
+        }
+        serviceModel.setEndpointTests(c2jServiceModel.getEndpointTests());
+        serviceModel.setClientContextParams(c2jServiceModel.getClientContextParams());
 
         return serviceModel;
     }
@@ -383,6 +402,7 @@ public class C2jModelToGeneratorModelTransformer {
         shapeMember.setLocationName(c2jShapeMember.getLocationName());
         shapeMember.setLocation(c2jShapeMember.getLocation());
         shapeMember.setQueryName(c2jShapeMember.getQueryName());
+        shapeMember.setContextParam(c2jShapeMember.getContextParam());
         shapeMember.setStreaming(c2jShapeMember.isStreaming());
         shapeMember.setIdempotencyToken(c2jShapeMember.isIdempotencyToken());
         shapeMember.setEventPayload(c2jShapeMember.isEventpayload());
@@ -494,6 +514,26 @@ public class C2jModelToGeneratorModelTransformer {
             operation.setHasEndpointTrait(true);
         }
 
+        if(operation.getAuthtype() == null) {
+            if(c2jServiceModel.getMetadata().getSignatureVersion() != null &&
+                    c2jServiceModel.getMetadata().getSignatureVersion().equals("bearer")) {
+                operation.setSignerName("Aws::Auth::BEARER_SIGNER");
+            } else {
+                operation.setSignerName("Aws::Auth::SIGV4_SIGNER");
+            }
+        } else if (operation.getAuthtype().equals("v4-unsigned-body")) {
+            operation.setSignerName("Aws::Auth::SIGV4_SIGNER");
+        } else if (operation.getAuthtype().equals("bearer")) {
+            operation.setSignerName("Aws::Auth::BEARER_SIGNER");
+        } else if (operation.getAuthtype().equals("custom")) {
+            operation.setSignerName("\"" + operation.getAuthorizer() + "\"");
+        } else {
+            operation.setSignerName("Aws::Auth::NULL_SIGNER");
+        }
+
+
+        operation.setStaticContextParams(c2jOperation.getStaticContextParams());
+
         // input
         if (c2jOperation.getInput() != null) {
             String requestName = c2jOperation.getName() + "Request";
@@ -514,16 +554,8 @@ public class C2jModelToGeneratorModelTransformer {
             }
 
             requestShape.setSignBody(true);
-
-            if(operation.getAuthtype() == null) {
-                requestShape.setSignerName("Aws::Auth::SIGV4_SIGNER");
-            } else if (operation.getAuthtype().equals("v4-unsigned-body")) {
+            if (operation.getAuthtype() != null && operation.getAuthtype().equals("v4-unsigned-body")) {
                 requestShape.setSignBody(false);
-                requestShape.setSignerName("Aws::Auth::SIGV4_SIGNER");
-            } else if (operation.getAuthtype().equals("custom")) {
-               requestShape.setSignerName("\"" + operation.getAuthorizer() + "\"");
-            } else {
-                requestShape.setSignerName("Aws::Auth::NULL_SIGNER");
             }
 
             if(c2jOperation.isHttpChecksumRequired()) {
@@ -693,6 +725,22 @@ public class C2jModelToGeneratorModelTransformer {
         Http http = new Http();
         http.setMethod(c2jHttp.getMethod());
         http.setRequestUri(c2jHttp.getRequestUri());
+        if (c2jServiceModel.getEndpointRules() != null && c2jHttp.getRequestUri() != null) {
+            // Legacy C2J models require path arguments preprocessed (i.e. removed) to avoid duplication with URI segments
+            if(c2jServiceModel.getServiceName().equalsIgnoreCase("S3") ||
+                    c2jServiceModel.getServiceName().equalsIgnoreCase("S3-CRT") ||
+                    c2jServiceModel.getServiceName().equalsIgnoreCase("S3 Control")) {
+                String bucketPathToRemove = "/{Bucket}";
+                String requestUri = c2jHttp.getRequestUri();
+                if (requestUri.startsWith(bucketPathToRemove)) {
+                    requestUri = requestUri.substring(bucketPathToRemove.length());
+                    if (requestUri.isEmpty()) {
+                        requestUri = null;
+                    }
+                }
+                http.setRequestUri(requestUri);
+            }
+        }
         http.setResponseCode(c2jHttp.getResponseCode());
         return http;
     }

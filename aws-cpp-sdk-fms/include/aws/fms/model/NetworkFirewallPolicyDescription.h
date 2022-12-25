@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallPolicyDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API NetworkFirewallPolicyDescription
+  class NetworkFirewallPolicyDescription
   {
   public:
-    NetworkFirewallPolicyDescription();
-    NetworkFirewallPolicyDescription(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFirewallPolicyDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API NetworkFirewallPolicyDescription();
+    AWS_FMS_API NetworkFirewallPolicyDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API NetworkFirewallPolicyDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -432,25 +432,25 @@ namespace Model
   private:
 
     Aws::Vector<StatelessRuleGroup> m_statelessRuleGroups;
-    bool m_statelessRuleGroupsHasBeenSet;
+    bool m_statelessRuleGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_statelessDefaultActions;
-    bool m_statelessDefaultActionsHasBeenSet;
+    bool m_statelessDefaultActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_statelessFragmentDefaultActions;
-    bool m_statelessFragmentDefaultActionsHasBeenSet;
+    bool m_statelessFragmentDefaultActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_statelessCustomActions;
-    bool m_statelessCustomActionsHasBeenSet;
+    bool m_statelessCustomActionsHasBeenSet = false;
 
     Aws::Vector<StatefulRuleGroup> m_statefulRuleGroups;
-    bool m_statefulRuleGroupsHasBeenSet;
+    bool m_statefulRuleGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_statefulDefaultActions;
-    bool m_statefulDefaultActionsHasBeenSet;
+    bool m_statefulDefaultActionsHasBeenSet = false;
 
     StatefulEngineOptions m_statefulEngineOptions;
-    bool m_statefulEngineOptionsHasBeenSet;
+    bool m_statefulEngineOptionsHasBeenSet = false;
   };
 
 } // namespace Model

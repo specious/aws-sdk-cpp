@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ContainerDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API ContainerDetails
+  class ContainerDetails
   {
   public:
-    ContainerDetails();
-    ContainerDetails(Aws::Utils::Json::JsonView jsonValue);
-    ContainerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API ContainerDetails();
+    AWS_SECURITYHUB_API ContainerDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API ContainerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -344,25 +344,25 @@ namespace Model
   private:
 
     Aws::String m_containerRuntime;
-    bool m_containerRuntimeHasBeenSet;
+    bool m_containerRuntimeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_imageName;
-    bool m_imageNameHasBeenSet;
+    bool m_imageNameHasBeenSet = false;
 
     Aws::String m_launchedAt;
-    bool m_launchedAtHasBeenSet;
+    bool m_launchedAtHasBeenSet = false;
 
     Aws::Vector<VolumeMount> m_volumeMounts;
-    bool m_volumeMountsHasBeenSet;
+    bool m_volumeMountsHasBeenSet = false;
 
     bool m_privileged;
-    bool m_privilegedHasBeenSet;
+    bool m_privilegedHasBeenSet = false;
   };
 
 } // namespace Model

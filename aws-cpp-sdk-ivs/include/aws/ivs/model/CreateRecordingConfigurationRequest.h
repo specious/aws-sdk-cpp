@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_IVS_API CreateRecordingConfigurationRequest : public IVSRequest
+  class CreateRecordingConfigurationRequest : public IVSRequest
   {
   public:
-    CreateRecordingConfigurationRequest();
+    AWS_IVS_API CreateRecordingConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRecordingConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IVS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -111,6 +111,35 @@ namespace Model
      * <p>Recording-configuration name. The value does not need to be unique.</p>
      */
     inline CreateRecordingConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>If a broadcast disconnects and then reconnects within the specified interval,
+     * the multiple streams will be considered a single broadcast and merged together.
+     * Default: 0.</p>
+     */
+    inline int GetRecordingReconnectWindowSeconds() const{ return m_recordingReconnectWindowSeconds; }
+
+    /**
+     * <p>If a broadcast disconnects and then reconnects within the specified interval,
+     * the multiple streams will be considered a single broadcast and merged together.
+     * Default: 0.</p>
+     */
+    inline bool RecordingReconnectWindowSecondsHasBeenSet() const { return m_recordingReconnectWindowSecondsHasBeenSet; }
+
+    /**
+     * <p>If a broadcast disconnects and then reconnects within the specified interval,
+     * the multiple streams will be considered a single broadcast and merged together.
+     * Default: 0.</p>
+     */
+    inline void SetRecordingReconnectWindowSeconds(int value) { m_recordingReconnectWindowSecondsHasBeenSet = true; m_recordingReconnectWindowSeconds = value; }
+
+    /**
+     * <p>If a broadcast disconnects and then reconnects within the specified interval,
+     * the multiple streams will be considered a single broadcast and merged together.
+     * Default: 0.</p>
+     */
+    inline CreateRecordingConfigurationRequest& WithRecordingReconnectWindowSeconds(int value) { SetRecordingReconnectWindowSeconds(value); return *this;}
 
 
     /**
@@ -289,16 +318,19 @@ namespace Model
   private:
 
     DestinationConfiguration m_destinationConfiguration;
-    bool m_destinationConfigurationHasBeenSet;
+    bool m_destinationConfigurationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
+
+    int m_recordingReconnectWindowSeconds;
+    bool m_recordingReconnectWindowSecondsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ThumbnailConfiguration m_thumbnailConfiguration;
-    bool m_thumbnailConfigurationHasBeenSet;
+    bool m_thumbnailConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

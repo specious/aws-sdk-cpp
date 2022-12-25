@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fms/model/NetworkFirewallStatefulRuleGroupOverride.h>
 #include <utility>
 
 namespace Aws
@@ -29,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/StatefulRuleGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API StatefulRuleGroup
+  class StatefulRuleGroup
   {
   public:
-    StatefulRuleGroup();
-    StatefulRuleGroup(Aws::Utils::Json::JsonView jsonValue);
-    StatefulRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API StatefulRuleGroup();
+    AWS_FMS_API StatefulRuleGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API StatefulRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,16 +177,56 @@ namespace Model
      */
     inline StatefulRuleGroup& WithPriority(int value) { SetPriority(value); return *this;}
 
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline const NetworkFirewallStatefulRuleGroupOverride& GetOverride() const{ return m_override; }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline void SetOverride(const NetworkFirewallStatefulRuleGroupOverride& value) { m_overrideHasBeenSet = true; m_override = value; }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline void SetOverride(NetworkFirewallStatefulRuleGroupOverride&& value) { m_overrideHasBeenSet = true; m_override = std::move(value); }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline StatefulRuleGroup& WithOverride(const NetworkFirewallStatefulRuleGroupOverride& value) { SetOverride(value); return *this;}
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline StatefulRuleGroup& WithOverride(NetworkFirewallStatefulRuleGroupOverride&& value) { SetOverride(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ruleGroupName;
-    bool m_ruleGroupNameHasBeenSet;
+    bool m_ruleGroupNameHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
+
+    NetworkFirewallStatefulRuleGroupOverride m_override;
+    bool m_overrideHasBeenSet = false;
   };
 
 } // namespace Model

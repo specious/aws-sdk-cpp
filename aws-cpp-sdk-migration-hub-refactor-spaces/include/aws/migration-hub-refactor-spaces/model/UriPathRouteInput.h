@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/UriPathRouteInput">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API UriPathRouteInput
+  class UriPathRouteInput
   {
   public:
-    UriPathRouteInput();
-    UriPathRouteInput(Aws::Utils::Json::JsonView jsonValue);
-    UriPathRouteInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBREFACTORSPACES_API UriPathRouteInput();
+    AWS_MIGRATIONHUBREFACTORSPACES_API UriPathRouteInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API UriPathRouteInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -214,16 +214,16 @@ namespace Model
   private:
 
     RouteActivationState m_activationState;
-    bool m_activationStateHasBeenSet;
+    bool m_activationStateHasBeenSet = false;
 
     bool m_includeChildPaths;
-    bool m_includeChildPathsHasBeenSet;
+    bool m_includeChildPathsHasBeenSet = false;
 
     Aws::Vector<HttpMethod> m_methods;
-    bool m_methodsHasBeenSet;
+    bool m_methodsHasBeenSet = false;
 
     Aws::String m_sourcePath;
-    bool m_sourcePathHasBeenSet;
+    bool m_sourcePathHasBeenSet = false;
   };
 
 } // namespace Model

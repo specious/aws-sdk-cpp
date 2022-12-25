@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/EcrRescanDurationState">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API EcrRescanDurationState
+  class EcrRescanDurationState
   {
   public:
-    EcrRescanDurationState();
-    EcrRescanDurationState(Aws::Utils::Json::JsonView jsonValue);
-    EcrRescanDurationState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API EcrRescanDurationState();
+    AWS_INSPECTOR2_API EcrRescanDurationState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API EcrRescanDurationState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     EcrRescanDuration m_rescanDuration;
-    bool m_rescanDurationHasBeenSet;
+    bool m_rescanDurationHasBeenSet = false;
 
     EcrRescanDurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUPSTORAGE_API NotifyObjectCompleteRequest : public StreamingBackupStorageRequest
+  class NotifyObjectCompleteRequest : public StreamingBackupStorageRequest
   {
   public:
-    NotifyObjectCompleteRequest();
+    AWS_BACKUPSTORAGE_API NotifyObjectCompleteRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "NotifyObjectComplete"; }
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_BACKUPSTORAGE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    bool SignBody() const override { return false; }
+    AWS_BACKUPSTORAGE_API bool SignBody() const override { return false; }
 
 
     /**
@@ -331,29 +331,29 @@ namespace Model
   private:
 
     Aws::String m_backupJobId;
-    bool m_backupJobIdHasBeenSet;
+    bool m_backupJobIdHasBeenSet = false;
 
     Aws::String m_uploadId;
-    bool m_uploadIdHasBeenSet;
+    bool m_uploadIdHasBeenSet = false;
 
     Aws::String m_objectChecksum;
-    bool m_objectChecksumHasBeenSet;
+    bool m_objectChecksumHasBeenSet = false;
 
     SummaryChecksumAlgorithm m_objectChecksumAlgorithm;
-    bool m_objectChecksumAlgorithmHasBeenSet;
+    bool m_objectChecksumAlgorithmHasBeenSet = false;
 
     Aws::String m_metadataString;
-    bool m_metadataStringHasBeenSet;
+    bool m_metadataStringHasBeenSet = false;
 
 
     long long m_metadataBlobLength;
-    bool m_metadataBlobLengthHasBeenSet;
+    bool m_metadataBlobLengthHasBeenSet = false;
 
     Aws::String m_metadataBlobChecksum;
-    bool m_metadataBlobChecksumHasBeenSet;
+    bool m_metadataBlobChecksumHasBeenSet = false;
 
     DataChecksumAlgorithm m_metadataBlobChecksumAlgorithm;
-    bool m_metadataBlobChecksumAlgorithmHasBeenSet;
+    bool m_metadataBlobChecksumAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

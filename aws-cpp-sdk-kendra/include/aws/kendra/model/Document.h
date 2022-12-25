@@ -35,92 +35,92 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Document">AWS API
    * Reference</a></p>
    */
-  class AWS_KENDRA_API Document
+  class Document
   {
   public:
-    Document();
-    Document(Aws::Utils::Json::JsonView jsonValue);
-    Document& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API Document();
+    AWS_KENDRA_API Document(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Document& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
-     * ID must be unique per index. You cannot create a data source to index your
-     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
-     * API to index the same documents, or vice versa. You can delete a data source and
-     * then use the <code>BatchPutDocument</code> API to index the same documents, or
-     * vice versa.</p>
+     * <p>A identifier of the document in the index.</p> <p>Note, each document ID must
+     * be unique per index. You cannot create a data source to index your documents
+     * with their unique IDs and then use the <code>BatchPutDocument</code> API to
+     * index the same documents, or vice versa. You can delete a data source and then
+     * use the <code>BatchPutDocument</code> API to index the same documents, or vice
+     * versa.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
-     * ID must be unique per index. You cannot create a data source to index your
-     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
-     * API to index the same documents, or vice versa. You can delete a data source and
-     * then use the <code>BatchPutDocument</code> API to index the same documents, or
-     * vice versa.</p>
+     * <p>A identifier of the document in the index.</p> <p>Note, each document ID must
+     * be unique per index. You cannot create a data source to index your documents
+     * with their unique IDs and then use the <code>BatchPutDocument</code> API to
+     * index the same documents, or vice versa. You can delete a data source and then
+     * use the <code>BatchPutDocument</code> API to index the same documents, or vice
+     * versa.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
-     * ID must be unique per index. You cannot create a data source to index your
-     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
-     * API to index the same documents, or vice versa. You can delete a data source and
-     * then use the <code>BatchPutDocument</code> API to index the same documents, or
-     * vice versa.</p>
+     * <p>A identifier of the document in the index.</p> <p>Note, each document ID must
+     * be unique per index. You cannot create a data source to index your documents
+     * with their unique IDs and then use the <code>BatchPutDocument</code> API to
+     * index the same documents, or vice versa. You can delete a data source and then
+     * use the <code>BatchPutDocument</code> API to index the same documents, or vice
+     * versa.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
-     * ID must be unique per index. You cannot create a data source to index your
-     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
-     * API to index the same documents, or vice versa. You can delete a data source and
-     * then use the <code>BatchPutDocument</code> API to index the same documents, or
-     * vice versa.</p>
+     * <p>A identifier of the document in the index.</p> <p>Note, each document ID must
+     * be unique per index. You cannot create a data source to index your documents
+     * with their unique IDs and then use the <code>BatchPutDocument</code> API to
+     * index the same documents, or vice versa. You can delete a data source and then
+     * use the <code>BatchPutDocument</code> API to index the same documents, or vice
+     * versa.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
-     * ID must be unique per index. You cannot create a data source to index your
-     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
-     * API to index the same documents, or vice versa. You can delete a data source and
-     * then use the <code>BatchPutDocument</code> API to index the same documents, or
-     * vice versa.</p>
+     * <p>A identifier of the document in the index.</p> <p>Note, each document ID must
+     * be unique per index. You cannot create a data source to index your documents
+     * with their unique IDs and then use the <code>BatchPutDocument</code> API to
+     * index the same documents, or vice versa. You can delete a data source and then
+     * use the <code>BatchPutDocument</code> API to index the same documents, or vice
+     * versa.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
-     * ID must be unique per index. You cannot create a data source to index your
-     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
-     * API to index the same documents, or vice versa. You can delete a data source and
-     * then use the <code>BatchPutDocument</code> API to index the same documents, or
-     * vice versa.</p>
+     * <p>A identifier of the document in the index.</p> <p>Note, each document ID must
+     * be unique per index. You cannot create a data source to index your documents
+     * with their unique IDs and then use the <code>BatchPutDocument</code> API to
+     * index the same documents, or vice versa. You can delete a data source and then
+     * use the <code>BatchPutDocument</code> API to index the same documents, or vice
+     * versa.</p>
      */
     inline Document& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
-     * ID must be unique per index. You cannot create a data source to index your
-     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
-     * API to index the same documents, or vice versa. You can delete a data source and
-     * then use the <code>BatchPutDocument</code> API to index the same documents, or
-     * vice versa.</p>
+     * <p>A identifier of the document in the index.</p> <p>Note, each document ID must
+     * be unique per index. You cannot create a data source to index your documents
+     * with their unique IDs and then use the <code>BatchPutDocument</code> API to
+     * index the same documents, or vice versa. You can delete a data source and then
+     * use the <code>BatchPutDocument</code> API to index the same documents, or vice
+     * versa.</p>
      */
     inline Document& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier of the document in the index.</p> <p>Note, each document
-     * ID must be unique per index. You cannot create a data source to index your
-     * documents with their unique IDs and then use the <code>BatchPutDocument</code>
-     * API to index the same documents, or vice versa. You can delete a data source and
-     * then use the <code>BatchPutDocument</code> API to index the same documents, or
-     * vice versa.</p>
+     * <p>A identifier of the document in the index.</p> <p>Note, each document ID must
+     * be unique per index. You cannot create a data source to index your documents
+     * with their unique IDs and then use the <code>BatchPutDocument</code> API to
+     * index the same documents, or vice versa. You can delete a data source and then
+     * use the <code>BatchPutDocument</code> API to index the same documents, or vice
+     * versa.</p>
      */
     inline Document& WithId(const char* value) { SetId(value); return *this;}
 
@@ -533,31 +533,31 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_blob;
-    bool m_blobHasBeenSet;
+    bool m_blobHasBeenSet = false;
 
     S3Path m_s3Path;
-    bool m_s3PathHasBeenSet;
+    bool m_s3PathHasBeenSet = false;
 
     Aws::Vector<DocumentAttribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Vector<Principal> m_accessControlList;
-    bool m_accessControlListHasBeenSet;
+    bool m_accessControlListHasBeenSet = false;
 
     Aws::Vector<HierarchicalPrincipal> m_hierarchicalAccessControlList;
-    bool m_hierarchicalAccessControlListHasBeenSet;
+    bool m_hierarchicalAccessControlListHasBeenSet = false;
 
     ContentType m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_accessControlConfigurationId;
-    bool m_accessControlConfigurationIdHasBeenSet;
+    bool m_accessControlConfigurationIdHasBeenSet = false;
   };
 
 } // namespace Model

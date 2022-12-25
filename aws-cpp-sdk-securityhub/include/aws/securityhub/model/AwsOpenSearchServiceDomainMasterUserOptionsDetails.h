@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsOpenSearchServiceDomainMasterUserOptionsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsOpenSearchServiceDomainMasterUserOptionsDetails
+  class AwsOpenSearchServiceDomainMasterUserOptionsDetails
   {
   public:
-    AwsOpenSearchServiceDomainMasterUserOptionsDetails();
-    AwsOpenSearchServiceDomainMasterUserOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsOpenSearchServiceDomainMasterUserOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainMasterUserOptionsDetails();
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainMasterUserOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainMasterUserOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_masterUserArn;
-    bool m_masterUserArnHasBeenSet;
+    bool m_masterUserArnHasBeenSet = false;
 
     Aws::String m_masterUserName;
-    bool m_masterUserNameHasBeenSet;
+    bool m_masterUserNameHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIMESDKMESSAGING_API SendChannelMessageRequest : public ChimeSDKMessagingRequest
+  class SendChannelMessageRequest : public ChimeSDKMessagingRequest
   {
   public:
-    SendChannelMessageRequest();
+    AWS_CHIMESDKMESSAGING_API SendChannelMessageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SendChannelMessage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIMESDKMESSAGING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CHIMESDKMESSAGING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -472,34 +472,34 @@ namespace Model
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     ChannelMessageType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ChannelMessagePersistenceType m_persistence;
-    bool m_persistenceHasBeenSet;
+    bool m_persistenceHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_chimeBearer;
-    bool m_chimeBearerHasBeenSet;
+    bool m_chimeBearerHasBeenSet = false;
 
     PushNotificationConfiguration m_pushNotification;
-    bool m_pushNotificationHasBeenSet;
+    bool m_pushNotificationHasBeenSet = false;
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-    bool m_messageAttributesHasBeenSet;
+    bool m_messageAttributesHasBeenSet = false;
 
     Aws::String m_subChannelId;
-    bool m_subChannelIdHasBeenSet;
+    bool m_subChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/VolumeDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API VolumeDetail
+  class VolumeDetail
   {
   public:
-    VolumeDetail();
-    VolumeDetail(Aws::Utils::Json::JsonView jsonValue);
-    VolumeDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API VolumeDetail();
+    AWS_GUARDDUTY_API VolumeDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API VolumeDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -306,25 +306,25 @@ namespace Model
   private:
 
     Aws::String m_volumeArn;
-    bool m_volumeArnHasBeenSet;
+    bool m_volumeArnHasBeenSet = false;
 
     Aws::String m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     int m_volumeSizeInGB;
-    bool m_volumeSizeInGBHasBeenSet;
+    bool m_volumeSizeInGBHasBeenSet = false;
 
     Aws::String m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_snapshotArn;
-    bool m_snapshotArnHasBeenSet;
+    bool m_snapshotArnHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

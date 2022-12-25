@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationManagedRuleMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API OrganizationManagedRuleMetadata
+  class OrganizationManagedRuleMetadata
   {
   public:
-    OrganizationManagedRuleMetadata();
-    OrganizationManagedRuleMetadata(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationManagedRuleMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API OrganizationManagedRuleMetadata();
+    AWS_CONFIGSERVICE_API OrganizationManagedRuleMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API OrganizationManagedRuleMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -447,28 +447,28 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_ruleIdentifier;
-    bool m_ruleIdentifierHasBeenSet;
+    bool m_ruleIdentifierHasBeenSet = false;
 
     Aws::String m_inputParameters;
-    bool m_inputParametersHasBeenSet;
+    bool m_inputParametersHasBeenSet = false;
 
     MaximumExecutionFrequency m_maximumExecutionFrequency;
-    bool m_maximumExecutionFrequencyHasBeenSet;
+    bool m_maximumExecutionFrequencyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypesScope;
-    bool m_resourceTypesScopeHasBeenSet;
+    bool m_resourceTypesScopeHasBeenSet = false;
 
     Aws::String m_resourceIdScope;
-    bool m_resourceIdScopeHasBeenSet;
+    bool m_resourceIdScopeHasBeenSet = false;
 
     Aws::String m_tagKeyScope;
-    bool m_tagKeyScopeHasBeenSet;
+    bool m_tagKeyScopeHasBeenSet = false;
 
     Aws::String m_tagValueScope;
-    bool m_tagValueScopeHasBeenSet;
+    bool m_tagValueScopeHasBeenSet = false;
   };
 
 } // namespace Model

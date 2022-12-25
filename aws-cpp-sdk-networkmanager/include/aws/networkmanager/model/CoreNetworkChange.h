@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CoreNetworkChange">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API CoreNetworkChange
+  class CoreNetworkChange
   {
   public:
-    CoreNetworkChange();
-    CoreNetworkChange(Aws::Utils::Json::JsonView jsonValue);
-    CoreNetworkChange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API CoreNetworkChange();
+    AWS_NETWORKMANAGER_API CoreNetworkChange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API CoreNetworkChange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -264,22 +264,22 @@ namespace Model
   private:
 
     ChangeType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     CoreNetworkChangeValues m_previousValues;
-    bool m_previousValuesHasBeenSet;
+    bool m_previousValuesHasBeenSet = false;
 
     CoreNetworkChangeValues m_newValues;
-    bool m_newValuesHasBeenSet;
+    bool m_newValuesHasBeenSet = false;
 
     Aws::String m_identifierPath;
-    bool m_identifierPathHasBeenSet;
+    bool m_identifierPathHasBeenSet = false;
   };
 
 } // namespace Model

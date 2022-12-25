@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsContainerDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsContainerDetails
+  class AwsEcsContainerDetails
   {
   public:
-    AwsEcsContainerDetails();
-    AwsEcsContainerDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsContainerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsContainerDetails();
+    AWS_SECURITYHUB_API AwsEcsContainerDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsContainerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -190,16 +190,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::Vector<AwsMountPoint> m_mountPoints;
-    bool m_mountPointsHasBeenSet;
+    bool m_mountPointsHasBeenSet = false;
 
     bool m_privileged;
-    bool m_privilegedHasBeenSet;
+    bool m_privilegedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,350 +5,84 @@
 
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
-#include <aws/awstransfer/TransferErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/awstransfer/model/CreateAccessResult.h>
-#include <aws/awstransfer/model/CreateAgreementResult.h>
-#include <aws/awstransfer/model/CreateConnectorResult.h>
-#include <aws/awstransfer/model/CreateProfileResult.h>
-#include <aws/awstransfer/model/CreateServerResult.h>
-#include <aws/awstransfer/model/CreateUserResult.h>
-#include <aws/awstransfer/model/CreateWorkflowResult.h>
-#include <aws/awstransfer/model/DescribeAccessResult.h>
-#include <aws/awstransfer/model/DescribeAgreementResult.h>
-#include <aws/awstransfer/model/DescribeCertificateResult.h>
-#include <aws/awstransfer/model/DescribeConnectorResult.h>
-#include <aws/awstransfer/model/DescribeExecutionResult.h>
-#include <aws/awstransfer/model/DescribeProfileResult.h>
-#include <aws/awstransfer/model/DescribeSecurityPolicyResult.h>
-#include <aws/awstransfer/model/DescribeServerResult.h>
-#include <aws/awstransfer/model/DescribeUserResult.h>
-#include <aws/awstransfer/model/DescribeWorkflowResult.h>
-#include <aws/awstransfer/model/ImportCertificateResult.h>
-#include <aws/awstransfer/model/ImportSshPublicKeyResult.h>
-#include <aws/awstransfer/model/ListAccessesResult.h>
-#include <aws/awstransfer/model/ListAgreementsResult.h>
-#include <aws/awstransfer/model/ListCertificatesResult.h>
-#include <aws/awstransfer/model/ListConnectorsResult.h>
-#include <aws/awstransfer/model/ListExecutionsResult.h>
-#include <aws/awstransfer/model/ListProfilesResult.h>
-#include <aws/awstransfer/model/ListSecurityPoliciesResult.h>
-#include <aws/awstransfer/model/ListServersResult.h>
-#include <aws/awstransfer/model/ListTagsForResourceResult.h>
-#include <aws/awstransfer/model/ListUsersResult.h>
-#include <aws/awstransfer/model/ListWorkflowsResult.h>
-#include <aws/awstransfer/model/SendWorkflowStepStateResult.h>
-#include <aws/awstransfer/model/StartFileTransferResult.h>
-#include <aws/awstransfer/model/TestIdentityProviderResult.h>
-#include <aws/awstransfer/model/UpdateAccessResult.h>
-#include <aws/awstransfer/model/UpdateAgreementResult.h>
-#include <aws/awstransfer/model/UpdateCertificateResult.h>
-#include <aws/awstransfer/model/UpdateConnectorResult.h>
-#include <aws/awstransfer/model/UpdateProfileResult.h>
-#include <aws/awstransfer/model/UpdateServerResult.h>
-#include <aws/awstransfer/model/UpdateUserResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/awstransfer/TransferServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Transfer
 {
-
-namespace Model
-{
-        class CreateAccessRequest;
-        class CreateAgreementRequest;
-        class CreateConnectorRequest;
-        class CreateProfileRequest;
-        class CreateServerRequest;
-        class CreateUserRequest;
-        class CreateWorkflowRequest;
-        class DeleteAccessRequest;
-        class DeleteAgreementRequest;
-        class DeleteCertificateRequest;
-        class DeleteConnectorRequest;
-        class DeleteProfileRequest;
-        class DeleteServerRequest;
-        class DeleteSshPublicKeyRequest;
-        class DeleteUserRequest;
-        class DeleteWorkflowRequest;
-        class DescribeAccessRequest;
-        class DescribeAgreementRequest;
-        class DescribeCertificateRequest;
-        class DescribeConnectorRequest;
-        class DescribeExecutionRequest;
-        class DescribeProfileRequest;
-        class DescribeSecurityPolicyRequest;
-        class DescribeServerRequest;
-        class DescribeUserRequest;
-        class DescribeWorkflowRequest;
-        class ImportCertificateRequest;
-        class ImportSshPublicKeyRequest;
-        class ListAccessesRequest;
-        class ListAgreementsRequest;
-        class ListCertificatesRequest;
-        class ListConnectorsRequest;
-        class ListExecutionsRequest;
-        class ListProfilesRequest;
-        class ListSecurityPoliciesRequest;
-        class ListServersRequest;
-        class ListTagsForResourceRequest;
-        class ListUsersRequest;
-        class ListWorkflowsRequest;
-        class SendWorkflowStepStateRequest;
-        class StartFileTransferRequest;
-        class StartServerRequest;
-        class StopServerRequest;
-        class TagResourceRequest;
-        class TestIdentityProviderRequest;
-        class UntagResourceRequest;
-        class UpdateAccessRequest;
-        class UpdateAgreementRequest;
-        class UpdateCertificateRequest;
-        class UpdateConnectorRequest;
-        class UpdateProfileRequest;
-        class UpdateServerRequest;
-        class UpdateUserRequest;
-
-        typedef Aws::Utils::Outcome<CreateAccessResult, TransferError> CreateAccessOutcome;
-        typedef Aws::Utils::Outcome<CreateAgreementResult, TransferError> CreateAgreementOutcome;
-        typedef Aws::Utils::Outcome<CreateConnectorResult, TransferError> CreateConnectorOutcome;
-        typedef Aws::Utils::Outcome<CreateProfileResult, TransferError> CreateProfileOutcome;
-        typedef Aws::Utils::Outcome<CreateServerResult, TransferError> CreateServerOutcome;
-        typedef Aws::Utils::Outcome<CreateUserResult, TransferError> CreateUserOutcome;
-        typedef Aws::Utils::Outcome<CreateWorkflowResult, TransferError> CreateWorkflowOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> DeleteAccessOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> DeleteAgreementOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> DeleteCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> DeleteConnectorOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> DeleteProfileOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> DeleteServerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> DeleteSshPublicKeyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> DeleteUserOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> DeleteWorkflowOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccessResult, TransferError> DescribeAccessOutcome;
-        typedef Aws::Utils::Outcome<DescribeAgreementResult, TransferError> DescribeAgreementOutcome;
-        typedef Aws::Utils::Outcome<DescribeCertificateResult, TransferError> DescribeCertificateOutcome;
-        typedef Aws::Utils::Outcome<DescribeConnectorResult, TransferError> DescribeConnectorOutcome;
-        typedef Aws::Utils::Outcome<DescribeExecutionResult, TransferError> DescribeExecutionOutcome;
-        typedef Aws::Utils::Outcome<DescribeProfileResult, TransferError> DescribeProfileOutcome;
-        typedef Aws::Utils::Outcome<DescribeSecurityPolicyResult, TransferError> DescribeSecurityPolicyOutcome;
-        typedef Aws::Utils::Outcome<DescribeServerResult, TransferError> DescribeServerOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserResult, TransferError> DescribeUserOutcome;
-        typedef Aws::Utils::Outcome<DescribeWorkflowResult, TransferError> DescribeWorkflowOutcome;
-        typedef Aws::Utils::Outcome<ImportCertificateResult, TransferError> ImportCertificateOutcome;
-        typedef Aws::Utils::Outcome<ImportSshPublicKeyResult, TransferError> ImportSshPublicKeyOutcome;
-        typedef Aws::Utils::Outcome<ListAccessesResult, TransferError> ListAccessesOutcome;
-        typedef Aws::Utils::Outcome<ListAgreementsResult, TransferError> ListAgreementsOutcome;
-        typedef Aws::Utils::Outcome<ListCertificatesResult, TransferError> ListCertificatesOutcome;
-        typedef Aws::Utils::Outcome<ListConnectorsResult, TransferError> ListConnectorsOutcome;
-        typedef Aws::Utils::Outcome<ListExecutionsResult, TransferError> ListExecutionsOutcome;
-        typedef Aws::Utils::Outcome<ListProfilesResult, TransferError> ListProfilesOutcome;
-        typedef Aws::Utils::Outcome<ListSecurityPoliciesResult, TransferError> ListSecurityPoliciesOutcome;
-        typedef Aws::Utils::Outcome<ListServersResult, TransferError> ListServersOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, TransferError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListUsersResult, TransferError> ListUsersOutcome;
-        typedef Aws::Utils::Outcome<ListWorkflowsResult, TransferError> ListWorkflowsOutcome;
-        typedef Aws::Utils::Outcome<SendWorkflowStepStateResult, TransferError> SendWorkflowStepStateOutcome;
-        typedef Aws::Utils::Outcome<StartFileTransferResult, TransferError> StartFileTransferOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> StartServerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> StopServerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TestIdentityProviderResult, TransferError> TestIdentityProviderOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateAccessResult, TransferError> UpdateAccessOutcome;
-        typedef Aws::Utils::Outcome<UpdateAgreementResult, TransferError> UpdateAgreementOutcome;
-        typedef Aws::Utils::Outcome<UpdateCertificateResult, TransferError> UpdateCertificateOutcome;
-        typedef Aws::Utils::Outcome<UpdateConnectorResult, TransferError> UpdateConnectorOutcome;
-        typedef Aws::Utils::Outcome<UpdateProfileResult, TransferError> UpdateProfileOutcome;
-        typedef Aws::Utils::Outcome<UpdateServerResult, TransferError> UpdateServerOutcome;
-        typedef Aws::Utils::Outcome<UpdateUserResult, TransferError> UpdateUserOutcome;
-
-        typedef std::future<CreateAccessOutcome> CreateAccessOutcomeCallable;
-        typedef std::future<CreateAgreementOutcome> CreateAgreementOutcomeCallable;
-        typedef std::future<CreateConnectorOutcome> CreateConnectorOutcomeCallable;
-        typedef std::future<CreateProfileOutcome> CreateProfileOutcomeCallable;
-        typedef std::future<CreateServerOutcome> CreateServerOutcomeCallable;
-        typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
-        typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
-        typedef std::future<DeleteAccessOutcome> DeleteAccessOutcomeCallable;
-        typedef std::future<DeleteAgreementOutcome> DeleteAgreementOutcomeCallable;
-        typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
-        typedef std::future<DeleteConnectorOutcome> DeleteConnectorOutcomeCallable;
-        typedef std::future<DeleteProfileOutcome> DeleteProfileOutcomeCallable;
-        typedef std::future<DeleteServerOutcome> DeleteServerOutcomeCallable;
-        typedef std::future<DeleteSshPublicKeyOutcome> DeleteSshPublicKeyOutcomeCallable;
-        typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
-        typedef std::future<DeleteWorkflowOutcome> DeleteWorkflowOutcomeCallable;
-        typedef std::future<DescribeAccessOutcome> DescribeAccessOutcomeCallable;
-        typedef std::future<DescribeAgreementOutcome> DescribeAgreementOutcomeCallable;
-        typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
-        typedef std::future<DescribeConnectorOutcome> DescribeConnectorOutcomeCallable;
-        typedef std::future<DescribeExecutionOutcome> DescribeExecutionOutcomeCallable;
-        typedef std::future<DescribeProfileOutcome> DescribeProfileOutcomeCallable;
-        typedef std::future<DescribeSecurityPolicyOutcome> DescribeSecurityPolicyOutcomeCallable;
-        typedef std::future<DescribeServerOutcome> DescribeServerOutcomeCallable;
-        typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
-        typedef std::future<DescribeWorkflowOutcome> DescribeWorkflowOutcomeCallable;
-        typedef std::future<ImportCertificateOutcome> ImportCertificateOutcomeCallable;
-        typedef std::future<ImportSshPublicKeyOutcome> ImportSshPublicKeyOutcomeCallable;
-        typedef std::future<ListAccessesOutcome> ListAccessesOutcomeCallable;
-        typedef std::future<ListAgreementsOutcome> ListAgreementsOutcomeCallable;
-        typedef std::future<ListCertificatesOutcome> ListCertificatesOutcomeCallable;
-        typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
-        typedef std::future<ListExecutionsOutcome> ListExecutionsOutcomeCallable;
-        typedef std::future<ListProfilesOutcome> ListProfilesOutcomeCallable;
-        typedef std::future<ListSecurityPoliciesOutcome> ListSecurityPoliciesOutcomeCallable;
-        typedef std::future<ListServersOutcome> ListServersOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
-        typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
-        typedef std::future<SendWorkflowStepStateOutcome> SendWorkflowStepStateOutcomeCallable;
-        typedef std::future<StartFileTransferOutcome> StartFileTransferOutcomeCallable;
-        typedef std::future<StartServerOutcome> StartServerOutcomeCallable;
-        typedef std::future<StopServerOutcome> StopServerOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<TestIdentityProviderOutcome> TestIdentityProviderOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateAccessOutcome> UpdateAccessOutcomeCallable;
-        typedef std::future<UpdateAgreementOutcome> UpdateAgreementOutcomeCallable;
-        typedef std::future<UpdateCertificateOutcome> UpdateCertificateOutcomeCallable;
-        typedef std::future<UpdateConnectorOutcome> UpdateConnectorOutcomeCallable;
-        typedef std::future<UpdateProfileOutcome> UpdateProfileOutcomeCallable;
-        typedef std::future<UpdateServerOutcome> UpdateServerOutcomeCallable;
-        typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
-} // namespace Model
-
-  class TransferClient;
-
-    typedef std::function<void(const TransferClient*, const Model::CreateAccessRequest&, const Model::CreateAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::CreateAgreementRequest&, const Model::CreateAgreementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAgreementResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::CreateConnectorRequest&, const Model::CreateConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectorResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::CreateProfileRequest&, const Model::CreateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProfileResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::CreateServerRequest&, const Model::CreateServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServerResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::CreateWorkflowRequest&, const Model::CreateWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkflowResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DeleteAccessRequest&, const Model::DeleteAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DeleteAgreementRequest&, const Model::DeleteAgreementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAgreementResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DeleteCertificateRequest&, const Model::DeleteCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DeleteConnectorRequest&, const Model::DeleteConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectorResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DeleteProfileRequest&, const Model::DeleteProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DeleteServerRequest&, const Model::DeleteServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServerResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DeleteSshPublicKeyRequest&, const Model::DeleteSshPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSshPublicKeyResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DeleteWorkflowRequest&, const Model::DeleteWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkflowResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DescribeAccessRequest&, const Model::DescribeAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccessResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DescribeAgreementRequest&, const Model::DescribeAgreementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAgreementResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DescribeCertificateRequest&, const Model::DescribeCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificateResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DescribeConnectorRequest&, const Model::DescribeConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectorResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DescribeExecutionRequest&, const Model::DescribeExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExecutionResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DescribeProfileRequest&, const Model::DescribeProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProfileResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DescribeSecurityPolicyRequest&, const Model::DescribeSecurityPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityPolicyResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DescribeServerRequest&, const Model::DescribeServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServerResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::DescribeWorkflowRequest&, const Model::DescribeWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkflowResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::ImportCertificateRequest&, const Model::ImportCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportCertificateResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::ImportSshPublicKeyRequest&, const Model::ImportSshPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportSshPublicKeyResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::ListAccessesRequest&, const Model::ListAccessesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessesResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::ListAgreementsRequest&, const Model::ListAgreementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAgreementsResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::ListCertificatesRequest&, const Model::ListCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCertificatesResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::ListConnectorsRequest&, const Model::ListConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectorsResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::ListExecutionsRequest&, const Model::ListExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExecutionsResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::ListProfilesRequest&, const Model::ListProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfilesResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::ListSecurityPoliciesRequest&, const Model::ListSecurityPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityPoliciesResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::ListServersRequest&, const Model::ListServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServersResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::ListWorkflowsRequest&, const Model::ListWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowsResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::SendWorkflowStepStateRequest&, const Model::SendWorkflowStepStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendWorkflowStepStateResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::StartFileTransferRequest&, const Model::StartFileTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFileTransferResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::StartServerRequest&, const Model::StartServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartServerResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::StopServerRequest&, const Model::StopServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopServerResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::TestIdentityProviderRequest&, const Model::TestIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestIdentityProviderResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::UpdateAccessRequest&, const Model::UpdateAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccessResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::UpdateAgreementRequest&, const Model::UpdateAgreementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAgreementResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::UpdateCertificateRequest&, const Model::UpdateCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCertificateResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::UpdateConnectorRequest&, const Model::UpdateConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectorResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::UpdateProfileRequest&, const Model::UpdateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProfileResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::UpdateServerRequest&, const Model::UpdateServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServerResponseReceivedHandler;
-    typedef std::function<void(const TransferClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
-
   /**
    * <p>Transfer Family is a fully managed service that enables the transfer of files
    * over the File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS),
    * or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and out of
-   * Amazon Simple Storage Service (Amazon S3). Amazon Web Services helps you
-   * seamlessly migrate your file transfer workflows to Transfer Family by
-   * integrating with existing authentication systems, and providing DNS routing with
-   * Amazon Route 53 so nothing changes for your customers and partners, or their
-   * applications. With your data in Amazon S3, you can use it with Amazon Web
-   * Services for processing, analytics, machine learning, and archiving. Getting
-   * started with Transfer Family is easy since there is no infrastructure to buy and
-   * set up.</p>
+   * Amazon Simple Storage Service (Amazon S3) or Amazon EFS. Additionally, you can
+   * use Applicability Statement 2 (AS2) to transfer files into and out of Amazon S3.
+   * Amazon Web Services helps you seamlessly migrate your file transfer workflows to
+   * Transfer Family by integrating with existing authentication systems, and
+   * providing DNS routing with Amazon Route 53 so nothing changes for your customers
+   * and partners, or their applications. With your data in Amazon S3, you can use it
+   * with Amazon Web Services for processing, analytics, machine learning, and
+   * archiving. Getting started with Transfer Family is easy since there is no
+   * infrastructure to buy and set up.</p>
    */
-  class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient
+  class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        TransferClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        TransferClient(const Aws::Transfer::TransferClientConfiguration& clientConfiguration = Aws::Transfer::TransferClientConfiguration(),
+                       std::shared_ptr<TransferEndpointProviderBase> endpointProvider = Aws::MakeShared<TransferEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        TransferClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        TransferClient(const Aws::Auth::AWSCredentials& credentials,
+                       std::shared_ptr<TransferEndpointProviderBase> endpointProvider = Aws::MakeShared<TransferEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::Transfer::TransferClientConfiguration& clientConfiguration = Aws::Transfer::TransferClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         TransferClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                       std::shared_ptr<TransferEndpointProviderBase> endpointProvider = Aws::MakeShared<TransferEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::Transfer::TransferClientConfiguration& clientConfiguration = Aws::Transfer::TransferClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        TransferClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        TransferClient(const Aws::Auth::AWSCredentials& credentials,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        TransferClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~TransferClient();
-
 
         /**
          * <p>Used by administrators to choose which groups in the directory should have
@@ -398,8 +132,10 @@ namespace Model
 
         /**
          * <p>Creates the connector, which captures the parameters for an outbound
-         * connection for the AS2 protocol. The connector is required for sending files
-         * from a customer's non Amazon Web Services server. </p><p><h3>See Also:</h3>   <a
+         * connection for the AS2 protocol. The connector is required for sending files to
+         * an externally hosted AS2 server. For more details about connectors, see <a
+         * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+         * AS2 connectors</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector">AWS
          * API Reference</a></p>
          */
@@ -416,8 +152,8 @@ namespace Model
         virtual void CreateConnectorAsync(const Model::CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates the profile for the AS2 process. The agreement is between the partner
-         * and the AS2 process.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates the local or partner profile to use for AS2 transfers.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile">AWS
          * API Reference</a></p>
          */
@@ -570,6 +306,24 @@ namespace Model
          * An Async wrapper for DeleteConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteConnectorAsync(const Model::DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the host key that's specified in the <code>HoskKeyId</code>
+         * parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteHostKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteHostKeyOutcome DeleteHostKey(const Model::DeleteHostKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteHostKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteHostKeyOutcomeCallable DeleteHostKeyCallable(const Model::DeleteHostKeyRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteHostKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteHostKeyAsync(const Model::DeleteHostKeyRequest& request, const DeleteHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the profile that's specified in the <code>ProfileId</code>
@@ -755,6 +509,24 @@ namespace Model
         virtual void DescribeExecutionAsync(const Model::DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the details of the host key that's specified by the
+         * <code>HostKeyId</code> and <code>ServerId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeHostKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeHostKeyOutcome DescribeHostKey(const Model::DescribeHostKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeHostKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeHostKeyOutcomeCallable DescribeHostKeyCallable(const Model::DescribeHostKeyRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeHostKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeHostKeyAsync(const Model::DescribeHostKeyRequest& request, const DescribeHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the details of the profile that's specified by the
          * <code>ProfileId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeProfile">AWS
@@ -868,6 +640,24 @@ namespace Model
          * An Async wrapper for ImportCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ImportCertificateAsync(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds a host key to the server that's specified by the <code>ServerId</code>
+         * parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportHostKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportHostKeyOutcome ImportHostKey(const Model::ImportHostKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for ImportHostKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportHostKeyOutcomeCallable ImportHostKeyCallable(const Model::ImportHostKeyRequest& request) const;
+
+        /**
+         * An Async wrapper for ImportHostKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportHostKeyAsync(const Model::ImportHostKeyRequest& request, const ImportHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a Secure Shell (SSH) public key to a user account identified by a
@@ -987,6 +777,24 @@ namespace Model
          * An Async wrapper for ListExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListExecutionsAsync(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of host keys for the server that's specified by the
+         * <code>ServerId</code> parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListHostKeys">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListHostKeysOutcome ListHostKeys(const Model::ListHostKeysRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListHostKeys that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListHostKeysOutcomeCallable ListHostKeysCallable(const Model::ListHostKeysRequest& request) const;
+
+        /**
+         * An Async wrapper for ListHostKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListHostKeysAsync(const Model::ListHostKeysRequest& request, const ListHostKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the profiles for your system. If you want to limit the
@@ -1121,8 +929,9 @@ namespace Model
         virtual void SendWorkflowStepStateAsync(const Model::SendWorkflowStepStateRequest& request, const SendWorkflowStepStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Begins an outbound file transfer. You specify the <code>ConnectorId</code>
-         * and the file paths for where to send the files. </p><p><h3>See Also:</h3>   <a
+         * <p>Begins an outbound file transfer to a remote AS2 server. You specify the
+         * <code>ConnectorId</code> and the file paths for where to send the files.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer">AWS
          * API Reference</a></p>
          */
@@ -1342,6 +1151,25 @@ namespace Model
         virtual void UpdateConnectorAsync(const Model::UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the description for the host key that's specified by the
+         * <code>ServerId</code> and <code>HostKeyId</code> parameters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateHostKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateHostKeyOutcome UpdateHostKey(const Model::UpdateHostKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateHostKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateHostKeyOutcomeCallable UpdateHostKeyCallable(const Model::UpdateHostKeyRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateHostKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateHostKeyAsync(const Model::UpdateHostKeyRequest& request, const UpdateHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates some of the parameters for an existing profile. Provide the
          * <code>ProfileId</code> for the profile that you want to update, along with the
          * new values for the parameters to update.</p><p><h3>See Also:</h3>   <a
@@ -1402,65 +1230,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<TransferEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateAccessAsyncHelper(const Model::CreateAccessRequest& request, const CreateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAgreementAsyncHelper(const Model::CreateAgreementRequest& request, const CreateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateConnectorAsyncHelper(const Model::CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateProfileAsyncHelper(const Model::CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateServerAsyncHelper(const Model::CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateWorkflowAsyncHelper(const Model::CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAccessAsyncHelper(const Model::DeleteAccessRequest& request, const DeleteAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAgreementAsyncHelper(const Model::DeleteAgreementRequest& request, const DeleteAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCertificateAsyncHelper(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteConnectorAsyncHelper(const Model::DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProfileAsyncHelper(const Model::DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteServerAsyncHelper(const Model::DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSshPublicKeyAsyncHelper(const Model::DeleteSshPublicKeyRequest& request, const DeleteSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteWorkflowAsyncHelper(const Model::DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAccessAsyncHelper(const Model::DescribeAccessRequest& request, const DescribeAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAgreementAsyncHelper(const Model::DescribeAgreementRequest& request, const DescribeAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCertificateAsyncHelper(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeConnectorAsyncHelper(const Model::DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeExecutionAsyncHelper(const Model::DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeProfileAsyncHelper(const Model::DescribeProfileRequest& request, const DescribeProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSecurityPolicyAsyncHelper(const Model::DescribeSecurityPolicyRequest& request, const DescribeSecurityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeServerAsyncHelper(const Model::DescribeServerRequest& request, const DescribeServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeUserAsyncHelper(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeWorkflowAsyncHelper(const Model::DescribeWorkflowRequest& request, const DescribeWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ImportCertificateAsyncHelper(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ImportSshPublicKeyAsyncHelper(const Model::ImportSshPublicKeyRequest& request, const ImportSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAccessesAsyncHelper(const Model::ListAccessesRequest& request, const ListAccessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAgreementsAsyncHelper(const Model::ListAgreementsRequest& request, const ListAgreementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCertificatesAsyncHelper(const Model::ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListConnectorsAsyncHelper(const Model::ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListExecutionsAsyncHelper(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProfilesAsyncHelper(const Model::ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSecurityPoliciesAsyncHelper(const Model::ListSecurityPoliciesRequest& request, const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListServersAsyncHelper(const Model::ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListWorkflowsAsyncHelper(const Model::ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SendWorkflowStepStateAsyncHelper(const Model::SendWorkflowStepStateRequest& request, const SendWorkflowStepStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartFileTransferAsyncHelper(const Model::StartFileTransferRequest& request, const StartFileTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartServerAsyncHelper(const Model::StartServerRequest& request, const StartServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopServerAsyncHelper(const Model::StopServerRequest& request, const StopServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TestIdentityProviderAsyncHelper(const Model::TestIdentityProviderRequest& request, const TestIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAccessAsyncHelper(const Model::UpdateAccessRequest& request, const UpdateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAgreementAsyncHelper(const Model::UpdateAgreementRequest& request, const UpdateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateCertificateAsyncHelper(const Model::UpdateCertificateRequest& request, const UpdateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateConnectorAsyncHelper(const Model::UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateProfileAsyncHelper(const Model::UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateServerAsyncHelper(const Model::UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateUserAsyncHelper(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>;
+      void init(const TransferClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      TransferClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<TransferEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Transfer

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTMETRICS_API UpdateAlertRequest : public LookoutMetricsRequest
+  class UpdateAlertRequest : public LookoutMetricsRequest
   {
   public:
-    UpdateAlertRequest();
+    AWS_LOOKOUTMETRICS_API UpdateAlertRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAlert"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTMETRICS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -207,19 +207,19 @@ namespace Model
   private:
 
     Aws::String m_alertArn;
-    bool m_alertArnHasBeenSet;
+    bool m_alertArnHasBeenSet = false;
 
     Aws::String m_alertDescription;
-    bool m_alertDescriptionHasBeenSet;
+    bool m_alertDescriptionHasBeenSet = false;
 
     int m_alertSensitivityThreshold;
-    bool m_alertSensitivityThresholdHasBeenSet;
+    bool m_alertSensitivityThresholdHasBeenSet = false;
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     AlertFilters m_alertFilters;
-    bool m_alertFiltersHasBeenSet;
+    bool m_alertFiltersHasBeenSet = false;
   };
 
 } // namespace Model

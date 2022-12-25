@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RegexMatchStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API RegexMatchStatement
+  class RegexMatchStatement
   {
   public:
-    RegexMatchStatement();
-    RegexMatchStatement(Aws::Utils::Json::JsonView jsonValue);
-    RegexMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API RegexMatchStatement();
+    AWS_WAFV2_API RegexMatchStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API RegexMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -196,13 +196,13 @@ namespace Model
   private:
 
     Aws::String m_regexString;
-    bool m_regexStringHasBeenSet;
+    bool m_regexStringHasBeenSet = false;
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     Aws::Vector<TextTransformation> m_textTransformations;
-    bool m_textTransformationsHasBeenSet;
+    bool m_textTransformationsHasBeenSet = false;
   };
 
 } // namespace Model

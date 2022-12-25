@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUE_API UpdateTableRequest : public GlueRequest
+  class UpdateTableRequest : public GlueRequest
   {
   public:
-    UpdateTableRequest();
+    AWS_GLUE_API UpdateTableRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateTable"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -283,22 +283,22 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     TableInput m_tableInput;
-    bool m_tableInputHasBeenSet;
+    bool m_tableInputHasBeenSet = false;
 
     bool m_skipArchive;
-    bool m_skipArchiveHasBeenSet;
+    bool m_skipArchiveHasBeenSet = false;
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
   };
 
 } // namespace Model

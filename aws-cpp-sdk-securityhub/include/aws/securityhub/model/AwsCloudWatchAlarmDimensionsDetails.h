@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudWatchAlarmDimensionsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudWatchAlarmDimensionsDetails
+  class AwsCloudWatchAlarmDimensionsDetails
   {
   public:
-    AwsCloudWatchAlarmDimensionsDetails();
-    AwsCloudWatchAlarmDimensionsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudWatchAlarmDimensionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudWatchAlarmDimensionsDetails();
+    AWS_SECURITYHUB_API AwsCloudWatchAlarmDimensionsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudWatchAlarmDimensionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

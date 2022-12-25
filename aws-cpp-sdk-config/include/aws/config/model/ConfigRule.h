@@ -10,6 +10,8 @@
 #include <aws/config/model/Source.h>
 #include <aws/config/model/MaximumExecutionFrequency.h>
 #include <aws/config/model/ConfigRuleState.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/config/model/EvaluationModeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -54,13 +56,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigRule">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConfigRule
+  class ConfigRule
   {
   public:
-    ConfigRule();
-    ConfigRule(Aws::Utils::Json::JsonView jsonValue);
-    ConfigRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConfigRule();
+    AWS_CONFIGSERVICE_API ConfigRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConfigRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -626,37 +628,89 @@ namespace Model
      */
     inline ConfigRule& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline const Aws::Vector<EvaluationModeConfiguration>& GetEvaluationModes() const{ return m_evaluationModes; }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline bool EvaluationModesHasBeenSet() const { return m_evaluationModesHasBeenSet; }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline void SetEvaluationModes(const Aws::Vector<EvaluationModeConfiguration>& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes = value; }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline void SetEvaluationModes(Aws::Vector<EvaluationModeConfiguration>&& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes = std::move(value); }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline ConfigRule& WithEvaluationModes(const Aws::Vector<EvaluationModeConfiguration>& value) { SetEvaluationModes(value); return *this;}
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline ConfigRule& WithEvaluationModes(Aws::Vector<EvaluationModeConfiguration>&& value) { SetEvaluationModes(std::move(value)); return *this;}
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline ConfigRule& AddEvaluationModes(const EvaluationModeConfiguration& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes.push_back(value); return *this; }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline ConfigRule& AddEvaluationModes(EvaluationModeConfiguration&& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     Aws::String m_configRuleArn;
-    bool m_configRuleArnHasBeenSet;
+    bool m_configRuleArnHasBeenSet = false;
 
     Aws::String m_configRuleId;
-    bool m_configRuleIdHasBeenSet;
+    bool m_configRuleIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Source m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_inputParameters;
-    bool m_inputParametersHasBeenSet;
+    bool m_inputParametersHasBeenSet = false;
 
     MaximumExecutionFrequency m_maximumExecutionFrequency;
-    bool m_maximumExecutionFrequencyHasBeenSet;
+    bool m_maximumExecutionFrequencyHasBeenSet = false;
 
     ConfigRuleState m_configRuleState;
-    bool m_configRuleStateHasBeenSet;
+    bool m_configRuleStateHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
+
+    Aws::Vector<EvaluationModeConfiguration> m_evaluationModes;
+    bool m_evaluationModesHasBeenSet = false;
   };
 
 } // namespace Model

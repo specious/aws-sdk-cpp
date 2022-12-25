@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GroupOrderingIdSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API GroupOrderingIdSummary
+  class GroupOrderingIdSummary
   {
   public:
-    GroupOrderingIdSummary();
-    GroupOrderingIdSummary(Aws::Utils::Json::JsonView jsonValue);
-    GroupOrderingIdSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API GroupOrderingIdSummary();
+    AWS_KENDRA_API GroupOrderingIdSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API GroupOrderingIdSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,19 +252,19 @@ namespace Model
   private:
 
     PrincipalMappingStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_receivedAt;
-    bool m_receivedAtHasBeenSet;
+    bool m_receivedAtHasBeenSet = false;
 
     long long m_orderingId;
-    bool m_orderingIdHasBeenSet;
+    bool m_orderingIdHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

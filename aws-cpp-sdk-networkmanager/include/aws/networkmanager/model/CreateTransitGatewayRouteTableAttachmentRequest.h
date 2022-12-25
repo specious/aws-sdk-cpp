@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_NETWORKMANAGER_API CreateTransitGatewayRouteTableAttachmentRequest : public NetworkManagerRequest
+  class CreateTransitGatewayRouteTableAttachmentRequest : public NetworkManagerRequest
   {
   public:
-    CreateTransitGatewayRouteTableAttachmentRequest();
+    AWS_NETWORKMANAGER_API CreateTransitGatewayRouteTableAttachmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateTransitGatewayRouteTableAttachment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_peeringId;
-    bool m_peeringIdHasBeenSet;
+    bool m_peeringIdHasBeenSet = false;
 
     Aws::String m_transitGatewayRouteTableArn;
-    bool m_transitGatewayRouteTableArnHasBeenSet;
+    bool m_transitGatewayRouteTableArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

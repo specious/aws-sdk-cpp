@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API CreateBulkImportJobRequest : public IoTSiteWiseRequest
+  class CreateBulkImportJobRequest : public IoTSiteWiseRequest
   {
   public:
-    CreateBulkImportJobRequest();
+    AWS_IOTSITEWISE_API CreateBulkImportJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateBulkImportJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -251,19 +251,19 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_jobRoleArn;
-    bool m_jobRoleArnHasBeenSet;
+    bool m_jobRoleArnHasBeenSet = false;
 
     Aws::Vector<File> m_files;
-    bool m_filesHasBeenSet;
+    bool m_filesHasBeenSet = false;
 
     ErrorReportLocation m_errorReportLocation;
-    bool m_errorReportLocationHasBeenSet;
+    bool m_errorReportLocationHasBeenSet = false;
 
     JobConfiguration m_jobConfiguration;
-    bool m_jobConfigurationHasBeenSet;
+    bool m_jobConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

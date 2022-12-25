@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_MACIE2_API CreateCustomDataIdentifierRequest : public Macie2Request
+  class CreateCustomDataIdentifierRequest : public Macie2Request
   {
   public:
-    CreateCustomDataIdentifierRequest();
+    AWS_MACIE2_API CreateCustomDataIdentifierRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCustomDataIdentifier"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MACIE2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -717,31 +717,31 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ignoreWords;
-    bool m_ignoreWordsHasBeenSet;
+    bool m_ignoreWordsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_keywords;
-    bool m_keywordsHasBeenSet;
+    bool m_keywordsHasBeenSet = false;
 
     int m_maximumMatchDistance;
-    bool m_maximumMatchDistanceHasBeenSet;
+    bool m_maximumMatchDistanceHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_regex;
-    bool m_regexHasBeenSet;
+    bool m_regexHasBeenSet = false;
 
     Aws::Vector<SeverityLevel> m_severityLevels;
-    bool m_severityLevelsHasBeenSet;
+    bool m_severityLevelsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

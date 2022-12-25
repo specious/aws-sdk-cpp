@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/JiraConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API JiraConfiguration
+  class JiraConfiguration
   {
   public:
-    JiraConfiguration();
-    JiraConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    JiraConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API JiraConfiguration();
+    AWS_KENDRA_API JiraConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API JiraConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,8 +105,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -116,8 +116,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -127,8 +127,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -138,8 +138,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -149,8 +149,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -160,8 +160,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -171,8 +171,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -182,8 +182,8 @@ namespace Model
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
      * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
      * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
-     * Authentication for a Jira data source</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * a Jira data source</a>.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
@@ -1101,49 +1101,49 @@ namespace Model
   private:
 
     Aws::String m_jiraAccountUrl;
-    bool m_jiraAccountUrlHasBeenSet;
+    bool m_jiraAccountUrlHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     bool m_useChangeLog;
-    bool m_useChangeLogHasBeenSet;
+    bool m_useChangeLogHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_issueType;
-    bool m_issueTypeHasBeenSet;
+    bool m_issueTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<IssueSubEntity> m_issueSubEntityFilter;
-    bool m_issueSubEntityFilterHasBeenSet;
+    bool m_issueSubEntityFilterHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_attachmentFieldMappings;
-    bool m_attachmentFieldMappingsHasBeenSet;
+    bool m_attachmentFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_commentFieldMappings;
-    bool m_commentFieldMappingsHasBeenSet;
+    bool m_commentFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_issueFieldMappings;
-    bool m_issueFieldMappingsHasBeenSet;
+    bool m_issueFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_projectFieldMappings;
-    bool m_projectFieldMappingsHasBeenSet;
+    bool m_projectFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_workLogFieldMappings;
-    bool m_workLogFieldMappingsHasBeenSet;
+    bool m_workLogFieldMappingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

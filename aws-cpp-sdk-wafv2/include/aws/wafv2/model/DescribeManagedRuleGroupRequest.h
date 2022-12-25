@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_WAFV2_API DescribeManagedRuleGroupRequest : public WAFV2Request
+  class DescribeManagedRuleGroupRequest : public WAFV2Request
   {
   public:
-    DescribeManagedRuleGroupRequest();
+    AWS_WAFV2_API DescribeManagedRuleGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeManagedRuleGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WAFV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WAFV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -265,16 +265,16 @@ namespace Model
   private:
 
     Aws::String m_vendorName;
-    bool m_vendorNameHasBeenSet;
+    bool m_vendorNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
   };
 
 } // namespace Model

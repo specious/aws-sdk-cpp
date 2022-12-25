@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryStagePlanNode">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API QueryStagePlanNode
+  class QueryStagePlanNode
   {
   public:
-    QueryStagePlanNode();
-    QueryStagePlanNode(Aws::Utils::Json::JsonView jsonValue);
-    QueryStagePlanNode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API QueryStagePlanNode();
+    AWS_ATHENA_API QueryStagePlanNode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API QueryStagePlanNode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -226,16 +226,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::Vector<QueryStagePlanNode> m_children;
-    bool m_childrenHasBeenSet;
+    bool m_childrenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_remoteSources;
-    bool m_remoteSourcesHasBeenSet;
+    bool m_remoteSourcesHasBeenSet = false;
   };
 
 } // namespace Model

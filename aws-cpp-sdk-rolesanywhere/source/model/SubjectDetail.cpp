@@ -58,7 +58,7 @@ SubjectDetail& SubjectDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("credentials"))
   {
-    Array<JsonView> credentialsJsonList = jsonValue.GetArray("credentials");
+    Aws::Utils::Array<JsonView> credentialsJsonList = jsonValue.GetArray("credentials");
     for(unsigned credentialsIndex = 0; credentialsIndex < credentialsJsonList.GetLength(); ++credentialsIndex)
     {
       m_credentials.push_back(credentialsJsonList[credentialsIndex].AsObject());
@@ -75,7 +75,7 @@ SubjectDetail& SubjectDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("instanceProperties"))
   {
-    Array<JsonView> instancePropertiesJsonList = jsonValue.GetArray("instanceProperties");
+    Aws::Utils::Array<JsonView> instancePropertiesJsonList = jsonValue.GetArray("instanceProperties");
     for(unsigned instancePropertiesIndex = 0; instancePropertiesIndex < instancePropertiesJsonList.GetLength(); ++instancePropertiesIndex)
     {
       m_instanceProperties.push_back(instancePropertiesJsonList[instancePropertiesIndex].AsObject());
@@ -127,12 +127,12 @@ JsonValue SubjectDetail::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_credentialsHasBeenSet)
   {
-   Array<JsonValue> credentialsJsonList(m_credentials.size());
+   Aws::Utils::Array<JsonValue> credentialsJsonList(m_credentials.size());
    for(unsigned credentialsIndex = 0; credentialsIndex < credentialsJsonList.GetLength(); ++credentialsIndex)
    {
      credentialsJsonList[credentialsIndex].AsObject(m_credentials[credentialsIndex].Jsonize());
@@ -149,7 +149,7 @@ JsonValue SubjectDetail::Jsonize() const
 
   if(m_instancePropertiesHasBeenSet)
   {
-   Array<JsonValue> instancePropertiesJsonList(m_instanceProperties.size());
+   Aws::Utils::Array<JsonValue> instancePropertiesJsonList(m_instanceProperties.size());
    for(unsigned instancePropertiesIndex = 0; instancePropertiesIndex < instancePropertiesJsonList.GetLength(); ++instancePropertiesIndex)
    {
      instancePropertiesJsonList[instancePropertiesIndex].AsObject(m_instanceProperties[instancePropertiesIndex].Jsonize());
@@ -160,7 +160,7 @@ JsonValue SubjectDetail::Jsonize() const
 
   if(m_lastSeenAtHasBeenSet)
   {
-   payload.WithString("lastSeenAt", m_lastSeenAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("lastSeenAt", m_lastSeenAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_subjectArnHasBeenSet)
@@ -177,7 +177,7 @@ JsonValue SubjectDetail::Jsonize() const
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_x509SubjectHasBeenSet)

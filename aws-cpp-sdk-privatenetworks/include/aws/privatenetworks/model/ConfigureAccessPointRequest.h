@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_PRIVATENETWORKS_API ConfigureAccessPointRequest : public PrivateNetworksRequest
+  class ConfigureAccessPointRequest : public PrivateNetworksRequest
   {
   public:
-    ConfigureAccessPointRequest();
+    AWS_PRIVATENETWORKS_API ConfigureAccessPointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ConfigureAccessPoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PRIVATENETWORKS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -303,22 +303,22 @@ namespace Model
   private:
 
     Aws::String m_accessPointArn;
-    bool m_accessPointArnHasBeenSet;
+    bool m_accessPointArnHasBeenSet = false;
 
     Aws::String m_cpiSecretKey;
-    bool m_cpiSecretKeyHasBeenSet;
+    bool m_cpiSecretKeyHasBeenSet = false;
 
     Aws::String m_cpiUserId;
-    bool m_cpiUserIdHasBeenSet;
+    bool m_cpiUserIdHasBeenSet = false;
 
     Aws::String m_cpiUserPassword;
-    bool m_cpiUserPasswordHasBeenSet;
+    bool m_cpiUserPasswordHasBeenSet = false;
 
     Aws::String m_cpiUsername;
-    bool m_cpiUsernameHasBeenSet;
+    bool m_cpiUsernameHasBeenSet = false;
 
     Position m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
   };
 
 } // namespace Model

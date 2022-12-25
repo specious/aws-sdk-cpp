@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ProtectionGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API ProtectionGroup
+  class ProtectionGroup
   {
   public:
-    ProtectionGroup();
-    ProtectionGroup(Aws::Utils::Json::JsonView jsonValue);
-    ProtectionGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API ProtectionGroup();
+    AWS_SHIELD_API ProtectionGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API ProtectionGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -405,22 +405,22 @@ namespace Model
   private:
 
     Aws::String m_protectionGroupId;
-    bool m_protectionGroupIdHasBeenSet;
+    bool m_protectionGroupIdHasBeenSet = false;
 
     ProtectionGroupAggregation m_aggregation;
-    bool m_aggregationHasBeenSet;
+    bool m_aggregationHasBeenSet = false;
 
     ProtectionGroupPattern m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
 
     ProtectedResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_members;
-    bool m_membersHasBeenSet;
+    bool m_membersHasBeenSet = false;
 
     Aws::String m_protectionGroupArn;
-    bool m_protectionGroupArnHasBeenSet;
+    bool m_protectionGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

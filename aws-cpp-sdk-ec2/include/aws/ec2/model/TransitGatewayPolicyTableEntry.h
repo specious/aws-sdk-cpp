@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayPolicyTableEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayPolicyTableEntry
+  class TransitGatewayPolicyTableEntry
   {
   public:
-    TransitGatewayPolicyTableEntry();
-    TransitGatewayPolicyTableEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayPolicyTableEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayPolicyTableEntry();
+    AWS_EC2_API TransitGatewayPolicyTableEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayPolicyTableEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_policyRuleNumber;
-    bool m_policyRuleNumberHasBeenSet;
+    bool m_policyRuleNumberHasBeenSet = false;
 
     TransitGatewayPolicyRule m_policyRule;
-    bool m_policyRuleHasBeenSet;
+    bool m_policyRuleHasBeenSet = false;
 
     Aws::String m_targetRouteTableId;
-    bool m_targetRouteTableIdHasBeenSet;
+    bool m_targetRouteTableIdHasBeenSet = false;
   };
 
 } // namespace Model

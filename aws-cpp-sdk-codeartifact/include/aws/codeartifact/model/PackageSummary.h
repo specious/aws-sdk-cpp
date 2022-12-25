@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PackageSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API PackageSummary
+  class PackageSummary
   {
   public:
-    PackageSummary();
-    PackageSummary(Aws::Utils::Json::JsonView jsonValue);
-    PackageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API PackageSummary();
+    AWS_CODEARTIFACT_API PackageSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API PackageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -258,16 +258,16 @@ namespace Model
   private:
 
     PackageFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_package;
-    bool m_packageHasBeenSet;
+    bool m_packageHasBeenSet = false;
 
     PackageOriginConfiguration m_originConfiguration;
-    bool m_originConfigurationHasBeenSet;
+    bool m_originConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

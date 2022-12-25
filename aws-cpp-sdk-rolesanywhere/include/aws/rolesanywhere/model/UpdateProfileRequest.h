@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROLESANYWHERE_API UpdateProfileRequest : public RolesAnywhereRequest
+  class UpdateProfileRequest : public RolesAnywhereRequest
   {
   public:
-    UpdateProfileRequest();
+    AWS_ROLESANYWHERE_API UpdateProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROLESANYWHERE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -306,22 +306,22 @@ namespace Model
   private:
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_managedPolicyArns;
-    bool m_managedPolicyArnsHasBeenSet;
+    bool m_managedPolicyArnsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_profileId;
-    bool m_profileIdHasBeenSet;
+    bool m_profileIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_roleArns;
-    bool m_roleArnsHasBeenSet;
+    bool m_roleArnsHasBeenSet = false;
 
     Aws::String m_sessionPolicy;
-    bool m_sessionPolicyHasBeenSet;
+    bool m_sessionPolicyHasBeenSet = false;
   };
 
 } // namespace Model

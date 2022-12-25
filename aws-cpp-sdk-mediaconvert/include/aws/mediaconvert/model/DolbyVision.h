@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DolbyVision">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API DolbyVision
+  class DolbyVision
   {
   public:
-    DolbyVision();
-    DolbyVision(Aws::Utils::Json::JsonView jsonValue);
-    DolbyVision& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API DolbyVision();
+    AWS_MEDIACONVERT_API DolbyVision(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API DolbyVision& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -251,16 +251,16 @@ namespace Model
   private:
 
     DolbyVisionLevel6Metadata m_l6Metadata;
-    bool m_l6MetadataHasBeenSet;
+    bool m_l6MetadataHasBeenSet = false;
 
     DolbyVisionLevel6Mode m_l6Mode;
-    bool m_l6ModeHasBeenSet;
+    bool m_l6ModeHasBeenSet = false;
 
     DolbyVisionMapping m_mapping;
-    bool m_mappingHasBeenSet;
+    bool m_mappingHasBeenSet = false;
 
     DolbyVisionProfile m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
   };
 
 } // namespace Model

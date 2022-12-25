@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DefaultImportClientBrandingAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API DefaultImportClientBrandingAttributes
+  class DefaultImportClientBrandingAttributes
   {
   public:
-    DefaultImportClientBrandingAttributes();
-    DefaultImportClientBrandingAttributes(Aws::Utils::Json::JsonView jsonValue);
-    DefaultImportClientBrandingAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API DefaultImportClientBrandingAttributes();
+    AWS_WORKSPACES_API DefaultImportClientBrandingAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API DefaultImportClientBrandingAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -402,19 +402,19 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_logo;
-    bool m_logoHasBeenSet;
+    bool m_logoHasBeenSet = false;
 
     Aws::String m_supportEmail;
-    bool m_supportEmailHasBeenSet;
+    bool m_supportEmailHasBeenSet = false;
 
     Aws::String m_supportLink;
-    bool m_supportLinkHasBeenSet;
+    bool m_supportLinkHasBeenSet = false;
 
     Aws::String m_forgotPasswordLink;
-    bool m_forgotPasswordLinkHasBeenSet;
+    bool m_forgotPasswordLinkHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_loginMessage;
-    bool m_loginMessageHasBeenSet;
+    bool m_loginMessageHasBeenSet = false;
   };
 
 } // namespace Model

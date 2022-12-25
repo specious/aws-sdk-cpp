@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_WAFV2_API GetRateBasedStatementManagedKeysRequest : public WAFV2Request
+  class GetRateBasedStatementManagedKeysRequest : public WAFV2Request
   {
   public:
-    GetRateBasedStatementManagedKeysRequest();
+    AWS_WAFV2_API GetRateBasedStatementManagedKeysRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetRateBasedStatementManagedKeys"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WAFV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WAFV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -330,19 +330,19 @@ namespace Model
   private:
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_webACLName;
-    bool m_webACLNameHasBeenSet;
+    bool m_webACLNameHasBeenSet = false;
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
 
     Aws::String m_ruleGroupRuleName;
-    bool m_ruleGroupRuleNameHasBeenSet;
+    bool m_ruleGroupRuleNameHasBeenSet = false;
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
   };
 
 } // namespace Model

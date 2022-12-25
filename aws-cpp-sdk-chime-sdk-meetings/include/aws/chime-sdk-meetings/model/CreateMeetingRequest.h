@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIMESDKMEETINGS_API CreateMeetingRequest : public ChimeSDKMeetingsRequest
+  class CreateMeetingRequest : public ChimeSDKMeetingsRequest
   {
   public:
-    CreateMeetingRequest();
+    AWS_CHIMESDKMEETINGS_API CreateMeetingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateMeeting"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIMESDKMEETINGS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -734,31 +734,31 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_mediaRegion;
-    bool m_mediaRegionHasBeenSet;
+    bool m_mediaRegionHasBeenSet = false;
 
     Aws::String m_meetingHostId;
-    bool m_meetingHostIdHasBeenSet;
+    bool m_meetingHostIdHasBeenSet = false;
 
     Aws::String m_externalMeetingId;
-    bool m_externalMeetingIdHasBeenSet;
+    bool m_externalMeetingIdHasBeenSet = false;
 
     NotificationsConfiguration m_notificationsConfiguration;
-    bool m_notificationsConfigurationHasBeenSet;
+    bool m_notificationsConfigurationHasBeenSet = false;
 
     MeetingFeaturesConfiguration m_meetingFeatures;
-    bool m_meetingFeaturesHasBeenSet;
+    bool m_meetingFeaturesHasBeenSet = false;
 
     Aws::String m_primaryMeetingId;
-    bool m_primaryMeetingIdHasBeenSet;
+    bool m_primaryMeetingIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tenantIds;
-    bool m_tenantIdsHasBeenSet;
+    bool m_tenantIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

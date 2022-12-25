@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/Order">AWS
    * API Reference</a></p>
    */
-  class AWS_PRIVATENETWORKS_API Order
+  class Order
   {
   public:
-    Order();
-    Order(Aws::Utils::Json::JsonView jsonValue);
-    Order& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRIVATENETWORKS_API Order();
+    AWS_PRIVATENETWORKS_API Order(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Order& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -309,25 +309,25 @@ namespace Model
   private:
 
     AcknowledgmentStatus m_acknowledgmentStatus;
-    bool m_acknowledgmentStatusHasBeenSet;
+    bool m_acknowledgmentStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_networkArn;
-    bool m_networkArnHasBeenSet;
+    bool m_networkArnHasBeenSet = false;
 
     Aws::String m_networkSiteArn;
-    bool m_networkSiteArnHasBeenSet;
+    bool m_networkSiteArnHasBeenSet = false;
 
     Aws::String m_orderArn;
-    bool m_orderArnHasBeenSet;
+    bool m_orderArnHasBeenSet = false;
 
     Address m_shippingAddress;
-    bool m_shippingAddressHasBeenSet;
+    bool m_shippingAddressHasBeenSet = false;
 
     Aws::Vector<TrackingInformation> m_trackingInformation;
-    bool m_trackingInformationHasBeenSet;
+    bool m_trackingInformationHasBeenSet = false;
   };
 
 } // namespace Model

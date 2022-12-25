@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/HeaderMatchPattern">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API HeaderMatchPattern
+  class HeaderMatchPattern
   {
   public:
-    HeaderMatchPattern();
-    HeaderMatchPattern(Aws::Utils::Json::JsonView jsonValue);
-    HeaderMatchPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API HeaderMatchPattern();
+    AWS_WAFV2_API HeaderMatchPattern(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API HeaderMatchPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,13 +186,13 @@ namespace Model
   private:
 
     All m_all;
-    bool m_allHasBeenSet;
+    bool m_allHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includedHeaders;
-    bool m_includedHeadersHasBeenSet;
+    bool m_includedHeadersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedHeaders;
-    bool m_excludedHeadersHasBeenSet;
+    bool m_excludedHeadersHasBeenSet = false;
   };
 
 } // namespace Model

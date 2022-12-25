@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API TestSegmentPatternRequest : public CloudWatchEvidentlyRequest
+  class TestSegmentPatternRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    TestSegmentPatternRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API TestSegmentPatternRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TestSegmentPattern"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
 
     Aws::String m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

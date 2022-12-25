@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryStage">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API QueryStage
+  class QueryStage
   {
   public:
-    QueryStage();
-    QueryStage(Aws::Utils::Json::JsonView jsonValue);
-    QueryStage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API QueryStage();
+    AWS_ATHENA_API QueryStage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API QueryStage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -288,31 +288,31 @@ namespace Model
   private:
 
     long long m_stageId;
-    bool m_stageIdHasBeenSet;
+    bool m_stageIdHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     long long m_outputBytes;
-    bool m_outputBytesHasBeenSet;
+    bool m_outputBytesHasBeenSet = false;
 
     long long m_outputRows;
-    bool m_outputRowsHasBeenSet;
+    bool m_outputRowsHasBeenSet = false;
 
     long long m_inputBytes;
-    bool m_inputBytesHasBeenSet;
+    bool m_inputBytesHasBeenSet = false;
 
     long long m_inputRows;
-    bool m_inputRowsHasBeenSet;
+    bool m_inputRowsHasBeenSet = false;
 
     long long m_executionTime;
-    bool m_executionTimeHasBeenSet;
+    bool m_executionTimeHasBeenSet = false;
 
     QueryStagePlanNode m_queryStagePlan;
-    bool m_queryStagePlanHasBeenSet;
+    bool m_queryStagePlanHasBeenSet = false;
 
     Aws::Vector<QueryStage> m_subStages;
-    bool m_subStagesHasBeenSet;
+    bool m_subStagesHasBeenSet = false;
   };
 
 } // namespace Model

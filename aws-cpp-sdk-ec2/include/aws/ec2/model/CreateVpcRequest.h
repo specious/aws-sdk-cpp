@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API CreateVpcRequest : public EC2Request
+  class CreateVpcRequest : public EC2Request
   {
   public:
-    CreateVpcRequest();
+    AWS_EC2_API CreateVpcRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateVpc"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -679,40 +679,40 @@ namespace Model
   private:
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
 
     bool m_amazonProvidedIpv6CidrBlock;
-    bool m_amazonProvidedIpv6CidrBlockHasBeenSet;
+    bool m_amazonProvidedIpv6CidrBlockHasBeenSet = false;
 
     Aws::String m_ipv6Pool;
-    bool m_ipv6PoolHasBeenSet;
+    bool m_ipv6PoolHasBeenSet = false;
 
     Aws::String m_ipv6CidrBlock;
-    bool m_ipv6CidrBlockHasBeenSet;
+    bool m_ipv6CidrBlockHasBeenSet = false;
 
     Aws::String m_ipv4IpamPoolId;
-    bool m_ipv4IpamPoolIdHasBeenSet;
+    bool m_ipv4IpamPoolIdHasBeenSet = false;
 
     int m_ipv4NetmaskLength;
-    bool m_ipv4NetmaskLengthHasBeenSet;
+    bool m_ipv4NetmaskLengthHasBeenSet = false;
 
     Aws::String m_ipv6IpamPoolId;
-    bool m_ipv6IpamPoolIdHasBeenSet;
+    bool m_ipv6IpamPoolIdHasBeenSet = false;
 
     int m_ipv6NetmaskLength;
-    bool m_ipv6NetmaskLengthHasBeenSet;
+    bool m_ipv6NetmaskLengthHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Tenancy m_instanceTenancy;
-    bool m_instanceTenancyHasBeenSet;
+    bool m_instanceTenancyHasBeenSet = false;
 
     Aws::String m_ipv6CidrBlockNetworkBorderGroup;
-    bool m_ipv6CidrBlockNetworkBorderGroupHasBeenSet;
+    bool m_ipv6CidrBlockNetworkBorderGroupHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

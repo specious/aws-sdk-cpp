@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DataSourceFreeTrial">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API DataSourceFreeTrial
+  class DataSourceFreeTrial
   {
   public:
-    DataSourceFreeTrial();
-    DataSourceFreeTrial(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceFreeTrial& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API DataSourceFreeTrial();
+    AWS_GUARDDUTY_API DataSourceFreeTrial(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API DataSourceFreeTrial& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_freeTrialDaysRemaining;
-    bool m_freeTrialDaysRemainingHasBeenSet;
+    bool m_freeTrialDaysRemainingHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,285 +5,16 @@
 
 #pragma once
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
-#include <aws/globalaccelerator/GlobalAcceleratorErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/globalaccelerator/model/AddCustomRoutingEndpointsResult.h>
-#include <aws/globalaccelerator/model/AdvertiseByoipCidrResult.h>
-#include <aws/globalaccelerator/model/CreateAcceleratorResult.h>
-#include <aws/globalaccelerator/model/CreateCustomRoutingAcceleratorResult.h>
-#include <aws/globalaccelerator/model/CreateCustomRoutingEndpointGroupResult.h>
-#include <aws/globalaccelerator/model/CreateCustomRoutingListenerResult.h>
-#include <aws/globalaccelerator/model/CreateEndpointGroupResult.h>
-#include <aws/globalaccelerator/model/CreateListenerResult.h>
-#include <aws/globalaccelerator/model/DeprovisionByoipCidrResult.h>
-#include <aws/globalaccelerator/model/DescribeAcceleratorResult.h>
-#include <aws/globalaccelerator/model/DescribeAcceleratorAttributesResult.h>
-#include <aws/globalaccelerator/model/DescribeCustomRoutingAcceleratorResult.h>
-#include <aws/globalaccelerator/model/DescribeCustomRoutingAcceleratorAttributesResult.h>
-#include <aws/globalaccelerator/model/DescribeCustomRoutingEndpointGroupResult.h>
-#include <aws/globalaccelerator/model/DescribeCustomRoutingListenerResult.h>
-#include <aws/globalaccelerator/model/DescribeEndpointGroupResult.h>
-#include <aws/globalaccelerator/model/DescribeListenerResult.h>
-#include <aws/globalaccelerator/model/ListAcceleratorsResult.h>
-#include <aws/globalaccelerator/model/ListByoipCidrsResult.h>
-#include <aws/globalaccelerator/model/ListCustomRoutingAcceleratorsResult.h>
-#include <aws/globalaccelerator/model/ListCustomRoutingEndpointGroupsResult.h>
-#include <aws/globalaccelerator/model/ListCustomRoutingListenersResult.h>
-#include <aws/globalaccelerator/model/ListCustomRoutingPortMappingsResult.h>
-#include <aws/globalaccelerator/model/ListCustomRoutingPortMappingsByDestinationResult.h>
-#include <aws/globalaccelerator/model/ListEndpointGroupsResult.h>
-#include <aws/globalaccelerator/model/ListListenersResult.h>
-#include <aws/globalaccelerator/model/ListTagsForResourceResult.h>
-#include <aws/globalaccelerator/model/ProvisionByoipCidrResult.h>
-#include <aws/globalaccelerator/model/TagResourceResult.h>
-#include <aws/globalaccelerator/model/UntagResourceResult.h>
-#include <aws/globalaccelerator/model/UpdateAcceleratorResult.h>
-#include <aws/globalaccelerator/model/UpdateAcceleratorAttributesResult.h>
-#include <aws/globalaccelerator/model/UpdateCustomRoutingAcceleratorResult.h>
-#include <aws/globalaccelerator/model/UpdateCustomRoutingAcceleratorAttributesResult.h>
-#include <aws/globalaccelerator/model/UpdateCustomRoutingListenerResult.h>
-#include <aws/globalaccelerator/model/UpdateEndpointGroupResult.h>
-#include <aws/globalaccelerator/model/UpdateListenerResult.h>
-#include <aws/globalaccelerator/model/WithdrawByoipCidrResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/globalaccelerator/GlobalAcceleratorServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace GlobalAccelerator
 {
-
-namespace Model
-{
-        class AddCustomRoutingEndpointsRequest;
-        class AdvertiseByoipCidrRequest;
-        class AllowCustomRoutingTrafficRequest;
-        class CreateAcceleratorRequest;
-        class CreateCustomRoutingAcceleratorRequest;
-        class CreateCustomRoutingEndpointGroupRequest;
-        class CreateCustomRoutingListenerRequest;
-        class CreateEndpointGroupRequest;
-        class CreateListenerRequest;
-        class DeleteAcceleratorRequest;
-        class DeleteCustomRoutingAcceleratorRequest;
-        class DeleteCustomRoutingEndpointGroupRequest;
-        class DeleteCustomRoutingListenerRequest;
-        class DeleteEndpointGroupRequest;
-        class DeleteListenerRequest;
-        class DenyCustomRoutingTrafficRequest;
-        class DeprovisionByoipCidrRequest;
-        class DescribeAcceleratorRequest;
-        class DescribeAcceleratorAttributesRequest;
-        class DescribeCustomRoutingAcceleratorRequest;
-        class DescribeCustomRoutingAcceleratorAttributesRequest;
-        class DescribeCustomRoutingEndpointGroupRequest;
-        class DescribeCustomRoutingListenerRequest;
-        class DescribeEndpointGroupRequest;
-        class DescribeListenerRequest;
-        class ListAcceleratorsRequest;
-        class ListByoipCidrsRequest;
-        class ListCustomRoutingAcceleratorsRequest;
-        class ListCustomRoutingEndpointGroupsRequest;
-        class ListCustomRoutingListenersRequest;
-        class ListCustomRoutingPortMappingsRequest;
-        class ListCustomRoutingPortMappingsByDestinationRequest;
-        class ListEndpointGroupsRequest;
-        class ListListenersRequest;
-        class ListTagsForResourceRequest;
-        class ProvisionByoipCidrRequest;
-        class RemoveCustomRoutingEndpointsRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateAcceleratorRequest;
-        class UpdateAcceleratorAttributesRequest;
-        class UpdateCustomRoutingAcceleratorRequest;
-        class UpdateCustomRoutingAcceleratorAttributesRequest;
-        class UpdateCustomRoutingListenerRequest;
-        class UpdateEndpointGroupRequest;
-        class UpdateListenerRequest;
-        class WithdrawByoipCidrRequest;
-
-        typedef Aws::Utils::Outcome<AddCustomRoutingEndpointsResult, GlobalAcceleratorError> AddCustomRoutingEndpointsOutcome;
-        typedef Aws::Utils::Outcome<AdvertiseByoipCidrResult, GlobalAcceleratorError> AdvertiseByoipCidrOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> AllowCustomRoutingTrafficOutcome;
-        typedef Aws::Utils::Outcome<CreateAcceleratorResult, GlobalAcceleratorError> CreateAcceleratorOutcome;
-        typedef Aws::Utils::Outcome<CreateCustomRoutingAcceleratorResult, GlobalAcceleratorError> CreateCustomRoutingAcceleratorOutcome;
-        typedef Aws::Utils::Outcome<CreateCustomRoutingEndpointGroupResult, GlobalAcceleratorError> CreateCustomRoutingEndpointGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateCustomRoutingListenerResult, GlobalAcceleratorError> CreateCustomRoutingListenerOutcome;
-        typedef Aws::Utils::Outcome<CreateEndpointGroupResult, GlobalAcceleratorError> CreateEndpointGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateListenerResult, GlobalAcceleratorError> CreateListenerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> DeleteAcceleratorOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> DeleteCustomRoutingAcceleratorOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> DeleteCustomRoutingEndpointGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> DeleteCustomRoutingListenerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> DeleteEndpointGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> DeleteListenerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> DenyCustomRoutingTrafficOutcome;
-        typedef Aws::Utils::Outcome<DeprovisionByoipCidrResult, GlobalAcceleratorError> DeprovisionByoipCidrOutcome;
-        typedef Aws::Utils::Outcome<DescribeAcceleratorResult, GlobalAcceleratorError> DescribeAcceleratorOutcome;
-        typedef Aws::Utils::Outcome<DescribeAcceleratorAttributesResult, GlobalAcceleratorError> DescribeAcceleratorAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeCustomRoutingAcceleratorResult, GlobalAcceleratorError> DescribeCustomRoutingAcceleratorOutcome;
-        typedef Aws::Utils::Outcome<DescribeCustomRoutingAcceleratorAttributesResult, GlobalAcceleratorError> DescribeCustomRoutingAcceleratorAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeCustomRoutingEndpointGroupResult, GlobalAcceleratorError> DescribeCustomRoutingEndpointGroupOutcome;
-        typedef Aws::Utils::Outcome<DescribeCustomRoutingListenerResult, GlobalAcceleratorError> DescribeCustomRoutingListenerOutcome;
-        typedef Aws::Utils::Outcome<DescribeEndpointGroupResult, GlobalAcceleratorError> DescribeEndpointGroupOutcome;
-        typedef Aws::Utils::Outcome<DescribeListenerResult, GlobalAcceleratorError> DescribeListenerOutcome;
-        typedef Aws::Utils::Outcome<ListAcceleratorsResult, GlobalAcceleratorError> ListAcceleratorsOutcome;
-        typedef Aws::Utils::Outcome<ListByoipCidrsResult, GlobalAcceleratorError> ListByoipCidrsOutcome;
-        typedef Aws::Utils::Outcome<ListCustomRoutingAcceleratorsResult, GlobalAcceleratorError> ListCustomRoutingAcceleratorsOutcome;
-        typedef Aws::Utils::Outcome<ListCustomRoutingEndpointGroupsResult, GlobalAcceleratorError> ListCustomRoutingEndpointGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListCustomRoutingListenersResult, GlobalAcceleratorError> ListCustomRoutingListenersOutcome;
-        typedef Aws::Utils::Outcome<ListCustomRoutingPortMappingsResult, GlobalAcceleratorError> ListCustomRoutingPortMappingsOutcome;
-        typedef Aws::Utils::Outcome<ListCustomRoutingPortMappingsByDestinationResult, GlobalAcceleratorError> ListCustomRoutingPortMappingsByDestinationOutcome;
-        typedef Aws::Utils::Outcome<ListEndpointGroupsResult, GlobalAcceleratorError> ListEndpointGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListListenersResult, GlobalAcceleratorError> ListListenersOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, GlobalAcceleratorError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ProvisionByoipCidrResult, GlobalAcceleratorError> ProvisionByoipCidrOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> RemoveCustomRoutingEndpointsOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, GlobalAcceleratorError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, GlobalAcceleratorError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateAcceleratorResult, GlobalAcceleratorError> UpdateAcceleratorOutcome;
-        typedef Aws::Utils::Outcome<UpdateAcceleratorAttributesResult, GlobalAcceleratorError> UpdateAcceleratorAttributesOutcome;
-        typedef Aws::Utils::Outcome<UpdateCustomRoutingAcceleratorResult, GlobalAcceleratorError> UpdateCustomRoutingAcceleratorOutcome;
-        typedef Aws::Utils::Outcome<UpdateCustomRoutingAcceleratorAttributesResult, GlobalAcceleratorError> UpdateCustomRoutingAcceleratorAttributesOutcome;
-        typedef Aws::Utils::Outcome<UpdateCustomRoutingListenerResult, GlobalAcceleratorError> UpdateCustomRoutingListenerOutcome;
-        typedef Aws::Utils::Outcome<UpdateEndpointGroupResult, GlobalAcceleratorError> UpdateEndpointGroupOutcome;
-        typedef Aws::Utils::Outcome<UpdateListenerResult, GlobalAcceleratorError> UpdateListenerOutcome;
-        typedef Aws::Utils::Outcome<WithdrawByoipCidrResult, GlobalAcceleratorError> WithdrawByoipCidrOutcome;
-
-        typedef std::future<AddCustomRoutingEndpointsOutcome> AddCustomRoutingEndpointsOutcomeCallable;
-        typedef std::future<AdvertiseByoipCidrOutcome> AdvertiseByoipCidrOutcomeCallable;
-        typedef std::future<AllowCustomRoutingTrafficOutcome> AllowCustomRoutingTrafficOutcomeCallable;
-        typedef std::future<CreateAcceleratorOutcome> CreateAcceleratorOutcomeCallable;
-        typedef std::future<CreateCustomRoutingAcceleratorOutcome> CreateCustomRoutingAcceleratorOutcomeCallable;
-        typedef std::future<CreateCustomRoutingEndpointGroupOutcome> CreateCustomRoutingEndpointGroupOutcomeCallable;
-        typedef std::future<CreateCustomRoutingListenerOutcome> CreateCustomRoutingListenerOutcomeCallable;
-        typedef std::future<CreateEndpointGroupOutcome> CreateEndpointGroupOutcomeCallable;
-        typedef std::future<CreateListenerOutcome> CreateListenerOutcomeCallable;
-        typedef std::future<DeleteAcceleratorOutcome> DeleteAcceleratorOutcomeCallable;
-        typedef std::future<DeleteCustomRoutingAcceleratorOutcome> DeleteCustomRoutingAcceleratorOutcomeCallable;
-        typedef std::future<DeleteCustomRoutingEndpointGroupOutcome> DeleteCustomRoutingEndpointGroupOutcomeCallable;
-        typedef std::future<DeleteCustomRoutingListenerOutcome> DeleteCustomRoutingListenerOutcomeCallable;
-        typedef std::future<DeleteEndpointGroupOutcome> DeleteEndpointGroupOutcomeCallable;
-        typedef std::future<DeleteListenerOutcome> DeleteListenerOutcomeCallable;
-        typedef std::future<DenyCustomRoutingTrafficOutcome> DenyCustomRoutingTrafficOutcomeCallable;
-        typedef std::future<DeprovisionByoipCidrOutcome> DeprovisionByoipCidrOutcomeCallable;
-        typedef std::future<DescribeAcceleratorOutcome> DescribeAcceleratorOutcomeCallable;
-        typedef std::future<DescribeAcceleratorAttributesOutcome> DescribeAcceleratorAttributesOutcomeCallable;
-        typedef std::future<DescribeCustomRoutingAcceleratorOutcome> DescribeCustomRoutingAcceleratorOutcomeCallable;
-        typedef std::future<DescribeCustomRoutingAcceleratorAttributesOutcome> DescribeCustomRoutingAcceleratorAttributesOutcomeCallable;
-        typedef std::future<DescribeCustomRoutingEndpointGroupOutcome> DescribeCustomRoutingEndpointGroupOutcomeCallable;
-        typedef std::future<DescribeCustomRoutingListenerOutcome> DescribeCustomRoutingListenerOutcomeCallable;
-        typedef std::future<DescribeEndpointGroupOutcome> DescribeEndpointGroupOutcomeCallable;
-        typedef std::future<DescribeListenerOutcome> DescribeListenerOutcomeCallable;
-        typedef std::future<ListAcceleratorsOutcome> ListAcceleratorsOutcomeCallable;
-        typedef std::future<ListByoipCidrsOutcome> ListByoipCidrsOutcomeCallable;
-        typedef std::future<ListCustomRoutingAcceleratorsOutcome> ListCustomRoutingAcceleratorsOutcomeCallable;
-        typedef std::future<ListCustomRoutingEndpointGroupsOutcome> ListCustomRoutingEndpointGroupsOutcomeCallable;
-        typedef std::future<ListCustomRoutingListenersOutcome> ListCustomRoutingListenersOutcomeCallable;
-        typedef std::future<ListCustomRoutingPortMappingsOutcome> ListCustomRoutingPortMappingsOutcomeCallable;
-        typedef std::future<ListCustomRoutingPortMappingsByDestinationOutcome> ListCustomRoutingPortMappingsByDestinationOutcomeCallable;
-        typedef std::future<ListEndpointGroupsOutcome> ListEndpointGroupsOutcomeCallable;
-        typedef std::future<ListListenersOutcome> ListListenersOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ProvisionByoipCidrOutcome> ProvisionByoipCidrOutcomeCallable;
-        typedef std::future<RemoveCustomRoutingEndpointsOutcome> RemoveCustomRoutingEndpointsOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateAcceleratorOutcome> UpdateAcceleratorOutcomeCallable;
-        typedef std::future<UpdateAcceleratorAttributesOutcome> UpdateAcceleratorAttributesOutcomeCallable;
-        typedef std::future<UpdateCustomRoutingAcceleratorOutcome> UpdateCustomRoutingAcceleratorOutcomeCallable;
-        typedef std::future<UpdateCustomRoutingAcceleratorAttributesOutcome> UpdateCustomRoutingAcceleratorAttributesOutcomeCallable;
-        typedef std::future<UpdateCustomRoutingListenerOutcome> UpdateCustomRoutingListenerOutcomeCallable;
-        typedef std::future<UpdateEndpointGroupOutcome> UpdateEndpointGroupOutcomeCallable;
-        typedef std::future<UpdateListenerOutcome> UpdateListenerOutcomeCallable;
-        typedef std::future<WithdrawByoipCidrOutcome> WithdrawByoipCidrOutcomeCallable;
-} // namespace Model
-
-  class GlobalAcceleratorClient;
-
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::AddCustomRoutingEndpointsRequest&, const Model::AddCustomRoutingEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddCustomRoutingEndpointsResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::AdvertiseByoipCidrRequest&, const Model::AdvertiseByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdvertiseByoipCidrResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::AllowCustomRoutingTrafficRequest&, const Model::AllowCustomRoutingTrafficOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllowCustomRoutingTrafficResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateAcceleratorRequest&, const Model::CreateAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAcceleratorResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateCustomRoutingAcceleratorRequest&, const Model::CreateCustomRoutingAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomRoutingAcceleratorResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateCustomRoutingEndpointGroupRequest&, const Model::CreateCustomRoutingEndpointGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomRoutingEndpointGroupResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateCustomRoutingListenerRequest&, const Model::CreateCustomRoutingListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomRoutingListenerResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateEndpointGroupRequest&, const Model::CreateEndpointGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointGroupResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateListenerRequest&, const Model::CreateListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateListenerResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DeleteAcceleratorRequest&, const Model::DeleteAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAcceleratorResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DeleteCustomRoutingAcceleratorRequest&, const Model::DeleteCustomRoutingAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomRoutingAcceleratorResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DeleteCustomRoutingEndpointGroupRequest&, const Model::DeleteCustomRoutingEndpointGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomRoutingEndpointGroupResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DeleteCustomRoutingListenerRequest&, const Model::DeleteCustomRoutingListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomRoutingListenerResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DeleteEndpointGroupRequest&, const Model::DeleteEndpointGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointGroupResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DeleteListenerRequest&, const Model::DeleteListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteListenerResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DenyCustomRoutingTrafficRequest&, const Model::DenyCustomRoutingTrafficOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DenyCustomRoutingTrafficResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DeprovisionByoipCidrRequest&, const Model::DeprovisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprovisionByoipCidrResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeAcceleratorRequest&, const Model::DescribeAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAcceleratorResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeAcceleratorAttributesRequest&, const Model::DescribeAcceleratorAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAcceleratorAttributesResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeCustomRoutingAcceleratorRequest&, const Model::DescribeCustomRoutingAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomRoutingAcceleratorResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeCustomRoutingAcceleratorAttributesRequest&, const Model::DescribeCustomRoutingAcceleratorAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomRoutingAcceleratorAttributesResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeCustomRoutingEndpointGroupRequest&, const Model::DescribeCustomRoutingEndpointGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomRoutingEndpointGroupResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeCustomRoutingListenerRequest&, const Model::DescribeCustomRoutingListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomRoutingListenerResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeEndpointGroupRequest&, const Model::DescribeEndpointGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointGroupResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::DescribeListenerRequest&, const Model::DescribeListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeListenerResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListAcceleratorsRequest&, const Model::ListAcceleratorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAcceleratorsResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListByoipCidrsRequest&, const Model::ListByoipCidrsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListByoipCidrsResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListCustomRoutingAcceleratorsRequest&, const Model::ListCustomRoutingAcceleratorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomRoutingAcceleratorsResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListCustomRoutingEndpointGroupsRequest&, const Model::ListCustomRoutingEndpointGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomRoutingEndpointGroupsResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListCustomRoutingListenersRequest&, const Model::ListCustomRoutingListenersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomRoutingListenersResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListCustomRoutingPortMappingsRequest&, const Model::ListCustomRoutingPortMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomRoutingPortMappingsResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListCustomRoutingPortMappingsByDestinationRequest&, const Model::ListCustomRoutingPortMappingsByDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomRoutingPortMappingsByDestinationResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListEndpointGroupsRequest&, const Model::ListEndpointGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointGroupsResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListListenersRequest&, const Model::ListListenersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListListenersResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::ProvisionByoipCidrRequest&, const Model::ProvisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionByoipCidrResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::RemoveCustomRoutingEndpointsRequest&, const Model::RemoveCustomRoutingEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveCustomRoutingEndpointsResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateAcceleratorRequest&, const Model::UpdateAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAcceleratorResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateAcceleratorAttributesRequest&, const Model::UpdateAcceleratorAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAcceleratorAttributesResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateCustomRoutingAcceleratorRequest&, const Model::UpdateCustomRoutingAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCustomRoutingAcceleratorResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateCustomRoutingAcceleratorAttributesRequest&, const Model::UpdateCustomRoutingAcceleratorAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCustomRoutingAcceleratorAttributesResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateCustomRoutingListenerRequest&, const Model::UpdateCustomRoutingListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCustomRoutingListenerResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateEndpointGroupRequest&, const Model::UpdateEndpointGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointGroupResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateListenerRequest&, const Model::UpdateListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateListenerResponseReceivedHandler;
-    typedef std::function<void(const GlobalAcceleratorClient*, const Model::WithdrawByoipCidrRequest&, const Model::WithdrawByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > WithdrawByoipCidrResponseReceivedHandler;
-
   /**
    * <fullname>Global Accelerator</fullname> <p>This is the <i>Global Accelerator API
    * Reference</i>. This guide is for developers who need detailed information about
@@ -338,32 +69,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html">Global
    * Accelerator Developer Guide</a>.</p>
    */
-  class AWS_GLOBALACCELERATOR_API GlobalAcceleratorClient : public Aws::Client::AWSJsonClient
+  class AWS_GLOBALACCELERATOR_API GlobalAcceleratorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GlobalAcceleratorClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        GlobalAcceleratorClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        GlobalAcceleratorClient(const Aws::GlobalAccelerator::GlobalAcceleratorClientConfiguration& clientConfiguration = Aws::GlobalAccelerator::GlobalAcceleratorClientConfiguration(),
+                                std::shared_ptr<GlobalAcceleratorEndpointProviderBase> endpointProvider = Aws::MakeShared<GlobalAcceleratorEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        GlobalAcceleratorClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        GlobalAcceleratorClient(const Aws::Auth::AWSCredentials& credentials,
+                                std::shared_ptr<GlobalAcceleratorEndpointProviderBase> endpointProvider = Aws::MakeShared<GlobalAcceleratorEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::GlobalAccelerator::GlobalAcceleratorClientConfiguration& clientConfiguration = Aws::GlobalAccelerator::GlobalAcceleratorClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         GlobalAcceleratorClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                std::shared_ptr<GlobalAcceleratorEndpointProviderBase> endpointProvider = Aws::MakeShared<GlobalAcceleratorEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::GlobalAccelerator::GlobalAcceleratorClientConfiguration& clientConfiguration = Aws::GlobalAccelerator::GlobalAcceleratorClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        GlobalAcceleratorClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        GlobalAcceleratorClient(const Aws::Auth::AWSCredentials& credentials,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        GlobalAcceleratorClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~GlobalAcceleratorClient();
-
 
         /**
          * <p>Associate a virtual private cloud (VPC) subnet endpoint with your custom
@@ -393,6 +152,34 @@ namespace Model
          * An Async wrapper for AddCustomRoutingEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AddCustomRoutingEndpointsAsync(const Model::AddCustomRoutingEndpointsRequest& request, const AddCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Add endpoints to an endpoint group. The <code>AddEndpoints</code> API
+         * operation is the recommended option for adding endpoints. The alternative
+         * options are to add endpoints when you create an endpoint group (with the <a
+         * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html">CreateEndpointGroup</a>
+         * API) or when you update an endpoint group (with the <a
+         * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
+         * API). </p> <p>There are two advantages to using <code>AddEndpoints</code> to add
+         * endpoints:</p> <ul> <li> <p>It's faster, because Global Accelerator only has to
+         * resolve the new endpoints that you're adding.</p> </li> <li> <p>It's more
+         * convenient, because you don't need to specify all of the current endpoints that
+         * are already in the endpoint group in addition to the new endpoints that you want
+         * to add.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddEndpoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddEndpointsOutcome AddEndpoints(const Model::AddEndpointsRequest& request) const;
+
+        /**
+         * A Callable wrapper for AddEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddEndpointsOutcomeCallable AddEndpointsCallable(const Model::AddEndpointsRequest& request) const;
+
+        /**
+         * An Async wrapper for AddEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddEndpointsAsync(const Model::AddEndpointsRequest& request, const AddEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Advertises an IPv4 address range that is provisioned for use with your Amazon
@@ -1140,6 +927,36 @@ namespace Model
         virtual void RemoveCustomRoutingEndpointsAsync(const Model::RemoveCustomRoutingEndpointsRequest& request, const RemoveCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Remove endpoints from an endpoint group. </p> <p>The
+         * <code>RemoveEndpoints</code> API operation is the recommended option for
+         * removing endpoints. The alternative is to remove endpoints by updating an
+         * endpoint group by using the <a
+         * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
+         * API operation. There are two advantages to using <code>AddEndpoints</code> to
+         * remove endpoints instead:</p> <ul> <li> <p>It's more convenient, because you
+         * only need to specify the endpoints that you want to remove. With the
+         * <code>UpdateEndpointGroup</code> API operation, you must specify all of the
+         * endpoints in the endpoint group except the ones that you want to remove from the
+         * group.</p> </li> <li> <p>It's faster, because Global Accelerator doesn't need to
+         * resolve any endpoints. With the <code>UpdateEndpointGroup</code> API operation,
+         * Global Accelerator must resolve all of the endpoints that remain in the
+         * group.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveEndpoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveEndpointsOutcome RemoveEndpoints(const Model::RemoveEndpointsRequest& request) const;
+
+        /**
+         * A Callable wrapper for RemoveEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveEndpointsOutcomeCallable RemoveEndpointsCallable(const Model::RemoveEndpointsRequest& request) const;
+
+        /**
+         * An Async wrapper for RemoveEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveEndpointsAsync(const Model::RemoveEndpointsRequest& request, const RemoveEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Add tags to an accelerator resource. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
          * in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.
@@ -1334,59 +1151,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<GlobalAcceleratorEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddCustomRoutingEndpointsAsyncHelper(const Model::AddCustomRoutingEndpointsRequest& request, const AddCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AdvertiseByoipCidrAsyncHelper(const Model::AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AllowCustomRoutingTrafficAsyncHelper(const Model::AllowCustomRoutingTrafficRequest& request, const AllowCustomRoutingTrafficResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAcceleratorAsyncHelper(const Model::CreateAcceleratorRequest& request, const CreateAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateCustomRoutingAcceleratorAsyncHelper(const Model::CreateCustomRoutingAcceleratorRequest& request, const CreateCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateCustomRoutingEndpointGroupAsyncHelper(const Model::CreateCustomRoutingEndpointGroupRequest& request, const CreateCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateCustomRoutingListenerAsyncHelper(const Model::CreateCustomRoutingListenerRequest& request, const CreateCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateEndpointGroupAsyncHelper(const Model::CreateEndpointGroupRequest& request, const CreateEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateListenerAsyncHelper(const Model::CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAcceleratorAsyncHelper(const Model::DeleteAcceleratorRequest& request, const DeleteAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCustomRoutingAcceleratorAsyncHelper(const Model::DeleteCustomRoutingAcceleratorRequest& request, const DeleteCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCustomRoutingEndpointGroupAsyncHelper(const Model::DeleteCustomRoutingEndpointGroupRequest& request, const DeleteCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCustomRoutingListenerAsyncHelper(const Model::DeleteCustomRoutingListenerRequest& request, const DeleteCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteEndpointGroupAsyncHelper(const Model::DeleteEndpointGroupRequest& request, const DeleteEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteListenerAsyncHelper(const Model::DeleteListenerRequest& request, const DeleteListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DenyCustomRoutingTrafficAsyncHelper(const Model::DenyCustomRoutingTrafficRequest& request, const DenyCustomRoutingTrafficResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeprovisionByoipCidrAsyncHelper(const Model::DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAcceleratorAsyncHelper(const Model::DescribeAcceleratorRequest& request, const DescribeAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAcceleratorAttributesAsyncHelper(const Model::DescribeAcceleratorAttributesRequest& request, const DescribeAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCustomRoutingAcceleratorAsyncHelper(const Model::DescribeCustomRoutingAcceleratorRequest& request, const DescribeCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCustomRoutingAcceleratorAttributesAsyncHelper(const Model::DescribeCustomRoutingAcceleratorAttributesRequest& request, const DescribeCustomRoutingAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCustomRoutingEndpointGroupAsyncHelper(const Model::DescribeCustomRoutingEndpointGroupRequest& request, const DescribeCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCustomRoutingListenerAsyncHelper(const Model::DescribeCustomRoutingListenerRequest& request, const DescribeCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeEndpointGroupAsyncHelper(const Model::DescribeEndpointGroupRequest& request, const DescribeEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeListenerAsyncHelper(const Model::DescribeListenerRequest& request, const DescribeListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAcceleratorsAsyncHelper(const Model::ListAcceleratorsRequest& request, const ListAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListByoipCidrsAsyncHelper(const Model::ListByoipCidrsRequest& request, const ListByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCustomRoutingAcceleratorsAsyncHelper(const Model::ListCustomRoutingAcceleratorsRequest& request, const ListCustomRoutingAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCustomRoutingEndpointGroupsAsyncHelper(const Model::ListCustomRoutingEndpointGroupsRequest& request, const ListCustomRoutingEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCustomRoutingListenersAsyncHelper(const Model::ListCustomRoutingListenersRequest& request, const ListCustomRoutingListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCustomRoutingPortMappingsAsyncHelper(const Model::ListCustomRoutingPortMappingsRequest& request, const ListCustomRoutingPortMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCustomRoutingPortMappingsByDestinationAsyncHelper(const Model::ListCustomRoutingPortMappingsByDestinationRequest& request, const ListCustomRoutingPortMappingsByDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEndpointGroupsAsyncHelper(const Model::ListEndpointGroupsRequest& request, const ListEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListListenersAsyncHelper(const Model::ListListenersRequest& request, const ListListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ProvisionByoipCidrAsyncHelper(const Model::ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveCustomRoutingEndpointsAsyncHelper(const Model::RemoveCustomRoutingEndpointsRequest& request, const RemoveCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAcceleratorAsyncHelper(const Model::UpdateAcceleratorRequest& request, const UpdateAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAcceleratorAttributesAsyncHelper(const Model::UpdateAcceleratorAttributesRequest& request, const UpdateAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateCustomRoutingAcceleratorAsyncHelper(const Model::UpdateCustomRoutingAcceleratorRequest& request, const UpdateCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateCustomRoutingAcceleratorAttributesAsyncHelper(const Model::UpdateCustomRoutingAcceleratorAttributesRequest& request, const UpdateCustomRoutingAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateCustomRoutingListenerAsyncHelper(const Model::UpdateCustomRoutingListenerRequest& request, const UpdateCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateEndpointGroupAsyncHelper(const Model::UpdateEndpointGroupRequest& request, const UpdateEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateListenerAsyncHelper(const Model::UpdateListenerRequest& request, const UpdateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void WithdrawByoipCidrAsyncHelper(const Model::WithdrawByoipCidrRequest& request, const WithdrawByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<GlobalAcceleratorClient>;
+      void init(const GlobalAcceleratorClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      GlobalAcceleratorClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<GlobalAcceleratorEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace GlobalAccelerator

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CustomResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API CustomResponse
+  class CustomResponse
   {
   public:
-    CustomResponse();
-    CustomResponse(Aws::Utils::Json::JsonView jsonValue);
-    CustomResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API CustomResponse();
+    AWS_WAFV2_API CustomResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API CustomResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -266,13 +266,13 @@ namespace Model
   private:
 
     int m_responseCode;
-    bool m_responseCodeHasBeenSet;
+    bool m_responseCodeHasBeenSet = false;
 
     Aws::String m_customResponseBodyKey;
-    bool m_customResponseBodyKeyHasBeenSet;
+    bool m_customResponseBodyKeyHasBeenSet = false;
 
     Aws::Vector<CustomHTTPHeader> m_responseHeaders;
-    bool m_responseHeadersHasBeenSet;
+    bool m_responseHeadersHasBeenSet = false;
   };
 
 } // namespace Model

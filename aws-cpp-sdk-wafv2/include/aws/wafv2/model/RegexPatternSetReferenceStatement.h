@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RegexPatternSetReferenceStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API RegexPatternSetReferenceStatement
+  class RegexPatternSetReferenceStatement
   {
   public:
-    RegexPatternSetReferenceStatement();
-    RegexPatternSetReferenceStatement(Aws::Utils::Json::JsonView jsonValue);
-    RegexPatternSetReferenceStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API RegexPatternSetReferenceStatement();
+    AWS_WAFV2_API RegexPatternSetReferenceStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API RegexPatternSetReferenceStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,13 +212,13 @@ namespace Model
   private:
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     Aws::Vector<TextTransformation> m_textTransformations;
-    bool m_textTransformationsHasBeenSet;
+    bool m_textTransformationsHasBeenSet = false;
   };
 
 } // namespace Model

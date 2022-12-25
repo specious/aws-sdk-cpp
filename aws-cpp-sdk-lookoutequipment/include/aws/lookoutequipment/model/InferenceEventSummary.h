@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/InferenceEventSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API InferenceEventSummary
+  class InferenceEventSummary
   {
   public:
-    InferenceEventSummary();
-    InferenceEventSummary(Aws::Utils::Json::JsonView jsonValue);
-    InferenceEventSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API InferenceEventSummary();
+    AWS_LOOKOUTEQUIPMENT_API InferenceEventSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API InferenceEventSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -264,22 +264,22 @@ namespace Model
   private:
 
     Aws::String m_inferenceSchedulerArn;
-    bool m_inferenceSchedulerArnHasBeenSet;
+    bool m_inferenceSchedulerArnHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerName;
-    bool m_inferenceSchedulerNameHasBeenSet;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventStartTime;
-    bool m_eventStartTimeHasBeenSet;
+    bool m_eventStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventEndTime;
-    bool m_eventEndTimeHasBeenSet;
+    bool m_eventEndTimeHasBeenSet = false;
 
     Aws::String m_diagnostics;
-    bool m_diagnosticsHasBeenSet;
+    bool m_diagnosticsHasBeenSet = false;
 
     long long m_eventDurationInSeconds;
-    bool m_eventDurationInSecondsHasBeenSet;
+    bool m_eventDurationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

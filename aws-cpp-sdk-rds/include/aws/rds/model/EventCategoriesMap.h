@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EventCategoriesMap">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API EventCategoriesMap
+  class EventCategoriesMap
   {
   public:
-    EventCategoriesMap();
-    EventCategoriesMap(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EventCategoriesMap& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API EventCategoriesMap();
+    AWS_RDS_API EventCategoriesMap(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API EventCategoriesMap& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eventCategories;
-    bool m_eventCategoriesHasBeenSet;
+    bool m_eventCategoriesHasBeenSet = false;
   };
 
 } // namespace Model

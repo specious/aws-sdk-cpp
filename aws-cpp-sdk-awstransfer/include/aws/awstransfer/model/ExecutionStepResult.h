@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ExecutionStepResult">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API ExecutionStepResult
+  class ExecutionStepResult
   {
   public:
-    ExecutionStepResult();
-    ExecutionStepResult(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionStepResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API ExecutionStepResult();
+    AWS_TRANSFER_API ExecutionStepResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API ExecutionStepResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,13 +177,13 @@ namespace Model
   private:
 
     WorkflowStepType m_stepType;
-    bool m_stepTypeHasBeenSet;
+    bool m_stepTypeHasBeenSet = false;
 
     Aws::String m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     ExecutionError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API UpdateExperimentRequest : public CloudWatchEvidentlyRequest
+  class UpdateExperimentRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    UpdateExperimentRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API UpdateExperimentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateExperiment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -520,34 +520,34 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_experiment;
-    bool m_experimentHasBeenSet;
+    bool m_experimentHasBeenSet = false;
 
     Aws::Vector<MetricGoalConfig> m_metricGoals;
-    bool m_metricGoalsHasBeenSet;
+    bool m_metricGoalsHasBeenSet = false;
 
     OnlineAbConfig m_onlineAbConfig;
-    bool m_onlineAbConfigHasBeenSet;
+    bool m_onlineAbConfigHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::String m_randomizationSalt;
-    bool m_randomizationSaltHasBeenSet;
+    bool m_randomizationSaltHasBeenSet = false;
 
     bool m_removeSegment;
-    bool m_removeSegmentHasBeenSet;
+    bool m_removeSegmentHasBeenSet = false;
 
     long long m_samplingRate;
-    bool m_samplingRateHasBeenSet;
+    bool m_samplingRateHasBeenSet = false;
 
     Aws::String m_segment;
-    bool m_segmentHasBeenSet;
+    bool m_segmentHasBeenSet = false;
 
     Aws::Vector<TreatmentConfig> m_treatments;
-    bool m_treatmentsHasBeenSet;
+    bool m_treatmentsHasBeenSet = false;
   };
 
 } // namespace Model

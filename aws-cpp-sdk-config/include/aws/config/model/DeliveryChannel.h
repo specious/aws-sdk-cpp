@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliveryChannel">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API DeliveryChannel
+  class DeliveryChannel
   {
   public:
-    DeliveryChannel();
-    DeliveryChannel(Aws::Utils::Json::JsonView jsonValue);
-    DeliveryChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API DeliveryChannel();
+    AWS_CONFIGSERVICE_API DeliveryChannel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API DeliveryChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -411,22 +411,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
 
     Aws::String m_s3KmsKeyArn;
-    bool m_s3KmsKeyArnHasBeenSet;
+    bool m_s3KmsKeyArnHasBeenSet = false;
 
     Aws::String m_snsTopicARN;
-    bool m_snsTopicARNHasBeenSet;
+    bool m_snsTopicARNHasBeenSet = false;
 
     ConfigSnapshotDeliveryProperties m_configSnapshotDeliveryProperties;
-    bool m_configSnapshotDeliveryPropertiesHasBeenSet;
+    bool m_configSnapshotDeliveryPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

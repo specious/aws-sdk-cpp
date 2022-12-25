@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROLESANYWHERE_API UpdateCrlRequest : public RolesAnywhereRequest
+  class UpdateCrlRequest : public RolesAnywhereRequest
   {
   public:
-    UpdateCrlRequest();
+    AWS_ROLESANYWHERE_API UpdateCrlRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateCrl"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROLESANYWHERE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_crlData;
-    bool m_crlDataHasBeenSet;
+    bool m_crlDataHasBeenSet = false;
 
     Aws::String m_crlId;
-    bool m_crlIdHasBeenSet;
+    bool m_crlIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

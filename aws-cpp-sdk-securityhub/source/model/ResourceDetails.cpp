@@ -94,7 +94,14 @@ ResourceDetails::ResourceDetails() :
     m_awsWafRegionalWebAclHasBeenSet(false),
     m_awsWafRuleHasBeenSet(false),
     m_awsWafRuleGroupHasBeenSet(false),
-    m_awsEcsTaskHasBeenSet(false)
+    m_awsEcsTaskHasBeenSet(false),
+    m_awsBackupBackupVaultHasBeenSet(false),
+    m_awsBackupBackupPlanHasBeenSet(false),
+    m_awsBackupRecoveryPointHasBeenSet(false),
+    m_awsEc2LaunchTemplateHasBeenSet(false),
+    m_awsSageMakerNotebookInstanceHasBeenSet(false),
+    m_awsWafv2WebAclHasBeenSet(false),
+    m_awsWafv2RuleGroupHasBeenSet(false)
 {
 }
 
@@ -174,7 +181,14 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsWafRegionalWebAclHasBeenSet(false),
     m_awsWafRuleHasBeenSet(false),
     m_awsWafRuleGroupHasBeenSet(false),
-    m_awsEcsTaskHasBeenSet(false)
+    m_awsEcsTaskHasBeenSet(false),
+    m_awsBackupBackupVaultHasBeenSet(false),
+    m_awsBackupBackupPlanHasBeenSet(false),
+    m_awsBackupRecoveryPointHasBeenSet(false),
+    m_awsEc2LaunchTemplateHasBeenSet(false),
+    m_awsSageMakerNotebookInstanceHasBeenSet(false),
+    m_awsWafv2WebAclHasBeenSet(false),
+    m_awsWafv2RuleGroupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -716,6 +730,55 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEcsTaskHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsBackupBackupVault"))
+  {
+    m_awsBackupBackupVault = jsonValue.GetObject("AwsBackupBackupVault");
+
+    m_awsBackupBackupVaultHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsBackupBackupPlan"))
+  {
+    m_awsBackupBackupPlan = jsonValue.GetObject("AwsBackupBackupPlan");
+
+    m_awsBackupBackupPlanHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsBackupRecoveryPoint"))
+  {
+    m_awsBackupRecoveryPoint = jsonValue.GetObject("AwsBackupRecoveryPoint");
+
+    m_awsBackupRecoveryPointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2LaunchTemplate"))
+  {
+    m_awsEc2LaunchTemplate = jsonValue.GetObject("AwsEc2LaunchTemplate");
+
+    m_awsEc2LaunchTemplateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsSageMakerNotebookInstance"))
+  {
+    m_awsSageMakerNotebookInstance = jsonValue.GetObject("AwsSageMakerNotebookInstance");
+
+    m_awsSageMakerNotebookInstanceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsWafv2WebAcl"))
+  {
+    m_awsWafv2WebAcl = jsonValue.GetObject("AwsWafv2WebAcl");
+
+    m_awsWafv2WebAclHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsWafv2RuleGroup"))
+  {
+    m_awsWafv2RuleGroup = jsonValue.GetObject("AwsWafv2RuleGroup");
+
+    m_awsWafv2RuleGroupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -1181,6 +1244,48 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsEcsTaskHasBeenSet)
   {
    payload.WithObject("AwsEcsTask", m_awsEcsTask.Jsonize());
+
+  }
+
+  if(m_awsBackupBackupVaultHasBeenSet)
+  {
+   payload.WithObject("AwsBackupBackupVault", m_awsBackupBackupVault.Jsonize());
+
+  }
+
+  if(m_awsBackupBackupPlanHasBeenSet)
+  {
+   payload.WithObject("AwsBackupBackupPlan", m_awsBackupBackupPlan.Jsonize());
+
+  }
+
+  if(m_awsBackupRecoveryPointHasBeenSet)
+  {
+   payload.WithObject("AwsBackupRecoveryPoint", m_awsBackupRecoveryPoint.Jsonize());
+
+  }
+
+  if(m_awsEc2LaunchTemplateHasBeenSet)
+  {
+   payload.WithObject("AwsEc2LaunchTemplate", m_awsEc2LaunchTemplate.Jsonize());
+
+  }
+
+  if(m_awsSageMakerNotebookInstanceHasBeenSet)
+  {
+   payload.WithObject("AwsSageMakerNotebookInstance", m_awsSageMakerNotebookInstance.Jsonize());
+
+  }
+
+  if(m_awsWafv2WebAclHasBeenSet)
+  {
+   payload.WithObject("AwsWafv2WebAcl", m_awsWafv2WebAcl.Jsonize());
+
+  }
+
+  if(m_awsWafv2RuleGroupHasBeenSet)
+  {
+   payload.WithObject("AwsWafv2RuleGroup", m_awsWafv2RuleGroup.Jsonize());
 
   }
 

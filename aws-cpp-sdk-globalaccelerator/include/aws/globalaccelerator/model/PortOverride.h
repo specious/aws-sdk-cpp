@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/PortOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API PortOverride
+  class PortOverride
   {
   public:
-    PortOverride();
-    PortOverride(Aws::Utils::Json::JsonView jsonValue);
-    PortOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API PortOverride();
+    AWS_GLOBALACCELERATOR_API PortOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API PortOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,10 +98,10 @@ namespace Model
   private:
 
     int m_listenerPort;
-    bool m_listenerPortHasBeenSet;
+    bool m_listenerPortHasBeenSet = false;
 
     int m_endpointPort;
-    bool m_endpointPortHasBeenSet;
+    bool m_endpointPortHasBeenSet = false;
   };
 
 } // namespace Model

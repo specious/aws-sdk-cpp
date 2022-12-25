@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LifecycleHook">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API LifecycleHook
+  class LifecycleHook
   {
   public:
-    LifecycleHook();
-    LifecycleHook(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LifecycleHook& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API LifecycleHook();
+    AWS_AUTOSCALING_API LifecycleHook(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API LifecycleHook& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -445,31 +445,31 @@ namespace Model
   private:
 
     Aws::String m_lifecycleHookName;
-    bool m_lifecycleHookNameHasBeenSet;
+    bool m_lifecycleHookNameHasBeenSet = false;
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_lifecycleTransition;
-    bool m_lifecycleTransitionHasBeenSet;
+    bool m_lifecycleTransitionHasBeenSet = false;
 
     Aws::String m_notificationTargetARN;
-    bool m_notificationTargetARNHasBeenSet;
+    bool m_notificationTargetARNHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::String m_notificationMetadata;
-    bool m_notificationMetadataHasBeenSet;
+    bool m_notificationMetadataHasBeenSet = false;
 
     int m_heartbeatTimeout;
-    bool m_heartbeatTimeoutHasBeenSet;
+    bool m_heartbeatTimeoutHasBeenSet = false;
 
     int m_globalTimeout;
-    bool m_globalTimeoutHasBeenSet;
+    bool m_globalTimeoutHasBeenSet = false;
 
     Aws::String m_defaultResult;
-    bool m_defaultResultHasBeenSet;
+    bool m_defaultResultHasBeenSet = false;
   };
 
 } // namespace Model

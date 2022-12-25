@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ATIMetricDataPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ATIMetricDataPoint
+  class ATIMetricDataPoint
   {
   public:
-    ATIMetricDataPoint();
-    ATIMetricDataPoint(Aws::Utils::Json::JsonView jsonValue);
-    ATIMetricDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ATIMetricDataPoint();
+    AWS_FRAUDDETECTOR_API ATIMetricDataPoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ATIMetricDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,16 +170,16 @@ namespace Model
   private:
 
     double m_cr;
-    bool m_crHasBeenSet;
+    bool m_crHasBeenSet = false;
 
     double m_adr;
-    bool m_adrHasBeenSet;
+    bool m_adrHasBeenSet = false;
 
     double m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     double m_atodr;
-    bool m_atodrHasBeenSet;
+    bool m_atodrHasBeenSet = false;
   };
 
 } // namespace Model

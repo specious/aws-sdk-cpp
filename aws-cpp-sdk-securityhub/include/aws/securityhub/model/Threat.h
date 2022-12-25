@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Threat">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Threat
+  class Threat
   {
   public:
-    Threat();
-    Threat(Aws::Utils::Json::JsonView jsonValue);
-    Threat& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Threat();
+    AWS_SECURITYHUB_API Threat(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Threat& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     int m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
 
     Aws::Vector<FilePaths> m_filePaths;
-    bool m_filePathsHasBeenSet;
+    bool m_filePathsHasBeenSet = false;
   };
 
 } // namespace Model

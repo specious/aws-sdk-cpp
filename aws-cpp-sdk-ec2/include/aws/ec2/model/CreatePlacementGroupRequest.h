@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API CreatePlacementGroupRequest : public EC2Request
+  class CreatePlacementGroupRequest : public EC2Request
   {
   public:
-    CreatePlacementGroupRequest();
+    AWS_EC2_API CreatePlacementGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePlacementGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -264,22 +264,22 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     PlacementStrategy m_strategy;
-    bool m_strategyHasBeenSet;
+    bool m_strategyHasBeenSet = false;
 
     int m_partitionCount;
-    bool m_partitionCountHasBeenSet;
+    bool m_partitionCountHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     SpreadLevel m_spreadLevel;
-    bool m_spreadLevelHasBeenSet;
+    bool m_spreadLevelHasBeenSet = false;
   };
 
 } // namespace Model

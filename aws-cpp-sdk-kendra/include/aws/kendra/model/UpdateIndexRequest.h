@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_KENDRA_API UpdateIndexRequest : public KendraRequest
+  class UpdateIndexRequest : public KendraRequest
   {
   public:
-    UpdateIndexRequest();
+    AWS_KENDRA_API UpdateIndexRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateIndex"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KENDRA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -397,43 +397,43 @@ namespace Model
 
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline bool UserGroupResolutionConfigurationHasBeenSet() const { return m_userGroupResolutionConfigurationHasBeenSet; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = value; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = std::move(value); }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline UpdateIndexRequest& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
 
     /**
-     * <p>Enables fetching access levels of groups and users from an Amazon Web
-     * Services Single Sign On identity source. To configure this, see <a
+     * <p>Enables fetching access levels of groups and users from an IAM Identity
+     * Center (successor to Single Sign-On) identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline UpdateIndexRequest& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
@@ -441,31 +441,31 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<DocumentMetadataConfiguration> m_documentMetadataConfigurationUpdates;
-    bool m_documentMetadataConfigurationUpdatesHasBeenSet;
+    bool m_documentMetadataConfigurationUpdatesHasBeenSet = false;
 
     CapacityUnitsConfiguration m_capacityUnits;
-    bool m_capacityUnitsHasBeenSet;
+    bool m_capacityUnitsHasBeenSet = false;
 
     Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
-    bool m_userTokenConfigurationsHasBeenSet;
+    bool m_userTokenConfigurationsHasBeenSet = false;
 
     UserContextPolicy m_userContextPolicy;
-    bool m_userContextPolicyHasBeenSet;
+    bool m_userContextPolicyHasBeenSet = false;
 
     UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
-    bool m_userGroupResolutionConfigurationHasBeenSet;
+    bool m_userGroupResolutionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

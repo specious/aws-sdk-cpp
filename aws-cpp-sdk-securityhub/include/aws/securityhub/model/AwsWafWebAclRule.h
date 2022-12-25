@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafWebAclRule">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsWafWebAclRule
+  class AwsWafWebAclRule
   {
   public:
-    AwsWafWebAclRule();
-    AwsWafWebAclRule(Aws::Utils::Json::JsonView jsonValue);
-    AwsWafWebAclRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsWafWebAclRule();
+    AWS_SECURITYHUB_API AwsWafWebAclRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsWafWebAclRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -367,22 +367,22 @@ namespace Model
   private:
 
     WafAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Vector<WafExcludedRule> m_excludedRules;
-    bool m_excludedRulesHasBeenSet;
+    bool m_excludedRulesHasBeenSet = false;
 
     WafOverrideAction m_overrideAction;
-    bool m_overrideActionHasBeenSet;
+    bool m_overrideActionHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

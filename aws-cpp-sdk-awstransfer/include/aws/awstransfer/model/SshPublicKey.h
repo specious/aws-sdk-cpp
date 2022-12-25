@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SshPublicKey">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API SshPublicKey
+  class SshPublicKey
   {
   public:
-    SshPublicKey();
-    SshPublicKey(Aws::Utils::Json::JsonView jsonValue);
-    SshPublicKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API SshPublicKey();
+    AWS_TRANSFER_API SshPublicKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API SshPublicKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,13 +182,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_dateImported;
-    bool m_dateImportedHasBeenSet;
+    bool m_dateImportedHasBeenSet = false;
 
     Aws::String m_sshPublicKeyBody;
-    bool m_sshPublicKeyBodyHasBeenSet;
+    bool m_sshPublicKeyBodyHasBeenSet = false;
 
     Aws::String m_sshPublicKeyId;
-    bool m_sshPublicKeyIdHasBeenSet;
+    bool m_sshPublicKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

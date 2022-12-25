@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPCONFIG_API UpdateExtensionRequest : public AppConfigRequest
+  class UpdateExtensionRequest : public AppConfigRequest
   {
   public:
-    UpdateExtensionRequest();
+    AWS_APPCONFIG_API UpdateExtensionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateExtension"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPCONFIG_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -254,19 +254,19 @@ namespace Model
   private:
 
     Aws::String m_extensionIdentifier;
-    bool m_extensionIdentifierHasBeenSet;
+    bool m_extensionIdentifierHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<ActionPoint, Aws::Vector<Action>> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::Map<Aws::String, Parameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     int m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
   };
 
 } // namespace Model

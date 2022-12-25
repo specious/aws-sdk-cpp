@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RedactedEwsAvailabilityProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API RedactedEwsAvailabilityProvider
+  class RedactedEwsAvailabilityProvider
   {
   public:
-    RedactedEwsAvailabilityProvider();
-    RedactedEwsAvailabilityProvider(Aws::Utils::Json::JsonView jsonValue);
-    RedactedEwsAvailabilityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API RedactedEwsAvailabilityProvider();
+    AWS_WORKMAIL_API RedactedEwsAvailabilityProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API RedactedEwsAvailabilityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_ewsEndpoint;
-    bool m_ewsEndpointHasBeenSet;
+    bool m_ewsEndpointHasBeenSet = false;
 
     Aws::String m_ewsUsername;
-    bool m_ewsUsernameHasBeenSet;
+    bool m_ewsUsernameHasBeenSet = false;
   };
 
 } // namespace Model

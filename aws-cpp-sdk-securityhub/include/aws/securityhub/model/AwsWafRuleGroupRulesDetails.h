@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafRuleGroupRulesDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsWafRuleGroupRulesDetails
+  class AwsWafRuleGroupRulesDetails
   {
   public:
-    AwsWafRuleGroupRulesDetails();
-    AwsWafRuleGroupRulesDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsWafRuleGroupRulesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsWafRuleGroupRulesDetails();
+    AWS_SECURITYHUB_API AwsWafRuleGroupRulesDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsWafRuleGroupRulesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,16 +186,16 @@ namespace Model
   private:
 
     AwsWafRuleGroupRulesActionDetails m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

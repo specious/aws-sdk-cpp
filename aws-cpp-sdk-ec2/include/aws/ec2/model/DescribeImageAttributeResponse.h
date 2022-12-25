@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImageAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeImageAttributeResponse
+  class DescribeImageAttributeResponse
   {
   public:
-    DescribeImageAttributeResponse();
-    DescribeImageAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeImageAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeImageAttributeResponse();
+    AWS_EC2_API DescribeImageAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeImageAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
@@ -361,7 +361,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const AttributeValue& GetUefiData() const{ return m_uefiData; }
 
@@ -373,7 +373,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetUefiData(const AttributeValue& value) { m_uefiData = value; }
 
@@ -385,7 +385,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetUefiData(AttributeValue&& value) { m_uefiData = std::move(value); }
 
@@ -397,7 +397,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeImageAttributeResponse& WithUefiData(const AttributeValue& value) { SetUefiData(value); return *this;}
 
@@ -409,7 +409,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeImageAttributeResponse& WithUefiData(AttributeValue&& value) { SetUefiData(std::move(value)); return *this;}
 
@@ -460,6 +460,67 @@ namespace Model
     inline DescribeImageAttributeResponse& WithLastLaunchedTime(AttributeValue&& value) { SetLastLaunchedTime(std::move(value)); return *this;}
 
 
+    /**
+     * <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline const AttributeValue& GetImdsSupport() const{ return m_imdsSupport; }
+
+    /**
+     * <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetImdsSupport(const AttributeValue& value) { m_imdsSupport = value; }
+
+    /**
+     * <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetImdsSupport(AttributeValue&& value) { m_imdsSupport = std::move(value); }
+
+    /**
+     * <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline DescribeImageAttributeResponse& WithImdsSupport(const AttributeValue& value) { SetImdsSupport(value); return *this;}
+
+    /**
+     * <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline DescribeImageAttributeResponse& WithImdsSupport(AttributeValue&& value) { SetImdsSupport(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -500,6 +561,8 @@ namespace Model
     AttributeValue m_uefiData;
 
     AttributeValue m_lastLaunchedTime;
+
+    AttributeValue m_imdsSupport;
 
     ResponseMetadata m_responseMetadata;
   };

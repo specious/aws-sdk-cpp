@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GatewayRouteTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GatewayRouteTarget
+  class GatewayRouteTarget
   {
   public:
-    GatewayRouteTarget();
-    GatewayRouteTarget(Aws::Utils::Json::JsonView jsonValue);
-    GatewayRouteTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GatewayRouteTarget();
+    AWS_APPMESH_API GatewayRouteTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GatewayRouteTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     GatewayRouteVirtualService m_virtualService;
-    bool m_virtualServiceHasBeenSet;
+    bool m_virtualServiceHasBeenSet = false;
   };
 
 } // namespace Model

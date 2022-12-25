@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backupstorage-2018-04-10/BackupObject">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPSTORAGE_API BackupObject
+  class BackupObject
   {
   public:
-    BackupObject();
-    BackupObject(Aws::Utils::Json::JsonView jsonValue);
-    BackupObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPSTORAGE_API BackupObject();
+    AWS_BACKUPSTORAGE_API BackupObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPSTORAGE_API BackupObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPSTORAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -256,22 +256,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_chunksCount;
-    bool m_chunksCountHasBeenSet;
+    bool m_chunksCountHasBeenSet = false;
 
     Aws::String m_metadataString;
-    bool m_metadataStringHasBeenSet;
+    bool m_metadataStringHasBeenSet = false;
 
     Aws::String m_objectChecksum;
-    bool m_objectChecksumHasBeenSet;
+    bool m_objectChecksumHasBeenSet = false;
 
     SummaryChecksumAlgorithm m_objectChecksumAlgorithm;
-    bool m_objectChecksumAlgorithmHasBeenSet;
+    bool m_objectChecksumAlgorithmHasBeenSet = false;
 
     Aws::String m_objectToken;
-    bool m_objectTokenHasBeenSet;
+    bool m_objectTokenHasBeenSet = false;
   };
 
 } // namespace Model

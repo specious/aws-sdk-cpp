@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTMETRICS_API CreateAlertRequest : public LookoutMetricsRequest
+  class CreateAlertRequest : public LookoutMetricsRequest
   {
   public:
-    CreateAlertRequest();
+    AWS_LOOKOUTMETRICS_API CreateAlertRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAlert"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTMETRICS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -341,25 +341,25 @@ namespace Model
   private:
 
     Aws::String m_alertName;
-    bool m_alertNameHasBeenSet;
+    bool m_alertNameHasBeenSet = false;
 
     int m_alertSensitivityThreshold;
-    bool m_alertSensitivityThresholdHasBeenSet;
+    bool m_alertSensitivityThresholdHasBeenSet = false;
 
     Aws::String m_alertDescription;
-    bool m_alertDescriptionHasBeenSet;
+    bool m_alertDescriptionHasBeenSet = false;
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     AlertFilters m_alertFilters;
-    bool m_alertFiltersHasBeenSet;
+    bool m_alertFiltersHasBeenSet = false;
   };
 
 } // namespace Model

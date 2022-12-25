@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/Segment">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API Segment
+  class Segment
   {
   public:
-    Segment();
-    Segment(Aws::Utils::Json::JsonView jsonValue);
-    Segment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API Segment();
+    AWS_CLOUDWATCHEVIDENTLY_API Segment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Segment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -278,42 +278,74 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The pattern that defines the attributes to use to evalute whether a user
+     * session will be in the segment. For more information about the pattern syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment
+     * rule pattern syntax</a>.</p>
      */
     inline const Aws::String& GetPattern() const{ return m_pattern; }
 
     /**
-     * <p/>
+     * <p>The pattern that defines the attributes to use to evalute whether a user
+     * session will be in the segment. For more information about the pattern syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment
+     * rule pattern syntax</a>.</p>
      */
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The pattern that defines the attributes to use to evalute whether a user
+     * session will be in the segment. For more information about the pattern syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment
+     * rule pattern syntax</a>.</p>
      */
     inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
 
     /**
-     * <p/>
+     * <p>The pattern that defines the attributes to use to evalute whether a user
+     * session will be in the segment. For more information about the pattern syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment
+     * rule pattern syntax</a>.</p>
      */
     inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The pattern that defines the attributes to use to evalute whether a user
+     * session will be in the segment. For more information about the pattern syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment
+     * rule pattern syntax</a>.</p>
      */
     inline void SetPattern(const char* value) { m_patternHasBeenSet = true; m_pattern.assign(value); }
 
     /**
-     * <p/>
+     * <p>The pattern that defines the attributes to use to evalute whether a user
+     * session will be in the segment. For more information about the pattern syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment
+     * rule pattern syntax</a>.</p>
      */
     inline Segment& WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The pattern that defines the attributes to use to evalute whether a user
+     * session will be in the segment. For more information about the pattern syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment
+     * rule pattern syntax</a>.</p>
      */
     inline Segment& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The pattern that defines the attributes to use to evalute whether a user
+     * session will be in the segment. For more information about the pattern syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment
+     * rule pattern syntax</a>.</p>
      */
     inline Segment& WithPattern(const char* value) { SetPattern(value); return *this;}
 
@@ -386,31 +418,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     long long m_experimentCount;
-    bool m_experimentCountHasBeenSet;
+    bool m_experimentCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     long long m_launchCount;
-    bool m_launchCountHasBeenSet;
+    bool m_launchCountHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

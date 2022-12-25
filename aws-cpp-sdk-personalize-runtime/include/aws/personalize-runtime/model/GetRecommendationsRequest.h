@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_PERSONALIZERUNTIME_API GetRecommendationsRequest : public PersonalizeRuntimeRequest
+  class GetRecommendationsRequest : public PersonalizeRuntimeRequest
   {
   public:
-    GetRecommendationsRequest();
+    AWS_PERSONALIZERUNTIME_API GetRecommendationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetRecommendations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PERSONALIZERUNTIME_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -706,31 +706,31 @@ namespace Model
   private:
 
     Aws::String m_campaignArn;
-    bool m_campaignArnHasBeenSet;
+    bool m_campaignArnHasBeenSet = false;
 
     Aws::String m_itemId;
-    bool m_itemIdHasBeenSet;
+    bool m_itemIdHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     int m_numResults;
-    bool m_numResultsHasBeenSet;
+    bool m_numResultsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     Aws::String m_filterArn;
-    bool m_filterArnHasBeenSet;
+    bool m_filterArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_filterValues;
-    bool m_filterValuesHasBeenSet;
+    bool m_filterValuesHasBeenSet = false;
 
     Aws::String m_recommenderArn;
-    bool m_recommenderArnHasBeenSet;
+    bool m_recommenderArnHasBeenSet = false;
 
     Aws::Vector<Promotion> m_promotions;
-    bool m_promotionsHasBeenSet;
+    bool m_promotionsHasBeenSet = false;
   };
 
 } // namespace Model

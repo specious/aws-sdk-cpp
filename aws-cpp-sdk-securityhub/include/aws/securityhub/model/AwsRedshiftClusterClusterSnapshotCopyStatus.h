@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterClusterSnapshotCopyStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRedshiftClusterClusterSnapshotCopyStatus
+  class AwsRedshiftClusterClusterSnapshotCopyStatus
   {
   public:
-    AwsRedshiftClusterClusterSnapshotCopyStatus();
-    AwsRedshiftClusterClusterSnapshotCopyStatus(Aws::Utils::Json::JsonView jsonValue);
-    AwsRedshiftClusterClusterSnapshotCopyStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRedshiftClusterClusterSnapshotCopyStatus();
+    AWS_SECURITYHUB_API AwsRedshiftClusterClusterSnapshotCopyStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRedshiftClusterClusterSnapshotCopyStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_destinationRegion;
-    bool m_destinationRegionHasBeenSet;
+    bool m_destinationRegionHasBeenSet = false;
 
     int m_manualSnapshotRetentionPeriod;
-    bool m_manualSnapshotRetentionPeriodHasBeenSet;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
     int m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
 
     Aws::String m_snapshotCopyGrantName;
-    bool m_snapshotCopyGrantNameHasBeenSet;
+    bool m_snapshotCopyGrantNameHasBeenSet = false;
   };
 
 } // namespace Model

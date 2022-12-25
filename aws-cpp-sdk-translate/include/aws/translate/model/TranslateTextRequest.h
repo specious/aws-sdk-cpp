@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSLATE_API TranslateTextRequest : public TranslateRequest
+  class TranslateTextRequest : public TranslateRequest
   {
   public:
-    TranslateTextRequest();
+    AWS_TRANSLATE_API TranslateTextRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,56 +31,56 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TranslateText"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSLATE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSLATE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline TranslateTextRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline TranslateTextRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
     /**
-     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
-     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
+     * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
     inline TranslateTextRequest& WithText(const char* value) { SetText(value); return *this;}
 
@@ -151,9 +151,10 @@ namespace Model
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
@@ -166,9 +167,10 @@ namespace Model
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
@@ -181,9 +183,10 @@ namespace Model
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
@@ -196,9 +199,10 @@ namespace Model
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
@@ -211,9 +215,10 @@ namespace Model
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
@@ -226,9 +231,10 @@ namespace Model
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
@@ -241,9 +247,10 @@ namespace Model
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
@@ -256,9 +263,10 @@ namespace Model
 
     /**
      * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see
-     * <a>what-is-languages</a>.</p> <p>To have Amazon Translate determine the source
-     * language of your text, you can specify <code>auto</code> in the
+     * language supported by Amazon Translate. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
      * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
      * Translate will call <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
@@ -364,19 +372,19 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_terminologyNames;
-    bool m_terminologyNamesHasBeenSet;
+    bool m_terminologyNamesHasBeenSet = false;
 
     Aws::String m_sourceLanguageCode;
-    bool m_sourceLanguageCodeHasBeenSet;
+    bool m_sourceLanguageCodeHasBeenSet = false;
 
     Aws::String m_targetLanguageCode;
-    bool m_targetLanguageCodeHasBeenSet;
+    bool m_targetLanguageCodeHasBeenSet = false;
 
     TranslationSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

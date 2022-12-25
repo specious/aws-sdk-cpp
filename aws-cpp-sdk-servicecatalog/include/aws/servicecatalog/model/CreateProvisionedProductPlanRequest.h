@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICECATALOG_API CreateProvisionedProductPlanRequest : public ServiceCatalogRequest
+  class CreateProvisionedProductPlanRequest : public ServiceCatalogRequest
   {
   public:
-    CreateProvisionedProductPlanRequest();
+    AWS_SERVICECATALOG_API CreateProvisionedProductPlanRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateProvisionedProductPlan"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICECATALOG_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -592,37 +592,37 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_planName;
-    bool m_planNameHasBeenSet;
+    bool m_planNameHasBeenSet = false;
 
     ProvisionedProductPlanType m_planType;
-    bool m_planTypeHasBeenSet;
+    bool m_planTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notificationArns;
-    bool m_notificationArnsHasBeenSet;
+    bool m_notificationArnsHasBeenSet = false;
 
     Aws::String m_pathId;
-    bool m_pathIdHasBeenSet;
+    bool m_pathIdHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_provisionedProductName;
-    bool m_provisionedProductNameHasBeenSet;
+    bool m_provisionedProductNameHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
 
     Aws::Vector<UpdateProvisioningParameter> m_provisioningParameters;
-    bool m_provisioningParametersHasBeenSet;
+    bool m_provisioningParametersHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

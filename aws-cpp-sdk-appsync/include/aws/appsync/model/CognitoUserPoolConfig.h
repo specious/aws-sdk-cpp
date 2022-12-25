@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CognitoUserPoolConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API CognitoUserPoolConfig
+  class CognitoUserPoolConfig
   {
   public:
-    CognitoUserPoolConfig();
-    CognitoUserPoolConfig(Aws::Utils::Json::JsonView jsonValue);
-    CognitoUserPoolConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API CognitoUserPoolConfig();
+    AWS_APPSYNC_API CognitoUserPoolConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API CognitoUserPoolConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     Aws::String m_appIdClientRegex;
-    bool m_appIdClientRegexHasBeenSet;
+    bool m_appIdClientRegexHasBeenSet = false;
   };
 
 } // namespace Model

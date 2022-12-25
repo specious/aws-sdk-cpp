@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/HighestSeverityThreatDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API HighestSeverityThreatDetails
+  class HighestSeverityThreatDetails
   {
   public:
-    HighestSeverityThreatDetails();
-    HighestSeverityThreatDetails(Aws::Utils::Json::JsonView jsonValue);
-    HighestSeverityThreatDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API HighestSeverityThreatDetails();
+    AWS_GUARDDUTY_API HighestSeverityThreatDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API HighestSeverityThreatDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::String m_threatName;
-    bool m_threatNameHasBeenSet;
+    bool m_threatNameHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model

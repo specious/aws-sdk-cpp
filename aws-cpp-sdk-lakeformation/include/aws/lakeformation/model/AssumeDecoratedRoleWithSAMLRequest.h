@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAKEFORMATION_API AssumeDecoratedRoleWithSAMLRequest : public LakeFormationRequest
+  class AssumeDecoratedRoleWithSAMLRequest : public LakeFormationRequest
   {
   public:
-    AssumeDecoratedRoleWithSAMLRequest();
+    AWS_LAKEFORMATION_API AssumeDecoratedRoleWithSAMLRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssumeDecoratedRoleWithSAML"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAKEFORMATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -230,16 +230,16 @@ namespace Model
   private:
 
     Aws::String m_sAMLAssertion;
-    bool m_sAMLAssertionHasBeenSet;
+    bool m_sAMLAssertionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet;
+    bool m_principalArnHasBeenSet = false;
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
   };
 
 } // namespace Model

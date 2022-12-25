@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/StackInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API StackInstance
+  class StackInstance
   {
   public:
-    StackInstance();
-    StackInstance(Aws::Utils::Json::JsonView jsonValue);
-    StackInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API StackInstance();
+    AWS_SERVICECATALOG_API StackInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API StackInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -253,13 +253,13 @@ namespace Model
   private:
 
     Aws::String m_account;
-    bool m_accountHasBeenSet;
+    bool m_accountHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     StackInstanceStatus m_stackInstanceStatus;
-    bool m_stackInstanceStatusHasBeenSet;
+    bool m_stackInstanceStatusHasBeenSet = false;
   };
 
 } // namespace Model

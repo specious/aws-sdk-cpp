@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DetectAnomalyResult">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API DetectAnomalyResult
+  class DetectAnomalyResult
   {
   public:
-    DetectAnomalyResult();
-    DetectAnomalyResult(Aws::Utils::Json::JsonView jsonValue);
-    DetectAnomalyResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API DetectAnomalyResult();
+    AWS_LOOKOUTFORVISION_API DetectAnomalyResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API DetectAnomalyResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -304,19 +304,19 @@ namespace Model
   private:
 
     ImageSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     bool m_isAnomalous;
-    bool m_isAnomalousHasBeenSet;
+    bool m_isAnomalousHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::Vector<Anomaly> m_anomalies;
-    bool m_anomaliesHasBeenSet;
+    bool m_anomaliesHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_anomalyMask;
-    bool m_anomalyMaskHasBeenSet;
+    bool m_anomalyMaskHasBeenSet = false;
   };
 
 } // namespace Model

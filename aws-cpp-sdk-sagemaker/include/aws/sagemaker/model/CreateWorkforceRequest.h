@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateWorkforceRequest : public SageMakerRequest
+  class CreateWorkforceRequest : public SageMakerRequest
   {
   public:
-    CreateWorkforceRequest();
+    AWS_SAGEMAKER_API CreateWorkforceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateWorkforce"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -288,22 +288,22 @@ namespace Model
   private:
 
     CognitoConfig m_cognitoConfig;
-    bool m_cognitoConfigHasBeenSet;
+    bool m_cognitoConfigHasBeenSet = false;
 
     OidcConfig m_oidcConfig;
-    bool m_oidcConfigHasBeenSet;
+    bool m_oidcConfigHasBeenSet = false;
 
     SourceIpConfig m_sourceIpConfig;
-    bool m_sourceIpConfigHasBeenSet;
+    bool m_sourceIpConfigHasBeenSet = false;
 
     Aws::String m_workforceName;
-    bool m_workforceNameHasBeenSet;
+    bool m_workforceNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     WorkforceVpcConfigRequest m_workforceVpcConfig;
-    bool m_workforceVpcConfigHasBeenSet;
+    bool m_workforceVpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/WeightedTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API WeightedTarget
+  class WeightedTarget
   {
   public:
-    WeightedTarget();
-    WeightedTarget(Aws::Utils::Json::JsonView jsonValue);
-    WeightedTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API WeightedTarget();
+    AWS_APPMESH_API WeightedTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API WeightedTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,13 +126,13 @@ namespace Model
   private:
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_virtualNode;
-    bool m_virtualNodeHasBeenSet;
+    bool m_virtualNodeHasBeenSet = false;
 
     int m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
   };
 
 } // namespace Model

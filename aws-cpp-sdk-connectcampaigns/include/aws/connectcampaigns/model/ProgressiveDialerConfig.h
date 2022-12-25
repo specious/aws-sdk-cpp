@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/ProgressiveDialerConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API ProgressiveDialerConfig
+  class ProgressiveDialerConfig
   {
   public:
-    ProgressiveDialerConfig();
-    ProgressiveDialerConfig(Aws::Utils::Json::JsonView jsonValue);
-    ProgressiveDialerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API ProgressiveDialerConfig();
+    AWS_CONNECTCAMPAIGNS_API ProgressiveDialerConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API ProgressiveDialerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -50,7 +50,7 @@ namespace Model
   private:
 
     double m_bandwidthAllocation;
-    bool m_bandwidthAllocationHasBeenSet;
+    bool m_bandwidthAllocationHasBeenSet = false;
   };
 
 } // namespace Model

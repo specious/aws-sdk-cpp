@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICLOADBALANCINGV2_API CreateLoadBalancerRequest : public ElasticLoadBalancingv2Request
+  class CreateLoadBalancerRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    CreateLoadBalancerRequest();
+    AWS_ELASTICLOADBALANCINGV2_API CreateLoadBalancerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLoadBalancer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICLOADBALANCINGV2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICLOADBALANCINGV2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -693,31 +693,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<SubnetMapping> m_subnetMappings;
-    bool m_subnetMappingsHasBeenSet;
+    bool m_subnetMappingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     LoadBalancerSchemeEnum m_scheme;
-    bool m_schemeHasBeenSet;
+    bool m_schemeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     LoadBalancerTypeEnum m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::String m_customerOwnedIpv4Pool;
-    bool m_customerOwnedIpv4PoolHasBeenSet;
+    bool m_customerOwnedIpv4PoolHasBeenSet = false;
   };
 
 } // namespace Model

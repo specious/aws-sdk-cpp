@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Certificate">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API Certificate
+  class Certificate
   {
   public:
-    Certificate();
-    Certificate(Aws::Utils::Json::JsonView jsonValue);
-    Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API Certificate();
+    AWS_IOT_API Certificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -291,19 +291,19 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
 
     CertificateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     CertificateMode m_certificateMode;
-    bool m_certificateModeHasBeenSet;
+    bool m_certificateModeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

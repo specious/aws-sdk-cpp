@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/CompositeAlarm">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API CompositeAlarm
+  class CompositeAlarm
   {
   public:
-    CompositeAlarm();
-    CompositeAlarm(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CompositeAlarm& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API CompositeAlarm();
+    AWS_CLOUDWATCH_API CompositeAlarm(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API CompositeAlarm& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -889,61 +889,61 @@ namespace Model
   private:
 
     bool m_actionsEnabled;
-    bool m_actionsEnabledHasBeenSet;
+    bool m_actionsEnabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_alarmActions;
-    bool m_alarmActionsHasBeenSet;
+    bool m_alarmActionsHasBeenSet = false;
 
     Aws::String m_alarmArn;
-    bool m_alarmArnHasBeenSet;
+    bool m_alarmArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_alarmConfigurationUpdatedTimestamp;
-    bool m_alarmConfigurationUpdatedTimestampHasBeenSet;
+    bool m_alarmConfigurationUpdatedTimestampHasBeenSet = false;
 
     Aws::String m_alarmDescription;
-    bool m_alarmDescriptionHasBeenSet;
+    bool m_alarmDescriptionHasBeenSet = false;
 
     Aws::String m_alarmName;
-    bool m_alarmNameHasBeenSet;
+    bool m_alarmNameHasBeenSet = false;
 
     Aws::String m_alarmRule;
-    bool m_alarmRuleHasBeenSet;
+    bool m_alarmRuleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_insufficientDataActions;
-    bool m_insufficientDataActionsHasBeenSet;
+    bool m_insufficientDataActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_oKActions;
-    bool m_oKActionsHasBeenSet;
+    bool m_oKActionsHasBeenSet = false;
 
     Aws::String m_stateReason;
-    bool m_stateReasonHasBeenSet;
+    bool m_stateReasonHasBeenSet = false;
 
     Aws::String m_stateReasonData;
-    bool m_stateReasonDataHasBeenSet;
+    bool m_stateReasonDataHasBeenSet = false;
 
     Aws::Utils::DateTime m_stateUpdatedTimestamp;
-    bool m_stateUpdatedTimestampHasBeenSet;
+    bool m_stateUpdatedTimestampHasBeenSet = false;
 
     StateValue m_stateValue;
-    bool m_stateValueHasBeenSet;
+    bool m_stateValueHasBeenSet = false;
 
     Aws::Utils::DateTime m_stateTransitionedTimestamp;
-    bool m_stateTransitionedTimestampHasBeenSet;
+    bool m_stateTransitionedTimestampHasBeenSet = false;
 
     ActionsSuppressedBy m_actionsSuppressedBy;
-    bool m_actionsSuppressedByHasBeenSet;
+    bool m_actionsSuppressedByHasBeenSet = false;
 
     Aws::String m_actionsSuppressedReason;
-    bool m_actionsSuppressedReasonHasBeenSet;
+    bool m_actionsSuppressedReasonHasBeenSet = false;
 
     Aws::String m_actionsSuppressor;
-    bool m_actionsSuppressorHasBeenSet;
+    bool m_actionsSuppressorHasBeenSet = false;
 
     int m_actionsSuppressorWaitPeriod;
-    bool m_actionsSuppressorWaitPeriodHasBeenSet;
+    bool m_actionsSuppressorWaitPeriodHasBeenSet = false;
 
     int m_actionsSuppressorExtensionPeriod;
-    bool m_actionsSuppressorExtensionPeriodHasBeenSet;
+    bool m_actionsSuppressorExtensionPeriodHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/EndpointGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API EndpointGroup
+  class EndpointGroup
   {
   public:
-    EndpointGroup();
-    EndpointGroup(Aws::Utils::Json::JsonView jsonValue);
-    EndpointGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API EndpointGroup();
+    AWS_GLOBALACCELERATOR_API EndpointGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API EndpointGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -458,34 +458,34 @@ namespace Model
   private:
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
 
     Aws::String m_endpointGroupRegion;
-    bool m_endpointGroupRegionHasBeenSet;
+    bool m_endpointGroupRegionHasBeenSet = false;
 
     Aws::Vector<EndpointDescription> m_endpointDescriptions;
-    bool m_endpointDescriptionsHasBeenSet;
+    bool m_endpointDescriptionsHasBeenSet = false;
 
     double m_trafficDialPercentage;
-    bool m_trafficDialPercentageHasBeenSet;
+    bool m_trafficDialPercentageHasBeenSet = false;
 
     int m_healthCheckPort;
-    bool m_healthCheckPortHasBeenSet;
+    bool m_healthCheckPortHasBeenSet = false;
 
     HealthCheckProtocol m_healthCheckProtocol;
-    bool m_healthCheckProtocolHasBeenSet;
+    bool m_healthCheckProtocolHasBeenSet = false;
 
     Aws::String m_healthCheckPath;
-    bool m_healthCheckPathHasBeenSet;
+    bool m_healthCheckPathHasBeenSet = false;
 
     int m_healthCheckIntervalSeconds;
-    bool m_healthCheckIntervalSecondsHasBeenSet;
+    bool m_healthCheckIntervalSecondsHasBeenSet = false;
 
     int m_thresholdCount;
-    bool m_thresholdCountHasBeenSet;
+    bool m_thresholdCountHasBeenSet = false;
 
     Aws::Vector<PortOverride> m_portOverrides;
-    bool m_portOverridesHasBeenSet;
+    bool m_portOverridesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backupstorage-2018-04-10/Chunk">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPSTORAGE_API Chunk
+  class Chunk
   {
   public:
-    Chunk();
-    Chunk(Aws::Utils::Json::JsonView jsonValue);
-    Chunk& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPSTORAGE_API Chunk();
+    AWS_BACKUPSTORAGE_API Chunk(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPSTORAGE_API Chunk& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPSTORAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,19 +195,19 @@ namespace Model
   private:
 
     long long m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
 
     long long m_length;
-    bool m_lengthHasBeenSet;
+    bool m_lengthHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     DataChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
 
     Aws::String m_chunkToken;
-    bool m_chunkTokenHasBeenSet;
+    bool m_chunkTokenHasBeenSet = false;
   };
 
 } // namespace Model

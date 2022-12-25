@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ClosedDays">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ClosedDays
+  class ClosedDays
   {
   public:
-    ClosedDays();
-    ClosedDays(Aws::Utils::Json::JsonView jsonValue);
-    ClosedDays& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ClosedDays();
+    AWS_PINPOINT_API ClosedDays(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ClosedDays& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -246,19 +246,19 @@ namespace Model
   private:
 
     Aws::Vector<ClosedDaysRule> m_eMAIL;
-    bool m_eMAILHasBeenSet;
+    bool m_eMAILHasBeenSet = false;
 
     Aws::Vector<ClosedDaysRule> m_sMS;
-    bool m_sMSHasBeenSet;
+    bool m_sMSHasBeenSet = false;
 
     Aws::Vector<ClosedDaysRule> m_pUSH;
-    bool m_pUSHHasBeenSet;
+    bool m_pUSHHasBeenSet = false;
 
     Aws::Vector<ClosedDaysRule> m_vOICE;
-    bool m_vOICEHasBeenSet;
+    bool m_vOICEHasBeenSet = false;
 
     Aws::Vector<ClosedDaysRule> m_cUSTOM;
-    bool m_cUSTOMHasBeenSet;
+    bool m_cUSTOMHasBeenSet = false;
   };
 
 } // namespace Model

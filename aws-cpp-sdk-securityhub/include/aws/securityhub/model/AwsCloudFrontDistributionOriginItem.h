@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginItem
+  class AwsCloudFrontDistributionOriginItem
   {
   public:
-    AwsCloudFrontDistributionOriginItem();
-    AwsCloudFrontDistributionOriginItem(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFrontDistributionOriginItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginItem();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -268,19 +268,19 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_originPath;
-    bool m_originPathHasBeenSet;
+    bool m_originPathHasBeenSet = false;
 
     AwsCloudFrontDistributionOriginS3OriginConfig m_s3OriginConfig;
-    bool m_s3OriginConfigHasBeenSet;
+    bool m_s3OriginConfigHasBeenSet = false;
 
     AwsCloudFrontDistributionOriginCustomOriginConfig m_customOriginConfig;
-    bool m_customOriginConfigHasBeenSet;
+    bool m_customOriginConfigHasBeenSet = false;
   };
 
 } // namespace Model

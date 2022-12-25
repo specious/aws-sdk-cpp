@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/DeploymentModel">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKEREDGEMANAGER_API DeploymentModel
+  class DeploymentModel
   {
   public:
-    DeploymentModel();
-    DeploymentModel(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentModel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKEREDGEMANAGER_API DeploymentModel();
+    AWS_SAGEMAKEREDGEMANAGER_API DeploymentModel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API DeploymentModel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -339,28 +339,28 @@ namespace Model
   private:
 
     Aws::String m_modelHandle;
-    bool m_modelHandleHasBeenSet;
+    bool m_modelHandleHasBeenSet = false;
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     ModelState m_desiredState;
-    bool m_desiredStateHasBeenSet;
+    bool m_desiredStateHasBeenSet = false;
 
     ModelState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     DeploymentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::String m_rollbackFailureReason;
-    bool m_rollbackFailureReasonHasBeenSet;
+    bool m_rollbackFailureReasonHasBeenSet = false;
   };
 
 } // namespace Model

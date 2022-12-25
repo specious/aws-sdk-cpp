@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotValue">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotValue
+  class SlotValue
   {
   public:
-    SlotValue();
-    SlotValue(Aws::Utils::Json::JsonView jsonValue);
-    SlotValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotValue();
+    AWS_LEXMODELSV2_API SlotValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,7 +104,7 @@ namespace Model
   private:
 
     Aws::String m_interpretedValue;
-    bool m_interpretedValueHasBeenSet;
+    bool m_interpretedValueHasBeenSet = false;
   };
 
 } // namespace Model

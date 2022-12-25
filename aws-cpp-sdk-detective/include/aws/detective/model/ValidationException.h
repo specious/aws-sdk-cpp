@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_DETECTIVE_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DETECTIVE_API ValidationException();
+    AWS_DETECTIVE_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -137,13 +137,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorCodeReason;
-    bool m_errorCodeReasonHasBeenSet;
+    bool m_errorCodeReasonHasBeenSet = false;
   };
 
 } // namespace Model

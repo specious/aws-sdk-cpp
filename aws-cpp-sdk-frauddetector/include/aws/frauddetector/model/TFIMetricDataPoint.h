@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/TFIMetricDataPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API TFIMetricDataPoint
+  class TFIMetricDataPoint
   {
   public:
-    TFIMetricDataPoint();
-    TFIMetricDataPoint(Aws::Utils::Json::JsonView jsonValue);
-    TFIMetricDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API TFIMetricDataPoint();
+    AWS_FRAUDDETECTOR_API TFIMetricDataPoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API TFIMetricDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,16 +142,16 @@ namespace Model
   private:
 
     double m_fpr;
-    bool m_fprHasBeenSet;
+    bool m_fprHasBeenSet = false;
 
     double m_precision;
-    bool m_precisionHasBeenSet;
+    bool m_precisionHasBeenSet = false;
 
     double m_tpr;
-    bool m_tprHasBeenSet;
+    bool m_tprHasBeenSet = false;
 
     double m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
   };
 
 } // namespace Model

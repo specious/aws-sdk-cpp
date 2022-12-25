@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEfsAccessPointRootDirectoryCreationInfoDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEfsAccessPointRootDirectoryCreationInfoDetails
+  class AwsEfsAccessPointRootDirectoryCreationInfoDetails
   {
   public:
-    AwsEfsAccessPointRootDirectoryCreationInfoDetails();
-    AwsEfsAccessPointRootDirectoryCreationInfoDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEfsAccessPointRootDirectoryCreationInfoDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEfsAccessPointRootDirectoryCreationInfoDetails();
+    AWS_SECURITYHUB_API AwsEfsAccessPointRootDirectoryCreationInfoDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEfsAccessPointRootDirectoryCreationInfoDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_ownerGid;
-    bool m_ownerGidHasBeenSet;
+    bool m_ownerGidHasBeenSet = false;
 
     Aws::String m_ownerUid;
-    bool m_ownerUidHasBeenSet;
+    bool m_ownerUidHasBeenSet = false;
 
     Aws::String m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -11,6 +11,7 @@
 #include <aws/dlm/model/RetainRule.h>
 #include <aws/dlm/model/FastRestoreRule.h>
 #include <aws/dlm/model/DeprecateRule.h>
+#include <aws/dlm/model/ArchiveRule.h>
 #include <aws/dlm/model/Tag.h>
 #include <aws/dlm/model/CrossRegionCopyRule.h>
 #include <aws/dlm/model/ShareRule.h>
@@ -37,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/Schedule">AWS API
    * Reference</a></p>
    */
-  class AWS_DLM_API Schedule
+  class Schedule
   {
   public:
-    Schedule();
-    Schedule(Aws::Utils::Json::JsonView jsonValue);
-    Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API Schedule();
+    AWS_DLM_API Schedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -485,37 +486,113 @@ namespace Model
      */
     inline Schedule& WithDeprecateRule(DeprecateRule&& value) { SetDeprecateRule(std::move(value)); return *this;}
 
+
+    /**
+     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
+     * rule for the schedule. When you specify an archiving rule, snapshots are
+     * automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the
+     * archive tier for the archive retention period that you specify. </p> <p>For more
+     * information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.</p>
+     */
+    inline const ArchiveRule& GetArchiveRule() const{ return m_archiveRule; }
+
+    /**
+     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
+     * rule for the schedule. When you specify an archiving rule, snapshots are
+     * automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the
+     * archive tier for the archive retention period that you specify. </p> <p>For more
+     * information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.</p>
+     */
+    inline bool ArchiveRuleHasBeenSet() const { return m_archiveRuleHasBeenSet; }
+
+    /**
+     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
+     * rule for the schedule. When you specify an archiving rule, snapshots are
+     * automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the
+     * archive tier for the archive retention period that you specify. </p> <p>For more
+     * information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.</p>
+     */
+    inline void SetArchiveRule(const ArchiveRule& value) { m_archiveRuleHasBeenSet = true; m_archiveRule = value; }
+
+    /**
+     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
+     * rule for the schedule. When you specify an archiving rule, snapshots are
+     * automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the
+     * archive tier for the archive retention period that you specify. </p> <p>For more
+     * information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.</p>
+     */
+    inline void SetArchiveRule(ArchiveRule&& value) { m_archiveRuleHasBeenSet = true; m_archiveRule = std::move(value); }
+
+    /**
+     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
+     * rule for the schedule. When you specify an archiving rule, snapshots are
+     * automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the
+     * archive tier for the archive retention period that you specify. </p> <p>For more
+     * information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.</p>
+     */
+    inline Schedule& WithArchiveRule(const ArchiveRule& value) { SetArchiveRule(value); return *this;}
+
+    /**
+     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
+     * rule for the schedule. When you specify an archiving rule, snapshots are
+     * automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the
+     * archive tier for the archive retention period that you specify. </p> <p>For more
+     * information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.</p>
+     */
+    inline Schedule& WithArchiveRule(ArchiveRule&& value) { SetArchiveRule(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_copyTags;
-    bool m_copyTagsHasBeenSet;
+    bool m_copyTagsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagsToAdd;
-    bool m_tagsToAddHasBeenSet;
+    bool m_tagsToAddHasBeenSet = false;
 
     Aws::Vector<Tag> m_variableTags;
-    bool m_variableTagsHasBeenSet;
+    bool m_variableTagsHasBeenSet = false;
 
     CreateRule m_createRule;
-    bool m_createRuleHasBeenSet;
+    bool m_createRuleHasBeenSet = false;
 
     RetainRule m_retainRule;
-    bool m_retainRuleHasBeenSet;
+    bool m_retainRuleHasBeenSet = false;
 
     FastRestoreRule m_fastRestoreRule;
-    bool m_fastRestoreRuleHasBeenSet;
+    bool m_fastRestoreRuleHasBeenSet = false;
 
     Aws::Vector<CrossRegionCopyRule> m_crossRegionCopyRules;
-    bool m_crossRegionCopyRulesHasBeenSet;
+    bool m_crossRegionCopyRulesHasBeenSet = false;
 
     Aws::Vector<ShareRule> m_shareRules;
-    bool m_shareRulesHasBeenSet;
+    bool m_shareRulesHasBeenSet = false;
 
     DeprecateRule m_deprecateRule;
-    bool m_deprecateRuleHasBeenSet;
+    bool m_deprecateRuleHasBeenSet = false;
+
+    ArchiveRule m_archiveRule;
+    bool m_archiveRuleHasBeenSet = false;
   };
 
 } // namespace Model

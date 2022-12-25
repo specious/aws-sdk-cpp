@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/RecordingConfigurationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API RecordingConfigurationSummary
+  class RecordingConfigurationSummary
   {
   public:
-    RecordingConfigurationSummary();
-    RecordingConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
-    RecordingConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API RecordingConfigurationSummary();
+    AWS_IVS_API RecordingConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API RecordingConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -336,19 +336,19 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     DestinationConfiguration m_destinationConfiguration;
-    bool m_destinationConfigurationHasBeenSet;
+    bool m_destinationConfigurationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RecordingConfigurationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

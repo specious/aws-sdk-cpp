@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUTOSCALING_API EnableMetricsCollectionRequest : public AutoScalingRequest
+  class EnableMetricsCollectionRequest : public AutoScalingRequest
   {
   public:
-    EnableMetricsCollectionRequest();
+    AWS_AUTOSCALING_API EnableMetricsCollectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "EnableMetricsCollection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUTOSCALING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_AUTOSCALING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -391,13 +391,13 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
 
     Aws::String m_granularity;
-    bool m_granularityHasBeenSet;
+    bool m_granularityHasBeenSet = false;
   };
 
 } // namespace Model

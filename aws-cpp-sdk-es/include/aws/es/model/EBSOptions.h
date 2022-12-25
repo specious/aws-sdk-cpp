@@ -31,13 +31,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/EBSOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API EBSOptions
+  class EBSOptions
   {
   public:
-    EBSOptions();
-    EBSOptions(Aws::Utils::Json::JsonView jsonValue);
-    EBSOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API EBSOptions();
+    AWS_ELASTICSEARCHSERVICE_API EBSOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API EBSOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,19 +157,19 @@ namespace Model
   private:
 
     bool m_eBSEnabled;
-    bool m_eBSEnabledHasBeenSet;
+    bool m_eBSEnabledHasBeenSet = false;
 
     VolumeType m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     int m_volumeSize;
-    bool m_volumeSizeHasBeenSet;
+    bool m_volumeSizeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     int m_throughput;
-    bool m_throughputHasBeenSet;
+    bool m_throughputHasBeenSet = false;
   };
 
 } // namespace Model

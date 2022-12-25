@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InstanceGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API InstanceGroup
+  class InstanceGroup
   {
   public:
-    InstanceGroup();
-    InstanceGroup(Aws::Utils::Json::JsonView jsonValue);
-    InstanceGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API InstanceGroup();
+    AWS_SAGEMAKER_API InstanceGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API InstanceGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,13 +136,13 @@ namespace Model
   private:
 
     TrainingInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_instanceGroupName;
-    bool m_instanceGroupNameHasBeenSet;
+    bool m_instanceGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

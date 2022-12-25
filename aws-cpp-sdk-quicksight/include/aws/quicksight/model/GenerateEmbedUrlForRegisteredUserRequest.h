@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserRequest : public QuickSightRequest
+  class GenerateEmbedUrlForRegisteredUserRequest : public QuickSightRequest
   {
   public:
-    GenerateEmbedUrlForRegisteredUserRequest();
+    AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GenerateEmbedUrlForRegisteredUser"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -151,37 +151,43 @@ namespace Model
 
     /**
      * <p>The experience you are embedding. For registered users, you can embed Amazon
-     * QuickSight dashboards or the entire Amazon QuickSight console.</p>
+     * QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search
+     * bar, or the entire Amazon QuickSight console.</p>
      */
     inline const RegisteredUserEmbeddingExperienceConfiguration& GetExperienceConfiguration() const{ return m_experienceConfiguration; }
 
     /**
      * <p>The experience you are embedding. For registered users, you can embed Amazon
-     * QuickSight dashboards or the entire Amazon QuickSight console.</p>
+     * QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search
+     * bar, or the entire Amazon QuickSight console.</p>
      */
     inline bool ExperienceConfigurationHasBeenSet() const { return m_experienceConfigurationHasBeenSet; }
 
     /**
      * <p>The experience you are embedding. For registered users, you can embed Amazon
-     * QuickSight dashboards or the entire Amazon QuickSight console.</p>
+     * QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search
+     * bar, or the entire Amazon QuickSight console.</p>
      */
     inline void SetExperienceConfiguration(const RegisteredUserEmbeddingExperienceConfiguration& value) { m_experienceConfigurationHasBeenSet = true; m_experienceConfiguration = value; }
 
     /**
      * <p>The experience you are embedding. For registered users, you can embed Amazon
-     * QuickSight dashboards or the entire Amazon QuickSight console.</p>
+     * QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search
+     * bar, or the entire Amazon QuickSight console.</p>
      */
     inline void SetExperienceConfiguration(RegisteredUserEmbeddingExperienceConfiguration&& value) { m_experienceConfigurationHasBeenSet = true; m_experienceConfiguration = std::move(value); }
 
     /**
      * <p>The experience you are embedding. For registered users, you can embed Amazon
-     * QuickSight dashboards or the entire Amazon QuickSight console.</p>
+     * QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search
+     * bar, or the entire Amazon QuickSight console.</p>
      */
     inline GenerateEmbedUrlForRegisteredUserRequest& WithExperienceConfiguration(const RegisteredUserEmbeddingExperienceConfiguration& value) { SetExperienceConfiguration(value); return *this;}
 
     /**
      * <p>The experience you are embedding. For registered users, you can embed Amazon
-     * QuickSight dashboards or the entire Amazon QuickSight console.</p>
+     * QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search
+     * bar, or the entire Amazon QuickSight console.</p>
      */
     inline GenerateEmbedUrlForRegisteredUserRequest& WithExperienceConfiguration(RegisteredUserEmbeddingExperienceConfiguration&& value) { SetExperienceConfiguration(std::move(value)); return *this;}
 
@@ -297,19 +303,19 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     long long m_sessionLifetimeInMinutes;
-    bool m_sessionLifetimeInMinutesHasBeenSet;
+    bool m_sessionLifetimeInMinutesHasBeenSet = false;
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
 
     RegisteredUserEmbeddingExperienceConfiguration m_experienceConfiguration;
-    bool m_experienceConfigurationHasBeenSet;
+    bool m_experienceConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowedDomains;
-    bool m_allowedDomainsHasBeenSet;
+    bool m_allowedDomainsHasBeenSet = false;
   };
 
 } // namespace Model

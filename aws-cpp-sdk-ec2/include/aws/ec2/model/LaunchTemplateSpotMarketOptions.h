@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateSpotMarketOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LaunchTemplateSpotMarketOptions
+  class LaunchTemplateSpotMarketOptions
   {
   public:
-    LaunchTemplateSpotMarketOptions();
-    LaunchTemplateSpotMarketOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchTemplateSpotMarketOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateSpotMarketOptions();
+    AWS_EC2_API LaunchTemplateSpotMarketOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateSpotMarketOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -265,19 +265,19 @@ namespace Model
   private:
 
     Aws::String m_maxPrice;
-    bool m_maxPriceHasBeenSet;
+    bool m_maxPriceHasBeenSet = false;
 
     SpotInstanceType m_spotInstanceType;
-    bool m_spotInstanceTypeHasBeenSet;
+    bool m_spotInstanceTypeHasBeenSet = false;
 
     int m_blockDurationMinutes;
-    bool m_blockDurationMinutesHasBeenSet;
+    bool m_blockDurationMinutesHasBeenSet = false;
 
     Aws::Utils::DateTime m_validUntil;
-    bool m_validUntilHasBeenSet;
+    bool m_validUntilHasBeenSet = false;
 
     InstanceInterruptionBehavior m_instanceInterruptionBehavior;
-    bool m_instanceInterruptionBehaviorHasBeenSet;
+    bool m_instanceInterruptionBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

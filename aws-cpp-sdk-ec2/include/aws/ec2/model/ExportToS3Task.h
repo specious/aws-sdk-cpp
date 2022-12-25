@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportToS3Task">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ExportToS3Task
+  class ExportToS3Task
   {
   public:
-    ExportToS3Task();
-    ExportToS3Task(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ExportToS3Task& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ExportToS3Task();
+    AWS_EC2_API ExportToS3Task(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ExportToS3Task& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -234,16 +234,16 @@ namespace Model
   private:
 
     ContainerFormat m_containerFormat;
-    bool m_containerFormatHasBeenSet;
+    bool m_containerFormatHasBeenSet = false;
 
     DiskImageFormat m_diskImageFormat;
-    bool m_diskImageFormatHasBeenSet;
+    bool m_diskImageFormatHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3Key;
-    bool m_s3KeyHasBeenSet;
+    bool m_s3KeyHasBeenSet = false;
   };
 
 } // namespace Model

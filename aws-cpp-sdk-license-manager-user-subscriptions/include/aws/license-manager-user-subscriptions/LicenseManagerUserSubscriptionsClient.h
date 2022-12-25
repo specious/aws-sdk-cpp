@@ -5,142 +5,84 @@
 
 #pragma once
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
-#include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/license-manager-user-subscriptions/model/AssociateUserResult.h>
-#include <aws/license-manager-user-subscriptions/model/DeregisterIdentityProviderResult.h>
-#include <aws/license-manager-user-subscriptions/model/DisassociateUserResult.h>
-#include <aws/license-manager-user-subscriptions/model/ListIdentityProvidersResult.h>
-#include <aws/license-manager-user-subscriptions/model/ListInstancesResult.h>
-#include <aws/license-manager-user-subscriptions/model/ListProductSubscriptionsResult.h>
-#include <aws/license-manager-user-subscriptions/model/ListUserAssociationsResult.h>
-#include <aws/license-manager-user-subscriptions/model/RegisterIdentityProviderResult.h>
-#include <aws/license-manager-user-subscriptions/model/StartProductSubscriptionResult.h>
-#include <aws/license-manager-user-subscriptions/model/StopProductSubscriptionResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace LicenseManagerUserSubscriptions
 {
-
-namespace Model
-{
-        class AssociateUserRequest;
-        class DeregisterIdentityProviderRequest;
-        class DisassociateUserRequest;
-        class ListIdentityProvidersRequest;
-        class ListInstancesRequest;
-        class ListProductSubscriptionsRequest;
-        class ListUserAssociationsRequest;
-        class RegisterIdentityProviderRequest;
-        class StartProductSubscriptionRequest;
-        class StopProductSubscriptionRequest;
-
-        typedef Aws::Utils::Outcome<AssociateUserResult, LicenseManagerUserSubscriptionsError> AssociateUserOutcome;
-        typedef Aws::Utils::Outcome<DeregisterIdentityProviderResult, LicenseManagerUserSubscriptionsError> DeregisterIdentityProviderOutcome;
-        typedef Aws::Utils::Outcome<DisassociateUserResult, LicenseManagerUserSubscriptionsError> DisassociateUserOutcome;
-        typedef Aws::Utils::Outcome<ListIdentityProvidersResult, LicenseManagerUserSubscriptionsError> ListIdentityProvidersOutcome;
-        typedef Aws::Utils::Outcome<ListInstancesResult, LicenseManagerUserSubscriptionsError> ListInstancesOutcome;
-        typedef Aws::Utils::Outcome<ListProductSubscriptionsResult, LicenseManagerUserSubscriptionsError> ListProductSubscriptionsOutcome;
-        typedef Aws::Utils::Outcome<ListUserAssociationsResult, LicenseManagerUserSubscriptionsError> ListUserAssociationsOutcome;
-        typedef Aws::Utils::Outcome<RegisterIdentityProviderResult, LicenseManagerUserSubscriptionsError> RegisterIdentityProviderOutcome;
-        typedef Aws::Utils::Outcome<StartProductSubscriptionResult, LicenseManagerUserSubscriptionsError> StartProductSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<StopProductSubscriptionResult, LicenseManagerUserSubscriptionsError> StopProductSubscriptionOutcome;
-
-        typedef std::future<AssociateUserOutcome> AssociateUserOutcomeCallable;
-        typedef std::future<DeregisterIdentityProviderOutcome> DeregisterIdentityProviderOutcomeCallable;
-        typedef std::future<DisassociateUserOutcome> DisassociateUserOutcomeCallable;
-        typedef std::future<ListIdentityProvidersOutcome> ListIdentityProvidersOutcomeCallable;
-        typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
-        typedef std::future<ListProductSubscriptionsOutcome> ListProductSubscriptionsOutcomeCallable;
-        typedef std::future<ListUserAssociationsOutcome> ListUserAssociationsOutcomeCallable;
-        typedef std::future<RegisterIdentityProviderOutcome> RegisterIdentityProviderOutcomeCallable;
-        typedef std::future<StartProductSubscriptionOutcome> StartProductSubscriptionOutcomeCallable;
-        typedef std::future<StopProductSubscriptionOutcome> StopProductSubscriptionOutcomeCallable;
-} // namespace Model
-
-  class LicenseManagerUserSubscriptionsClient;
-
-    typedef std::function<void(const LicenseManagerUserSubscriptionsClient*, const Model::AssociateUserRequest&, const Model::AssociateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateUserResponseReceivedHandler;
-    typedef std::function<void(const LicenseManagerUserSubscriptionsClient*, const Model::DeregisterIdentityProviderRequest&, const Model::DeregisterIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterIdentityProviderResponseReceivedHandler;
-    typedef std::function<void(const LicenseManagerUserSubscriptionsClient*, const Model::DisassociateUserRequest&, const Model::DisassociateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateUserResponseReceivedHandler;
-    typedef std::function<void(const LicenseManagerUserSubscriptionsClient*, const Model::ListIdentityProvidersRequest&, const Model::ListIdentityProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityProvidersResponseReceivedHandler;
-    typedef std::function<void(const LicenseManagerUserSubscriptionsClient*, const Model::ListInstancesRequest&, const Model::ListInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstancesResponseReceivedHandler;
-    typedef std::function<void(const LicenseManagerUserSubscriptionsClient*, const Model::ListProductSubscriptionsRequest&, const Model::ListProductSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProductSubscriptionsResponseReceivedHandler;
-    typedef std::function<void(const LicenseManagerUserSubscriptionsClient*, const Model::ListUserAssociationsRequest&, const Model::ListUserAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserAssociationsResponseReceivedHandler;
-    typedef std::function<void(const LicenseManagerUserSubscriptionsClient*, const Model::RegisterIdentityProviderRequest&, const Model::RegisterIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterIdentityProviderResponseReceivedHandler;
-    typedef std::function<void(const LicenseManagerUserSubscriptionsClient*, const Model::StartProductSubscriptionRequest&, const Model::StartProductSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartProductSubscriptionResponseReceivedHandler;
-    typedef std::function<void(const LicenseManagerUserSubscriptionsClient*, const Model::StopProductSubscriptionRequest&, const Model::StopProductSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopProductSubscriptionResponseReceivedHandler;
-
   /**
    * <p>With License Manager, you can create user-based subscriptions to utilize
    * licensed software with a per user subscription fee on Amazon EC2 instances.</p>
    */
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseManagerUserSubscriptionsClient : public Aws::Client::AWSJsonClient
+  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseManagerUserSubscriptionsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerUserSubscriptionsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LicenseManagerUserSubscriptionsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LicenseManagerUserSubscriptionsClient(const Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsClientConfiguration& clientConfiguration = Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsClientConfiguration(),
+                                              std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase> endpointProvider = Aws::MakeShared<LicenseManagerUserSubscriptionsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LicenseManagerUserSubscriptionsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LicenseManagerUserSubscriptionsClient(const Aws::Auth::AWSCredentials& credentials,
+                                              std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase> endpointProvider = Aws::MakeShared<LicenseManagerUserSubscriptionsEndpointProvider>(ALLOCATION_TAG),
+                                              const Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsClientConfiguration& clientConfiguration = Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         LicenseManagerUserSubscriptionsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                              std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase> endpointProvider = Aws::MakeShared<LicenseManagerUserSubscriptionsEndpointProvider>(ALLOCATION_TAG),
+                                              const Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsClientConfiguration& clientConfiguration = Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LicenseManagerUserSubscriptionsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LicenseManagerUserSubscriptionsClient(const Aws::Auth::AWSCredentials& credentials,
+                                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        LicenseManagerUserSubscriptionsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~LicenseManagerUserSubscriptionsClient();
-
 
         /**
          * <p>Associates the user to an EC2 instance to utilize user-based
-         * subscriptions.</p><p><h3>See Also:</h3>   <a
+         * subscriptions.</p>  <p>Your estimated bill for charges on the number of
+         * users and related costs will take 48 hours to appear for billing periods that
+         * haven't closed (marked as <b>Pending</b> billing status) in Amazon Web Services
+         * Billing. For more information, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing
+         * your monthly charges</a> in the <i>Amazon Web Services Billing User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/AssociateUser">AWS
          * API Reference</a></p>
          */
@@ -284,7 +226,13 @@ namespace Model
 
         /**
          * <p>Starts a product subscription for a user with the specified identity
-         * provider.</p><p><h3>See Also:</h3>   <a
+         * provider.</p>  <p>Your estimated bill for charges on the number of users
+         * and related costs will take 48 hours to appear for billing periods that haven't
+         * closed (marked as <b>Pending</b> billing status) in Amazon Web Services Billing.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing
+         * your monthly charges</a> in the <i>Amazon Web Services Billing User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/StartProductSubscription">AWS
          * API Reference</a></p>
          */
@@ -318,24 +266,34 @@ namespace Model
          */
         virtual void StopProductSubscriptionAsync(const Model::StopProductSubscriptionRequest& request, const StopProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates additional product configuration settings for the registered identity
+         * provider.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/UpdateIdentityProviderSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateIdentityProviderSettingsOutcome UpdateIdentityProviderSettings(const Model::UpdateIdentityProviderSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateIdentityProviderSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateIdentityProviderSettingsOutcomeCallable UpdateIdentityProviderSettingsCallable(const Model::UpdateIdentityProviderSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateIdentityProviderSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateIdentityProviderSettingsAsync(const Model::UpdateIdentityProviderSettingsRequest& request, const UpdateIdentityProviderSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateUserAsyncHelper(const Model::AssociateUserRequest& request, const AssociateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterIdentityProviderAsyncHelper(const Model::DeregisterIdentityProviderRequest& request, const DeregisterIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateUserAsyncHelper(const Model::DisassociateUserRequest& request, const DisassociateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListIdentityProvidersAsyncHelper(const Model::ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInstancesAsyncHelper(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProductSubscriptionsAsyncHelper(const Model::ListProductSubscriptionsRequest& request, const ListProductSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListUserAssociationsAsyncHelper(const Model::ListUserAssociationsRequest& request, const ListUserAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterIdentityProviderAsyncHelper(const Model::RegisterIdentityProviderRequest& request, const RegisterIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartProductSubscriptionAsyncHelper(const Model::StartProductSubscriptionRequest& request, const StartProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopProductSubscriptionAsyncHelper(const Model::StopProductSubscriptionRequest& request, const StopProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerUserSubscriptionsClient>;
+      void init(const LicenseManagerUserSubscriptionsClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      LicenseManagerUserSubscriptionsClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LicenseManagerUserSubscriptions

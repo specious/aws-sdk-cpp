@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPCONFIG_API DeleteExtensionRequest : public AppConfigRequest
+  class DeleteExtensionRequest : public AppConfigRequest
   {
   public:
-    DeleteExtensionRequest();
+    AWS_APPCONFIG_API DeleteExtensionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteExtension"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPCONFIG_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_APPCONFIG_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_extensionIdentifier;
-    bool m_extensionIdentifierHasBeenSet;
+    bool m_extensionIdentifierHasBeenSet = false;
 
     int m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
   };
 
 } // namespace Model

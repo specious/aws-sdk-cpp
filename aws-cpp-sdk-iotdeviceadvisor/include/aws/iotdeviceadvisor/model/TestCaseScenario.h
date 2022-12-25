@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/TestCaseScenario">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTDEVICEADVISOR_API TestCaseScenario
+  class TestCaseScenario
   {
   public:
-    TestCaseScenario();
-    TestCaseScenario(Aws::Utils::Json::JsonView jsonValue);
-    TestCaseScenario& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTDEVICEADVISOR_API TestCaseScenario();
+    AWS_IOTDEVICEADVISOR_API TestCaseScenario(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API TestCaseScenario& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -292,19 +292,19 @@ namespace Model
   private:
 
     Aws::String m_testCaseScenarioId;
-    bool m_testCaseScenarioIdHasBeenSet;
+    bool m_testCaseScenarioIdHasBeenSet = false;
 
     TestCaseScenarioType m_testCaseScenarioType;
-    bool m_testCaseScenarioTypeHasBeenSet;
+    bool m_testCaseScenarioTypeHasBeenSet = false;
 
     TestCaseScenarioStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failure;
-    bool m_failureHasBeenSet;
+    bool m_failureHasBeenSet = false;
 
     Aws::String m_systemMessage;
-    bool m_systemMessageHasBeenSet;
+    bool m_systemMessageHasBeenSet = false;
   };
 
 } // namespace Model

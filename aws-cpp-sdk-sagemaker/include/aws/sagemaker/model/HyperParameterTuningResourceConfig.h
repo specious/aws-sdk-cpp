@@ -29,21 +29,27 @@ namespace Model
 
   /**
    * <p>The configuration of resources, including compute instances and storage
-   * volumes for use in training jobs launched by hyperparameter tuning jobs. Specify
-   * one or more instance type and count and the allocation strategy for instance
-   * selection.</p>  <p>HyperParameterTuningResourceConfig supports all of the
-   * capabilities of ResourceConfig with added functionality for flexible instance
-   * management.</p> <p><h3>See Also:</h3>   <a
+   * volumes for use in training jobs launched by hyperparameter tuning jobs.
+   * <code>HyperParameterTuningResourceConfig</code> is similar to
+   * <code>ResourceConfig</code>, but has the additional <code>InstanceConfigs</code>
+   * and <code>AllocationStrategy</code> fields to allow for flexible instance
+   * management. Specify one or more instance types, count, and the allocation
+   * strategy for instance selection.</p>  <p>
+   * <code>HyperParameterTuningResourceConfig</code> supports the capabilities of
+   * <code>ResourceConfig</code> with the exception of
+   * <code>KeepAlivePeriodInSeconds</code>. Hyperparameter tuning jobs use warm pools
+   * by default, which reuse clusters between training jobs.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperParameterTuningResourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HyperParameterTuningResourceConfig
+  class HyperParameterTuningResourceConfig
   {
   public:
-    HyperParameterTuningResourceConfig();
-    HyperParameterTuningResourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    HyperParameterTuningResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HyperParameterTuningResourceConfig();
+    AWS_SAGEMAKER_API HyperParameterTuningResourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HyperParameterTuningResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,7 +137,7 @@ namespace Model
      * a fixed total local storage size. If you select one of these instances for
      * training, <code>VolumeSizeInGB</code> cannot be greater than this total size.
      * For a list of instance types with local instance storage and their sizes, see <a
-     * href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+     * href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
      * store volumes</a>.</p>  <p>SageMaker supports only the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General
      * Purpose SSD (gp2)</a> storage volume type.</p> 
@@ -147,7 +153,7 @@ namespace Model
      * a fixed total local storage size. If you select one of these instances for
      * training, <code>VolumeSizeInGB</code> cannot be greater than this total size.
      * For a list of instance types with local instance storage and their sizes, see <a
-     * href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+     * href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
      * store volumes</a>.</p>  <p>SageMaker supports only the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General
      * Purpose SSD (gp2)</a> storage volume type.</p> 
@@ -163,7 +169,7 @@ namespace Model
      * a fixed total local storage size. If you select one of these instances for
      * training, <code>VolumeSizeInGB</code> cannot be greater than this total size.
      * For a list of instance types with local instance storage and their sizes, see <a
-     * href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+     * href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
      * store volumes</a>.</p>  <p>SageMaker supports only the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General
      * Purpose SSD (gp2)</a> storage volume type.</p> 
@@ -179,7 +185,7 @@ namespace Model
      * a fixed total local storage size. If you select one of these instances for
      * training, <code>VolumeSizeInGB</code> cannot be greater than this total size.
      * For a list of instance types with local instance storage and their sizes, see <a
-     * href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+     * href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
      * store volumes</a>.</p>  <p>SageMaker supports only the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General
      * Purpose SSD (gp2)</a> storage volume type.</p> 
@@ -188,154 +194,162 @@ namespace Model
 
 
     /**
-     * <p>A key used by AWS Key Management Service to encrypt data on the storage
-     * volume attached to the compute instances used to run the training job. You can
-     * use either of the following formats to specify a key.</p> <p>KMS Key ID:</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> <p>Amazon Resource Name
-     * (ARN) of a AWS KMS key:</p> <p>
+     * <p>A key used by Amazon Web Services Key Management Service to encrypt data on
+     * the storage volume attached to the compute instances used to run the training
+     * job. You can use either of the following formats to specify a key.</p> <p>KMS
+     * Key ID:</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * <p>Amazon Resource Name (ARN) of a KMS key:</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> <p>Some instances use local storage, which use a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware
      * module to encrypt</a> storage volumes. If you choose one of these instance
      * types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance
      * types that use local storage, see <a
-     * href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
-     * store volumes</a>. For more information about AWS Key Management Service, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS
-     * KMS encryption</a> for more information.</p>
+     * href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+     * store volumes</a>. For more information about Amazon Web Services Key Management
+     * Service, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS
+     * encryption</a> for more information.</p>
      */
     inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
 
     /**
-     * <p>A key used by AWS Key Management Service to encrypt data on the storage
-     * volume attached to the compute instances used to run the training job. You can
-     * use either of the following formats to specify a key.</p> <p>KMS Key ID:</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> <p>Amazon Resource Name
-     * (ARN) of a AWS KMS key:</p> <p>
+     * <p>A key used by Amazon Web Services Key Management Service to encrypt data on
+     * the storage volume attached to the compute instances used to run the training
+     * job. You can use either of the following formats to specify a key.</p> <p>KMS
+     * Key ID:</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * <p>Amazon Resource Name (ARN) of a KMS key:</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> <p>Some instances use local storage, which use a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware
      * module to encrypt</a> storage volumes. If you choose one of these instance
      * types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance
      * types that use local storage, see <a
-     * href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
-     * store volumes</a>. For more information about AWS Key Management Service, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS
-     * KMS encryption</a> for more information.</p>
+     * href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+     * store volumes</a>. For more information about Amazon Web Services Key Management
+     * Service, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS
+     * encryption</a> for more information.</p>
      */
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>A key used by AWS Key Management Service to encrypt data on the storage
-     * volume attached to the compute instances used to run the training job. You can
-     * use either of the following formats to specify a key.</p> <p>KMS Key ID:</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> <p>Amazon Resource Name
-     * (ARN) of a AWS KMS key:</p> <p>
+     * <p>A key used by Amazon Web Services Key Management Service to encrypt data on
+     * the storage volume attached to the compute instances used to run the training
+     * job. You can use either of the following formats to specify a key.</p> <p>KMS
+     * Key ID:</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * <p>Amazon Resource Name (ARN) of a KMS key:</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> <p>Some instances use local storage, which use a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware
      * module to encrypt</a> storage volumes. If you choose one of these instance
      * types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance
      * types that use local storage, see <a
-     * href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
-     * store volumes</a>. For more information about AWS Key Management Service, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS
-     * KMS encryption</a> for more information.</p>
+     * href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+     * store volumes</a>. For more information about Amazon Web Services Key Management
+     * Service, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS
+     * encryption</a> for more information.</p>
      */
     inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
 
     /**
-     * <p>A key used by AWS Key Management Service to encrypt data on the storage
-     * volume attached to the compute instances used to run the training job. You can
-     * use either of the following formats to specify a key.</p> <p>KMS Key ID:</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> <p>Amazon Resource Name
-     * (ARN) of a AWS KMS key:</p> <p>
+     * <p>A key used by Amazon Web Services Key Management Service to encrypt data on
+     * the storage volume attached to the compute instances used to run the training
+     * job. You can use either of the following formats to specify a key.</p> <p>KMS
+     * Key ID:</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * <p>Amazon Resource Name (ARN) of a KMS key:</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> <p>Some instances use local storage, which use a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware
      * module to encrypt</a> storage volumes. If you choose one of these instance
      * types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance
      * types that use local storage, see <a
-     * href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
-     * store volumes</a>. For more information about AWS Key Management Service, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS
-     * KMS encryption</a> for more information.</p>
+     * href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+     * store volumes</a>. For more information about Amazon Web Services Key Management
+     * Service, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS
+     * encryption</a> for more information.</p>
      */
     inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
 
     /**
-     * <p>A key used by AWS Key Management Service to encrypt data on the storage
-     * volume attached to the compute instances used to run the training job. You can
-     * use either of the following formats to specify a key.</p> <p>KMS Key ID:</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> <p>Amazon Resource Name
-     * (ARN) of a AWS KMS key:</p> <p>
+     * <p>A key used by Amazon Web Services Key Management Service to encrypt data on
+     * the storage volume attached to the compute instances used to run the training
+     * job. You can use either of the following formats to specify a key.</p> <p>KMS
+     * Key ID:</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * <p>Amazon Resource Name (ARN) of a KMS key:</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> <p>Some instances use local storage, which use a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware
      * module to encrypt</a> storage volumes. If you choose one of these instance
      * types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance
      * types that use local storage, see <a
-     * href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
-     * store volumes</a>. For more information about AWS Key Management Service, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS
-     * KMS encryption</a> for more information.</p>
+     * href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+     * store volumes</a>. For more information about Amazon Web Services Key Management
+     * Service, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS
+     * encryption</a> for more information.</p>
      */
     inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
 
     /**
-     * <p>A key used by AWS Key Management Service to encrypt data on the storage
-     * volume attached to the compute instances used to run the training job. You can
-     * use either of the following formats to specify a key.</p> <p>KMS Key ID:</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> <p>Amazon Resource Name
-     * (ARN) of a AWS KMS key:</p> <p>
+     * <p>A key used by Amazon Web Services Key Management Service to encrypt data on
+     * the storage volume attached to the compute instances used to run the training
+     * job. You can use either of the following formats to specify a key.</p> <p>KMS
+     * Key ID:</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * <p>Amazon Resource Name (ARN) of a KMS key:</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> <p>Some instances use local storage, which use a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware
      * module to encrypt</a> storage volumes. If you choose one of these instance
      * types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance
      * types that use local storage, see <a
-     * href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
-     * store volumes</a>. For more information about AWS Key Management Service, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS
-     * KMS encryption</a> for more information.</p>
+     * href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+     * store volumes</a>. For more information about Amazon Web Services Key Management
+     * Service, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS
+     * encryption</a> for more information.</p>
      */
     inline HyperParameterTuningResourceConfig& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
 
     /**
-     * <p>A key used by AWS Key Management Service to encrypt data on the storage
-     * volume attached to the compute instances used to run the training job. You can
-     * use either of the following formats to specify a key.</p> <p>KMS Key ID:</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> <p>Amazon Resource Name
-     * (ARN) of a AWS KMS key:</p> <p>
+     * <p>A key used by Amazon Web Services Key Management Service to encrypt data on
+     * the storage volume attached to the compute instances used to run the training
+     * job. You can use either of the following formats to specify a key.</p> <p>KMS
+     * Key ID:</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * <p>Amazon Resource Name (ARN) of a KMS key:</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> <p>Some instances use local storage, which use a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware
      * module to encrypt</a> storage volumes. If you choose one of these instance
      * types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance
      * types that use local storage, see <a
-     * href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
-     * store volumes</a>. For more information about AWS Key Management Service, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS
-     * KMS encryption</a> for more information.</p>
+     * href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+     * store volumes</a>. For more information about Amazon Web Services Key Management
+     * Service, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS
+     * encryption</a> for more information.</p>
      */
     inline HyperParameterTuningResourceConfig& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>A key used by AWS Key Management Service to encrypt data on the storage
-     * volume attached to the compute instances used to run the training job. You can
-     * use either of the following formats to specify a key.</p> <p>KMS Key ID:</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> <p>Amazon Resource Name
-     * (ARN) of a AWS KMS key:</p> <p>
+     * <p>A key used by Amazon Web Services Key Management Service to encrypt data on
+     * the storage volume attached to the compute instances used to run the training
+     * job. You can use either of the following formats to specify a key.</p> <p>KMS
+     * Key ID:</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * <p>Amazon Resource Name (ARN) of a KMS key:</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> <p>Some instances use local storage, which use a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware
      * module to encrypt</a> storage volumes. If you choose one of these instance
      * types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance
      * types that use local storage, see <a
-     * href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
-     * store volumes</a>. For more information about AWS Key Management Service, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS
-     * KMS encryption</a> for more information.</p>
+     * href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+     * store volumes</a>. For more information about Amazon Web Services Key Management
+     * Service, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS
+     * encryption</a> for more information.</p>
      */
     inline HyperParameterTuningResourceConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
 
@@ -383,7 +397,7 @@ namespace Model
      * storage volumes to use in model training jobs launched by hyperparameter tuning
      * jobs. The <code>AllocationStrategy</code> controls the order in which multiple
      * configurations provided in <code>InstanceConfigs</code> are used.</p> 
-     * <p>If you only want to use a single InstanceConfig inside the
+     * <p>If you only want to use a single instance configuration inside the
      * <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for
      * <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>,
      * <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use
@@ -399,7 +413,7 @@ namespace Model
      * storage volumes to use in model training jobs launched by hyperparameter tuning
      * jobs. The <code>AllocationStrategy</code> controls the order in which multiple
      * configurations provided in <code>InstanceConfigs</code> are used.</p> 
-     * <p>If you only want to use a single InstanceConfig inside the
+     * <p>If you only want to use a single instance configuration inside the
      * <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for
      * <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>,
      * <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use
@@ -415,7 +429,7 @@ namespace Model
      * storage volumes to use in model training jobs launched by hyperparameter tuning
      * jobs. The <code>AllocationStrategy</code> controls the order in which multiple
      * configurations provided in <code>InstanceConfigs</code> are used.</p> 
-     * <p>If you only want to use a single InstanceConfig inside the
+     * <p>If you only want to use a single instance configuration inside the
      * <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for
      * <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>,
      * <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use
@@ -431,7 +445,7 @@ namespace Model
      * storage volumes to use in model training jobs launched by hyperparameter tuning
      * jobs. The <code>AllocationStrategy</code> controls the order in which multiple
      * configurations provided in <code>InstanceConfigs</code> are used.</p> 
-     * <p>If you only want to use a single InstanceConfig inside the
+     * <p>If you only want to use a single instance configuration inside the
      * <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for
      * <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>,
      * <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use
@@ -447,7 +461,7 @@ namespace Model
      * storage volumes to use in model training jobs launched by hyperparameter tuning
      * jobs. The <code>AllocationStrategy</code> controls the order in which multiple
      * configurations provided in <code>InstanceConfigs</code> are used.</p> 
-     * <p>If you only want to use a single InstanceConfig inside the
+     * <p>If you only want to use a single instance configuration inside the
      * <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for
      * <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>,
      * <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use
@@ -463,7 +477,7 @@ namespace Model
      * storage volumes to use in model training jobs launched by hyperparameter tuning
      * jobs. The <code>AllocationStrategy</code> controls the order in which multiple
      * configurations provided in <code>InstanceConfigs</code> are used.</p> 
-     * <p>If you only want to use a single InstanceConfig inside the
+     * <p>If you only want to use a single instance configuration inside the
      * <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for
      * <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>,
      * <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use
@@ -479,7 +493,7 @@ namespace Model
      * storage volumes to use in model training jobs launched by hyperparameter tuning
      * jobs. The <code>AllocationStrategy</code> controls the order in which multiple
      * configurations provided in <code>InstanceConfigs</code> are used.</p> 
-     * <p>If you only want to use a single InstanceConfig inside the
+     * <p>If you only want to use a single instance configuration inside the
      * <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for
      * <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>,
      * <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use
@@ -495,7 +509,7 @@ namespace Model
      * storage volumes to use in model training jobs launched by hyperparameter tuning
      * jobs. The <code>AllocationStrategy</code> controls the order in which multiple
      * configurations provided in <code>InstanceConfigs</code> are used.</p> 
-     * <p>If you only want to use a single InstanceConfig inside the
+     * <p>If you only want to use a single instance configuration inside the
      * <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for
      * <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>,
      * <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use
@@ -508,22 +522,22 @@ namespace Model
   private:
 
     TrainingInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     int m_volumeSizeInGB;
-    bool m_volumeSizeInGBHasBeenSet;
+    bool m_volumeSizeInGBHasBeenSet = false;
 
     Aws::String m_volumeKmsKeyId;
-    bool m_volumeKmsKeyIdHasBeenSet;
+    bool m_volumeKmsKeyIdHasBeenSet = false;
 
     HyperParameterTuningAllocationStrategy m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
 
     Aws::Vector<HyperParameterTuningInstanceConfig> m_instanceConfigs;
-    bool m_instanceConfigsHasBeenSet;
+    bool m_instanceConfigsHasBeenSet = false;
   };
 
 } // namespace Model

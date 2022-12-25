@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/TFITrainingMetricsValue">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API TFITrainingMetricsValue
+  class TFITrainingMetricsValue
   {
   public:
-    TFITrainingMetricsValue();
-    TFITrainingMetricsValue(Aws::Utils::Json::JsonView jsonValue);
-    TFITrainingMetricsValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API TFITrainingMetricsValue();
+    AWS_FRAUDDETECTOR_API TFITrainingMetricsValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API TFITrainingMetricsValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::Vector<TFIMetricDataPoint> m_metricDataPoints;
-    bool m_metricDataPointsHasBeenSet;
+    bool m_metricDataPointsHasBeenSet = false;
 
     TFIModelPerformance m_modelPerformance;
-    bool m_modelPerformanceHasBeenSet;
+    bool m_modelPerformanceHasBeenSet = false;
   };
 
 } // namespace Model

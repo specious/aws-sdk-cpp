@@ -81,6 +81,13 @@
 #include <aws/securityhub/model/AwsWafRuleDetails.h>
 #include <aws/securityhub/model/AwsWafRuleGroupDetails.h>
 #include <aws/securityhub/model/AwsEcsTaskDetails.h>
+#include <aws/securityhub/model/AwsBackupBackupVaultDetails.h>
+#include <aws/securityhub/model/AwsBackupBackupPlanDetails.h>
+#include <aws/securityhub/model/AwsBackupRecoveryPointDetails.h>
+#include <aws/securityhub/model/AwsEc2LaunchTemplateDetails.h>
+#include <aws/securityhub/model/AwsSageMakerNotebookInstanceDetails.h>
+#include <aws/securityhub/model/AwsWafv2WebAclDetails.h>
+#include <aws/securityhub/model/AwsWafv2RuleGroupDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -112,13 +119,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ResourceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API ResourceDetails
+  class ResourceDetails
   {
   public:
-    ResourceDetails();
-    ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API ResourceDetails();
+    AWS_SECURITYHUB_API ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -2680,235 +2687,425 @@ namespace Model
      */
     inline ResourceDetails& WithAwsEcsTask(AwsEcsTaskDetails&& value) { SetAwsEcsTask(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline const AwsBackupBackupVaultDetails& GetAwsBackupBackupVault() const{ return m_awsBackupBackupVault; }
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline bool AwsBackupBackupVaultHasBeenSet() const { return m_awsBackupBackupVaultHasBeenSet; }
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline void SetAwsBackupBackupVault(const AwsBackupBackupVaultDetails& value) { m_awsBackupBackupVaultHasBeenSet = true; m_awsBackupBackupVault = value; }
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline void SetAwsBackupBackupVault(AwsBackupBackupVaultDetails&& value) { m_awsBackupBackupVaultHasBeenSet = true; m_awsBackupBackupVault = std::move(value); }
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline ResourceDetails& WithAwsBackupBackupVault(const AwsBackupBackupVaultDetails& value) { SetAwsBackupBackupVault(value); return *this;}
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline ResourceDetails& WithAwsBackupBackupVault(AwsBackupBackupVaultDetails&& value) { SetAwsBackupBackupVault(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline const AwsBackupBackupPlanDetails& GetAwsBackupBackupPlan() const{ return m_awsBackupBackupPlan; }
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline bool AwsBackupBackupPlanHasBeenSet() const { return m_awsBackupBackupPlanHasBeenSet; }
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline void SetAwsBackupBackupPlan(const AwsBackupBackupPlanDetails& value) { m_awsBackupBackupPlanHasBeenSet = true; m_awsBackupBackupPlan = value; }
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline void SetAwsBackupBackupPlan(AwsBackupBackupPlanDetails&& value) { m_awsBackupBackupPlanHasBeenSet = true; m_awsBackupBackupPlan = std::move(value); }
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline ResourceDetails& WithAwsBackupBackupPlan(const AwsBackupBackupPlanDetails& value) { SetAwsBackupBackupPlan(value); return *this;}
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline ResourceDetails& WithAwsBackupBackupPlan(AwsBackupBackupPlanDetails&& value) { SetAwsBackupBackupPlan(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline const AwsBackupRecoveryPointDetails& GetAwsBackupRecoveryPoint() const{ return m_awsBackupRecoveryPoint; }
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline bool AwsBackupRecoveryPointHasBeenSet() const { return m_awsBackupRecoveryPointHasBeenSet; }
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline void SetAwsBackupRecoveryPoint(const AwsBackupRecoveryPointDetails& value) { m_awsBackupRecoveryPointHasBeenSet = true; m_awsBackupRecoveryPoint = value; }
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline void SetAwsBackupRecoveryPoint(AwsBackupRecoveryPointDetails&& value) { m_awsBackupRecoveryPointHasBeenSet = true; m_awsBackupRecoveryPoint = std::move(value); }
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline ResourceDetails& WithAwsBackupRecoveryPoint(const AwsBackupRecoveryPointDetails& value) { SetAwsBackupRecoveryPoint(value); return *this;}
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline ResourceDetails& WithAwsBackupRecoveryPoint(AwsBackupRecoveryPointDetails&& value) { SetAwsBackupRecoveryPoint(std::move(value)); return *this;}
+
+
+    
+    inline const AwsEc2LaunchTemplateDetails& GetAwsEc2LaunchTemplate() const{ return m_awsEc2LaunchTemplate; }
+
+    
+    inline bool AwsEc2LaunchTemplateHasBeenSet() const { return m_awsEc2LaunchTemplateHasBeenSet; }
+
+    
+    inline void SetAwsEc2LaunchTemplate(const AwsEc2LaunchTemplateDetails& value) { m_awsEc2LaunchTemplateHasBeenSet = true; m_awsEc2LaunchTemplate = value; }
+
+    
+    inline void SetAwsEc2LaunchTemplate(AwsEc2LaunchTemplateDetails&& value) { m_awsEc2LaunchTemplateHasBeenSet = true; m_awsEc2LaunchTemplate = std::move(value); }
+
+    
+    inline ResourceDetails& WithAwsEc2LaunchTemplate(const AwsEc2LaunchTemplateDetails& value) { SetAwsEc2LaunchTemplate(value); return *this;}
+
+    
+    inline ResourceDetails& WithAwsEc2LaunchTemplate(AwsEc2LaunchTemplateDetails&& value) { SetAwsEc2LaunchTemplate(std::move(value)); return *this;}
+
+
+    
+    inline const AwsSageMakerNotebookInstanceDetails& GetAwsSageMakerNotebookInstance() const{ return m_awsSageMakerNotebookInstance; }
+
+    
+    inline bool AwsSageMakerNotebookInstanceHasBeenSet() const { return m_awsSageMakerNotebookInstanceHasBeenSet; }
+
+    
+    inline void SetAwsSageMakerNotebookInstance(const AwsSageMakerNotebookInstanceDetails& value) { m_awsSageMakerNotebookInstanceHasBeenSet = true; m_awsSageMakerNotebookInstance = value; }
+
+    
+    inline void SetAwsSageMakerNotebookInstance(AwsSageMakerNotebookInstanceDetails&& value) { m_awsSageMakerNotebookInstanceHasBeenSet = true; m_awsSageMakerNotebookInstance = std::move(value); }
+
+    
+    inline ResourceDetails& WithAwsSageMakerNotebookInstance(const AwsSageMakerNotebookInstanceDetails& value) { SetAwsSageMakerNotebookInstance(value); return *this;}
+
+    
+    inline ResourceDetails& WithAwsSageMakerNotebookInstance(AwsSageMakerNotebookInstanceDetails&& value) { SetAwsSageMakerNotebookInstance(std::move(value)); return *this;}
+
+
+    
+    inline const AwsWafv2WebAclDetails& GetAwsWafv2WebAcl() const{ return m_awsWafv2WebAcl; }
+
+    
+    inline bool AwsWafv2WebAclHasBeenSet() const { return m_awsWafv2WebAclHasBeenSet; }
+
+    
+    inline void SetAwsWafv2WebAcl(const AwsWafv2WebAclDetails& value) { m_awsWafv2WebAclHasBeenSet = true; m_awsWafv2WebAcl = value; }
+
+    
+    inline void SetAwsWafv2WebAcl(AwsWafv2WebAclDetails&& value) { m_awsWafv2WebAclHasBeenSet = true; m_awsWafv2WebAcl = std::move(value); }
+
+    
+    inline ResourceDetails& WithAwsWafv2WebAcl(const AwsWafv2WebAclDetails& value) { SetAwsWafv2WebAcl(value); return *this;}
+
+    
+    inline ResourceDetails& WithAwsWafv2WebAcl(AwsWafv2WebAclDetails&& value) { SetAwsWafv2WebAcl(std::move(value)); return *this;}
+
+
+    
+    inline const AwsWafv2RuleGroupDetails& GetAwsWafv2RuleGroup() const{ return m_awsWafv2RuleGroup; }
+
+    
+    inline bool AwsWafv2RuleGroupHasBeenSet() const { return m_awsWafv2RuleGroupHasBeenSet; }
+
+    
+    inline void SetAwsWafv2RuleGroup(const AwsWafv2RuleGroupDetails& value) { m_awsWafv2RuleGroupHasBeenSet = true; m_awsWafv2RuleGroup = value; }
+
+    
+    inline void SetAwsWafv2RuleGroup(AwsWafv2RuleGroupDetails&& value) { m_awsWafv2RuleGroupHasBeenSet = true; m_awsWafv2RuleGroup = std::move(value); }
+
+    
+    inline ResourceDetails& WithAwsWafv2RuleGroup(const AwsWafv2RuleGroupDetails& value) { SetAwsWafv2RuleGroup(value); return *this;}
+
+    
+    inline ResourceDetails& WithAwsWafv2RuleGroup(AwsWafv2RuleGroupDetails&& value) { SetAwsWafv2RuleGroup(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
-    bool m_awsAutoScalingAutoScalingGroupHasBeenSet;
+    bool m_awsAutoScalingAutoScalingGroupHasBeenSet = false;
 
     AwsCodeBuildProjectDetails m_awsCodeBuildProject;
-    bool m_awsCodeBuildProjectHasBeenSet;
+    bool m_awsCodeBuildProjectHasBeenSet = false;
 
     AwsCloudFrontDistributionDetails m_awsCloudFrontDistribution;
-    bool m_awsCloudFrontDistributionHasBeenSet;
+    bool m_awsCloudFrontDistributionHasBeenSet = false;
 
     AwsEc2InstanceDetails m_awsEc2Instance;
-    bool m_awsEc2InstanceHasBeenSet;
+    bool m_awsEc2InstanceHasBeenSet = false;
 
     AwsEc2NetworkInterfaceDetails m_awsEc2NetworkInterface;
-    bool m_awsEc2NetworkInterfaceHasBeenSet;
+    bool m_awsEc2NetworkInterfaceHasBeenSet = false;
 
     AwsEc2SecurityGroupDetails m_awsEc2SecurityGroup;
-    bool m_awsEc2SecurityGroupHasBeenSet;
+    bool m_awsEc2SecurityGroupHasBeenSet = false;
 
     AwsEc2VolumeDetails m_awsEc2Volume;
-    bool m_awsEc2VolumeHasBeenSet;
+    bool m_awsEc2VolumeHasBeenSet = false;
 
     AwsEc2VpcDetails m_awsEc2Vpc;
-    bool m_awsEc2VpcHasBeenSet;
+    bool m_awsEc2VpcHasBeenSet = false;
 
     AwsEc2EipDetails m_awsEc2Eip;
-    bool m_awsEc2EipHasBeenSet;
+    bool m_awsEc2EipHasBeenSet = false;
 
     AwsEc2SubnetDetails m_awsEc2Subnet;
-    bool m_awsEc2SubnetHasBeenSet;
+    bool m_awsEc2SubnetHasBeenSet = false;
 
     AwsEc2NetworkAclDetails m_awsEc2NetworkAcl;
-    bool m_awsEc2NetworkAclHasBeenSet;
+    bool m_awsEc2NetworkAclHasBeenSet = false;
 
     AwsElbv2LoadBalancerDetails m_awsElbv2LoadBalancer;
-    bool m_awsElbv2LoadBalancerHasBeenSet;
+    bool m_awsElbv2LoadBalancerHasBeenSet = false;
 
     AwsElasticBeanstalkEnvironmentDetails m_awsElasticBeanstalkEnvironment;
-    bool m_awsElasticBeanstalkEnvironmentHasBeenSet;
+    bool m_awsElasticBeanstalkEnvironmentHasBeenSet = false;
 
     AwsElasticsearchDomainDetails m_awsElasticsearchDomain;
-    bool m_awsElasticsearchDomainHasBeenSet;
+    bool m_awsElasticsearchDomainHasBeenSet = false;
 
     AwsS3BucketDetails m_awsS3Bucket;
-    bool m_awsS3BucketHasBeenSet;
+    bool m_awsS3BucketHasBeenSet = false;
 
     AwsS3AccountPublicAccessBlockDetails m_awsS3AccountPublicAccessBlock;
-    bool m_awsS3AccountPublicAccessBlockHasBeenSet;
+    bool m_awsS3AccountPublicAccessBlockHasBeenSet = false;
 
     AwsS3ObjectDetails m_awsS3Object;
-    bool m_awsS3ObjectHasBeenSet;
+    bool m_awsS3ObjectHasBeenSet = false;
 
     AwsSecretsManagerSecretDetails m_awsSecretsManagerSecret;
-    bool m_awsSecretsManagerSecretHasBeenSet;
+    bool m_awsSecretsManagerSecretHasBeenSet = false;
 
     AwsIamAccessKeyDetails m_awsIamAccessKey;
-    bool m_awsIamAccessKeyHasBeenSet;
+    bool m_awsIamAccessKeyHasBeenSet = false;
 
     AwsIamUserDetails m_awsIamUser;
-    bool m_awsIamUserHasBeenSet;
+    bool m_awsIamUserHasBeenSet = false;
 
     AwsIamPolicyDetails m_awsIamPolicy;
-    bool m_awsIamPolicyHasBeenSet;
+    bool m_awsIamPolicyHasBeenSet = false;
 
     AwsApiGatewayV2StageDetails m_awsApiGatewayV2Stage;
-    bool m_awsApiGatewayV2StageHasBeenSet;
+    bool m_awsApiGatewayV2StageHasBeenSet = false;
 
     AwsApiGatewayV2ApiDetails m_awsApiGatewayV2Api;
-    bool m_awsApiGatewayV2ApiHasBeenSet;
+    bool m_awsApiGatewayV2ApiHasBeenSet = false;
 
     AwsDynamoDbTableDetails m_awsDynamoDbTable;
-    bool m_awsDynamoDbTableHasBeenSet;
+    bool m_awsDynamoDbTableHasBeenSet = false;
 
     AwsApiGatewayStageDetails m_awsApiGatewayStage;
-    bool m_awsApiGatewayStageHasBeenSet;
+    bool m_awsApiGatewayStageHasBeenSet = false;
 
     AwsApiGatewayRestApiDetails m_awsApiGatewayRestApi;
-    bool m_awsApiGatewayRestApiHasBeenSet;
+    bool m_awsApiGatewayRestApiHasBeenSet = false;
 
     AwsCloudTrailTrailDetails m_awsCloudTrailTrail;
-    bool m_awsCloudTrailTrailHasBeenSet;
+    bool m_awsCloudTrailTrailHasBeenSet = false;
 
     AwsSsmPatchComplianceDetails m_awsSsmPatchCompliance;
-    bool m_awsSsmPatchComplianceHasBeenSet;
+    bool m_awsSsmPatchComplianceHasBeenSet = false;
 
     AwsCertificateManagerCertificateDetails m_awsCertificateManagerCertificate;
-    bool m_awsCertificateManagerCertificateHasBeenSet;
+    bool m_awsCertificateManagerCertificateHasBeenSet = false;
 
     AwsRedshiftClusterDetails m_awsRedshiftCluster;
-    bool m_awsRedshiftClusterHasBeenSet;
+    bool m_awsRedshiftClusterHasBeenSet = false;
 
     AwsElbLoadBalancerDetails m_awsElbLoadBalancer;
-    bool m_awsElbLoadBalancerHasBeenSet;
+    bool m_awsElbLoadBalancerHasBeenSet = false;
 
     AwsIamGroupDetails m_awsIamGroup;
-    bool m_awsIamGroupHasBeenSet;
+    bool m_awsIamGroupHasBeenSet = false;
 
     AwsIamRoleDetails m_awsIamRole;
-    bool m_awsIamRoleHasBeenSet;
+    bool m_awsIamRoleHasBeenSet = false;
 
     AwsKmsKeyDetails m_awsKmsKey;
-    bool m_awsKmsKeyHasBeenSet;
+    bool m_awsKmsKeyHasBeenSet = false;
 
     AwsLambdaFunctionDetails m_awsLambdaFunction;
-    bool m_awsLambdaFunctionHasBeenSet;
+    bool m_awsLambdaFunctionHasBeenSet = false;
 
     AwsLambdaLayerVersionDetails m_awsLambdaLayerVersion;
-    bool m_awsLambdaLayerVersionHasBeenSet;
+    bool m_awsLambdaLayerVersionHasBeenSet = false;
 
     AwsRdsDbInstanceDetails m_awsRdsDbInstance;
-    bool m_awsRdsDbInstanceHasBeenSet;
+    bool m_awsRdsDbInstanceHasBeenSet = false;
 
     AwsSnsTopicDetails m_awsSnsTopic;
-    bool m_awsSnsTopicHasBeenSet;
+    bool m_awsSnsTopicHasBeenSet = false;
 
     AwsSqsQueueDetails m_awsSqsQueue;
-    bool m_awsSqsQueueHasBeenSet;
+    bool m_awsSqsQueueHasBeenSet = false;
 
     AwsWafWebAclDetails m_awsWafWebAcl;
-    bool m_awsWafWebAclHasBeenSet;
+    bool m_awsWafWebAclHasBeenSet = false;
 
     AwsRdsDbSnapshotDetails m_awsRdsDbSnapshot;
-    bool m_awsRdsDbSnapshotHasBeenSet;
+    bool m_awsRdsDbSnapshotHasBeenSet = false;
 
     AwsRdsDbClusterSnapshotDetails m_awsRdsDbClusterSnapshot;
-    bool m_awsRdsDbClusterSnapshotHasBeenSet;
+    bool m_awsRdsDbClusterSnapshotHasBeenSet = false;
 
     AwsRdsDbClusterDetails m_awsRdsDbCluster;
-    bool m_awsRdsDbClusterHasBeenSet;
+    bool m_awsRdsDbClusterHasBeenSet = false;
 
     AwsEcsClusterDetails m_awsEcsCluster;
-    bool m_awsEcsClusterHasBeenSet;
+    bool m_awsEcsClusterHasBeenSet = false;
 
     AwsEcsContainerDetails m_awsEcsContainer;
-    bool m_awsEcsContainerHasBeenSet;
+    bool m_awsEcsContainerHasBeenSet = false;
 
     AwsEcsTaskDefinitionDetails m_awsEcsTaskDefinition;
-    bool m_awsEcsTaskDefinitionHasBeenSet;
+    bool m_awsEcsTaskDefinitionHasBeenSet = false;
 
     ContainerDetails m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_other;
-    bool m_otherHasBeenSet;
+    bool m_otherHasBeenSet = false;
 
     AwsRdsEventSubscriptionDetails m_awsRdsEventSubscription;
-    bool m_awsRdsEventSubscriptionHasBeenSet;
+    bool m_awsRdsEventSubscriptionHasBeenSet = false;
 
     AwsEcsServiceDetails m_awsEcsService;
-    bool m_awsEcsServiceHasBeenSet;
+    bool m_awsEcsServiceHasBeenSet = false;
 
     AwsAutoScalingLaunchConfigurationDetails m_awsAutoScalingLaunchConfiguration;
-    bool m_awsAutoScalingLaunchConfigurationHasBeenSet;
+    bool m_awsAutoScalingLaunchConfigurationHasBeenSet = false;
 
     AwsEc2VpnConnectionDetails m_awsEc2VpnConnection;
-    bool m_awsEc2VpnConnectionHasBeenSet;
+    bool m_awsEc2VpnConnectionHasBeenSet = false;
 
     AwsEcrContainerImageDetails m_awsEcrContainerImage;
-    bool m_awsEcrContainerImageHasBeenSet;
+    bool m_awsEcrContainerImageHasBeenSet = false;
 
     AwsOpenSearchServiceDomainDetails m_awsOpenSearchServiceDomain;
-    bool m_awsOpenSearchServiceDomainHasBeenSet;
+    bool m_awsOpenSearchServiceDomainHasBeenSet = false;
 
     AwsEc2VpcEndpointServiceDetails m_awsEc2VpcEndpointService;
-    bool m_awsEc2VpcEndpointServiceHasBeenSet;
+    bool m_awsEc2VpcEndpointServiceHasBeenSet = false;
 
     AwsXrayEncryptionConfigDetails m_awsXrayEncryptionConfig;
-    bool m_awsXrayEncryptionConfigHasBeenSet;
+    bool m_awsXrayEncryptionConfigHasBeenSet = false;
 
     AwsWafRateBasedRuleDetails m_awsWafRateBasedRule;
-    bool m_awsWafRateBasedRuleHasBeenSet;
+    bool m_awsWafRateBasedRuleHasBeenSet = false;
 
     AwsWafRegionalRateBasedRuleDetails m_awsWafRegionalRateBasedRule;
-    bool m_awsWafRegionalRateBasedRuleHasBeenSet;
+    bool m_awsWafRegionalRateBasedRuleHasBeenSet = false;
 
     AwsEcrRepositoryDetails m_awsEcrRepository;
-    bool m_awsEcrRepositoryHasBeenSet;
+    bool m_awsEcrRepositoryHasBeenSet = false;
 
     AwsEksClusterDetails m_awsEksCluster;
-    bool m_awsEksClusterHasBeenSet;
+    bool m_awsEksClusterHasBeenSet = false;
 
     AwsNetworkFirewallFirewallPolicyDetails m_awsNetworkFirewallFirewallPolicy;
-    bool m_awsNetworkFirewallFirewallPolicyHasBeenSet;
+    bool m_awsNetworkFirewallFirewallPolicyHasBeenSet = false;
 
     AwsNetworkFirewallFirewallDetails m_awsNetworkFirewallFirewall;
-    bool m_awsNetworkFirewallFirewallHasBeenSet;
+    bool m_awsNetworkFirewallFirewallHasBeenSet = false;
 
     AwsNetworkFirewallRuleGroupDetails m_awsNetworkFirewallRuleGroup;
-    bool m_awsNetworkFirewallRuleGroupHasBeenSet;
+    bool m_awsNetworkFirewallRuleGroupHasBeenSet = false;
 
     AwsRdsDbSecurityGroupDetails m_awsRdsDbSecurityGroup;
-    bool m_awsRdsDbSecurityGroupHasBeenSet;
+    bool m_awsRdsDbSecurityGroupHasBeenSet = false;
 
     AwsKinesisStreamDetails m_awsKinesisStream;
-    bool m_awsKinesisStreamHasBeenSet;
+    bool m_awsKinesisStreamHasBeenSet = false;
 
     AwsEc2TransitGatewayDetails m_awsEc2TransitGateway;
-    bool m_awsEc2TransitGatewayHasBeenSet;
+    bool m_awsEc2TransitGatewayHasBeenSet = false;
 
     AwsEfsAccessPointDetails m_awsEfsAccessPoint;
-    bool m_awsEfsAccessPointHasBeenSet;
+    bool m_awsEfsAccessPointHasBeenSet = false;
 
     AwsCloudFormationStackDetails m_awsCloudFormationStack;
-    bool m_awsCloudFormationStackHasBeenSet;
+    bool m_awsCloudFormationStackHasBeenSet = false;
 
     AwsCloudWatchAlarmDetails m_awsCloudWatchAlarm;
-    bool m_awsCloudWatchAlarmHasBeenSet;
+    bool m_awsCloudWatchAlarmHasBeenSet = false;
 
     AwsEc2VpcPeeringConnectionDetails m_awsEc2VpcPeeringConnection;
-    bool m_awsEc2VpcPeeringConnectionHasBeenSet;
+    bool m_awsEc2VpcPeeringConnectionHasBeenSet = false;
 
     AwsWafRegionalRuleGroupDetails m_awsWafRegionalRuleGroup;
-    bool m_awsWafRegionalRuleGroupHasBeenSet;
+    bool m_awsWafRegionalRuleGroupHasBeenSet = false;
 
     AwsWafRegionalRuleDetails m_awsWafRegionalRule;
-    bool m_awsWafRegionalRuleHasBeenSet;
+    bool m_awsWafRegionalRuleHasBeenSet = false;
 
     AwsWafRegionalWebAclDetails m_awsWafRegionalWebAcl;
-    bool m_awsWafRegionalWebAclHasBeenSet;
+    bool m_awsWafRegionalWebAclHasBeenSet = false;
 
     AwsWafRuleDetails m_awsWafRule;
-    bool m_awsWafRuleHasBeenSet;
+    bool m_awsWafRuleHasBeenSet = false;
 
     AwsWafRuleGroupDetails m_awsWafRuleGroup;
-    bool m_awsWafRuleGroupHasBeenSet;
+    bool m_awsWafRuleGroupHasBeenSet = false;
 
     AwsEcsTaskDetails m_awsEcsTask;
-    bool m_awsEcsTaskHasBeenSet;
+    bool m_awsEcsTaskHasBeenSet = false;
+
+    AwsBackupBackupVaultDetails m_awsBackupBackupVault;
+    bool m_awsBackupBackupVaultHasBeenSet = false;
+
+    AwsBackupBackupPlanDetails m_awsBackupBackupPlan;
+    bool m_awsBackupBackupPlanHasBeenSet = false;
+
+    AwsBackupRecoveryPointDetails m_awsBackupRecoveryPoint;
+    bool m_awsBackupRecoveryPointHasBeenSet = false;
+
+    AwsEc2LaunchTemplateDetails m_awsEc2LaunchTemplate;
+    bool m_awsEc2LaunchTemplateHasBeenSet = false;
+
+    AwsSageMakerNotebookInstanceDetails m_awsSageMakerNotebookInstance;
+    bool m_awsSageMakerNotebookInstanceHasBeenSet = false;
+
+    AwsWafv2WebAclDetails m_awsWafv2WebAcl;
+    bool m_awsWafv2WebAclHasBeenSet = false;
+
+    AwsWafv2RuleGroupDetails m_awsWafv2RuleGroup;
+    bool m_awsWafv2RuleGroupHasBeenSet = false;
   };
 
 } // namespace Model

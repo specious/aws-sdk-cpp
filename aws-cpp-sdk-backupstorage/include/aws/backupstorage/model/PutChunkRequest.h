@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUPSTORAGE_API PutChunkRequest : public StreamingBackupStorageRequest
+  class PutChunkRequest : public StreamingBackupStorageRequest
   {
   public:
-    PutChunkRequest();
+    AWS_BACKUPSTORAGE_API PutChunkRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutChunk"; }
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_BACKUPSTORAGE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    bool SignBody() const override { return false; }
+    AWS_BACKUPSTORAGE_API bool SignBody() const override { return false; }
 
 
     /**
@@ -238,23 +238,23 @@ namespace Model
   private:
 
     Aws::String m_backupJobId;
-    bool m_backupJobIdHasBeenSet;
+    bool m_backupJobIdHasBeenSet = false;
 
     Aws::String m_uploadId;
-    bool m_uploadIdHasBeenSet;
+    bool m_uploadIdHasBeenSet = false;
 
     long long m_chunkIndex;
-    bool m_chunkIndexHasBeenSet;
+    bool m_chunkIndexHasBeenSet = false;
 
 
     long long m_length;
-    bool m_lengthHasBeenSet;
+    bool m_lengthHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     DataChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

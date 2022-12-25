@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ParallelDataDataLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API ParallelDataDataLocation
+  class ParallelDataDataLocation
   {
   public:
-    ParallelDataDataLocation();
-    ParallelDataDataLocation(Aws::Utils::Json::JsonView jsonValue);
-    ParallelDataDataLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API ParallelDataDataLocation();
+    AWS_TRANSLATE_API ParallelDataDataLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API ParallelDataDataLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,10 +186,10 @@ namespace Model
   private:
 
     Aws::String m_repositoryType;
-    bool m_repositoryTypeHasBeenSet;
+    bool m_repositoryTypeHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

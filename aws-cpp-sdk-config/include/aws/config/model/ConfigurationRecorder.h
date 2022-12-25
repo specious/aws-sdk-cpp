@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigurationRecorder">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConfigurationRecorder
+  class ConfigurationRecorder
   {
   public:
-    ConfigurationRecorder();
-    ConfigurationRecorder(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationRecorder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConfigurationRecorder();
+    AWS_CONFIGSERVICE_API ConfigurationRecorder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConfigurationRecorder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -200,13 +200,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     RecordingGroup m_recordingGroup;
-    bool m_recordingGroupHasBeenSet;
+    bool m_recordingGroupHasBeenSet = false;
   };
 
 } // namespace Model

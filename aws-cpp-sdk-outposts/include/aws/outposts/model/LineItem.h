@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/LineItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OUTPOSTS_API LineItem
+  class LineItem
   {
   public:
-    LineItem();
-    LineItem(Aws::Utils::Json::JsonView jsonValue);
-    LineItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API LineItem();
+    AWS_OUTPOSTS_API LineItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API LineItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -249,22 +249,22 @@ namespace Model
   private:
 
     Aws::String m_catalogItemId;
-    bool m_catalogItemIdHasBeenSet;
+    bool m_catalogItemIdHasBeenSet = false;
 
     Aws::String m_lineItemId;
-    bool m_lineItemIdHasBeenSet;
+    bool m_lineItemIdHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     LineItemStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ShipmentInformation m_shipmentInformation;
-    bool m_shipmentInformationHasBeenSet;
+    bool m_shipmentInformationHasBeenSet = false;
 
     Aws::Vector<LineItemAssetInformation> m_assetInformationList;
-    bool m_assetInformationListHasBeenSet;
+    bool m_assetInformationListHasBeenSet = false;
   };
 
 } // namespace Model

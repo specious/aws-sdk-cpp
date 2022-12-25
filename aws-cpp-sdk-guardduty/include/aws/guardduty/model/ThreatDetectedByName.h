@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ThreatDetectedByName">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ThreatDetectedByName
+  class ThreatDetectedByName
   {
   public:
-    ThreatDetectedByName();
-    ThreatDetectedByName(Aws::Utils::Json::JsonView jsonValue);
-    ThreatDetectedByName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ThreatDetectedByName();
+    AWS_GUARDDUTY_API ThreatDetectedByName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ThreatDetectedByName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,16 +153,16 @@ namespace Model
   private:
 
     int m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
 
     int m_uniqueThreatNameCount;
-    bool m_uniqueThreatNameCountHasBeenSet;
+    bool m_uniqueThreatNameCountHasBeenSet = false;
 
     bool m_shortened;
-    bool m_shortenedHasBeenSet;
+    bool m_shortenedHasBeenSet = false;
 
     Aws::Vector<ScanThreatName> m_threatNames;
-    bool m_threatNamesHasBeenSet;
+    bool m_threatNamesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API UpdateProvisioningTemplateRequest : public IoTRequest
+  class UpdateProvisioningTemplateRequest : public IoTRequest
   {
   public:
-    UpdateProvisioningTemplateRequest();
+    AWS_IOT_API UpdateProvisioningTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateProvisioningTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -207,32 +207,50 @@ namespace Model
 
 
     /**
-     * <p>Updates the pre-provisioning hook template.</p>
+     * <p>Updates the pre-provisioning hook template. Only supports template of type
+     * <code>FLEET_PROVISIONING</code>. For more information about provisioning
+     * template types, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
      */
     inline const ProvisioningHook& GetPreProvisioningHook() const{ return m_preProvisioningHook; }
 
     /**
-     * <p>Updates the pre-provisioning hook template.</p>
+     * <p>Updates the pre-provisioning hook template. Only supports template of type
+     * <code>FLEET_PROVISIONING</code>. For more information about provisioning
+     * template types, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
      */
     inline bool PreProvisioningHookHasBeenSet() const { return m_preProvisioningHookHasBeenSet; }
 
     /**
-     * <p>Updates the pre-provisioning hook template.</p>
+     * <p>Updates the pre-provisioning hook template. Only supports template of type
+     * <code>FLEET_PROVISIONING</code>. For more information about provisioning
+     * template types, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
      */
     inline void SetPreProvisioningHook(const ProvisioningHook& value) { m_preProvisioningHookHasBeenSet = true; m_preProvisioningHook = value; }
 
     /**
-     * <p>Updates the pre-provisioning hook template.</p>
+     * <p>Updates the pre-provisioning hook template. Only supports template of type
+     * <code>FLEET_PROVISIONING</code>. For more information about provisioning
+     * template types, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
      */
     inline void SetPreProvisioningHook(ProvisioningHook&& value) { m_preProvisioningHookHasBeenSet = true; m_preProvisioningHook = std::move(value); }
 
     /**
-     * <p>Updates the pre-provisioning hook template.</p>
+     * <p>Updates the pre-provisioning hook template. Only supports template of type
+     * <code>FLEET_PROVISIONING</code>. For more information about provisioning
+     * template types, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
      */
     inline UpdateProvisioningTemplateRequest& WithPreProvisioningHook(const ProvisioningHook& value) { SetPreProvisioningHook(value); return *this;}
 
     /**
-     * <p>Updates the pre-provisioning hook template.</p>
+     * <p>Updates the pre-provisioning hook template. Only supports template of type
+     * <code>FLEET_PROVISIONING</code>. For more information about provisioning
+     * template types, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
      */
     inline UpdateProvisioningTemplateRequest& WithPreProvisioningHook(ProvisioningHook&& value) { SetPreProvisioningHook(std::move(value)); return *this;}
 
@@ -260,25 +278,25 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_defaultVersionId;
-    bool m_defaultVersionIdHasBeenSet;
+    bool m_defaultVersionIdHasBeenSet = false;
 
     Aws::String m_provisioningRoleArn;
-    bool m_provisioningRoleArnHasBeenSet;
+    bool m_provisioningRoleArnHasBeenSet = false;
 
     ProvisioningHook m_preProvisioningHook;
-    bool m_preProvisioningHookHasBeenSet;
+    bool m_preProvisioningHookHasBeenSet = false;
 
     bool m_removePreProvisioningHook;
-    bool m_removePreProvisioningHookHasBeenSet;
+    bool m_removePreProvisioningHookHasBeenSet = false;
   };
 
 } // namespace Model

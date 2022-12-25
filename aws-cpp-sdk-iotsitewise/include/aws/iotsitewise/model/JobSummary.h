@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/JobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API JobSummary
+  class JobSummary
   {
   public:
-    JobSummary();
-    JobSummary(Aws::Utils::Json::JsonView jsonValue);
-    JobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API JobSummary();
+    AWS_IOTSITEWISE_API JobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API JobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -225,13 +225,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

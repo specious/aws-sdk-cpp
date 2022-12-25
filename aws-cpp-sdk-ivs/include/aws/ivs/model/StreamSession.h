@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StreamSession">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API StreamSession
+  class StreamSession
   {
   public:
-    StreamSession();
-    StreamSession(Aws::Utils::Json::JsonView jsonValue);
-    StreamSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API StreamSession();
+    AWS_IVS_API StreamSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API StreamSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -334,25 +334,25 @@ namespace Model
   private:
 
     Channel m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     IngestConfiguration m_ingestConfiguration;
-    bool m_ingestConfigurationHasBeenSet;
+    bool m_ingestConfigurationHasBeenSet = false;
 
     RecordingConfiguration m_recordingConfiguration;
-    bool m_recordingConfigurationHasBeenSet;
+    bool m_recordingConfigurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     Aws::Vector<StreamEvent> m_truncatedEvents;
-    bool m_truncatedEventsHasBeenSet;
+    bool m_truncatedEventsHasBeenSet = false;
   };
 
 } // namespace Model

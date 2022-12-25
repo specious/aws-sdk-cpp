@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/MessageDeliveryStatusEventConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API MessageDeliveryStatusEventConfiguration
+  class MessageDeliveryStatusEventConfiguration
   {
   public:
-    MessageDeliveryStatusEventConfiguration();
-    MessageDeliveryStatusEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MessageDeliveryStatusEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API MessageDeliveryStatusEventConfiguration();
+    AWS_IOTWIRELESS_API MessageDeliveryStatusEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API MessageDeliveryStatusEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -59,48 +59,48 @@ namespace Model
 
 
     /**
-     * <p>Enum to denote whether the wireless device id device registration state event
-     * topic is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID message delivery status event topic is
+     * enabled or disabled.</p>
      */
     inline const EventNotificationTopicStatus& GetWirelessDeviceIdEventTopic() const{ return m_wirelessDeviceIdEventTopic; }
 
     /**
-     * <p>Enum to denote whether the wireless device id device registration state event
-     * topic is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID message delivery status event topic is
+     * enabled or disabled.</p>
      */
     inline bool WirelessDeviceIdEventTopicHasBeenSet() const { return m_wirelessDeviceIdEventTopicHasBeenSet; }
 
     /**
-     * <p>Enum to denote whether the wireless device id device registration state event
-     * topic is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID message delivery status event topic is
+     * enabled or disabled.</p>
      */
     inline void SetWirelessDeviceIdEventTopic(const EventNotificationTopicStatus& value) { m_wirelessDeviceIdEventTopicHasBeenSet = true; m_wirelessDeviceIdEventTopic = value; }
 
     /**
-     * <p>Enum to denote whether the wireless device id device registration state event
-     * topic is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID message delivery status event topic is
+     * enabled or disabled.</p>
      */
     inline void SetWirelessDeviceIdEventTopic(EventNotificationTopicStatus&& value) { m_wirelessDeviceIdEventTopicHasBeenSet = true; m_wirelessDeviceIdEventTopic = std::move(value); }
 
     /**
-     * <p>Enum to denote whether the wireless device id device registration state event
-     * topic is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID message delivery status event topic is
+     * enabled or disabled.</p>
      */
     inline MessageDeliveryStatusEventConfiguration& WithWirelessDeviceIdEventTopic(const EventNotificationTopicStatus& value) { SetWirelessDeviceIdEventTopic(value); return *this;}
 
     /**
-     * <p>Enum to denote whether the wireless device id device registration state event
-     * topic is enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID message delivery status event topic is
+     * enabled or disabled.</p>
      */
     inline MessageDeliveryStatusEventConfiguration& WithWirelessDeviceIdEventTopic(EventNotificationTopicStatus&& value) { SetWirelessDeviceIdEventTopic(std::move(value)); return *this;}
 
   private:
 
     SidewalkEventNotificationConfigurations m_sidewalk;
-    bool m_sidewalkHasBeenSet;
+    bool m_sidewalkHasBeenSet = false;
 
     EventNotificationTopicStatus m_wirelessDeviceIdEventTopic;
-    bool m_wirelessDeviceIdEventTopicHasBeenSet;
+    bool m_wirelessDeviceIdEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

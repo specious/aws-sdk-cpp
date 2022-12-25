@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/Lifecycle">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API Lifecycle
+  class Lifecycle
   {
   public:
-    Lifecycle();
-    Lifecycle(Aws::Utils::Json::JsonView jsonValue);
-    Lifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API Lifecycle();
+    AWS_BACKUP_API Lifecycle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Lifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,10 +98,10 @@ namespace Model
   private:
 
     long long m_moveToColdStorageAfterDays;
-    bool m_moveToColdStorageAfterDaysHasBeenSet;
+    bool m_moveToColdStorageAfterDaysHasBeenSet = false;
 
     long long m_deleteAfterDays;
-    bool m_deleteAfterDaysHasBeenSet;
+    bool m_deleteAfterDaysHasBeenSet = false;
   };
 
 } // namespace Model

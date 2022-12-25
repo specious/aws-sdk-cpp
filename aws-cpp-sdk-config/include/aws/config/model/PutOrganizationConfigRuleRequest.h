@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONFIGSERVICE_API PutOrganizationConfigRuleRequest : public ConfigServiceRequest
+  class PutOrganizationConfigRuleRequest : public ConfigServiceRequest
   {
   public:
-    PutOrganizationConfigRuleRequest();
+    AWS_CONFIGSERVICE_API PutOrganizationConfigRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutOrganizationConfigRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONFIGSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -313,19 +313,19 @@ namespace Model
   private:
 
     Aws::String m_organizationConfigRuleName;
-    bool m_organizationConfigRuleNameHasBeenSet;
+    bool m_organizationConfigRuleNameHasBeenSet = false;
 
     OrganizationManagedRuleMetadata m_organizationManagedRuleMetadata;
-    bool m_organizationManagedRuleMetadataHasBeenSet;
+    bool m_organizationManagedRuleMetadataHasBeenSet = false;
 
     OrganizationCustomRuleMetadata m_organizationCustomRuleMetadata;
-    bool m_organizationCustomRuleMetadataHasBeenSet;
+    bool m_organizationCustomRuleMetadataHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedAccounts;
-    bool m_excludedAccountsHasBeenSet;
+    bool m_excludedAccountsHasBeenSet = false;
 
     OrganizationCustomPolicyRuleMetadata m_organizationCustomPolicyRuleMetadata;
-    bool m_organizationCustomPolicyRuleMetadataHasBeenSet;
+    bool m_organizationCustomPolicyRuleMetadataHasBeenSet = false;
   };
 
 } // namespace Model

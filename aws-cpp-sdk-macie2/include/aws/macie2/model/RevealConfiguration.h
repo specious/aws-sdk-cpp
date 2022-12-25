@@ -28,19 +28,19 @@ namespace Model
    * <p>Specifies the configuration settings for retrieving occurrences of sensitive
    * data reported by findings, and the status of the configuration for an Amazon
    * Macie account. When you enable the configuration for the first time, your
-   * request must specify an AWS Key Management Service (AWS KMS) key. Otherwise, an
-   * error occurs. Macie uses the specified key to encrypt the sensitive data that
-   * you retrieve.</p><p><h3>See Also:</h3>   <a
+   * request must specify an Key Management Service (KMS) key. Otherwise, an error
+   * occurs. Macie uses the specified key to encrypt the sensitive data that you
+   * retrieve.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/RevealConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API RevealConfiguration
+  class RevealConfiguration
   {
   public:
-    RevealConfiguration();
-    RevealConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RevealConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API RevealConfiguration();
+    AWS_MACIE2_API RevealConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API RevealConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,10 +189,10 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     RevealStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/AppInstanceUserMembershipSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API AppInstanceUserMembershipSummary
+  class AppInstanceUserMembershipSummary
   {
   public:
-    AppInstanceUserMembershipSummary();
-    AppInstanceUserMembershipSummary(Aws::Utils::Json::JsonView jsonValue);
-    AppInstanceUserMembershipSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API AppInstanceUserMembershipSummary();
+    AWS_CHIMESDKMESSAGING_API AppInstanceUserMembershipSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API AppInstanceUserMembershipSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     ChannelMembershipType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_readMarkerTimestamp;
-    bool m_readMarkerTimestampHasBeenSet;
+    bool m_readMarkerTimestampHasBeenSet = false;
 
     Aws::String m_subChannelId;
-    bool m_subChannelIdHasBeenSet;
+    bool m_subChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_WAFV2_API GetSampledRequestsRequest : public WAFV2Request
+  class GetSampledRequestsRequest : public WAFV2Request
   {
   public:
-    GetSampledRequestsRequest();
+    AWS_WAFV2_API GetSampledRequestsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetSampledRequests"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WAFV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WAFV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -313,19 +313,19 @@ namespace Model
   private:
 
     Aws::String m_webAclArn;
-    bool m_webAclArnHasBeenSet;
+    bool m_webAclArnHasBeenSet = false;
 
     Aws::String m_ruleMetricName;
-    bool m_ruleMetricNameHasBeenSet;
+    bool m_ruleMetricNameHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     TimeWindow m_timeWindow;
-    bool m_timeWindowHasBeenSet;
+    bool m_timeWindowHasBeenSet = false;
 
     long long m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

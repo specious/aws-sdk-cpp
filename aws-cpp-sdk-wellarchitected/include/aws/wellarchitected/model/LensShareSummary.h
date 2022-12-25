@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/LensShareSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API LensShareSummary
+  class LensShareSummary
   {
   public:
-    LensShareSummary();
-    LensShareSummary(Aws::Utils::Json::JsonView jsonValue);
-    LensShareSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API LensShareSummary();
+    AWS_WELLARCHITECTED_API LensShareSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API LensShareSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -150,16 +150,16 @@ namespace Model
   private:
 
     Aws::String m_shareId;
-    bool m_shareIdHasBeenSet;
+    bool m_shareIdHasBeenSet = false;
 
     Aws::String m_sharedWith;
-    bool m_sharedWithHasBeenSet;
+    bool m_sharedWithHasBeenSet = false;
 
     ShareStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

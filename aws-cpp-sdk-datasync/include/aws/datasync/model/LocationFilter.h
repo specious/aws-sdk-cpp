@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/LocationFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API LocationFilter
+  class LocationFilter
   {
   public:
-    LocationFilter();
-    LocationFilter(Aws::Utils::Json::JsonView jsonValue);
-    LocationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API LocationFilter();
+    AWS_DATASYNC_API LocationFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API LocationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,13 +182,13 @@ namespace Model
   private:
 
     LocationFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     Operator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeviceSelectionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DeviceSelectionConfig
+  class DeviceSelectionConfig
   {
   public:
-    DeviceSelectionConfig();
-    DeviceSelectionConfig(Aws::Utils::Json::JsonView jsonValue);
-    DeviceSelectionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DeviceSelectionConfig();
+    AWS_SAGEMAKER_API DeviceSelectionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DeviceSelectionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,16 +181,16 @@ namespace Model
   private:
 
     DeviceSubsetType m_deviceSubsetType;
-    bool m_deviceSubsetTypeHasBeenSet;
+    bool m_deviceSubsetTypeHasBeenSet = false;
 
     int m_percentage;
-    bool m_percentageHasBeenSet;
+    bool m_percentageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deviceNames;
-    bool m_deviceNamesHasBeenSet;
+    bool m_deviceNamesHasBeenSet = false;
 
     Aws::String m_deviceNameContains;
-    bool m_deviceNameContainsHasBeenSet;
+    bool m_deviceNameContainsHasBeenSet = false;
   };
 
 } // namespace Model

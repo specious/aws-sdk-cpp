@@ -5,169 +5,16 @@
 
 #pragma once
 #include <aws/detective/Detective_EXPORTS.h>
-#include <aws/detective/DetectiveErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/detective/model/BatchGetGraphMemberDatasourcesResult.h>
-#include <aws/detective/model/BatchGetMembershipDatasourcesResult.h>
-#include <aws/detective/model/CreateGraphResult.h>
-#include <aws/detective/model/CreateMembersResult.h>
-#include <aws/detective/model/DeleteMembersResult.h>
-#include <aws/detective/model/DescribeOrganizationConfigurationResult.h>
-#include <aws/detective/model/GetMembersResult.h>
-#include <aws/detective/model/ListDatasourcePackagesResult.h>
-#include <aws/detective/model/ListGraphsResult.h>
-#include <aws/detective/model/ListInvitationsResult.h>
-#include <aws/detective/model/ListMembersResult.h>
-#include <aws/detective/model/ListOrganizationAdminAccountsResult.h>
-#include <aws/detective/model/ListTagsForResourceResult.h>
-#include <aws/detective/model/TagResourceResult.h>
-#include <aws/detective/model/UntagResourceResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/detective/DetectiveServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Detective
 {
-
-namespace Model
-{
-        class AcceptInvitationRequest;
-        class BatchGetGraphMemberDatasourcesRequest;
-        class BatchGetMembershipDatasourcesRequest;
-        class CreateGraphRequest;
-        class CreateMembersRequest;
-        class DeleteGraphRequest;
-        class DeleteMembersRequest;
-        class DescribeOrganizationConfigurationRequest;
-        class DisassociateMembershipRequest;
-        class EnableOrganizationAdminAccountRequest;
-        class GetMembersRequest;
-        class ListDatasourcePackagesRequest;
-        class ListGraphsRequest;
-        class ListInvitationsRequest;
-        class ListMembersRequest;
-        class ListOrganizationAdminAccountsRequest;
-        class ListTagsForResourceRequest;
-        class RejectInvitationRequest;
-        class StartMonitoringMemberRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateDatasourcePackagesRequest;
-        class UpdateOrganizationConfigurationRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> AcceptInvitationOutcome;
-        typedef Aws::Utils::Outcome<BatchGetGraphMemberDatasourcesResult, DetectiveError> BatchGetGraphMemberDatasourcesOutcome;
-        typedef Aws::Utils::Outcome<BatchGetMembershipDatasourcesResult, DetectiveError> BatchGetMembershipDatasourcesOutcome;
-        typedef Aws::Utils::Outcome<CreateGraphResult, DetectiveError> CreateGraphOutcome;
-        typedef Aws::Utils::Outcome<CreateMembersResult, DetectiveError> CreateMembersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> DeleteGraphOutcome;
-        typedef Aws::Utils::Outcome<DeleteMembersResult, DetectiveError> DeleteMembersOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrganizationConfigurationResult, DetectiveError> DescribeOrganizationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> DisableOrganizationAdminAccountOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> DisassociateMembershipOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> EnableOrganizationAdminAccountOutcome;
-        typedef Aws::Utils::Outcome<GetMembersResult, DetectiveError> GetMembersOutcome;
-        typedef Aws::Utils::Outcome<ListDatasourcePackagesResult, DetectiveError> ListDatasourcePackagesOutcome;
-        typedef Aws::Utils::Outcome<ListGraphsResult, DetectiveError> ListGraphsOutcome;
-        typedef Aws::Utils::Outcome<ListInvitationsResult, DetectiveError> ListInvitationsOutcome;
-        typedef Aws::Utils::Outcome<ListMembersResult, DetectiveError> ListMembersOutcome;
-        typedef Aws::Utils::Outcome<ListOrganizationAdminAccountsResult, DetectiveError> ListOrganizationAdminAccountsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, DetectiveError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> RejectInvitationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> StartMonitoringMemberOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, DetectiveError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, DetectiveError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> UpdateDatasourcePackagesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> UpdateOrganizationConfigurationOutcome;
-
-        typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
-        typedef std::future<BatchGetGraphMemberDatasourcesOutcome> BatchGetGraphMemberDatasourcesOutcomeCallable;
-        typedef std::future<BatchGetMembershipDatasourcesOutcome> BatchGetMembershipDatasourcesOutcomeCallable;
-        typedef std::future<CreateGraphOutcome> CreateGraphOutcomeCallable;
-        typedef std::future<CreateMembersOutcome> CreateMembersOutcomeCallable;
-        typedef std::future<DeleteGraphOutcome> DeleteGraphOutcomeCallable;
-        typedef std::future<DeleteMembersOutcome> DeleteMembersOutcomeCallable;
-        typedef std::future<DescribeOrganizationConfigurationOutcome> DescribeOrganizationConfigurationOutcomeCallable;
-        typedef std::future<DisableOrganizationAdminAccountOutcome> DisableOrganizationAdminAccountOutcomeCallable;
-        typedef std::future<DisassociateMembershipOutcome> DisassociateMembershipOutcomeCallable;
-        typedef std::future<EnableOrganizationAdminAccountOutcome> EnableOrganizationAdminAccountOutcomeCallable;
-        typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
-        typedef std::future<ListDatasourcePackagesOutcome> ListDatasourcePackagesOutcomeCallable;
-        typedef std::future<ListGraphsOutcome> ListGraphsOutcomeCallable;
-        typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
-        typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
-        typedef std::future<ListOrganizationAdminAccountsOutcome> ListOrganizationAdminAccountsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<RejectInvitationOutcome> RejectInvitationOutcomeCallable;
-        typedef std::future<StartMonitoringMemberOutcome> StartMonitoringMemberOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateDatasourcePackagesOutcome> UpdateDatasourcePackagesOutcomeCallable;
-        typedef std::future<UpdateOrganizationConfigurationOutcome> UpdateOrganizationConfigurationOutcomeCallable;
-} // namespace Model
-
-  class DetectiveClient;
-
-    typedef std::function<void(const DetectiveClient*, const Model::AcceptInvitationRequest&, const Model::AcceptInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptInvitationResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::BatchGetGraphMemberDatasourcesRequest&, const Model::BatchGetGraphMemberDatasourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetGraphMemberDatasourcesResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::BatchGetMembershipDatasourcesRequest&, const Model::BatchGetMembershipDatasourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetMembershipDatasourcesResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::CreateGraphRequest&, const Model::CreateGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGraphResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::CreateMembersRequest&, const Model::CreateMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMembersResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::DeleteGraphRequest&, const Model::DeleteGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGraphResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::DeleteMembersRequest&, const Model::DeleteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMembersResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::DescribeOrganizationConfigurationRequest&, const Model::DescribeOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::DisableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableOrganizationAdminAccountResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::DisassociateMembershipRequest&, const Model::DisassociateMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateMembershipResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::EnableOrganizationAdminAccountRequest&, const Model::EnableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableOrganizationAdminAccountResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::GetMembersRequest&, const Model::GetMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMembersResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::ListDatasourcePackagesRequest&, const Model::ListDatasourcePackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasourcePackagesResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::ListGraphsRequest&, const Model::ListGraphsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGraphsResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::ListOrganizationAdminAccountsRequest&, const Model::ListOrganizationAdminAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationAdminAccountsResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::RejectInvitationRequest&, const Model::RejectInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInvitationResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::StartMonitoringMemberRequest&, const Model::StartMonitoringMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringMemberResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::UpdateDatasourcePackagesRequest&, const Model::UpdateDatasourcePackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatasourcePackagesResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::UpdateOrganizationConfigurationRequest&, const Model::UpdateOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOrganizationConfigurationResponseReceivedHandler;
-
   /**
    * <p>Detective uses machine learning and purpose-built visualizations to help you
    * to analyze and investigate security issues across your Amazon Web Services
@@ -215,32 +62,60 @@ namespace Model
    * is used to centrally manage multiple accounts. In the case of Detective, the
    * administrator account manages the accounts in their behavior graph.</p> 
    */
-  class AWS_DETECTIVE_API DetectiveClient : public Aws::Client::AWSJsonClient
+  class AWS_DETECTIVE_API DetectiveClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DetectiveClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        DetectiveClient(const Aws::Detective::DetectiveClientConfiguration& clientConfiguration = Aws::Detective::DetectiveClientConfiguration(),
+                        std::shared_ptr<DetectiveEndpointProviderBase> endpointProvider = Aws::MakeShared<DetectiveEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DetectiveClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        DetectiveClient(const Aws::Auth::AWSCredentials& credentials,
+                        std::shared_ptr<DetectiveEndpointProviderBase> endpointProvider = Aws::MakeShared<DetectiveEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::Detective::DetectiveClientConfiguration& clientConfiguration = Aws::Detective::DetectiveClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         DetectiveClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<DetectiveEndpointProviderBase> endpointProvider = Aws::MakeShared<DetectiveEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::Detective::DetectiveClientConfiguration& clientConfiguration = Aws::Detective::DetectiveClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DetectiveClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DetectiveClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        DetectiveClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~DetectiveClient();
-
 
         /**
          * <p>Accepts an invitation for the member account to contribute data to a behavior
@@ -768,36 +643,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<DetectiveEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AcceptInvitationAsyncHelper(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetGraphMemberDatasourcesAsyncHelper(const Model::BatchGetGraphMemberDatasourcesRequest& request, const BatchGetGraphMemberDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetMembershipDatasourcesAsyncHelper(const Model::BatchGetMembershipDatasourcesRequest& request, const BatchGetMembershipDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateGraphAsyncHelper(const Model::CreateGraphRequest& request, const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateMembersAsyncHelper(const Model::CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteGraphAsyncHelper(const Model::DeleteGraphRequest& request, const DeleteGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteMembersAsyncHelper(const Model::DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeOrganizationConfigurationAsyncHelper(const Model::DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisableOrganizationAdminAccountAsyncHelper(const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateMembershipAsyncHelper(const Model::DisassociateMembershipRequest& request, const DisassociateMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EnableOrganizationAdminAccountAsyncHelper(const Model::EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetMembersAsyncHelper(const Model::GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDatasourcePackagesAsyncHelper(const Model::ListDatasourcePackagesRequest& request, const ListDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListGraphsAsyncHelper(const Model::ListGraphsRequest& request, const ListGraphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInvitationsAsyncHelper(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListMembersAsyncHelper(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListOrganizationAdminAccountsAsyncHelper(const Model::ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RejectInvitationAsyncHelper(const Model::RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartMonitoringMemberAsyncHelper(const Model::StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDatasourcePackagesAsyncHelper(const Model::UpdateDatasourcePackagesRequest& request, const UpdateDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateOrganizationConfigurationAsyncHelper(const Model::UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient>;
+      void init(const DetectiveClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      DetectiveClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<DetectiveEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Detective

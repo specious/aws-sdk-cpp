@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/User">AWS API
    * Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API User
+  class User
   {
   public:
-    User();
-    User(Aws::Utils::Json::JsonView jsonValue);
-    User& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API User();
+    AWS_FINSPACEDATA_API User(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API User& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -575,43 +575,43 @@ namespace Model
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     UserStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
+    bool m_firstNameHasBeenSet = false;
 
     Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
+    bool m_lastNameHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     UserType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ApiAccess m_apiAccess;
-    bool m_apiAccessHasBeenSet;
+    bool m_apiAccessHasBeenSet = false;
 
     Aws::String m_apiAccessPrincipalArn;
-    bool m_apiAccessPrincipalArnHasBeenSet;
+    bool m_apiAccessPrincipalArnHasBeenSet = false;
 
     long long m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     long long m_lastEnabledTime;
-    bool m_lastEnabledTimeHasBeenSet;
+    bool m_lastEnabledTimeHasBeenSet = false;
 
     long long m_lastDisabledTime;
-    bool m_lastDisabledTimeHasBeenSet;
+    bool m_lastDisabledTimeHasBeenSet = false;
 
     long long m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     long long m_lastLoginTime;
-    bool m_lastLoginTimeHasBeenSet;
+    bool m_lastLoginTimeHasBeenSet = false;
   };
 
 } // namespace Model

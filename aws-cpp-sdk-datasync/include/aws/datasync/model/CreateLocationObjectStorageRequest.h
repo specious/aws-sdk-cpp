@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/ObjectStorageServerProtocol.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/Array.h>
 #include <aws/datasync/model/TagListEntry.h>
 #include <utility>
 
@@ -24,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API CreateLocationObjectStorageRequest : public DataSyncRequest
+  class CreateLocationObjectStorageRequest : public DataSyncRequest
   {
   public:
-    CreateLocationObjectStorageRequest();
+    AWS_DATASYNC_API CreateLocationObjectStorageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLocationObjectStorage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATASYNC_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -466,34 +467,98 @@ namespace Model
      */
     inline CreateLocationObjectStorageRequest& AddTags(TagListEntry&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetServerCertificate() const{ return m_serverCertificate; }
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     */
+    inline bool ServerCertificateHasBeenSet() const { return m_serverCertificateHasBeenSet; }
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     */
+    inline void SetServerCertificate(const Aws::Utils::ByteBuffer& value) { m_serverCertificateHasBeenSet = true; m_serverCertificate = value; }
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     */
+    inline void SetServerCertificate(Aws::Utils::ByteBuffer&& value) { m_serverCertificateHasBeenSet = true; m_serverCertificate = std::move(value); }
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     */
+    inline CreateLocationObjectStorageRequest& WithServerCertificate(const Aws::Utils::ByteBuffer& value) { SetServerCertificate(value); return *this;}
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     */
+    inline CreateLocationObjectStorageRequest& WithServerCertificate(Aws::Utils::ByteBuffer&& value) { SetServerCertificate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serverHostname;
-    bool m_serverHostnameHasBeenSet;
+    bool m_serverHostnameHasBeenSet = false;
 
     int m_serverPort;
-    bool m_serverPortHasBeenSet;
+    bool m_serverPortHasBeenSet = false;
 
     ObjectStorageServerProtocol m_serverProtocol;
-    bool m_serverProtocolHasBeenSet;
+    bool m_serverProtocolHasBeenSet = false;
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_accessKey;
-    bool m_accessKeyHasBeenSet;
+    bool m_accessKeyHasBeenSet = false;
 
     Aws::String m_secretKey;
-    bool m_secretKeyHasBeenSet;
+    bool m_secretKeyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_agentArns;
-    bool m_agentArnsHasBeenSet;
+    bool m_agentArnsHasBeenSet = false;
 
     Aws::Vector<TagListEntry> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::Utils::ByteBuffer m_serverCertificate;
+    bool m_serverCertificateHasBeenSet = false;
   };
 
 } // namespace Model

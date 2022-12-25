@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RemediationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API RemediationConfiguration
+  class RemediationConfiguration
   {
   public:
-    RemediationConfiguration();
-    RemediationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RemediationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API RemediationConfiguration();
+    AWS_CONFIGSERVICE_API RemediationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API RemediationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -539,40 +539,40 @@ namespace Model
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     RemediationTargetType m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     Aws::String m_targetVersion;
-    bool m_targetVersionHasBeenSet;
+    bool m_targetVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, RemediationParameterValue> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     bool m_automatic;
-    bool m_automaticHasBeenSet;
+    bool m_automaticHasBeenSet = false;
 
     ExecutionControls m_executionControls;
-    bool m_executionControlsHasBeenSet;
+    bool m_executionControlsHasBeenSet = false;
 
     int m_maximumAutomaticAttempts;
-    bool m_maximumAutomaticAttemptsHasBeenSet;
+    bool m_maximumAutomaticAttemptsHasBeenSet = false;
 
     long long m_retryAttemptSeconds;
-    bool m_retryAttemptSecondsHasBeenSet;
+    bool m_retryAttemptSecondsHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_createdByService;
-    bool m_createdByServiceHasBeenSet;
+    bool m_createdByServiceHasBeenSet = false;
   };
 
 } // namespace Model

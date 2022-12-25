@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelMessageCallback">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API ChannelMessageCallback
+  class ChannelMessageCallback
   {
   public:
-    ChannelMessageCallback();
-    ChannelMessageCallback(Aws::Utils::Json::JsonView jsonValue);
-    ChannelMessageCallback& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API ChannelMessageCallback();
+    AWS_CHIMESDKMESSAGING_API ChannelMessageCallback(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API ChannelMessageCallback& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -322,22 +322,22 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     PushNotificationConfiguration m_pushNotification;
-    bool m_pushNotificationHasBeenSet;
+    bool m_pushNotificationHasBeenSet = false;
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-    bool m_messageAttributesHasBeenSet;
+    bool m_messageAttributesHasBeenSet = false;
 
     Aws::String m_subChannelId;
-    bool m_subChannelIdHasBeenSet;
+    bool m_subChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

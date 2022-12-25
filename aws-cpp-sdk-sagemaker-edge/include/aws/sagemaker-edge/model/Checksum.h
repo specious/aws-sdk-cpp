@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/Checksum">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKEREDGEMANAGER_API Checksum
+  class Checksum
   {
   public:
-    Checksum();
-    Checksum(Aws::Utils::Json::JsonView jsonValue);
-    Checksum& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKEREDGEMANAGER_API Checksum();
+    AWS_SAGEMAKEREDGEMANAGER_API Checksum(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API Checksum& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     ChecksumType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_sum;
-    bool m_sumHasBeenSet;
+    bool m_sumHasBeenSet = false;
   };
 
 } // namespace Model

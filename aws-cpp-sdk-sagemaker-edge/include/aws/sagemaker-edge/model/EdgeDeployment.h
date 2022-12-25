@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/EdgeDeployment">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKEREDGEMANAGER_API EdgeDeployment
+  class EdgeDeployment
   {
   public:
-    EdgeDeployment();
-    EdgeDeployment(Aws::Utils::Json::JsonView jsonValue);
-    EdgeDeployment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKEREDGEMANAGER_API EdgeDeployment();
+    AWS_SAGEMAKEREDGEMANAGER_API EdgeDeployment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API EdgeDeployment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_deploymentName;
-    bool m_deploymentNameHasBeenSet;
+    bool m_deploymentNameHasBeenSet = false;
 
     DeploymentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     FailureHandlingPolicy m_failureHandlingPolicy;
-    bool m_failureHandlingPolicyHasBeenSet;
+    bool m_failureHandlingPolicyHasBeenSet = false;
 
     Aws::Vector<Definition> m_definitions;
-    bool m_definitionsHasBeenSet;
+    bool m_definitionsHasBeenSet = false;
   };
 
 } // namespace Model

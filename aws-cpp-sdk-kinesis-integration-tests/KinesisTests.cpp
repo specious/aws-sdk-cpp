@@ -4,6 +4,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -41,13 +42,14 @@ protected:
     void SetUp() override {
         // Create client
         m_UUID = Aws::Utils::UUID::RandomUUID();
+        streamName = BuildResourceName("stream");
         Client::ClientConfiguration config;
         config.region = Aws::Region::US_EAST_1;
         m_client.reset(Aws::New<KinesisClient>(ALLOC_TAG, config));
 
         // Create stream
         auto createStream = m_client->CreateStream(CreateStreamRequest().WithStreamName(streamName));
-        ASSERT_TRUE(createStream.IsSuccess());
+        AWS_ASSERT_SUCCESS(createStream);
 
         // Wait 2 minutes for stream to be ready
         auto describeStream = m_client->DescribeStream(DescribeStreamRequest().WithStreamName(streamName));
@@ -64,13 +66,13 @@ protected:
         auto tagStreamOutcome =m_client->AddTagsToStream(AddTagsToStreamRequest()
                 .WithStreamName(streamName)
                 .WithTags({{TEST_TAG, TEST_TAG}}));
-        ASSERT_TRUE(describeStream.IsSuccess());
+        AWS_ASSERT_SUCCESS(describeStream);
     }
 
     void TearDown() override {
         // Delete stream
-        auto deleteStream = m_client->DeleteStream(DeleteStreamRequest().WithStreamName(streamName));
-        ASSERT_TRUE(deleteStream.IsSuccess());
+        auto deleteStream = m_client->DeleteStream(DeleteStreamRequest().WithStreamName(streamName).WithEnforceConsumerDeletion(true));
+        AWS_ASSERT_SUCCESS(deleteStream);
     }
 
     Aws::String BuildResourceName(const char* name)
@@ -105,7 +107,7 @@ protected:
 
     Aws::UniquePtr<KinesisClient> m_client;
     Aws::String m_UUID;
-    Aws::String streamName = BuildResourceName("stream");
+    Aws::String streamName;
 };
 
 TEST_F(KinesisTest, EnhancedFanOut)
@@ -114,7 +116,7 @@ TEST_F(KinesisTest, EnhancedFanOut)
     DescribeStreamRequest describeStreamRequest;
     describeStreamRequest.SetStreamName(streamName);
     auto describeStreamOutcome = m_client->DescribeStream(describeStreamRequest);
-    ASSERT_TRUE(describeStreamOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(describeStreamOutcome);
     const auto streamARN = describeStreamOutcome.GetResult().GetStreamDescription().GetStreamARN();
 
     // Register a consumer for enhanced fan-out
@@ -122,7 +124,7 @@ TEST_F(KinesisTest, EnhancedFanOut)
     const auto consumerName = BuildResourceName("sdktest");
     registerRequest.WithConsumerName(consumerName).WithStreamARN(streamARN);
     auto registerConsumerOutcome = m_client->RegisterStreamConsumer(registerRequest);
-    ASSERT_TRUE(registerConsumerOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(registerConsumerOutcome);
     const auto consumerARN = registerConsumerOutcome.GetResult().GetConsumer().GetConsumerARN();
     WaitUntilConsumerIsActive(consumerARN);
 
@@ -130,7 +132,7 @@ TEST_F(KinesisTest, EnhancedFanOut)
     ListShardsRequest listShardRequest;
     listShardRequest.SetStreamName(streamName);
     auto listShardsOutcome = m_client->ListShards(listShardRequest);
-    ASSERT_TRUE(listShardsOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(listShardsOutcome);
     const auto& shards = listShardsOutcome.GetResult().GetShards();
     ASSERT_FALSE(shards.empty());
     const auto shardId = shards[0].GetShardId();
@@ -157,15 +159,15 @@ TEST_F(KinesisTest, EnhancedFanOut)
         .WithShardId(shardId)
         .WithStartingPosition(position);
     subscribeRequest.SetEventStreamHandler(handler);
-    const auto subscribeOutcome = m_client->SubscribeToShard(subscribeRequest);
-    ASSERT_TRUE(subscribeOutcome.IsSuccess());
+    const auto subscribeOutcome = m_client->SubmitCallable(&KinesisClient::SubscribeToShard, subscribeRequest).get();
+    AWS_ASSERT_SUCCESS(subscribeOutcome);
 
     // Deregister the consumer from fan-out (we're only allowed 5, so we must cleanup)
     DeregisterStreamConsumerRequest deregisterRequest;
     deregisterRequest.WithConsumerName(consumerName)
                      .WithStreamARN(streamARN)
                      .WithConsumerARN(consumerARN);
-    ASSERT_TRUE(m_client->DeregisterStreamConsumer(deregisterRequest).IsSuccess());
+    AWS_ASSERT_SUCCESS(m_client->DeregisterStreamConsumer(deregisterRequest));
 }
 
 }

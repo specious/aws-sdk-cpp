@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/RegisteredUserDashboardEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserQuickSightConsoleEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserQSearchBarEmbeddingConfiguration.h>
+#include <aws/quicksight/model/RegisteredUserDashboardVisualEmbeddingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -34,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisteredUserEmbeddingExperienceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RegisteredUserEmbeddingExperienceConfiguration
+  class RegisteredUserEmbeddingExperienceConfiguration
   {
   public:
-    RegisteredUserEmbeddingExperienceConfiguration();
-    RegisteredUserEmbeddingExperienceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RegisteredUserEmbeddingExperienceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RegisteredUserEmbeddingExperienceConfiguration();
+    AWS_QUICKSIGHT_API RegisteredUserEmbeddingExperienceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RegisteredUserEmbeddingExperienceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -309,16 +310,56 @@ namespace Model
      */
     inline RegisteredUserEmbeddingExperienceConfiguration& WithQSearchBar(RegisteredUserQSearchBarEmbeddingConfiguration&& value) { SetQSearchBar(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline const RegisteredUserDashboardVisualEmbeddingConfiguration& GetDashboardVisual() const{ return m_dashboardVisual; }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline bool DashboardVisualHasBeenSet() const { return m_dashboardVisualHasBeenSet; }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline void SetDashboardVisual(const RegisteredUserDashboardVisualEmbeddingConfiguration& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = value; }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline void SetDashboardVisual(RegisteredUserDashboardVisualEmbeddingConfiguration&& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = std::move(value); }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline RegisteredUserEmbeddingExperienceConfiguration& WithDashboardVisual(const RegisteredUserDashboardVisualEmbeddingConfiguration& value) { SetDashboardVisual(value); return *this;}
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline RegisteredUserEmbeddingExperienceConfiguration& WithDashboardVisual(RegisteredUserDashboardVisualEmbeddingConfiguration&& value) { SetDashboardVisual(std::move(value)); return *this;}
+
   private:
 
     RegisteredUserDashboardEmbeddingConfiguration m_dashboard;
-    bool m_dashboardHasBeenSet;
+    bool m_dashboardHasBeenSet = false;
 
     RegisteredUserQuickSightConsoleEmbeddingConfiguration m_quickSightConsole;
-    bool m_quickSightConsoleHasBeenSet;
+    bool m_quickSightConsoleHasBeenSet = false;
 
     RegisteredUserQSearchBarEmbeddingConfiguration m_qSearchBar;
-    bool m_qSearchBarHasBeenSet;
+    bool m_qSearchBarHasBeenSet = false;
+
+    RegisteredUserDashboardVisualEmbeddingConfiguration m_dashboardVisual;
+    bool m_dashboardVisualHasBeenSet = false;
   };
 
 } // namespace Model

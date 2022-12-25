@@ -41,15 +41,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RuleCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCINGV2_API RuleCondition
+  class RuleCondition
   {
   public:
-    RuleCondition();
-    RuleCondition(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RuleCondition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API RuleCondition();
+    AWS_ELASTICLOADBALANCINGV2_API RuleCondition(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API RuleCondition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -556,28 +556,28 @@ namespace Model
   private:
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     HostHeaderConditionConfig m_hostHeaderConfig;
-    bool m_hostHeaderConfigHasBeenSet;
+    bool m_hostHeaderConfigHasBeenSet = false;
 
     PathPatternConditionConfig m_pathPatternConfig;
-    bool m_pathPatternConfigHasBeenSet;
+    bool m_pathPatternConfigHasBeenSet = false;
 
     HttpHeaderConditionConfig m_httpHeaderConfig;
-    bool m_httpHeaderConfigHasBeenSet;
+    bool m_httpHeaderConfigHasBeenSet = false;
 
     QueryStringConditionConfig m_queryStringConfig;
-    bool m_queryStringConfigHasBeenSet;
+    bool m_queryStringConfigHasBeenSet = false;
 
     HttpRequestMethodConditionConfig m_httpRequestMethodConfig;
-    bool m_httpRequestMethodConfigHasBeenSet;
+    bool m_httpRequestMethodConfigHasBeenSet = false;
 
     SourceIpConditionConfig m_sourceIpConfig;
-    bool m_sourceIpConfigHasBeenSet;
+    bool m_sourceIpConfigHasBeenSet = false;
   };
 
 } // namespace Model

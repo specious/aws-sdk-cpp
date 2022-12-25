@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/Address">AWS
    * API Reference</a></p>
    */
-  class AWS_PRIVATENETWORKS_API Address
+  class Address
   {
   public:
-    Address();
-    Address(Aws::Utils::Json::JsonView jsonValue);
-    Address& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRIVATENETWORKS_API Address();
+    AWS_PRIVATENETWORKS_API Address(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Address& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -449,34 +449,34 @@ namespace Model
   private:
 
     Aws::String m_city;
-    bool m_cityHasBeenSet;
+    bool m_cityHasBeenSet = false;
 
     Aws::String m_company;
-    bool m_companyHasBeenSet;
+    bool m_companyHasBeenSet = false;
 
     Aws::String m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_postalCode;
-    bool m_postalCodeHasBeenSet;
+    bool m_postalCodeHasBeenSet = false;
 
     Aws::String m_stateOrProvince;
-    bool m_stateOrProvinceHasBeenSet;
+    bool m_stateOrProvinceHasBeenSet = false;
 
     Aws::String m_street1;
-    bool m_street1HasBeenSet;
+    bool m_street1HasBeenSet = false;
 
     Aws::String m_street2;
-    bool m_street2HasBeenSet;
+    bool m_street2HasBeenSet = false;
 
     Aws::String m_street3;
-    bool m_street3HasBeenSet;
+    bool m_street3HasBeenSet = false;
   };
 
 } // namespace Model

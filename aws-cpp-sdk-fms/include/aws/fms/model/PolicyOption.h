@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PolicyOption">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API PolicyOption
+  class PolicyOption
   {
   public:
-    PolicyOption();
-    PolicyOption(Aws::Utils::Json::JsonView jsonValue);
-    PolicyOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API PolicyOption();
+    AWS_FMS_API PolicyOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API PolicyOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     NetworkFirewallPolicy m_networkFirewallPolicy;
-    bool m_networkFirewallPolicyHasBeenSet;
+    bool m_networkFirewallPolicyHasBeenSet = false;
 
     ThirdPartyFirewallPolicy m_thirdPartyFirewallPolicy;
-    bool m_thirdPartyFirewallPolicyHasBeenSet;
+    bool m_thirdPartyFirewallPolicyHasBeenSet = false;
   };
 
 } // namespace Model

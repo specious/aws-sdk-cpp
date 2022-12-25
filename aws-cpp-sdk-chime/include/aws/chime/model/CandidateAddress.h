@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CandidateAddress">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API CandidateAddress
+  class CandidateAddress
   {
   public:
-    CandidateAddress();
-    CandidateAddress(Aws::Utils::Json::JsonView jsonValue);
-    CandidateAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API CandidateAddress();
+    AWS_CHIME_API CandidateAddress(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API CandidateAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -326,25 +326,25 @@ namespace Model
   private:
 
     Aws::String m_streetInfo;
-    bool m_streetInfoHasBeenSet;
+    bool m_streetInfoHasBeenSet = false;
 
     Aws::String m_streetNumber;
-    bool m_streetNumberHasBeenSet;
+    bool m_streetNumberHasBeenSet = false;
 
     Aws::String m_city;
-    bool m_cityHasBeenSet;
+    bool m_cityHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_postalCode;
-    bool m_postalCodeHasBeenSet;
+    bool m_postalCodeHasBeenSet = false;
 
     Aws::String m_postalCodePlus4;
-    bool m_postalCodePlus4HasBeenSet;
+    bool m_postalCodePlus4HasBeenSet = false;
 
     Aws::String m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
   };
 
 } // namespace Model

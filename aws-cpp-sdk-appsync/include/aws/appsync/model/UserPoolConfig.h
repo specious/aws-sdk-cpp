@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UserPoolConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API UserPoolConfig
+  class UserPoolConfig
   {
   public:
-    UserPoolConfig();
-    UserPoolConfig(Aws::Utils::Json::JsonView jsonValue);
-    UserPoolConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API UserPoolConfig();
+    AWS_APPSYNC_API UserPoolConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API UserPoolConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     DefaultAction m_defaultAction;
-    bool m_defaultActionHasBeenSet;
+    bool m_defaultActionHasBeenSet = false;
 
     Aws::String m_appIdClientRegex;
-    bool m_appIdClientRegexHasBeenSet;
+    bool m_appIdClientRegexHasBeenSet = false;
   };
 
 } // namespace Model

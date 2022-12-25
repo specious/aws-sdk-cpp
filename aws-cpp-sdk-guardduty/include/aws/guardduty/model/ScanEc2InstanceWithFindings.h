@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ScanEc2InstanceWithFindings">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ScanEc2InstanceWithFindings
+  class ScanEc2InstanceWithFindings
   {
   public:
-    ScanEc2InstanceWithFindings();
-    ScanEc2InstanceWithFindings(Aws::Utils::Json::JsonView jsonValue);
-    ScanEc2InstanceWithFindings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ScanEc2InstanceWithFindings();
+    AWS_GUARDDUTY_API ScanEc2InstanceWithFindings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ScanEc2InstanceWithFindings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_ebsVolumes;
-    bool m_ebsVolumesHasBeenSet;
+    bool m_ebsVolumesHasBeenSet = false;
   };
 
 } // namespace Model

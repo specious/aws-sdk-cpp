@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ScanFilePath">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ScanFilePath
+  class ScanFilePath
   {
   public:
-    ScanFilePath();
-    ScanFilePath(Aws::Utils::Json::JsonView jsonValue);
-    ScanFilePath& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ScanFilePath();
+    AWS_GUARDDUTY_API ScanFilePath(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ScanFilePath& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     Aws::String m_volumeArn;
-    bool m_volumeArnHasBeenSet;
+    bool m_volumeArnHasBeenSet = false;
 
     Aws::String m_hash;
-    bool m_hashHasBeenSet;
+    bool m_hashHasBeenSet = false;
 
     Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
+    bool m_fileNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/SamlProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API SamlProperties
+  class SamlProperties
   {
   public:
-    SamlProperties();
-    SamlProperties(Aws::Utils::Json::JsonView jsonValue);
-    SamlProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API SamlProperties();
+    AWS_WORKSPACES_API SamlProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API SamlProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -279,13 +279,13 @@ namespace Model
   private:
 
     SamlStatusEnum m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_userAccessUrl;
-    bool m_userAccessUrlHasBeenSet;
+    bool m_userAccessUrlHasBeenSet = false;
 
     Aws::String m_relayStateParameterName;
-    bool m_relayStateParameterNameHasBeenSet;
+    bool m_relayStateParameterNameHasBeenSet = false;
   };
 
 } // namespace Model

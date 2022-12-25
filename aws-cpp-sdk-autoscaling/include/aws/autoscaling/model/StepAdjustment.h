@@ -44,15 +44,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StepAdjustment">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API StepAdjustment
+  class StepAdjustment
   {
   public:
-    StepAdjustment();
-    StepAdjustment(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StepAdjustment& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API StepAdjustment();
+    AWS_AUTOSCALING_API StepAdjustment(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API StepAdjustment& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -184,13 +184,13 @@ namespace Model
   private:
 
     double m_metricIntervalLowerBound;
-    bool m_metricIntervalLowerBoundHasBeenSet;
+    bool m_metricIntervalLowerBoundHasBeenSet = false;
 
     double m_metricIntervalUpperBound;
-    bool m_metricIntervalUpperBoundHasBeenSet;
+    bool m_metricIntervalUpperBoundHasBeenSet = false;
 
     int m_scalingAdjustment;
-    bool m_scalingAdjustmentHasBeenSet;
+    bool m_scalingAdjustmentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UnprocessedPreparedStatementName">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API UnprocessedPreparedStatementName
+  class UnprocessedPreparedStatementName
   {
   public:
-    UnprocessedPreparedStatementName();
-    UnprocessedPreparedStatementName(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessedPreparedStatementName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API UnprocessedPreparedStatementName();
+    AWS_ATHENA_API UnprocessedPreparedStatementName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API UnprocessedPreparedStatementName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -235,13 +235,13 @@ namespace Model
   private:
 
     Aws::String m_statementName;
-    bool m_statementNameHasBeenSet;
+    bool m_statementNameHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

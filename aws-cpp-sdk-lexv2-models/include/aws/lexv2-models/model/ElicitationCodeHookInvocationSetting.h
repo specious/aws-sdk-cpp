@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ElicitationCodeHookInvocationSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ElicitationCodeHookInvocationSetting
+  class ElicitationCodeHookInvocationSetting
   {
   public:
-    ElicitationCodeHookInvocationSetting();
-    ElicitationCodeHookInvocationSetting(Aws::Utils::Json::JsonView jsonValue);
-    ElicitationCodeHookInvocationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ElicitationCodeHookInvocationSetting();
+    AWS_LEXMODELSV2_API ElicitationCodeHookInvocationSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ElicitationCodeHookInvocationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     bool m_enableCodeHookInvocation;
-    bool m_enableCodeHookInvocationHasBeenSet;
+    bool m_enableCodeHookInvocationHasBeenSet = false;
 
     Aws::String m_invocationLabel;
-    bool m_invocationLabelHasBeenSet;
+    bool m_invocationLabelHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/Definition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKEREDGEMANAGER_API Definition
+  class Definition
   {
   public:
-    Definition();
-    Definition(Aws::Utils::Json::JsonView jsonValue);
-    Definition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKEREDGEMANAGER_API Definition();
+    AWS_SAGEMAKEREDGEMANAGER_API Definition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API Definition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_modelHandle;
-    bool m_modelHandleHasBeenSet;
+    bool m_modelHandleHasBeenSet = false;
 
     Aws::String m_s3Url;
-    bool m_s3UrlHasBeenSet;
+    bool m_s3UrlHasBeenSet = false;
 
     Checksum m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     ModelState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

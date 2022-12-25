@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/FirewallStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API FirewallStatus
+  class FirewallStatus
   {
   public:
-    FirewallStatus();
-    FirewallStatus(Aws::Utils::Json::JsonView jsonValue);
-    FirewallStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API FirewallStatus();
+    AWS_NETWORKFIREWALL_API FirewallStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API FirewallStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -350,16 +350,16 @@ namespace Model
   private:
 
     FirewallStatusValue m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ConfigurationSyncState m_configurationSyncStateSummary;
-    bool m_configurationSyncStateSummaryHasBeenSet;
+    bool m_configurationSyncStateSummaryHasBeenSet = false;
 
     Aws::Map<Aws::String, SyncState> m_syncStates;
-    bool m_syncStatesHasBeenSet;
+    bool m_syncStatesHasBeenSet = false;
 
     CapacityUsageSummary m_capacityUsageSummary;
-    bool m_capacityUsageSummaryHasBeenSet;
+    bool m_capacityUsageSummaryHasBeenSet = false;
   };
 
 } // namespace Model

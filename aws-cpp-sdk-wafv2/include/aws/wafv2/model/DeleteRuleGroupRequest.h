@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_WAFV2_API DeleteRuleGroupRequest : public WAFV2Request
+  class DeleteRuleGroupRequest : public WAFV2Request
   {
   public:
-    DeleteRuleGroupRequest();
+    AWS_WAFV2_API DeleteRuleGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteRuleGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WAFV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WAFV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -313,16 +313,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_lockToken;
-    bool m_lockTokenHasBeenSet;
+    bool m_lockTokenHasBeenSet = false;
   };
 
 } // namespace Model

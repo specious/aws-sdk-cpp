@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSFER_API UpdateConnectorRequest : public TransferRequest
+  class UpdateConnectorRequest : public TransferRequest
   {
   public:
-    UpdateConnectorRequest();
+    AWS_TRANSFER_API UpdateConnectorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateConnector"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSFER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -328,19 +328,19 @@ namespace Model
   private:
 
     Aws::String m_connectorId;
-    bool m_connectorIdHasBeenSet;
+    bool m_connectorIdHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     As2ConnectorConfig m_as2Config;
-    bool m_as2ConfigHasBeenSet;
+    bool m_as2ConfigHasBeenSet = false;
 
     Aws::String m_accessRole;
-    bool m_accessRoleHasBeenSet;
+    bool m_accessRoleHasBeenSet = false;
 
     Aws::String m_loggingRole;
-    bool m_loggingRoleHasBeenSet;
+    bool m_loggingRoleHasBeenSet = false;
   };
 
 } // namespace Model

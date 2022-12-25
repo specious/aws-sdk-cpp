@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/LogsAnomalyDetectionIntegrationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API LogsAnomalyDetectionIntegrationConfig
+  class LogsAnomalyDetectionIntegrationConfig
   {
   public:
-    LogsAnomalyDetectionIntegrationConfig();
-    LogsAnomalyDetectionIntegrationConfig(Aws::Utils::Json::JsonView jsonValue);
-    LogsAnomalyDetectionIntegrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API LogsAnomalyDetectionIntegrationConfig();
+    AWS_DEVOPSGURU_API LogsAnomalyDetectionIntegrationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API LogsAnomalyDetectionIntegrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     OptInStatus m_optInStatus;
-    bool m_optInStatusHasBeenSet;
+    bool m_optInStatusHasBeenSet = false;
   };
 
 } // namespace Model

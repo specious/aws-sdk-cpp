@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ScanDetections">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ScanDetections
+  class ScanDetections
   {
   public:
-    ScanDetections();
-    ScanDetections(Aws::Utils::Json::JsonView jsonValue);
-    ScanDetections& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ScanDetections();
+    AWS_GUARDDUTY_API ScanDetections(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ScanDetections& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -173,16 +173,16 @@ namespace Model
   private:
 
     ScannedItemCount m_scannedItemCount;
-    bool m_scannedItemCountHasBeenSet;
+    bool m_scannedItemCountHasBeenSet = false;
 
     ThreatsDetectedItemCount m_threatsDetectedItemCount;
-    bool m_threatsDetectedItemCountHasBeenSet;
+    bool m_threatsDetectedItemCountHasBeenSet = false;
 
     HighestSeverityThreatDetails m_highestSeverityThreatDetails;
-    bool m_highestSeverityThreatDetailsHasBeenSet;
+    bool m_highestSeverityThreatDetailsHasBeenSet = false;
 
     ThreatDetectedByName m_threatDetectedByName;
-    bool m_threatDetectedByNameHasBeenSet;
+    bool m_threatDetectedByNameHasBeenSet = false;
   };
 
 } // namespace Model

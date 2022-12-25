@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CrossRegionCopyRule">AWS
    * API Reference</a></p>
    */
-  class AWS_DLM_API CrossRegionCopyRule
+  class CrossRegionCopyRule
   {
   public:
-    CrossRegionCopyRule();
-    CrossRegionCopyRule(Aws::Utils::Json::JsonView jsonValue);
-    CrossRegionCopyRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API CrossRegionCopyRule();
+    AWS_DLM_API CrossRegionCopyRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API CrossRegionCopyRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -363,25 +363,25 @@ namespace Model
   private:
 
     Aws::String m_targetRegion;
-    bool m_targetRegionHasBeenSet;
+    bool m_targetRegionHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_cmkArn;
-    bool m_cmkArnHasBeenSet;
+    bool m_cmkArnHasBeenSet = false;
 
     bool m_copyTags;
-    bool m_copyTagsHasBeenSet;
+    bool m_copyTagsHasBeenSet = false;
 
     CrossRegionCopyRetainRule m_retainRule;
-    bool m_retainRuleHasBeenSet;
+    bool m_retainRuleHasBeenSet = false;
 
     CrossRegionCopyDeprecateRule m_deprecateRule;
-    bool m_deprecateRuleHasBeenSet;
+    bool m_deprecateRuleHasBeenSet = false;
   };
 
 } // namespace Model

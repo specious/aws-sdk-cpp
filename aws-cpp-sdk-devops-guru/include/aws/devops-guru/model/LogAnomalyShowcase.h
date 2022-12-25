@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/LogAnomalyShowcase">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API LogAnomalyShowcase
+  class LogAnomalyShowcase
   {
   public:
-    LogAnomalyShowcase();
-    LogAnomalyShowcase(Aws::Utils::Json::JsonView jsonValue);
-    LogAnomalyShowcase& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API LogAnomalyShowcase();
+    AWS_DEVOPSGURU_API LogAnomalyShowcase(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API LogAnomalyShowcase& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<LogAnomalyClass> m_logAnomalyClasses;
-    bool m_logAnomalyClassesHasBeenSet;
+    bool m_logAnomalyClassesHasBeenSet = false;
   };
 
 } // namespace Model

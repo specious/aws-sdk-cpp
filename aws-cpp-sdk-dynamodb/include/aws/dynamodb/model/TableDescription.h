@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TableDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API TableDescription
+  class TableDescription
   {
   public:
-    TableDescription();
-    TableDescription(Aws::Utils::Json::JsonView jsonValue);
-    TableDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API TableDescription();
+    AWS_DYNAMODB_API TableDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API TableDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -321,97 +321,109 @@ namespace Model
 
     /**
      * <p>The current state of the table:</p> <ul> <li> <p> <code>CREATING</code> - The
-     * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The table is
-     * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
-     * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
-     * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * KMS key used to encrypt the table in inaccessible. Table operations may fail due
-     * to failure to use the KMS key. DynamoDB will initiate the table archival process
-     * when a table's KMS key remains inaccessible for more than seven days. </p> </li>
-     * <li> <p> <code>ARCHIVING</code> - The table is being archived. Operations are
-     * not allowed until archival is complete. </p> </li> <li> <p>
-     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
-     * more information. </p> </li> </ul>
+     * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
+     * table/index configuration is being updated. The table/index remains available
+     * for data operations when <code>UPDATING</code>.</p> </li> <li> <p>
+     * <code>DELETING</code> - The table is being deleted.</p> </li> <li> <p>
+     * <code>ACTIVE</code> - The table is ready for use.</p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key used to encrypt
+     * the table in inaccessible. Table operations may fail due to failure to use the
+     * KMS key. DynamoDB will initiate the table archival process when a table's KMS
+     * key remains inaccessible for more than seven days. </p> </li> <li> <p>
+     * <code>ARCHIVING</code> - The table is being archived. Operations are not allowed
+     * until archival is complete. </p> </li> <li> <p> <code>ARCHIVED</code> - The
+     * table has been archived. See the ArchivalReason for more information. </p> </li>
+     * </ul>
      */
     inline const TableStatus& GetTableStatus() const{ return m_tableStatus; }
 
     /**
      * <p>The current state of the table:</p> <ul> <li> <p> <code>CREATING</code> - The
-     * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The table is
-     * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
-     * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
-     * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * KMS key used to encrypt the table in inaccessible. Table operations may fail due
-     * to failure to use the KMS key. DynamoDB will initiate the table archival process
-     * when a table's KMS key remains inaccessible for more than seven days. </p> </li>
-     * <li> <p> <code>ARCHIVING</code> - The table is being archived. Operations are
-     * not allowed until archival is complete. </p> </li> <li> <p>
-     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
-     * more information. </p> </li> </ul>
+     * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
+     * table/index configuration is being updated. The table/index remains available
+     * for data operations when <code>UPDATING</code>.</p> </li> <li> <p>
+     * <code>DELETING</code> - The table is being deleted.</p> </li> <li> <p>
+     * <code>ACTIVE</code> - The table is ready for use.</p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key used to encrypt
+     * the table in inaccessible. Table operations may fail due to failure to use the
+     * KMS key. DynamoDB will initiate the table archival process when a table's KMS
+     * key remains inaccessible for more than seven days. </p> </li> <li> <p>
+     * <code>ARCHIVING</code> - The table is being archived. Operations are not allowed
+     * until archival is complete. </p> </li> <li> <p> <code>ARCHIVED</code> - The
+     * table has been archived. See the ArchivalReason for more information. </p> </li>
+     * </ul>
      */
     inline bool TableStatusHasBeenSet() const { return m_tableStatusHasBeenSet; }
 
     /**
      * <p>The current state of the table:</p> <ul> <li> <p> <code>CREATING</code> - The
-     * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The table is
-     * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
-     * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
-     * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * KMS key used to encrypt the table in inaccessible. Table operations may fail due
-     * to failure to use the KMS key. DynamoDB will initiate the table archival process
-     * when a table's KMS key remains inaccessible for more than seven days. </p> </li>
-     * <li> <p> <code>ARCHIVING</code> - The table is being archived. Operations are
-     * not allowed until archival is complete. </p> </li> <li> <p>
-     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
-     * more information. </p> </li> </ul>
+     * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
+     * table/index configuration is being updated. The table/index remains available
+     * for data operations when <code>UPDATING</code>.</p> </li> <li> <p>
+     * <code>DELETING</code> - The table is being deleted.</p> </li> <li> <p>
+     * <code>ACTIVE</code> - The table is ready for use.</p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key used to encrypt
+     * the table in inaccessible. Table operations may fail due to failure to use the
+     * KMS key. DynamoDB will initiate the table archival process when a table's KMS
+     * key remains inaccessible for more than seven days. </p> </li> <li> <p>
+     * <code>ARCHIVING</code> - The table is being archived. Operations are not allowed
+     * until archival is complete. </p> </li> <li> <p> <code>ARCHIVED</code> - The
+     * table has been archived. See the ArchivalReason for more information. </p> </li>
+     * </ul>
      */
     inline void SetTableStatus(const TableStatus& value) { m_tableStatusHasBeenSet = true; m_tableStatus = value; }
 
     /**
      * <p>The current state of the table:</p> <ul> <li> <p> <code>CREATING</code> - The
-     * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The table is
-     * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
-     * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
-     * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * KMS key used to encrypt the table in inaccessible. Table operations may fail due
-     * to failure to use the KMS key. DynamoDB will initiate the table archival process
-     * when a table's KMS key remains inaccessible for more than seven days. </p> </li>
-     * <li> <p> <code>ARCHIVING</code> - The table is being archived. Operations are
-     * not allowed until archival is complete. </p> </li> <li> <p>
-     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
-     * more information. </p> </li> </ul>
+     * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
+     * table/index configuration is being updated. The table/index remains available
+     * for data operations when <code>UPDATING</code>.</p> </li> <li> <p>
+     * <code>DELETING</code> - The table is being deleted.</p> </li> <li> <p>
+     * <code>ACTIVE</code> - The table is ready for use.</p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key used to encrypt
+     * the table in inaccessible. Table operations may fail due to failure to use the
+     * KMS key. DynamoDB will initiate the table archival process when a table's KMS
+     * key remains inaccessible for more than seven days. </p> </li> <li> <p>
+     * <code>ARCHIVING</code> - The table is being archived. Operations are not allowed
+     * until archival is complete. </p> </li> <li> <p> <code>ARCHIVED</code> - The
+     * table has been archived. See the ArchivalReason for more information. </p> </li>
+     * </ul>
      */
     inline void SetTableStatus(TableStatus&& value) { m_tableStatusHasBeenSet = true; m_tableStatus = std::move(value); }
 
     /**
      * <p>The current state of the table:</p> <ul> <li> <p> <code>CREATING</code> - The
-     * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The table is
-     * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
-     * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
-     * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * KMS key used to encrypt the table in inaccessible. Table operations may fail due
-     * to failure to use the KMS key. DynamoDB will initiate the table archival process
-     * when a table's KMS key remains inaccessible for more than seven days. </p> </li>
-     * <li> <p> <code>ARCHIVING</code> - The table is being archived. Operations are
-     * not allowed until archival is complete. </p> </li> <li> <p>
-     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
-     * more information. </p> </li> </ul>
+     * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
+     * table/index configuration is being updated. The table/index remains available
+     * for data operations when <code>UPDATING</code>.</p> </li> <li> <p>
+     * <code>DELETING</code> - The table is being deleted.</p> </li> <li> <p>
+     * <code>ACTIVE</code> - The table is ready for use.</p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key used to encrypt
+     * the table in inaccessible. Table operations may fail due to failure to use the
+     * KMS key. DynamoDB will initiate the table archival process when a table's KMS
+     * key remains inaccessible for more than seven days. </p> </li> <li> <p>
+     * <code>ARCHIVING</code> - The table is being archived. Operations are not allowed
+     * until archival is complete. </p> </li> <li> <p> <code>ARCHIVED</code> - The
+     * table has been archived. See the ArchivalReason for more information. </p> </li>
+     * </ul>
      */
     inline TableDescription& WithTableStatus(const TableStatus& value) { SetTableStatus(value); return *this;}
 
     /**
      * <p>The current state of the table:</p> <ul> <li> <p> <code>CREATING</code> - The
-     * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The table is
-     * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
-     * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
-     * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * KMS key used to encrypt the table in inaccessible. Table operations may fail due
-     * to failure to use the KMS key. DynamoDB will initiate the table archival process
-     * when a table's KMS key remains inaccessible for more than seven days. </p> </li>
-     * <li> <p> <code>ARCHIVING</code> - The table is being archived. Operations are
-     * not allowed until archival is complete. </p> </li> <li> <p>
-     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
-     * more information. </p> </li> </ul>
+     * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
+     * table/index configuration is being updated. The table/index remains available
+     * for data operations when <code>UPDATING</code>.</p> </li> <li> <p>
+     * <code>DELETING</code> - The table is being deleted.</p> </li> <li> <p>
+     * <code>ACTIVE</code> - The table is ready for use.</p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key used to encrypt
+     * the table in inaccessible. Table operations may fail due to failure to use the
+     * KMS key. DynamoDB will initiate the table archival process when a table's KMS
+     * key remains inaccessible for more than seven days. </p> </li> <li> <p>
+     * <code>ARCHIVING</code> - The table is being archived. Operations are not allowed
+     * until archival is complete. </p> </li> <li> <p> <code>ARCHIVED</code> - The
+     * table has been archived. See the ArchivalReason for more information. </p> </li>
+     * </ul>
      */
     inline TableDescription& WithTableStatus(TableStatus&& value) { SetTableStatus(std::move(value)); return *this;}
 
@@ -1750,70 +1762,70 @@ namespace Model
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
-    bool m_attributeDefinitionsHasBeenSet;
+    bool m_attributeDefinitionsHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::Vector<KeySchemaElement> m_keySchema;
-    bool m_keySchemaHasBeenSet;
+    bool m_keySchemaHasBeenSet = false;
 
     TableStatus m_tableStatus;
-    bool m_tableStatusHasBeenSet;
+    bool m_tableStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     ProvisionedThroughputDescription m_provisionedThroughput;
-    bool m_provisionedThroughputHasBeenSet;
+    bool m_provisionedThroughputHasBeenSet = false;
 
     long long m_tableSizeBytes;
-    bool m_tableSizeBytesHasBeenSet;
+    bool m_tableSizeBytesHasBeenSet = false;
 
     long long m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
 
     Aws::String m_tableArn;
-    bool m_tableArnHasBeenSet;
+    bool m_tableArnHasBeenSet = false;
 
     Aws::String m_tableId;
-    bool m_tableIdHasBeenSet;
+    bool m_tableIdHasBeenSet = false;
 
     BillingModeSummary m_billingModeSummary;
-    bool m_billingModeSummaryHasBeenSet;
+    bool m_billingModeSummaryHasBeenSet = false;
 
     Aws::Vector<LocalSecondaryIndexDescription> m_localSecondaryIndexes;
-    bool m_localSecondaryIndexesHasBeenSet;
+    bool m_localSecondaryIndexesHasBeenSet = false;
 
     Aws::Vector<GlobalSecondaryIndexDescription> m_globalSecondaryIndexes;
-    bool m_globalSecondaryIndexesHasBeenSet;
+    bool m_globalSecondaryIndexesHasBeenSet = false;
 
     StreamSpecification m_streamSpecification;
-    bool m_streamSpecificationHasBeenSet;
+    bool m_streamSpecificationHasBeenSet = false;
 
     Aws::String m_latestStreamLabel;
-    bool m_latestStreamLabelHasBeenSet;
+    bool m_latestStreamLabelHasBeenSet = false;
 
     Aws::String m_latestStreamArn;
-    bool m_latestStreamArnHasBeenSet;
+    bool m_latestStreamArnHasBeenSet = false;
 
     Aws::String m_globalTableVersion;
-    bool m_globalTableVersionHasBeenSet;
+    bool m_globalTableVersionHasBeenSet = false;
 
     Aws::Vector<ReplicaDescription> m_replicas;
-    bool m_replicasHasBeenSet;
+    bool m_replicasHasBeenSet = false;
 
     RestoreSummary m_restoreSummary;
-    bool m_restoreSummaryHasBeenSet;
+    bool m_restoreSummaryHasBeenSet = false;
 
     SSEDescription m_sSEDescription;
-    bool m_sSEDescriptionHasBeenSet;
+    bool m_sSEDescriptionHasBeenSet = false;
 
     ArchivalSummary m_archivalSummary;
-    bool m_archivalSummaryHasBeenSet;
+    bool m_archivalSummaryHasBeenSet = false;
 
     TableClassSummary m_tableClassSummary;
-    bool m_tableClassSummaryHasBeenSet;
+    bool m_tableClassSummaryHasBeenSet = false;
   };
 
 } // namespace Model

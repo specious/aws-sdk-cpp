@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelBiasAppSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelBiasAppSpecification
+  class ModelBiasAppSpecification
   {
   public:
-    ModelBiasAppSpecification();
-    ModelBiasAppSpecification(Aws::Utils::Json::JsonView jsonValue);
-    ModelBiasAppSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelBiasAppSpecification();
+    AWS_SAGEMAKER_API ModelBiasAppSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelBiasAppSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_imageUri;
-    bool m_imageUriHasBeenSet;
+    bool m_imageUriHasBeenSet = false;
 
     Aws::String m_configUri;
-    bool m_configUriHasBeenSet;
+    bool m_configUriHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
   };
 
 } // namespace Model

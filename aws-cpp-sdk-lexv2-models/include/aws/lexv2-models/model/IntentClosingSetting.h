@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/IntentClosingSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API IntentClosingSetting
+  class IntentClosingSetting
   {
   public:
-    IntentClosingSetting();
-    IntentClosingSetting(Aws::Utils::Json::JsonView jsonValue);
-    IntentClosingSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API IntentClosingSetting();
+    AWS_LEXMODELSV2_API IntentClosingSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API IntentClosingSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -188,16 +188,16 @@ namespace Model
   private:
 
     ResponseSpecification m_closingResponse;
-    bool m_closingResponseHasBeenSet;
+    bool m_closingResponseHasBeenSet = false;
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
 
     DialogState m_nextStep;
-    bool m_nextStepHasBeenSet;
+    bool m_nextStepHasBeenSet = false;
 
     ConditionalSpecification m_conditional;
-    bool m_conditionalHasBeenSet;
+    bool m_conditionalHasBeenSet = false;
   };
 
 } // namespace Model

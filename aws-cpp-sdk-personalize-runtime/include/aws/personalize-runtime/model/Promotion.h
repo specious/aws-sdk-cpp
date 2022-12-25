@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/Promotion">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZERUNTIME_API Promotion
+  class Promotion
   {
   public:
-    Promotion();
-    Promotion(Aws::Utils::Json::JsonView jsonValue);
-    Promotion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZERUNTIME_API Promotion();
+    AWS_PERSONALIZERUNTIME_API Promotion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZERUNTIME_API Promotion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZERUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -378,16 +378,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_percentPromotedItems;
-    bool m_percentPromotedItemsHasBeenSet;
+    bool m_percentPromotedItemsHasBeenSet = false;
 
     Aws::String m_filterArn;
-    bool m_filterArnHasBeenSet;
+    bool m_filterArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_filterValues;
-    bool m_filterValuesHasBeenSet;
+    bool m_filterValuesHasBeenSet = false;
   };
 
 } // namespace Model

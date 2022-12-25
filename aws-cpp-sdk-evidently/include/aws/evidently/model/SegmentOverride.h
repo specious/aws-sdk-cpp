@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/SegmentOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API SegmentOverride
+  class SegmentOverride
   {
   public:
-    SegmentOverride();
-    SegmentOverride(Aws::Utils::Json::JsonView jsonValue);
-    SegmentOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API SegmentOverride();
+    AWS_CLOUDWATCHEVIDENTLY_API SegmentOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API SegmentOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -190,13 +190,13 @@ namespace Model
   private:
 
     long long m_evaluationOrder;
-    bool m_evaluationOrderHasBeenSet;
+    bool m_evaluationOrderHasBeenSet = false;
 
     Aws::String m_segment;
-    bool m_segmentHasBeenSet;
+    bool m_segmentHasBeenSet = false;
 
     Aws::Map<Aws::String, long long> m_weights;
-    bool m_weightsHasBeenSet;
+    bool m_weightsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/NetworkResource">AWS
    * API Reference</a></p>
    */
-  class AWS_PRIVATENETWORKS_API NetworkResource
+  class NetworkResource
   {
   public:
-    NetworkResource();
-    NetworkResource(Aws::Utils::Json::JsonView jsonValue);
-    NetworkResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRIVATENETWORKS_API NetworkResource();
+    AWS_PRIVATENETWORKS_API NetworkResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API NetworkResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -635,49 +635,49 @@ namespace Model
   private:
 
     Aws::Vector<NameValuePair> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     HealthStatus m_health;
-    bool m_healthHasBeenSet;
+    bool m_healthHasBeenSet = false;
 
     Aws::String m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     Aws::String m_networkArn;
-    bool m_networkArnHasBeenSet;
+    bool m_networkArnHasBeenSet = false;
 
     Aws::String m_networkResourceArn;
-    bool m_networkResourceArnHasBeenSet;
+    bool m_networkResourceArnHasBeenSet = false;
 
     Aws::String m_networkSiteArn;
-    bool m_networkSiteArnHasBeenSet;
+    bool m_networkSiteArnHasBeenSet = false;
 
     Aws::String m_orderArn;
-    bool m_orderArnHasBeenSet;
+    bool m_orderArnHasBeenSet = false;
 
     Position m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
 
     NetworkResourceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     NetworkResourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_vendor;
-    bool m_vendorHasBeenSet;
+    bool m_vendorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API JobDetails
+  class JobDetails
   {
   public:
-    JobDetails();
-    JobDetails(Aws::Utils::Json::JsonView jsonValue);
-    JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API JobDetails();
+    AWS_MACIE2_API JobDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -352,16 +352,16 @@ namespace Model
   private:
 
     IsDefinedInJob m_isDefinedInJob;
-    bool m_isDefinedInJobHasBeenSet;
+    bool m_isDefinedInJobHasBeenSet = false;
 
     IsMonitoredByJob m_isMonitoredByJob;
-    bool m_isMonitoredByJobHasBeenSet;
+    bool m_isMonitoredByJobHasBeenSet = false;
 
     Aws::String m_lastJobId;
-    bool m_lastJobIdHasBeenSet;
+    bool m_lastJobIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastJobRunTime;
-    bool m_lastJobRunTimeHasBeenSet;
+    bool m_lastJobRunTimeHasBeenSet = false;
   };
 
 } // namespace Model

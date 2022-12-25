@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICECATALOG_API ImportAsProvisionedProductRequest : public ServiceCatalogRequest
+  class ImportAsProvisionedProductRequest : public ServiceCatalogRequest
   {
   public:
-    ImportAsProvisionedProductRequest();
+    AWS_SERVICECATALOG_API ImportAsProvisionedProductRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportAsProvisionedProduct"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICECATALOG_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -339,22 +339,22 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
 
     Aws::String m_provisionedProductName;
-    bool m_provisionedProductNameHasBeenSet;
+    bool m_provisionedProductNameHasBeenSet = false;
 
     Aws::String m_physicalId;
-    bool m_physicalIdHasBeenSet;
+    bool m_physicalIdHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StreamEvent">AWS API
    * Reference</a></p>
    */
-  class AWS_IVS_API StreamEvent
+  class StreamEvent
   {
   public:
-    StreamEvent();
-    StreamEvent(Aws::Utils::Json::JsonView jsonValue);
-    StreamEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API StreamEvent();
+    AWS_IVS_API StreamEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API StreamEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

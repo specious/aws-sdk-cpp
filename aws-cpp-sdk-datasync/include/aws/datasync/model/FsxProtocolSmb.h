@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/FsxProtocolSmb">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API FsxProtocolSmb
+  class FsxProtocolSmb
   {
   public:
-    FsxProtocolSmb();
-    FsxProtocolSmb(Aws::Utils::Json::JsonView jsonValue);
-    FsxProtocolSmb& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API FsxProtocolSmb();
+    AWS_DATASYNC_API FsxProtocolSmb(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API FsxProtocolSmb& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -330,16 +330,16 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     SmbMountOptions m_mountOptions;
-    bool m_mountOptionsHasBeenSet;
+    bool m_mountOptionsHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::String m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
   };
 
 } // namespace Model

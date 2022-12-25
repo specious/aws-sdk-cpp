@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Condition">AWS API
    * Reference</a></p>
    */
-  class AWS_WAFV2_API Condition
+  class Condition
   {
   public:
-    Condition();
-    Condition(Aws::Utils::Json::JsonView jsonValue);
-    Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API Condition();
+    AWS_WAFV2_API Condition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     ActionCondition m_actionCondition;
-    bool m_actionConditionHasBeenSet;
+    bool m_actionConditionHasBeenSet = false;
 
     LabelNameCondition m_labelNameCondition;
-    bool m_labelNameConditionHasBeenSet;
+    bool m_labelNameConditionHasBeenSet = false;
   };
 
 } // namespace Model

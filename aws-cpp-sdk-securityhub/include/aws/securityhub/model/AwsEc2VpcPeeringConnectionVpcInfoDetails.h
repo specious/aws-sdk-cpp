@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2VpcPeeringConnectionVpcInfoDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionVpcInfoDetails
+  class AwsEc2VpcPeeringConnectionVpcInfoDetails
   {
   public:
-    AwsEc2VpcPeeringConnectionVpcInfoDetails();
-    AwsEc2VpcPeeringConnectionVpcInfoDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2VpcPeeringConnectionVpcInfoDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionVpcInfoDetails();
+    AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionVpcInfoDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionVpcInfoDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -326,25 +326,25 @@ namespace Model
   private:
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
 
     Aws::Vector<VpcInfoCidrBlockSetDetails> m_cidrBlockSet;
-    bool m_cidrBlockSetHasBeenSet;
+    bool m_cidrBlockSetHasBeenSet = false;
 
     Aws::Vector<VpcInfoIpv6CidrBlockSetDetails> m_ipv6CidrBlockSet;
-    bool m_ipv6CidrBlockSetHasBeenSet;
+    bool m_ipv6CidrBlockSetHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     VpcInfoPeeringOptionsDetails m_peeringOptions;
-    bool m_peeringOptionsHasBeenSet;
+    bool m_peeringOptionsHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

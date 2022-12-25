@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ThirdPartyFirewallFirewallPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ThirdPartyFirewallFirewallPolicy
+  class ThirdPartyFirewallFirewallPolicy
   {
   public:
-    ThirdPartyFirewallFirewallPolicy();
-    ThirdPartyFirewallFirewallPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ThirdPartyFirewallFirewallPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ThirdPartyFirewallFirewallPolicy();
+    AWS_FMS_API ThirdPartyFirewallFirewallPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ThirdPartyFirewallFirewallPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_firewallPolicyId;
-    bool m_firewallPolicyIdHasBeenSet;
+    bool m_firewallPolicyIdHasBeenSet = false;
 
     Aws::String m_firewallPolicyName;
-    bool m_firewallPolicyNameHasBeenSet;
+    bool m_firewallPolicyNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_REKOGNITION_API CopyProjectVersionRequest : public RekognitionRequest
+  class CopyProjectVersionRequest : public RekognitionRequest
   {
   public:
-    CopyProjectVersionRequest();
+    AWS_REKOGNITION_API CopyProjectVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CopyProjectVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REKOGNITION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -442,25 +442,25 @@ namespace Model
   private:
 
     Aws::String m_sourceProjectArn;
-    bool m_sourceProjectArnHasBeenSet;
+    bool m_sourceProjectArnHasBeenSet = false;
 
     Aws::String m_sourceProjectVersionArn;
-    bool m_sourceProjectVersionArnHasBeenSet;
+    bool m_sourceProjectVersionArnHasBeenSet = false;
 
     Aws::String m_destinationProjectArn;
-    bool m_destinationProjectArnHasBeenSet;
+    bool m_destinationProjectArnHasBeenSet = false;
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
 
     OutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

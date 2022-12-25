@@ -5,132 +5,73 @@
 
 #pragma once
 #include <aws/backupstorage/BackupStorage_EXPORTS.h>
-#include <aws/backupstorage/BackupStorageErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/backupstorage/model/GetChunkResult.h>
-#include <aws/backupstorage/model/GetObjectMetadataResult.h>
-#include <aws/backupstorage/model/ListChunksResult.h>
-#include <aws/backupstorage/model/ListObjectsResult.h>
-#include <aws/backupstorage/model/NotifyObjectCompleteResult.h>
-#include <aws/backupstorage/model/PutChunkResult.h>
-#include <aws/backupstorage/model/PutObjectResult.h>
-#include <aws/backupstorage/model/StartObjectResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/backupstorage/BackupStorageServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace BackupStorage
 {
-
-namespace Model
-{
-        class DeleteObjectRequest;
-        class GetChunkRequest;
-        class GetObjectMetadataRequest;
-        class ListChunksRequest;
-        class ListObjectsRequest;
-        class NotifyObjectCompleteRequest;
-        class PutChunkRequest;
-        class PutObjectRequest;
-        class StartObjectRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupStorageError> DeleteObjectOutcome;
-        typedef Aws::Utils::Outcome<GetChunkResult, BackupStorageError> GetChunkOutcome;
-        typedef Aws::Utils::Outcome<GetObjectMetadataResult, BackupStorageError> GetObjectMetadataOutcome;
-        typedef Aws::Utils::Outcome<ListChunksResult, BackupStorageError> ListChunksOutcome;
-        typedef Aws::Utils::Outcome<ListObjectsResult, BackupStorageError> ListObjectsOutcome;
-        typedef Aws::Utils::Outcome<NotifyObjectCompleteResult, BackupStorageError> NotifyObjectCompleteOutcome;
-        typedef Aws::Utils::Outcome<PutChunkResult, BackupStorageError> PutChunkOutcome;
-        typedef Aws::Utils::Outcome<PutObjectResult, BackupStorageError> PutObjectOutcome;
-        typedef Aws::Utils::Outcome<StartObjectResult, BackupStorageError> StartObjectOutcome;
-
-        typedef std::future<DeleteObjectOutcome> DeleteObjectOutcomeCallable;
-        typedef std::future<GetChunkOutcome> GetChunkOutcomeCallable;
-        typedef std::future<GetObjectMetadataOutcome> GetObjectMetadataOutcomeCallable;
-        typedef std::future<ListChunksOutcome> ListChunksOutcomeCallable;
-        typedef std::future<ListObjectsOutcome> ListObjectsOutcomeCallable;
-        typedef std::future<NotifyObjectCompleteOutcome> NotifyObjectCompleteOutcomeCallable;
-        typedef std::future<PutChunkOutcome> PutChunkOutcomeCallable;
-        typedef std::future<PutObjectOutcome> PutObjectOutcomeCallable;
-        typedef std::future<StartObjectOutcome> StartObjectOutcomeCallable;
-} // namespace Model
-
-  class BackupStorageClient;
-
-    typedef std::function<void(const BackupStorageClient*, const Model::DeleteObjectRequest&, const Model::DeleteObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteObjectResponseReceivedHandler;
-    typedef std::function<void(const BackupStorageClient*, const Model::GetChunkRequest&, Model::GetChunkOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChunkResponseReceivedHandler;
-    typedef std::function<void(const BackupStorageClient*, const Model::GetObjectMetadataRequest&, Model::GetObjectMetadataOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectMetadataResponseReceivedHandler;
-    typedef std::function<void(const BackupStorageClient*, const Model::ListChunksRequest&, const Model::ListChunksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChunksResponseReceivedHandler;
-    typedef std::function<void(const BackupStorageClient*, const Model::ListObjectsRequest&, const Model::ListObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectsResponseReceivedHandler;
-    typedef std::function<void(const BackupStorageClient*, const Model::NotifyObjectCompleteRequest&, const Model::NotifyObjectCompleteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > NotifyObjectCompleteResponseReceivedHandler;
-    typedef std::function<void(const BackupStorageClient*, const Model::PutChunkRequest&, const Model::PutChunkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutChunkResponseReceivedHandler;
-    typedef std::function<void(const BackupStorageClient*, const Model::PutObjectRequest&, const Model::PutObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectResponseReceivedHandler;
-    typedef std::function<void(const BackupStorageClient*, const Model::StartObjectRequest&, const Model::StartObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartObjectResponseReceivedHandler;
-
   /**
    * The frontend service for Cryo Storage.
    */
-  class AWS_BACKUPSTORAGE_API BackupStorageClient : public Aws::Client::AWSJsonClient
+  class AWS_BACKUPSTORAGE_API BackupStorageClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BackupStorageClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        BackupStorageClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        BackupStorageClient(const Aws::BackupStorage::BackupStorageClientConfiguration& clientConfiguration = Aws::BackupStorage::BackupStorageClientConfiguration(),
+                            std::shared_ptr<BackupStorageEndpointProviderBase> endpointProvider = Aws::MakeShared<BackupStorageEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        BackupStorageClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        BackupStorageClient(const Aws::Auth::AWSCredentials& credentials,
+                            std::shared_ptr<BackupStorageEndpointProviderBase> endpointProvider = Aws::MakeShared<BackupStorageEndpointProvider>(ALLOCATION_TAG),
+                            const Aws::BackupStorage::BackupStorageClientConfiguration& clientConfiguration = Aws::BackupStorage::BackupStorageClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         BackupStorageClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                            std::shared_ptr<BackupStorageEndpointProviderBase> endpointProvider = Aws::MakeShared<BackupStorageEndpointProvider>(ALLOCATION_TAG),
+                            const Aws::BackupStorage::BackupStorageClientConfiguration& clientConfiguration = Aws::BackupStorage::BackupStorageClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        BackupStorageClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        BackupStorageClient(const Aws::Auth::AWSCredentials& credentials,
+                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        BackupStorageClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~BackupStorageClient();
-
 
         /**
          * Delete Object from the incremental base Backup.<p><h3>See Also:</h3>   <a
@@ -288,21 +229,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<BackupStorageEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DeleteObjectAsyncHelper(const Model::DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetChunkAsyncHelper(const Model::GetChunkRequest& request, const GetChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetObjectMetadataAsyncHelper(const Model::GetObjectMetadataRequest& request, const GetObjectMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListChunksAsyncHelper(const Model::ListChunksRequest& request, const ListChunksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListObjectsAsyncHelper(const Model::ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void NotifyObjectCompleteAsyncHelper(const Model::NotifyObjectCompleteRequest& request, const NotifyObjectCompleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutChunkAsyncHelper(const Model::PutChunkRequest& request, const PutChunkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutObjectAsyncHelper(const Model::PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartObjectAsyncHelper(const Model::StartObjectRequest& request, const StartObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupStorageClient>;
+      void init(const BackupStorageClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      BackupStorageClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<BackupStorageEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace BackupStorage

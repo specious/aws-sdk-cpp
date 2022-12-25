@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TcpRoute">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API TcpRoute
+  class TcpRoute
   {
   public:
-    TcpRoute();
-    TcpRoute(Aws::Utils::Json::JsonView jsonValue);
-    TcpRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API TcpRoute();
+    AWS_APPMESH_API TcpRoute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API TcpRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     TcpRouteAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     TcpRouteMatch m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
 
     TcpTimeout m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
   };
 
 } // namespace Model

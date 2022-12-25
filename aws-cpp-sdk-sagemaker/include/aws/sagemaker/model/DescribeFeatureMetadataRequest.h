@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API DescribeFeatureMetadataRequest : public SageMakerRequest
+  class DescribeFeatureMetadataRequest : public SageMakerRequest
   {
   public:
-    DescribeFeatureMetadataRequest();
+    AWS_SAGEMAKER_API DescribeFeatureMetadataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeFeatureMetadata"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::String m_featureName;
-    bool m_featureNameHasBeenSet;
+    bool m_featureNameHasBeenSet = false;
   };
 
 } // namespace Model

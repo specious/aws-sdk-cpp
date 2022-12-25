@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_DYNAMODB_API ListBackupsRequest : public DynamoDBRequest
+  class ListBackupsRequest : public DynamoDBRequest
   {
   public:
-    ListBackupsRequest();
+    AWS_DYNAMODB_API ListBackupsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListBackups"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DYNAMODB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -322,22 +322,22 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::Utils::DateTime m_timeRangeLowerBound;
-    bool m_timeRangeLowerBoundHasBeenSet;
+    bool m_timeRangeLowerBoundHasBeenSet = false;
 
     Aws::Utils::DateTime m_timeRangeUpperBound;
-    bool m_timeRangeUpperBoundHasBeenSet;
+    bool m_timeRangeUpperBoundHasBeenSet = false;
 
     Aws::String m_exclusiveStartBackupArn;
-    bool m_exclusiveStartBackupArnHasBeenSet;
+    bool m_exclusiveStartBackupArnHasBeenSet = false;
 
     BackupTypeFilter m_backupType;
-    bool m_backupTypeHasBeenSet;
+    bool m_backupTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PackageOriginRestrictions">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API PackageOriginRestrictions
+  class PackageOriginRestrictions
   {
   public:
-    PackageOriginRestrictions();
-    PackageOriginRestrictions(Aws::Utils::Json::JsonView jsonValue);
-    PackageOriginRestrictions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API PackageOriginRestrictions();
+    AWS_CODEARTIFACT_API PackageOriginRestrictions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API PackageOriginRestrictions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     AllowPublish m_publish;
-    bool m_publishHasBeenSet;
+    bool m_publishHasBeenSet = false;
 
     AllowUpstream m_upstream;
-    bool m_upstreamHasBeenSet;
+    bool m_upstreamHasBeenSet = false;
   };
 
 } // namespace Model

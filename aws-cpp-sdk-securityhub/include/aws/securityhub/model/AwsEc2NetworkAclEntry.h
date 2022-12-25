@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2NetworkAclEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2NetworkAclEntry
+  class AwsEc2NetworkAclEntry
   {
   public:
-    AwsEc2NetworkAclEntry();
-    AwsEc2NetworkAclEntry(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2NetworkAclEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2NetworkAclEntry();
+    AWS_SECURITYHUB_API AwsEc2NetworkAclEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2NetworkAclEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -328,28 +328,28 @@ namespace Model
   private:
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
 
     bool m_egress;
-    bool m_egressHasBeenSet;
+    bool m_egressHasBeenSet = false;
 
     IcmpTypeCode m_icmpTypeCode;
-    bool m_icmpTypeCodeHasBeenSet;
+    bool m_icmpTypeCodeHasBeenSet = false;
 
     Aws::String m_ipv6CidrBlock;
-    bool m_ipv6CidrBlockHasBeenSet;
+    bool m_ipv6CidrBlockHasBeenSet = false;
 
     PortRangeFromTo m_portRange;
-    bool m_portRangeHasBeenSet;
+    bool m_portRangeHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_ruleAction;
-    bool m_ruleActionHasBeenSet;
+    bool m_ruleActionHasBeenSet = false;
 
     int m_ruleNumber;
-    bool m_ruleNumberHasBeenSet;
+    bool m_ruleNumberHasBeenSet = false;
   };
 
 } // namespace Model

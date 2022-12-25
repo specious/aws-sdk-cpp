@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/UpdateCampaignOutboundCallConfigRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API UpdateCampaignOutboundCallConfigRequest : public ConnectCampaignsRequest
+  class UpdateCampaignOutboundCallConfigRequest : public ConnectCampaignsRequest
   {
   public:
-    UpdateCampaignOutboundCallConfigRequest();
+    AWS_CONNECTCAMPAIGNS_API UpdateCampaignOutboundCallConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateCampaignOutboundCallConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECTCAMPAIGNS_API Aws::String SerializePayload() const override;
 
 
     
@@ -132,16 +132,16 @@ namespace Model
   private:
 
     AnswerMachineDetectionConfig m_answerMachineDetectionConfig;
-    bool m_answerMachineDetectionConfigHasBeenSet;
+    bool m_answerMachineDetectionConfigHasBeenSet = false;
 
     Aws::String m_connectContactFlowId;
-    bool m_connectContactFlowIdHasBeenSet;
+    bool m_connectContactFlowIdHasBeenSet = false;
 
     Aws::String m_connectSourcePhoneNumber;
-    bool m_connectSourcePhoneNumberHasBeenSet;
+    bool m_connectSourcePhoneNumberHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

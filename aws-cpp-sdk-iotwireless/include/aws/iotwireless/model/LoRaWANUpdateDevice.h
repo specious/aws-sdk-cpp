@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANUpdateDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANUpdateDevice
+  class LoRaWANUpdateDevice
   {
   public:
-    LoRaWANUpdateDevice();
-    LoRaWANUpdateDevice(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANUpdateDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANUpdateDevice();
+    AWS_IOTWIRELESS_API LoRaWANUpdateDevice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANUpdateDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_deviceProfileId;
-    bool m_deviceProfileIdHasBeenSet;
+    bool m_deviceProfileIdHasBeenSet = false;
 
     Aws::String m_serviceProfileId;
-    bool m_serviceProfileIdHasBeenSet;
+    bool m_serviceProfileIdHasBeenSet = false;
 
     UpdateAbpV1_1 m_abpV1_1;
-    bool m_abpV1_1HasBeenSet;
+    bool m_abpV1_1HasBeenSet = false;
 
     UpdateAbpV1_0_x m_abpV1_0_x;
-    bool m_abpV1_0_xHasBeenSet;
+    bool m_abpV1_0_xHasBeenSet = false;
 
     UpdateFPorts m_fPorts;
-    bool m_fPortsHasBeenSet;
+    bool m_fPortsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupRule">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API BackupRule
+  class BackupRule
   {
   public:
-    BackupRule();
-    BackupRule(Aws::Utils::Json::JsonView jsonValue);
-    BackupRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API BackupRule();
+    AWS_BACKUP_API BackupRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API BackupRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,25 +255,29 @@ namespace Model
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional. If this value is
+     * included, it must be at least 60 minutes to avoid errors.</p>
      */
     inline long long GetStartWindowMinutes() const{ return m_startWindowMinutes; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional. If this value is
+     * included, it must be at least 60 minutes to avoid errors.</p>
      */
     inline bool StartWindowMinutesHasBeenSet() const { return m_startWindowMinutesHasBeenSet; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional. If this value is
+     * included, it must be at least 60 minutes to avoid errors.</p>
      */
     inline void SetStartWindowMinutes(long long value) { m_startWindowMinutesHasBeenSet = true; m_startWindowMinutes = value; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional. If this value is
+     * included, it must be at least 60 minutes to avoid errors.</p>
      */
     inline BackupRule& WithStartWindowMinutes(long long value) { SetStartWindowMinutes(value); return *this;}
 
@@ -608,34 +612,34 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::String m_targetBackupVaultName;
-    bool m_targetBackupVaultNameHasBeenSet;
+    bool m_targetBackupVaultNameHasBeenSet = false;
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
 
     long long m_startWindowMinutes;
-    bool m_startWindowMinutesHasBeenSet;
+    bool m_startWindowMinutesHasBeenSet = false;
 
     long long m_completionWindowMinutes;
-    bool m_completionWindowMinutesHasBeenSet;
+    bool m_completionWindowMinutesHasBeenSet = false;
 
     Lifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_recoveryPointTags;
-    bool m_recoveryPointTagsHasBeenSet;
+    bool m_recoveryPointTagsHasBeenSet = false;
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::Vector<CopyAction> m_copyActions;
-    bool m_copyActionsHasBeenSet;
+    bool m_copyActionsHasBeenSet = false;
 
     bool m_enableContinuousBackup;
-    bool m_enableContinuousBackupHasBeenSet;
+    bool m_enableContinuousBackupHasBeenSet = false;
   };
 
 } // namespace Model

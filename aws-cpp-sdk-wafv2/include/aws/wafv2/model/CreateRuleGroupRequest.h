@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_WAFV2_API CreateRuleGroupRequest : public WAFV2Request
+  class CreateRuleGroupRequest : public WAFV2Request
   {
   public:
-    CreateRuleGroupRequest();
+    AWS_WAFV2_API CreateRuleGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRuleGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WAFV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WAFV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -627,28 +627,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     long long m_capacity;
-    bool m_capacityHasBeenSet;
+    bool m_capacityHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     VisibilityConfig m_visibilityConfig;
-    bool m_visibilityConfigHasBeenSet;
+    bool m_visibilityConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
-    bool m_customResponseBodiesHasBeenSet;
+    bool m_customResponseBodiesHasBeenSet = false;
   };
 
 } // namespace Model

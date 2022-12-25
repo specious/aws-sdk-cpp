@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RegionOfInterest">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API RegionOfInterest
+  class RegionOfInterest
   {
   public:
-    RegionOfInterest();
-    RegionOfInterest(Aws::Utils::Json::JsonView jsonValue);
-    RegionOfInterest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API RegionOfInterest();
+    AWS_REKOGNITION_API RegionOfInterest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API RegionOfInterest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     Aws::Vector<Point> m_polygon;
-    bool m_polygonHasBeenSet;
+    bool m_polygonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,10 +28,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSFER_API CreateServerRequest : public TransferRequest
+  class CreateServerRequest : public TransferRequest
   {
   public:
-    CreateServerRequest();
+    AWS_TRANSFER_API CreateServerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,9 +39,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateServer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSFER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -487,177 +487,185 @@ namespace Model
 
 
     /**
-     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
-     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
-     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
-     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
-     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
-     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
-     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
-     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
-     *  <p>If you aren't planning to migrate existing users from an existing
-     * SFTP-enabled server to a new server, don't update the host key. Accidentally
-     * changing a server's host key can be disruptive.</p>  <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server.
+     * You can add multiple host keys, in case you want to rotate keys, or have a set
+     * of active keys that use different algorithms.</p> <p>Use the following command
+     * to generate an RSA 2048 bit key with no passphrase:</p> <p> <code>ssh-keygen -t
+     * rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Use a minimum value
+     * of 2048 for the <code>-b</code> option. You can create a stronger key by using
+     * 3072 or 4096.</p> <p>Use the following command to generate an ECDSA 256 bit key
+     * with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f
+     * my-new-server-key</code>.</p> <p>Valid values for the <code>-b</code> option for
+     * ECDSA are 256, 384, and 521.</p> <p>Use the following command to generate an
+     * ED25519 key with no passphrase:</p> <p> <code>ssh-keygen -t ed25519 -N "" -f
+     * my-new-server-key</code>.</p> <p>For all of these commands, you can replace
+     * <i>my-new-server-key</i> with a string of your choice.</p>  <p>If you
+     * aren't planning to migrate existing users from an existing SFTP-enabled server
+     * to a new server, don't update the host key. Accidentally changing a server's
+     * host key can be disruptive.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update
+     * host keys for your SFTP-enabled server</a> in the <i>Transfer Family User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetHostKey() const{ return m_hostKey; }
 
     /**
-     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
-     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
-     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
-     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
-     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
-     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
-     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
-     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
-     *  <p>If you aren't planning to migrate existing users from an existing
-     * SFTP-enabled server to a new server, don't update the host key. Accidentally
-     * changing a server's host key can be disruptive.</p>  <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server.
+     * You can add multiple host keys, in case you want to rotate keys, or have a set
+     * of active keys that use different algorithms.</p> <p>Use the following command
+     * to generate an RSA 2048 bit key with no passphrase:</p> <p> <code>ssh-keygen -t
+     * rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Use a minimum value
+     * of 2048 for the <code>-b</code> option. You can create a stronger key by using
+     * 3072 or 4096.</p> <p>Use the following command to generate an ECDSA 256 bit key
+     * with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f
+     * my-new-server-key</code>.</p> <p>Valid values for the <code>-b</code> option for
+     * ECDSA are 256, 384, and 521.</p> <p>Use the following command to generate an
+     * ED25519 key with no passphrase:</p> <p> <code>ssh-keygen -t ed25519 -N "" -f
+     * my-new-server-key</code>.</p> <p>For all of these commands, you can replace
+     * <i>my-new-server-key</i> with a string of your choice.</p>  <p>If you
+     * aren't planning to migrate existing users from an existing SFTP-enabled server
+     * to a new server, don't update the host key. Accidentally changing a server's
+     * host key can be disruptive.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update
+     * host keys for your SFTP-enabled server</a> in the <i>Transfer Family User
      * Guide</i>.</p>
      */
     inline bool HostKeyHasBeenSet() const { return m_hostKeyHasBeenSet; }
 
     /**
-     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
-     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
-     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
-     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
-     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
-     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
-     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
-     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
-     *  <p>If you aren't planning to migrate existing users from an existing
-     * SFTP-enabled server to a new server, don't update the host key. Accidentally
-     * changing a server's host key can be disruptive.</p>  <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server.
+     * You can add multiple host keys, in case you want to rotate keys, or have a set
+     * of active keys that use different algorithms.</p> <p>Use the following command
+     * to generate an RSA 2048 bit key with no passphrase:</p> <p> <code>ssh-keygen -t
+     * rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Use a minimum value
+     * of 2048 for the <code>-b</code> option. You can create a stronger key by using
+     * 3072 or 4096.</p> <p>Use the following command to generate an ECDSA 256 bit key
+     * with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f
+     * my-new-server-key</code>.</p> <p>Valid values for the <code>-b</code> option for
+     * ECDSA are 256, 384, and 521.</p> <p>Use the following command to generate an
+     * ED25519 key with no passphrase:</p> <p> <code>ssh-keygen -t ed25519 -N "" -f
+     * my-new-server-key</code>.</p> <p>For all of these commands, you can replace
+     * <i>my-new-server-key</i> with a string of your choice.</p>  <p>If you
+     * aren't planning to migrate existing users from an existing SFTP-enabled server
+     * to a new server, don't update the host key. Accidentally changing a server's
+     * host key can be disruptive.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update
+     * host keys for your SFTP-enabled server</a> in the <i>Transfer Family User
      * Guide</i>.</p>
      */
     inline void SetHostKey(const Aws::String& value) { m_hostKeyHasBeenSet = true; m_hostKey = value; }
 
     /**
-     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
-     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
-     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
-     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
-     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
-     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
-     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
-     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
-     *  <p>If you aren't planning to migrate existing users from an existing
-     * SFTP-enabled server to a new server, don't update the host key. Accidentally
-     * changing a server's host key can be disruptive.</p>  <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server.
+     * You can add multiple host keys, in case you want to rotate keys, or have a set
+     * of active keys that use different algorithms.</p> <p>Use the following command
+     * to generate an RSA 2048 bit key with no passphrase:</p> <p> <code>ssh-keygen -t
+     * rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Use a minimum value
+     * of 2048 for the <code>-b</code> option. You can create a stronger key by using
+     * 3072 or 4096.</p> <p>Use the following command to generate an ECDSA 256 bit key
+     * with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f
+     * my-new-server-key</code>.</p> <p>Valid values for the <code>-b</code> option for
+     * ECDSA are 256, 384, and 521.</p> <p>Use the following command to generate an
+     * ED25519 key with no passphrase:</p> <p> <code>ssh-keygen -t ed25519 -N "" -f
+     * my-new-server-key</code>.</p> <p>For all of these commands, you can replace
+     * <i>my-new-server-key</i> with a string of your choice.</p>  <p>If you
+     * aren't planning to migrate existing users from an existing SFTP-enabled server
+     * to a new server, don't update the host key. Accidentally changing a server's
+     * host key can be disruptive.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update
+     * host keys for your SFTP-enabled server</a> in the <i>Transfer Family User
      * Guide</i>.</p>
      */
     inline void SetHostKey(Aws::String&& value) { m_hostKeyHasBeenSet = true; m_hostKey = std::move(value); }
 
     /**
-     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
-     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
-     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
-     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
-     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
-     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
-     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
-     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
-     *  <p>If you aren't planning to migrate existing users from an existing
-     * SFTP-enabled server to a new server, don't update the host key. Accidentally
-     * changing a server's host key can be disruptive.</p>  <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server.
+     * You can add multiple host keys, in case you want to rotate keys, or have a set
+     * of active keys that use different algorithms.</p> <p>Use the following command
+     * to generate an RSA 2048 bit key with no passphrase:</p> <p> <code>ssh-keygen -t
+     * rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Use a minimum value
+     * of 2048 for the <code>-b</code> option. You can create a stronger key by using
+     * 3072 or 4096.</p> <p>Use the following command to generate an ECDSA 256 bit key
+     * with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f
+     * my-new-server-key</code>.</p> <p>Valid values for the <code>-b</code> option for
+     * ECDSA are 256, 384, and 521.</p> <p>Use the following command to generate an
+     * ED25519 key with no passphrase:</p> <p> <code>ssh-keygen -t ed25519 -N "" -f
+     * my-new-server-key</code>.</p> <p>For all of these commands, you can replace
+     * <i>my-new-server-key</i> with a string of your choice.</p>  <p>If you
+     * aren't planning to migrate existing users from an existing SFTP-enabled server
+     * to a new server, don't update the host key. Accidentally changing a server's
+     * host key can be disruptive.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update
+     * host keys for your SFTP-enabled server</a> in the <i>Transfer Family User
      * Guide</i>.</p>
      */
     inline void SetHostKey(const char* value) { m_hostKeyHasBeenSet = true; m_hostKey.assign(value); }
 
     /**
-     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
-     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
-     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
-     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
-     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
-     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
-     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
-     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
-     *  <p>If you aren't planning to migrate existing users from an existing
-     * SFTP-enabled server to a new server, don't update the host key. Accidentally
-     * changing a server's host key can be disruptive.</p>  <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server.
+     * You can add multiple host keys, in case you want to rotate keys, or have a set
+     * of active keys that use different algorithms.</p> <p>Use the following command
+     * to generate an RSA 2048 bit key with no passphrase:</p> <p> <code>ssh-keygen -t
+     * rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Use a minimum value
+     * of 2048 for the <code>-b</code> option. You can create a stronger key by using
+     * 3072 or 4096.</p> <p>Use the following command to generate an ECDSA 256 bit key
+     * with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f
+     * my-new-server-key</code>.</p> <p>Valid values for the <code>-b</code> option for
+     * ECDSA are 256, 384, and 521.</p> <p>Use the following command to generate an
+     * ED25519 key with no passphrase:</p> <p> <code>ssh-keygen -t ed25519 -N "" -f
+     * my-new-server-key</code>.</p> <p>For all of these commands, you can replace
+     * <i>my-new-server-key</i> with a string of your choice.</p>  <p>If you
+     * aren't planning to migrate existing users from an existing SFTP-enabled server
+     * to a new server, don't update the host key. Accidentally changing a server's
+     * host key can be disruptive.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update
+     * host keys for your SFTP-enabled server</a> in the <i>Transfer Family User
      * Guide</i>.</p>
      */
     inline CreateServerRequest& WithHostKey(const Aws::String& value) { SetHostKey(value); return *this;}
 
     /**
-     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
-     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
-     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
-     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
-     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
-     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
-     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
-     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
-     *  <p>If you aren't planning to migrate existing users from an existing
-     * SFTP-enabled server to a new server, don't update the host key. Accidentally
-     * changing a server's host key can be disruptive.</p>  <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server.
+     * You can add multiple host keys, in case you want to rotate keys, or have a set
+     * of active keys that use different algorithms.</p> <p>Use the following command
+     * to generate an RSA 2048 bit key with no passphrase:</p> <p> <code>ssh-keygen -t
+     * rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Use a minimum value
+     * of 2048 for the <code>-b</code> option. You can create a stronger key by using
+     * 3072 or 4096.</p> <p>Use the following command to generate an ECDSA 256 bit key
+     * with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f
+     * my-new-server-key</code>.</p> <p>Valid values for the <code>-b</code> option for
+     * ECDSA are 256, 384, and 521.</p> <p>Use the following command to generate an
+     * ED25519 key with no passphrase:</p> <p> <code>ssh-keygen -t ed25519 -N "" -f
+     * my-new-server-key</code>.</p> <p>For all of these commands, you can replace
+     * <i>my-new-server-key</i> with a string of your choice.</p>  <p>If you
+     * aren't planning to migrate existing users from an existing SFTP-enabled server
+     * to a new server, don't update the host key. Accidentally changing a server's
+     * host key can be disruptive.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update
+     * host keys for your SFTP-enabled server</a> in the <i>Transfer Family User
      * Guide</i>.</p>
      */
     inline CreateServerRequest& WithHostKey(Aws::String&& value) { SetHostKey(std::move(value)); return *this;}
 
     /**
-     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
-     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
-     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
-     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
-     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
-     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
-     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
-     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
-     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
-     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
-     *  <p>If you aren't planning to migrate existing users from an existing
-     * SFTP-enabled server to a new server, don't update the host key. Accidentally
-     * changing a server's host key can be disruptive.</p>  <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server.
+     * You can add multiple host keys, in case you want to rotate keys, or have a set
+     * of active keys that use different algorithms.</p> <p>Use the following command
+     * to generate an RSA 2048 bit key with no passphrase:</p> <p> <code>ssh-keygen -t
+     * rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Use a minimum value
+     * of 2048 for the <code>-b</code> option. You can create a stronger key by using
+     * 3072 or 4096.</p> <p>Use the following command to generate an ECDSA 256 bit key
+     * with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f
+     * my-new-server-key</code>.</p> <p>Valid values for the <code>-b</code> option for
+     * ECDSA are 256, 384, and 521.</p> <p>Use the following command to generate an
+     * ED25519 key with no passphrase:</p> <p> <code>ssh-keygen -t ed25519 -N "" -f
+     * my-new-server-key</code>.</p> <p>For all of these commands, you can replace
+     * <i>my-new-server-key</i> with a string of your choice.</p>  <p>If you
+     * aren't planning to migrate existing users from an existing SFTP-enabled server
+     * to a new server, don't update the host key. Accidentally changing a server's
+     * host key can be disruptive.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update
+     * host keys for your SFTP-enabled server</a> in the <i>Transfer Family User
      * Guide</i>.</p>
      */
     inline CreateServerRequest& WithHostKey(const char* value) { SetHostKey(value); return *this;}
@@ -1476,86 +1484,110 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * that's used for executing the workflow.</p>
+     * that's used for executing the workflow.</p> <p>In additon to a workflow to
+     * execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     * also contain a workflow ID (and execution role) for a workflow to execute on
+     * partial upload. A partial upload occurs when a file is open when the session
+     * disconnects.</p>
      */
     inline const WorkflowDetails& GetWorkflowDetails() const{ return m_workflowDetails; }
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * that's used for executing the workflow.</p>
+     * that's used for executing the workflow.</p> <p>In additon to a workflow to
+     * execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     * also contain a workflow ID (and execution role) for a workflow to execute on
+     * partial upload. A partial upload occurs when a file is open when the session
+     * disconnects.</p>
      */
     inline bool WorkflowDetailsHasBeenSet() const { return m_workflowDetailsHasBeenSet; }
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * that's used for executing the workflow.</p>
+     * that's used for executing the workflow.</p> <p>In additon to a workflow to
+     * execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     * also contain a workflow ID (and execution role) for a workflow to execute on
+     * partial upload. A partial upload occurs when a file is open when the session
+     * disconnects.</p>
      */
     inline void SetWorkflowDetails(const WorkflowDetails& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = value; }
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * that's used for executing the workflow.</p>
+     * that's used for executing the workflow.</p> <p>In additon to a workflow to
+     * execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     * also contain a workflow ID (and execution role) for a workflow to execute on
+     * partial upload. A partial upload occurs when a file is open when the session
+     * disconnects.</p>
      */
     inline void SetWorkflowDetails(WorkflowDetails&& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = std::move(value); }
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * that's used for executing the workflow.</p>
+     * that's used for executing the workflow.</p> <p>In additon to a workflow to
+     * execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     * also contain a workflow ID (and execution role) for a workflow to execute on
+     * partial upload. A partial upload occurs when a file is open when the session
+     * disconnects.</p>
      */
     inline CreateServerRequest& WithWorkflowDetails(const WorkflowDetails& value) { SetWorkflowDetails(value); return *this;}
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * that's used for executing the workflow.</p>
+     * that's used for executing the workflow.</p> <p>In additon to a workflow to
+     * execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     * also contain a workflow ID (and execution role) for a workflow to execute on
+     * partial upload. A partial upload occurs when a file is open when the session
+     * disconnects.</p>
      */
     inline CreateServerRequest& WithWorkflowDetails(WorkflowDetails&& value) { SetWorkflowDetails(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     Domain m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     EndpointDetails m_endpointDetails;
-    bool m_endpointDetailsHasBeenSet;
+    bool m_endpointDetailsHasBeenSet = false;
 
     EndpointType m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_hostKey;
-    bool m_hostKeyHasBeenSet;
+    bool m_hostKeyHasBeenSet = false;
 
     IdentityProviderDetails m_identityProviderDetails;
-    bool m_identityProviderDetailsHasBeenSet;
+    bool m_identityProviderDetailsHasBeenSet = false;
 
     IdentityProviderType m_identityProviderType;
-    bool m_identityProviderTypeHasBeenSet;
+    bool m_identityProviderTypeHasBeenSet = false;
 
     Aws::String m_loggingRole;
-    bool m_loggingRoleHasBeenSet;
+    bool m_loggingRoleHasBeenSet = false;
 
     Aws::String m_postAuthenticationLoginBanner;
-    bool m_postAuthenticationLoginBannerHasBeenSet;
+    bool m_postAuthenticationLoginBannerHasBeenSet = false;
 
     Aws::String m_preAuthenticationLoginBanner;
-    bool m_preAuthenticationLoginBannerHasBeenSet;
+    bool m_preAuthenticationLoginBannerHasBeenSet = false;
 
     Aws::Vector<Protocol> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
 
     ProtocolDetails m_protocolDetails;
-    bool m_protocolDetailsHasBeenSet;
+    bool m_protocolDetailsHasBeenSet = false;
 
     Aws::String m_securityPolicyName;
-    bool m_securityPolicyNameHasBeenSet;
+    bool m_securityPolicyNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     WorkflowDetails m_workflowDetails;
-    bool m_workflowDetailsHasBeenSet;
+    bool m_workflowDetailsHasBeenSet = false;
   };
 
 } // namespace Model

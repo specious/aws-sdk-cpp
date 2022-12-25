@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/VpcInfoPeeringOptionsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API VpcInfoPeeringOptionsDetails
+  class VpcInfoPeeringOptionsDetails
   {
   public:
-    VpcInfoPeeringOptionsDetails();
-    VpcInfoPeeringOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
-    VpcInfoPeeringOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API VpcInfoPeeringOptionsDetails();
+    AWS_SECURITYHUB_API VpcInfoPeeringOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API VpcInfoPeeringOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,13 +113,13 @@ namespace Model
   private:
 
     bool m_allowDnsResolutionFromRemoteVpc;
-    bool m_allowDnsResolutionFromRemoteVpcHasBeenSet;
+    bool m_allowDnsResolutionFromRemoteVpcHasBeenSet = false;
 
     bool m_allowEgressFromLocalClassicLinkToRemoteVpc;
-    bool m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet;
+    bool m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet = false;
 
     bool m_allowEgressFromLocalVpcToRemoteClassicLink;
-    bool m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet;
+    bool m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet = false;
   };
 
 } // namespace Model

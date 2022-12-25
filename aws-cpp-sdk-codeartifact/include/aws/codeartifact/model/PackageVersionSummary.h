@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PackageVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API PackageVersionSummary
+  class PackageVersionSummary
   {
   public:
-    PackageVersionSummary();
-    PackageVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    PackageVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API PackageVersionSummary();
+    AWS_CODEARTIFACT_API PackageVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API PackageVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     PackageVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     PackageVersionOrigin m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
   };
 
 } // namespace Model

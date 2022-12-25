@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_RDS_API StartDBInstanceAutomatedBackupsReplicationRequest : public RDSRequest
+  class StartDBInstanceAutomatedBackupsReplicationRequest : public RDSRequest
   {
   public:
-    StartDBInstanceAutomatedBackupsReplicationRequest();
+    AWS_RDS_API StartDBInstanceAutomatedBackupsReplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartDBInstanceAutomatedBackupsReplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -415,19 +415,19 @@ namespace Model
   private:
 
     Aws::String m_sourceDBInstanceArn;
-    bool m_sourceDBInstanceArnHasBeenSet;
+    bool m_sourceDBInstanceArnHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_preSignedUrl;
-    bool m_preSignedUrlHasBeenSet;
+    bool m_preSignedUrlHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
   };
 
 } // namespace Model

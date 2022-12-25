@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/AlertFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API AlertFilters
+  class AlertFilters
   {
   public:
-    AlertFilters();
-    AlertFilters(Aws::Utils::Json::JsonView jsonValue);
-    AlertFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API AlertFilters();
+    AWS_LOOKOUTMETRICS_API AlertFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API AlertFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_metricList;
-    bool m_metricListHasBeenSet;
+    bool m_metricListHasBeenSet = false;
 
     Aws::Vector<DimensionFilter> m_dimensionFilterList;
-    bool m_dimensionFilterListHasBeenSet;
+    bool m_dimensionFilterListHasBeenSet = false;
   };
 
 } // namespace Model

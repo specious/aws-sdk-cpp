@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateInstanceMetadataOptionsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LaunchTemplateInstanceMetadataOptionsRequest
+  class LaunchTemplateInstanceMetadataOptionsRequest
   {
   public:
-    LaunchTemplateInstanceMetadataOptionsRequest();
-    LaunchTemplateInstanceMetadataOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchTemplateInstanceMetadataOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateInstanceMetadataOptionsRequest();
+    AWS_EC2_API LaunchTemplateInstanceMetadataOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateInstanceMetadataOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -314,19 +314,19 @@ namespace Model
   private:
 
     LaunchTemplateHttpTokensState m_httpTokens;
-    bool m_httpTokensHasBeenSet;
+    bool m_httpTokensHasBeenSet = false;
 
     int m_httpPutResponseHopLimit;
-    bool m_httpPutResponseHopLimitHasBeenSet;
+    bool m_httpPutResponseHopLimitHasBeenSet = false;
 
     LaunchTemplateInstanceMetadataEndpointState m_httpEndpoint;
-    bool m_httpEndpointHasBeenSet;
+    bool m_httpEndpointHasBeenSet = false;
 
     LaunchTemplateInstanceMetadataProtocolIpv6 m_httpProtocolIpv6;
-    bool m_httpProtocolIpv6HasBeenSet;
+    bool m_httpProtocolIpv6HasBeenSet = false;
 
     LaunchTemplateInstanceMetadataTagsState m_instanceMetadataTags;
-    bool m_instanceMetadataTagsHasBeenSet;
+    bool m_instanceMetadataTagsHasBeenSet = false;
   };
 
 } // namespace Model

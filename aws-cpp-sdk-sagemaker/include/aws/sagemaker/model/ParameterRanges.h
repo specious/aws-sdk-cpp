@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ParameterRanges">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ParameterRanges
+  class ParameterRanges
   {
   public:
-    ParameterRanges();
-    ParameterRanges(Aws::Utils::Json::JsonView jsonValue);
-    ParameterRanges& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ParameterRanges();
+    AWS_SAGEMAKER_API ParameterRanges(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ParameterRanges& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -198,13 +198,13 @@ namespace Model
   private:
 
     Aws::Vector<IntegerParameterRange> m_integerParameterRanges;
-    bool m_integerParameterRangesHasBeenSet;
+    bool m_integerParameterRangesHasBeenSet = false;
 
     Aws::Vector<ContinuousParameterRange> m_continuousParameterRanges;
-    bool m_continuousParameterRangesHasBeenSet;
+    bool m_continuousParameterRangesHasBeenSet = false;
 
     Aws::Vector<CategoricalParameterRange> m_categoricalParameterRanges;
-    bool m_categoricalParameterRangesHasBeenSet;
+    bool m_categoricalParameterRangesHasBeenSet = false;
   };
 
 } // namespace Model

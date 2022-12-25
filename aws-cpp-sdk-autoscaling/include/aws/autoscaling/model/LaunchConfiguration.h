@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API LaunchConfiguration
+  class LaunchConfiguration
   {
   public:
-    LaunchConfiguration();
-    LaunchConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API LaunchConfiguration();
+    AWS_AUTOSCALING_API LaunchConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API LaunchConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -331,122 +331,88 @@ namespace Model
 
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline const Aws::String& GetClassicLinkVPCId() const{ return m_classicLinkVPCId; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline bool ClassicLinkVPCIdHasBeenSet() const { return m_classicLinkVPCIdHasBeenSet; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline void SetClassicLinkVPCId(const Aws::String& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = value; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline void SetClassicLinkVPCId(Aws::String&& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = std::move(value); }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline void SetClassicLinkVPCId(const char* value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId.assign(value); }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(const Aws::String& value) { SetClassicLinkVPCId(value); return *this;}
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(Aws::String&& value) { SetClassicLinkVPCId(std::move(value)); return *this;}
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
-     * EC2-Classic instances to.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(const char* value) { SetClassicLinkVPCId(value); return *this;}
 
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
-     * specified in <code>ClassicLinkVPCId</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassicLinkVPCSecurityGroups() const{ return m_classicLinkVPCSecurityGroups; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
-     * specified in <code>ClassicLinkVPCId</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline bool ClassicLinkVPCSecurityGroupsHasBeenSet() const { return m_classicLinkVPCSecurityGroupsHasBeenSet; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
-     * specified in <code>ClassicLinkVPCId</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = value; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
-     * specified in <code>ClassicLinkVPCId</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = std::move(value); }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
-     * specified in <code>ClassicLinkVPCId</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { SetClassicLinkVPCSecurityGroups(value); return *this;}
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
-     * specified in <code>ClassicLinkVPCId</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClassicLinkVPCSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
-     * specified in <code>ClassicLinkVPCId</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const Aws::String& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
-     * specified in <code>ClassicLinkVPCId</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(Aws::String&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
-     * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
-     * specified in <code>ClassicLinkVPCId</code>.</p>
+     * <p>Available for backward compatibility.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const char* value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
@@ -1252,64 +1218,64 @@ namespace Model
   private:
 
     Aws::String m_launchConfigurationName;
-    bool m_launchConfigurationNameHasBeenSet;
+    bool m_launchConfigurationNameHasBeenSet = false;
 
     Aws::String m_launchConfigurationARN;
-    bool m_launchConfigurationARNHasBeenSet;
+    bool m_launchConfigurationARNHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::String m_classicLinkVPCId;
-    bool m_classicLinkVPCIdHasBeenSet;
+    bool m_classicLinkVPCIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_classicLinkVPCSecurityGroups;
-    bool m_classicLinkVPCSecurityGroupsHasBeenSet;
+    bool m_classicLinkVPCSecurityGroupsHasBeenSet = false;
 
     Aws::String m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_kernelId;
-    bool m_kernelIdHasBeenSet;
+    bool m_kernelIdHasBeenSet = false;
 
     Aws::String m_ramdiskId;
-    bool m_ramdiskIdHasBeenSet;
+    bool m_ramdiskIdHasBeenSet = false;
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     InstanceMonitoring m_instanceMonitoring;
-    bool m_instanceMonitoringHasBeenSet;
+    bool m_instanceMonitoringHasBeenSet = false;
 
     Aws::String m_spotPrice;
-    bool m_spotPriceHasBeenSet;
+    bool m_spotPriceHasBeenSet = false;
 
     Aws::String m_iamInstanceProfile;
-    bool m_iamInstanceProfileHasBeenSet;
+    bool m_iamInstanceProfileHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     bool m_associatePublicIpAddress;
-    bool m_associatePublicIpAddressHasBeenSet;
+    bool m_associatePublicIpAddressHasBeenSet = false;
 
     Aws::String m_placementTenancy;
-    bool m_placementTenancyHasBeenSet;
+    bool m_placementTenancyHasBeenSet = false;
 
     InstanceMetadataOptions m_metadataOptions;
-    bool m_metadataOptionsHasBeenSet;
+    bool m_metadataOptionsHasBeenSet = false;
   };
 
 } // namespace Model

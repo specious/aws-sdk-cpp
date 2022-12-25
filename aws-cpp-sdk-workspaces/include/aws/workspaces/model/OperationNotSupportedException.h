@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/OperationNotSupportedException">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API OperationNotSupportedException
+  class OperationNotSupportedException
   {
   public:
-    OperationNotSupportedException();
-    OperationNotSupportedException(Aws::Utils::Json::JsonView jsonValue);
-    OperationNotSupportedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API OperationNotSupportedException();
+    AWS_WORKSPACES_API OperationNotSupportedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API OperationNotSupportedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

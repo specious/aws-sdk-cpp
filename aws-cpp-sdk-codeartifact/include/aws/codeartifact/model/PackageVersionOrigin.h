@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PackageVersionOrigin">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API PackageVersionOrigin
+  class PackageVersionOrigin
   {
   public:
-    PackageVersionOrigin();
-    PackageVersionOrigin(Aws::Utils::Json::JsonView jsonValue);
-    PackageVersionOrigin& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API PackageVersionOrigin();
+    AWS_CODEARTIFACT_API PackageVersionOrigin(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API PackageVersionOrigin& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     DomainEntryPoint m_domainEntryPoint;
-    bool m_domainEntryPointHasBeenSet;
+    bool m_domainEntryPointHasBeenSet = false;
 
     PackageVersionOriginType m_originType;
-    bool m_originTypeHasBeenSet;
+    bool m_originTypeHasBeenSet = false;
   };
 
 } // namespace Model

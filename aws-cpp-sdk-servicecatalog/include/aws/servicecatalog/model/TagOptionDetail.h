@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TagOptionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API TagOptionDetail
+  class TagOptionDetail
   {
   public:
-    TagOptionDetail();
-    TagOptionDetail(Aws::Utils::Json::JsonView jsonValue);
-    TagOptionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API TagOptionDetail();
+    AWS_SERVICECATALOG_API TagOptionDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API TagOptionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -232,19 +232,19 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
   };
 
 } // namespace Model

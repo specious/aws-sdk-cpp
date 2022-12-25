@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/CrlDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ROLESANYWHERE_API CrlDetail
+  class CrlDetail
   {
   public:
-    CrlDetail();
-    CrlDetail(Aws::Utils::Json::JsonView jsonValue);
-    CrlDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROLESANYWHERE_API CrlDetail();
+    AWS_ROLESANYWHERE_API CrlDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API CrlDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -346,28 +346,28 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_crlArn;
-    bool m_crlArnHasBeenSet;
+    bool m_crlArnHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_crlData;
-    bool m_crlDataHasBeenSet;
+    bool m_crlDataHasBeenSet = false;
 
     Aws::String m_crlId;
-    bool m_crlIdHasBeenSet;
+    bool m_crlIdHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_trustAnchorArn;
-    bool m_trustAnchorArnHasBeenSet;
+    bool m_trustAnchorArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

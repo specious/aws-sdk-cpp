@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SeveritySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API SeveritySummary
+  class SeveritySummary
   {
   public:
-    SeveritySummary();
-    SeveritySummary(Aws::Utils::Json::JsonView jsonValue);
-    SeveritySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API SeveritySummary();
+    AWS_SSM_API SeveritySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API SeveritySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,22 +212,22 @@ namespace Model
   private:
 
     int m_criticalCount;
-    bool m_criticalCountHasBeenSet;
+    bool m_criticalCountHasBeenSet = false;
 
     int m_highCount;
-    bool m_highCountHasBeenSet;
+    bool m_highCountHasBeenSet = false;
 
     int m_mediumCount;
-    bool m_mediumCountHasBeenSet;
+    bool m_mediumCountHasBeenSet = false;
 
     int m_lowCount;
-    bool m_lowCountHasBeenSet;
+    bool m_lowCountHasBeenSet = false;
 
     int m_informationalCount;
-    bool m_informationalCountHasBeenSet;
+    bool m_informationalCountHasBeenSet = false;
 
     int m_unspecifiedCount;
-    bool m_unspecifiedCountHasBeenSet;
+    bool m_unspecifiedCountHasBeenSet = false;
   };
 
 } // namespace Model

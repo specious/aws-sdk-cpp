@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayPolicyRuleMetaData">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayPolicyRuleMetaData
+  class TransitGatewayPolicyRuleMetaData
   {
   public:
-    TransitGatewayPolicyRuleMetaData();
-    TransitGatewayPolicyRuleMetaData(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayPolicyRuleMetaData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayPolicyRuleMetaData();
+    AWS_EC2_API TransitGatewayPolicyRuleMetaData(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayPolicyRuleMetaData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_metaDataKey;
-    bool m_metaDataKeyHasBeenSet;
+    bool m_metaDataKeyHasBeenSet = false;
 
     Aws::String m_metaDataValue;
-    bool m_metaDataValueHasBeenSet;
+    bool m_metaDataValueHasBeenSet = false;
   };
 
 } // namespace Model

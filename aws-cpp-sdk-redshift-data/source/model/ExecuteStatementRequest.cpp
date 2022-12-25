@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ExecuteStatementRequest::ExecuteStatementRequest() : 
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_clusterIdentifierHasBeenSet(false),
     m_databaseHasBeenSet(false),
     m_dbUserHasBeenSet(false),
@@ -29,6 +31,12 @@ ExecuteStatementRequest::ExecuteStatementRequest() :
 Aws::String ExecuteStatementRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
+
+  }
 
   if(m_clusterIdentifierHasBeenSet)
   {
@@ -50,7 +58,7 @@ Aws::String ExecuteStatementRequest::SerializePayload() const
 
   if(m_parametersHasBeenSet)
   {
-   Array<JsonValue> parametersJsonList(m_parameters.size());
+   Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
    {
      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());

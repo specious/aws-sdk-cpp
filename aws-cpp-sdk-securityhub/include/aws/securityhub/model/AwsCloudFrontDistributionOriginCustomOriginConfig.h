@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginCustomOriginConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginCustomOriginConfig
+  class AwsCloudFrontDistributionOriginCustomOriginConfig
   {
   public:
-    AwsCloudFrontDistributionOriginCustomOriginConfig();
-    AwsCloudFrontDistributionOriginCustomOriginConfig(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFrontDistributionOriginCustomOriginConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginCustomOriginConfig();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginCustomOriginConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginCustomOriginConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -222,22 +222,22 @@ namespace Model
   private:
 
     int m_httpPort;
-    bool m_httpPortHasBeenSet;
+    bool m_httpPortHasBeenSet = false;
 
     int m_httpsPort;
-    bool m_httpsPortHasBeenSet;
+    bool m_httpsPortHasBeenSet = false;
 
     int m_originKeepaliveTimeout;
-    bool m_originKeepaliveTimeoutHasBeenSet;
+    bool m_originKeepaliveTimeoutHasBeenSet = false;
 
     Aws::String m_originProtocolPolicy;
-    bool m_originProtocolPolicyHasBeenSet;
+    bool m_originProtocolPolicyHasBeenSet = false;
 
     int m_originReadTimeout;
-    bool m_originReadTimeoutHasBeenSet;
+    bool m_originReadTimeoutHasBeenSet = false;
 
     AwsCloudFrontDistributionOriginSslProtocols m_originSslProtocols;
-    bool m_originSslProtocolsHasBeenSet;
+    bool m_originSslProtocolsHasBeenSet = false;
   };
 
 } // namespace Model

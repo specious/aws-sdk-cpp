@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafRegionalWebAclDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsWafRegionalWebAclDetails
+  class AwsWafRegionalWebAclDetails
   {
   public:
-    AwsWafRegionalWebAclDetails();
-    AwsWafRegionalWebAclDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsWafRegionalWebAclDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsWafRegionalWebAclDetails();
+    AWS_SECURITYHUB_API AwsWafRegionalWebAclDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsWafRegionalWebAclDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -264,19 +264,19 @@ namespace Model
   private:
 
     Aws::String m_defaultAction;
-    bool m_defaultActionHasBeenSet;
+    bool m_defaultActionHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<AwsWafRegionalWebAclRulesListDetails> m_rulesList;
-    bool m_rulesListHasBeenSet;
+    bool m_rulesListHasBeenSet = false;
 
     Aws::String m_webAclId;
-    bool m_webAclIdHasBeenSet;
+    bool m_webAclIdHasBeenSet = false;
   };
 
 } // namespace Model

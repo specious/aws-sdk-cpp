@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DestinationPortMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API DestinationPortMapping
+  class DestinationPortMapping
   {
   public:
-    DestinationPortMapping();
-    DestinationPortMapping(Aws::Utils::Json::JsonView jsonValue);
-    DestinationPortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API DestinationPortMapping();
+    AWS_GLOBALACCELERATOR_API DestinationPortMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API DestinationPortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -382,28 +382,28 @@ namespace Model
   private:
 
     Aws::String m_acceleratorArn;
-    bool m_acceleratorArnHasBeenSet;
+    bool m_acceleratorArnHasBeenSet = false;
 
     Aws::Vector<SocketAddress> m_acceleratorSocketAddresses;
-    bool m_acceleratorSocketAddressesHasBeenSet;
+    bool m_acceleratorSocketAddressesHasBeenSet = false;
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     Aws::String m_endpointGroupRegion;
-    bool m_endpointGroupRegionHasBeenSet;
+    bool m_endpointGroupRegionHasBeenSet = false;
 
     SocketAddress m_destinationSocketAddress;
-    bool m_destinationSocketAddressHasBeenSet;
+    bool m_destinationSocketAddressHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
 
     CustomRoutingDestinationTrafficState m_destinationTrafficState;
-    bool m_destinationTrafficStateHasBeenSet;
+    bool m_destinationTrafficStateHasBeenSet = false;
   };
 
 } // namespace Model

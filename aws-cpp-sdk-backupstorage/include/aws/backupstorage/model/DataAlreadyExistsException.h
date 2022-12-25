@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backupstorage-2018-04-10/DataAlreadyExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPSTORAGE_API DataAlreadyExistsException
+  class DataAlreadyExistsException
   {
   public:
-    DataAlreadyExistsException();
-    DataAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
-    DataAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPSTORAGE_API DataAlreadyExistsException();
+    AWS_BACKUPSTORAGE_API DataAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPSTORAGE_API DataAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPSTORAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     Aws::String m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

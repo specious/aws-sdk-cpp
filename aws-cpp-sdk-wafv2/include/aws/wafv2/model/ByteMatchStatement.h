@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ByteMatchStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ByteMatchStatement
+  class ByteMatchStatement
   {
   public:
-    ByteMatchStatement();
-    ByteMatchStatement(Aws::Utils::Json::JsonView jsonValue);
-    ByteMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ByteMatchStatement();
+    AWS_WAFV2_API ByteMatchStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ByteMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -456,16 +456,16 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_searchString;
-    bool m_searchStringHasBeenSet;
+    bool m_searchStringHasBeenSet = false;
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     Aws::Vector<TextTransformation> m_textTransformations;
-    bool m_textTransformationsHasBeenSet;
+    bool m_textTransformationsHasBeenSet = false;
 
     PositionalConstraint m_positionalConstraint;
-    bool m_positionalConstraintHasBeenSet;
+    bool m_positionalConstraintHasBeenSet = false;
   };
 
 } // namespace Model

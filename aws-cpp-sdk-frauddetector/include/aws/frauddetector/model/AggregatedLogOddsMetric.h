@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/AggregatedLogOddsMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API AggregatedLogOddsMetric
+  class AggregatedLogOddsMetric
   {
   public:
-    AggregatedLogOddsMetric();
-    AggregatedLogOddsMetric(Aws::Utils::Json::JsonView jsonValue);
-    AggregatedLogOddsMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API AggregatedLogOddsMetric();
+    AWS_FRAUDDETECTOR_API AggregatedLogOddsMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API AggregatedLogOddsMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_variableNames;
-    bool m_variableNamesHasBeenSet;
+    bool m_variableNamesHasBeenSet = false;
 
     double m_aggregatedVariablesImportance;
-    bool m_aggregatedVariablesImportanceHasBeenSet;
+    bool m_aggregatedVariablesImportanceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTEQUIPMENT_API ListInferenceEventsRequest : public LookoutEquipmentRequest
+  class ListInferenceEventsRequest : public LookoutEquipmentRequest
   {
   public:
-    ListInferenceEventsRequest();
+    AWS_LOOKOUTEQUIPMENT_API ListInferenceEventsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListInferenceEvents"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -147,94 +147,94 @@ namespace Model
 
 
     /**
-     * <p> Lookout for Equipment will return all the inference events with start time
+     * <p> Lookout for Equipment will return all the inference events with an end time
      * equal to or greater than the start time given.</p>
      */
     inline const Aws::Utils::DateTime& GetIntervalStartTime() const{ return m_intervalStartTime; }
 
     /**
-     * <p> Lookout for Equipment will return all the inference events with start time
+     * <p> Lookout for Equipment will return all the inference events with an end time
      * equal to or greater than the start time given.</p>
      */
     inline bool IntervalStartTimeHasBeenSet() const { return m_intervalStartTimeHasBeenSet; }
 
     /**
-     * <p> Lookout for Equipment will return all the inference events with start time
+     * <p> Lookout for Equipment will return all the inference events with an end time
      * equal to or greater than the start time given.</p>
      */
     inline void SetIntervalStartTime(const Aws::Utils::DateTime& value) { m_intervalStartTimeHasBeenSet = true; m_intervalStartTime = value; }
 
     /**
-     * <p> Lookout for Equipment will return all the inference events with start time
+     * <p> Lookout for Equipment will return all the inference events with an end time
      * equal to or greater than the start time given.</p>
      */
     inline void SetIntervalStartTime(Aws::Utils::DateTime&& value) { m_intervalStartTimeHasBeenSet = true; m_intervalStartTime = std::move(value); }
 
     /**
-     * <p> Lookout for Equipment will return all the inference events with start time
+     * <p> Lookout for Equipment will return all the inference events with an end time
      * equal to or greater than the start time given.</p>
      */
     inline ListInferenceEventsRequest& WithIntervalStartTime(const Aws::Utils::DateTime& value) { SetIntervalStartTime(value); return *this;}
 
     /**
-     * <p> Lookout for Equipment will return all the inference events with start time
+     * <p> Lookout for Equipment will return all the inference events with an end time
      * equal to or greater than the start time given.</p>
      */
     inline ListInferenceEventsRequest& WithIntervalStartTime(Aws::Utils::DateTime&& value) { SetIntervalStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Lookout for Equipment will return all the inference events with end time
-     * equal to or less than the end time given.</p>
+     * <p>Returns all the inference events with an end start time equal to or greater
+     * than less than the end time given</p>
      */
     inline const Aws::Utils::DateTime& GetIntervalEndTime() const{ return m_intervalEndTime; }
 
     /**
-     * <p>Lookout for Equipment will return all the inference events with end time
-     * equal to or less than the end time given.</p>
+     * <p>Returns all the inference events with an end start time equal to or greater
+     * than less than the end time given</p>
      */
     inline bool IntervalEndTimeHasBeenSet() const { return m_intervalEndTimeHasBeenSet; }
 
     /**
-     * <p>Lookout for Equipment will return all the inference events with end time
-     * equal to or less than the end time given.</p>
+     * <p>Returns all the inference events with an end start time equal to or greater
+     * than less than the end time given</p>
      */
     inline void SetIntervalEndTime(const Aws::Utils::DateTime& value) { m_intervalEndTimeHasBeenSet = true; m_intervalEndTime = value; }
 
     /**
-     * <p>Lookout for Equipment will return all the inference events with end time
-     * equal to or less than the end time given.</p>
+     * <p>Returns all the inference events with an end start time equal to or greater
+     * than less than the end time given</p>
      */
     inline void SetIntervalEndTime(Aws::Utils::DateTime&& value) { m_intervalEndTimeHasBeenSet = true; m_intervalEndTime = std::move(value); }
 
     /**
-     * <p>Lookout for Equipment will return all the inference events with end time
-     * equal to or less than the end time given.</p>
+     * <p>Returns all the inference events with an end start time equal to or greater
+     * than less than the end time given</p>
      */
     inline ListInferenceEventsRequest& WithIntervalEndTime(const Aws::Utils::DateTime& value) { SetIntervalEndTime(value); return *this;}
 
     /**
-     * <p>Lookout for Equipment will return all the inference events with end time
-     * equal to or less than the end time given.</p>
+     * <p>Returns all the inference events with an end start time equal to or greater
+     * than less than the end time given</p>
      */
     inline ListInferenceEventsRequest& WithIntervalEndTime(Aws::Utils::DateTime&& value) { SetIntervalEndTime(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerName;
-    bool m_inferenceSchedulerNameHasBeenSet;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_intervalStartTime;
-    bool m_intervalStartTimeHasBeenSet;
+    bool m_intervalStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_intervalEndTime;
-    bool m_intervalEndTimeHasBeenSet;
+    bool m_intervalEndTimeHasBeenSet = false;
   };
 
 } // namespace Model

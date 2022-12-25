@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_IDENTITYSTORE_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IDENTITYSTORE_API ThrottlingException();
+    AWS_IDENTITYSTORE_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -119,13 +119,41 @@ namespace Model
      */
     inline ThrottlingException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
+
+    /**
+     * <p>The number of seconds that you would like to wait before retrying the next
+     * request.</p>
+     */
+    inline int GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
+
+    /**
+     * <p>The number of seconds that you would like to wait before retrying the next
+     * request.</p>
+     */
+    inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
+
+    /**
+     * <p>The number of seconds that you would like to wait before retrying the next
+     * request.</p>
+     */
+    inline void SetRetryAfterSeconds(int value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
+
+    /**
+     * <p>The number of seconds that you would like to wait before retrying the next
+     * request.</p>
+     */
+    inline ThrottlingException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
+
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
+
+    int m_retryAfterSeconds;
+    bool m_retryAfterSecondsHasBeenSet = false;
   };
 
 } // namespace Model

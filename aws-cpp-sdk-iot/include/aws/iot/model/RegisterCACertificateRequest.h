@@ -30,10 +30,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCACertificateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API RegisterCACertificateRequest : public IoTRequest
+  class RegisterCACertificateRequest : public IoTRequest
   {
   public:
-    RegisterCACertificateRequest();
+    AWS_IOT_API RegisterCACertificateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,9 +41,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RegisterCACertificate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -399,25 +399,25 @@ namespace Model
   private:
 
     Aws::String m_caCertificate;
-    bool m_caCertificateHasBeenSet;
+    bool m_caCertificateHasBeenSet = false;
 
     Aws::String m_verificationCertificate;
-    bool m_verificationCertificateHasBeenSet;
+    bool m_verificationCertificateHasBeenSet = false;
 
     bool m_setAsActive;
-    bool m_setAsActiveHasBeenSet;
+    bool m_setAsActiveHasBeenSet = false;
 
     bool m_allowAutoRegistration;
-    bool m_allowAutoRegistrationHasBeenSet;
+    bool m_allowAutoRegistrationHasBeenSet = false;
 
     RegistrationConfig m_registrationConfig;
-    bool m_registrationConfigHasBeenSet;
+    bool m_registrationConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     CertificateMode m_certificateMode;
-    bool m_certificateModeHasBeenSet;
+    bool m_certificateModeHasBeenSet = false;
   };
 
 } // namespace Model

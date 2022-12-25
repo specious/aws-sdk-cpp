@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GrpcRouteMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GrpcRouteMatch
+  class GrpcRouteMatch
   {
   public:
-    GrpcRouteMatch();
-    GrpcRouteMatch(Aws::Utils::Json::JsonView jsonValue);
-    GrpcRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GrpcRouteMatch();
+    AWS_APPMESH_API GrpcRouteMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GrpcRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -202,16 +202,16 @@ namespace Model
   private:
 
     Aws::Vector<GrpcRouteMetadata> m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_methodName;
-    bool m_methodNameHasBeenSet;
+    bool m_methodNameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

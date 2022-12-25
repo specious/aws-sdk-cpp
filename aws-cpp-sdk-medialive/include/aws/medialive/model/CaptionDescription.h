@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CaptionDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API CaptionDescription
+  class CaptionDescription
   {
   public:
-    CaptionDescription();
-    CaptionDescription(Aws::Utils::Json::JsonView jsonValue);
-    CaptionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API CaptionDescription();
+    AWS_MEDIALIVE_API CaptionDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API CaptionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -303,22 +303,22 @@ namespace Model
   private:
 
     AccessibilityType m_accessibility;
-    bool m_accessibilityHasBeenSet;
+    bool m_accessibilityHasBeenSet = false;
 
     Aws::String m_captionSelectorName;
-    bool m_captionSelectorNameHasBeenSet;
+    bool m_captionSelectorNameHasBeenSet = false;
 
     CaptionDestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_languageDescription;
-    bool m_languageDescriptionHasBeenSet;
+    bool m_languageDescriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

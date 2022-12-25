@@ -29,10 +29,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ScanInput">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ScanRequest : public DynamoDBRequest
+  class ScanRequest : public DynamoDBRequest
   {
   public:
-    ScanRequest();
+    AWS_DYNAMODB_API ScanRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,9 +40,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "Scan"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DYNAMODB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1768,52 +1768,52 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributesToGet;
-    bool m_attributesToGetHasBeenSet;
+    bool m_attributesToGetHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Select m_select;
-    bool m_selectHasBeenSet;
+    bool m_selectHasBeenSet = false;
 
     Aws::Map<Aws::String, Condition> m_scanFilter;
-    bool m_scanFilterHasBeenSet;
+    bool m_scanFilterHasBeenSet = false;
 
     ConditionalOperator m_conditionalOperator;
-    bool m_conditionalOperatorHasBeenSet;
+    bool m_conditionalOperatorHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_exclusiveStartKey;
-    bool m_exclusiveStartKeyHasBeenSet;
+    bool m_exclusiveStartKeyHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
 
     int m_totalSegments;
-    bool m_totalSegmentsHasBeenSet;
+    bool m_totalSegmentsHasBeenSet = false;
 
     int m_segment;
-    bool m_segmentHasBeenSet;
+    bool m_segmentHasBeenSet = false;
 
     Aws::String m_projectionExpression;
-    bool m_projectionExpressionHasBeenSet;
+    bool m_projectionExpressionHasBeenSet = false;
 
     Aws::String m_filterExpression;
-    bool m_filterExpressionHasBeenSet;
+    bool m_filterExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
-    bool m_expressionAttributeNamesHasBeenSet;
+    bool m_expressionAttributeNamesHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
-    bool m_expressionAttributeValuesHasBeenSet;
+    bool m_expressionAttributeValuesHasBeenSet = false;
 
     bool m_consistentRead;
-    bool m_consistentReadHasBeenSet;
+    bool m_consistentReadHasBeenSet = false;
   };
 
 } // namespace Model

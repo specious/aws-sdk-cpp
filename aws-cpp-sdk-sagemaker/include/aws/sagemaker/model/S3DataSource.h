@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/S3DataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API S3DataSource
+  class S3DataSource
   {
   public:
-    S3DataSource();
-    S3DataSource(Aws::Utils::Json::JsonView jsonValue);
-    S3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API S3DataSource();
+    AWS_SAGEMAKER_API S3DataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API S3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -570,19 +570,19 @@ namespace Model
   private:
 
     S3DataType m_s3DataType;
-    bool m_s3DataTypeHasBeenSet;
+    bool m_s3DataTypeHasBeenSet = false;
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     S3DataDistribution m_s3DataDistributionType;
-    bool m_s3DataDistributionTypeHasBeenSet;
+    bool m_s3DataDistributionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeNames;
-    bool m_attributeNamesHasBeenSet;
+    bool m_attributeNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceGroupNames;
-    bool m_instanceGroupNamesHasBeenSet;
+    bool m_instanceGroupNamesHasBeenSet = false;
   };
 
 } // namespace Model

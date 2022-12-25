@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLOBALACCELERATOR_API UpdateEndpointGroupRequest : public GlobalAcceleratorRequest
+  class UpdateEndpointGroupRequest : public GlobalAcceleratorRequest
   {
   public:
-    UpdateEndpointGroupRequest();
+    AWS_GLOBALACCELERATOR_API UpdateEndpointGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateEndpointGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLOBALACCELERATOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLOBALACCELERATOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -441,31 +441,31 @@ namespace Model
   private:
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
 
     Aws::Vector<EndpointConfiguration> m_endpointConfigurations;
-    bool m_endpointConfigurationsHasBeenSet;
+    bool m_endpointConfigurationsHasBeenSet = false;
 
     double m_trafficDialPercentage;
-    bool m_trafficDialPercentageHasBeenSet;
+    bool m_trafficDialPercentageHasBeenSet = false;
 
     int m_healthCheckPort;
-    bool m_healthCheckPortHasBeenSet;
+    bool m_healthCheckPortHasBeenSet = false;
 
     HealthCheckProtocol m_healthCheckProtocol;
-    bool m_healthCheckProtocolHasBeenSet;
+    bool m_healthCheckProtocolHasBeenSet = false;
 
     Aws::String m_healthCheckPath;
-    bool m_healthCheckPathHasBeenSet;
+    bool m_healthCheckPathHasBeenSet = false;
 
     int m_healthCheckIntervalSeconds;
-    bool m_healthCheckIntervalSecondsHasBeenSet;
+    bool m_healthCheckIntervalSecondsHasBeenSet = false;
 
     int m_thresholdCount;
-    bool m_thresholdCountHasBeenSet;
+    bool m_thresholdCountHasBeenSet = false;
 
     Aws::Vector<PortOverride> m_portOverrides;
-    bool m_portOverridesHasBeenSet;
+    bool m_portOverridesHasBeenSet = false;
   };
 
 } // namespace Model

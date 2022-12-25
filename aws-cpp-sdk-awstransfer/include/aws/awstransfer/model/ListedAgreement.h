@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListedAgreement">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API ListedAgreement
+  class ListedAgreement
   {
   public:
-    ListedAgreement();
-    ListedAgreement(Aws::Utils::Json::JsonView jsonValue);
-    ListedAgreement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API ListedAgreement();
+    AWS_TRANSFER_API ListedAgreement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API ListedAgreement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -250,108 +250,108 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline const Aws::String& GetLocalProfileId() const{ return m_localProfileId; }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline bool LocalProfileIdHasBeenSet() const { return m_localProfileIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline void SetLocalProfileId(const Aws::String& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = value; }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline void SetLocalProfileId(Aws::String&& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline void SetLocalProfileId(const char* value) { m_localProfileIdHasBeenSet = true; m_localProfileId.assign(value); }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline ListedAgreement& WithLocalProfileId(const Aws::String& value) { SetLocalProfileId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline ListedAgreement& WithLocalProfileId(Aws::String&& value) { SetLocalProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline ListedAgreement& WithLocalProfileId(const char* value) { SetLocalProfileId(value); return *this;}
 
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline const Aws::String& GetPartnerProfileId() const{ return m_partnerProfileId; }
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline bool PartnerProfileIdHasBeenSet() const { return m_partnerProfileIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline void SetPartnerProfileId(const Aws::String& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = value; }
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline void SetPartnerProfileId(Aws::String&& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline void SetPartnerProfileId(const char* value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId.assign(value); }
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline ListedAgreement& WithPartnerProfileId(const Aws::String& value) { SetPartnerProfileId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline ListedAgreement& WithPartnerProfileId(Aws::String&& value) { SetPartnerProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline ListedAgreement& WithPartnerProfileId(const char* value) { SetPartnerProfileId(value); return *this;}
 
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_agreementId;
-    bool m_agreementIdHasBeenSet;
+    bool m_agreementIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     AgreementStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::String m_localProfileId;
-    bool m_localProfileIdHasBeenSet;
+    bool m_localProfileIdHasBeenSet = false;
 
     Aws::String m_partnerProfileId;
-    bool m_partnerProfileIdHasBeenSet;
+    bool m_partnerProfileIdHasBeenSet = false;
   };
 
 } // namespace Model

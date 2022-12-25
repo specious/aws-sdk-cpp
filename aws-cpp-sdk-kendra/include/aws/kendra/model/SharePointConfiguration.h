@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SharePointConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SharePointConfiguration
+  class SharePointConfiguration
   {
   public:
-    SharePointConfiguration();
-    SharePointConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SharePointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SharePointConfiguration();
+    AWS_KENDRA_API SharePointConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SharePointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,47 +77,47 @@ namespace Model
 
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUrls() const{ return m_urls; }
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline bool UrlsHasBeenSet() const { return m_urlsHasBeenSet; }
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline void SetUrls(const Aws::Vector<Aws::String>& value) { m_urlsHasBeenSet = true; m_urls = value; }
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline void SetUrls(Aws::Vector<Aws::String>&& value) { m_urlsHasBeenSet = true; m_urls = std::move(value); }
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline SharePointConfiguration& WithUrls(const Aws::Vector<Aws::String>& value) { SetUrls(value); return *this;}
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline SharePointConfiguration& WithUrls(Aws::Vector<Aws::String>&& value) { SetUrls(std::move(value)); return *this;}
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline SharePointConfiguration& AddUrls(const Aws::String& value) { m_urlsHasBeenSet = true; m_urls.push_back(value); return *this; }
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline SharePointConfiguration& AddUrls(Aws::String&& value) { m_urlsHasBeenSet = true; m_urls.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline SharePointConfiguration& AddUrls(const char* value) { m_urlsHasBeenSet = true; m_urls.push_back(value); return *this; }
 
@@ -131,8 +131,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -145,8 +145,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -159,8 +159,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -173,8 +173,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -187,8 +187,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -201,8 +201,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -215,8 +215,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -229,8 +229,8 @@ namespace Model
      * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
      * authentication credentials of user name, password, client ID, and client secret.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
-     * for a SharePoint data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+     * a SharePoint data source</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
@@ -681,37 +681,61 @@ namespace Model
 
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
-     * to connect to SharePoint.</p>
+     * to connect to SharePoint Server if you require a secure SSL connection.</p>
+     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline const S3Path& GetSslCertificateS3Path() const{ return m_sslCertificateS3Path; }
 
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
-     * to connect to SharePoint.</p>
+     * to connect to SharePoint Server if you require a secure SSL connection.</p>
+     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline bool SslCertificateS3PathHasBeenSet() const { return m_sslCertificateS3PathHasBeenSet; }
 
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
-     * to connect to SharePoint.</p>
+     * to connect to SharePoint Server if you require a secure SSL connection.</p>
+     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline void SetSslCertificateS3Path(const S3Path& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = value; }
 
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
-     * to connect to SharePoint.</p>
+     * to connect to SharePoint Server if you require a secure SSL connection.</p>
+     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline void SetSslCertificateS3Path(S3Path&& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = std::move(value); }
 
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
-     * to connect to SharePoint.</p>
+     * to connect to SharePoint Server if you require a secure SSL connection.</p>
+     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline SharePointConfiguration& WithSslCertificateS3Path(const S3Path& value) { SetSslCertificateS3Path(value); return *this;}
 
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
-     * to connect to SharePoint.</p>
+     * to connect to SharePoint Server if you require a secure SSL connection.</p>
+     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline SharePointConfiguration& WithSslCertificateS3Path(S3Path&& value) { SetSslCertificateS3Path(std::move(value)); return *this;}
 
@@ -870,46 +894,46 @@ namespace Model
   private:
 
     SharePointVersion m_sharePointVersion;
-    bool m_sharePointVersionHasBeenSet;
+    bool m_sharePointVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_urls;
-    bool m_urlsHasBeenSet;
+    bool m_urlsHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     bool m_crawlAttachments;
-    bool m_crawlAttachmentsHasBeenSet;
+    bool m_crawlAttachmentsHasBeenSet = false;
 
     bool m_useChangeLog;
-    bool m_useChangeLogHasBeenSet;
+    bool m_useChangeLogHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
 
     Aws::String m_documentTitleFieldName;
-    bool m_documentTitleFieldNameHasBeenSet;
+    bool m_documentTitleFieldNameHasBeenSet = false;
 
     bool m_disableLocalGroups;
-    bool m_disableLocalGroupsHasBeenSet;
+    bool m_disableLocalGroupsHasBeenSet = false;
 
     S3Path m_sslCertificateS3Path;
-    bool m_sslCertificateS3PathHasBeenSet;
+    bool m_sslCertificateS3PathHasBeenSet = false;
 
     SharePointOnlineAuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
 
     ProxyConfiguration m_proxyConfiguration;
-    bool m_proxyConfigurationHasBeenSet;
+    bool m_proxyConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/SNSConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API SNSConfiguration
+  class SNSConfiguration
   {
   public:
-    SNSConfiguration();
-    SNSConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SNSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API SNSConfiguration();
+    AWS_LOOKOUTMETRICS_API SNSConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API SNSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,7 +127,7 @@ namespace Model
      * alerts with an anomaly ID and a link to the anomaly detail page. This is the
      * default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts
      * with information about the impacted timeseries and a link to the anomaly detail
-     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> ��
+     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> –
      * Send human-readable alerts with a link to the anomaly detail page. We recommend
      * this for SMS.</p> </li> </ul>
      */
@@ -138,7 +138,7 @@ namespace Model
      * alerts with an anomaly ID and a link to the anomaly detail page. This is the
      * default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts
      * with information about the impacted timeseries and a link to the anomaly detail
-     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> ��
+     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> –
      * Send human-readable alerts with a link to the anomaly detail page. We recommend
      * this for SMS.</p> </li> </ul>
      */
@@ -149,7 +149,7 @@ namespace Model
      * alerts with an anomaly ID and a link to the anomaly detail page. This is the
      * default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts
      * with information about the impacted timeseries and a link to the anomaly detail
-     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> ��
+     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> –
      * Send human-readable alerts with a link to the anomaly detail page. We recommend
      * this for SMS.</p> </li> </ul>
      */
@@ -160,7 +160,7 @@ namespace Model
      * alerts with an anomaly ID and a link to the anomaly detail page. This is the
      * default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts
      * with information about the impacted timeseries and a link to the anomaly detail
-     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> ��
+     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> –
      * Send human-readable alerts with a link to the anomaly detail page. We recommend
      * this for SMS.</p> </li> </ul>
      */
@@ -171,7 +171,7 @@ namespace Model
      * alerts with an anomaly ID and a link to the anomaly detail page. This is the
      * default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts
      * with information about the impacted timeseries and a link to the anomaly detail
-     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> ��
+     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> –
      * Send human-readable alerts with a link to the anomaly detail page. We recommend
      * this for SMS.</p> </li> </ul>
      */
@@ -182,7 +182,7 @@ namespace Model
      * alerts with an anomaly ID and a link to the anomaly detail page. This is the
      * default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts
      * with information about the impacted timeseries and a link to the anomaly detail
-     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> ��
+     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> –
      * Send human-readable alerts with a link to the anomaly detail page. We recommend
      * this for SMS.</p> </li> </ul>
      */
@@ -191,13 +191,13 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     SnsFormat m_snsFormat;
-    bool m_snsFormatHasBeenSet;
+    bool m_snsFormatHasBeenSet = false;
   };
 
 } // namespace Model

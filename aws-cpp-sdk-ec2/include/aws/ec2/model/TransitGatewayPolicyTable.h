@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayPolicyTable">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayPolicyTable
+  class TransitGatewayPolicyTable
   {
   public:
-    TransitGatewayPolicyTable();
-    TransitGatewayPolicyTable(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayPolicyTable& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayPolicyTable();
+    AWS_EC2_API TransitGatewayPolicyTable(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayPolicyTable& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -230,19 +230,19 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayPolicyTableId;
-    bool m_transitGatewayPolicyTableIdHasBeenSet;
+    bool m_transitGatewayPolicyTableIdHasBeenSet = false;
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
 
     TransitGatewayPolicyTableState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

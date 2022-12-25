@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/DeviceIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_PRIVATENETWORKS_API DeviceIdentifier
+  class DeviceIdentifier
   {
   public:
-    DeviceIdentifier();
-    DeviceIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    DeviceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRIVATENETWORKS_API DeviceIdentifier();
+    AWS_PRIVATENETWORKS_API DeviceIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API DeviceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -415,31 +415,31 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_deviceIdentifierArn;
-    bool m_deviceIdentifierArnHasBeenSet;
+    bool m_deviceIdentifierArnHasBeenSet = false;
 
     Aws::String m_iccid;
-    bool m_iccidHasBeenSet;
+    bool m_iccidHasBeenSet = false;
 
     Aws::String m_imsi;
-    bool m_imsiHasBeenSet;
+    bool m_imsiHasBeenSet = false;
 
     Aws::String m_networkArn;
-    bool m_networkArnHasBeenSet;
+    bool m_networkArnHasBeenSet = false;
 
     Aws::String m_orderArn;
-    bool m_orderArnHasBeenSet;
+    bool m_orderArnHasBeenSet = false;
 
     DeviceIdentifierStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_trafficGroupArn;
-    bool m_trafficGroupArnHasBeenSet;
+    bool m_trafficGroupArnHasBeenSet = false;
 
     Aws::String m_vendor;
-    bool m_vendorHasBeenSet;
+    bool m_vendorHasBeenSet = false;
   };
 
 } // namespace Model

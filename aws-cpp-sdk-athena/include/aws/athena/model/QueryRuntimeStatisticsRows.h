@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryRuntimeStatisticsRows">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API QueryRuntimeStatisticsRows
+  class QueryRuntimeStatisticsRows
   {
   public:
-    QueryRuntimeStatisticsRows();
-    QueryRuntimeStatisticsRows(Aws::Utils::Json::JsonView jsonValue);
-    QueryRuntimeStatisticsRows& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API QueryRuntimeStatisticsRows();
+    AWS_ATHENA_API QueryRuntimeStatisticsRows(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API QueryRuntimeStatisticsRows& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,16 +123,16 @@ namespace Model
   private:
 
     long long m_inputRows;
-    bool m_inputRowsHasBeenSet;
+    bool m_inputRowsHasBeenSet = false;
 
     long long m_inputBytes;
-    bool m_inputBytesHasBeenSet;
+    bool m_inputBytesHasBeenSet = false;
 
     long long m_outputBytes;
-    bool m_outputBytesHasBeenSet;
+    bool m_outputBytesHasBeenSet = false;
 
     long long m_outputRows;
-    bool m_outputRowsHasBeenSet;
+    bool m_outputRowsHasBeenSet = false;
   };
 
 } // namespace Model

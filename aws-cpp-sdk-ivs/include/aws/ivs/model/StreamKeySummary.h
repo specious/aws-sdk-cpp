@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StreamKeySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API StreamKeySummary
+  class StreamKeySummary
   {
   public:
-    StreamKeySummary();
-    StreamKeySummary(Aws::Utils::Json::JsonView jsonValue);
-    StreamKeySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API StreamKeySummary();
+    AWS_IVS_API StreamKeySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API StreamKeySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -253,13 +253,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

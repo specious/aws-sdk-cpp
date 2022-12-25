@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ScanResourceCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ScanResourceCriteria
+  class ScanResourceCriteria
   {
   public:
-    ScanResourceCriteria();
-    ScanResourceCriteria(Aws::Utils::Json::JsonView jsonValue);
-    ScanResourceCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ScanResourceCriteria();
+    AWS_GUARDDUTY_API ScanResourceCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ScanResourceCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Aws::Map<ScanCriterionKey, ScanCondition> m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
 
     Aws::Map<ScanCriterionKey, ScanCondition> m_exclude;
-    bool m_excludeHasBeenSet;
+    bool m_excludeHasBeenSet = false;
   };
 
 } // namespace Model

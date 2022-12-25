@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/EbsBlockDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API EbsBlockDevice
+  class EbsBlockDevice
   {
   public:
-    EbsBlockDevice();
-    EbsBlockDevice(Aws::Utils::Json::JsonView jsonValue);
-    EbsBlockDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API EbsBlockDevice();
+    AWS_EMR_API EbsBlockDevice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API EbsBlockDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     VolumeSpecification m_volumeSpecification;
-    bool m_volumeSpecificationHasBeenSet;
+    bool m_volumeSpecificationHasBeenSet = false;
 
     Aws::String m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
   };
 
 } // namespace Model

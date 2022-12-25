@@ -1307,7 +1307,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Enables for the Network Manager service for an Amazon Web Services Organization. This can only be called by a management account within the organization. </p>"
+      "documentation":"<p>Enables the Network Manager service for an Amazon Web Services Organization. This can only be called by a management account within the organization. </p>"
     },
     "StartRouteAnalysis":{
       "name":"StartRouteAnalysis",
@@ -6526,9 +6526,19 @@
         "TransitGatewayArn":{
           "shape":"TransitGatewayArn",
           "documentation":"<p>The ARN of the transit gateway.</p>"
+        },
+        "TransitGatewayPeeringAttachmentId":{
+          "shape":"TransitGatewayPeeringAttachmentId",
+          "documentation":"<p>The ID of the transit gateway peering attachment.</p>"
         }
       },
       "documentation":"<p>Describes a transit gateway peering attachment.</p>"
+    },
+    "TransitGatewayPeeringAttachmentId":{
+      "type":"string",
+      "max":50,
+      "min":0,
+      "pattern":"^tgw-attach-([0-9a-f]{8,17})$"
     },
     "TransitGatewayRegistration":{
       "type":"structure",
@@ -7013,6 +7023,10 @@
         "Ipv6Support":{
           "shape":"Boolean",
           "documentation":"<p>Indicates whether IPv6 is supported.</p>"
+        },
+        "ApplianceModeSupport":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination use the same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is <code>false</code>.</p>"
         }
       },
       "documentation":"<p>Describes the VPC options.</p>"

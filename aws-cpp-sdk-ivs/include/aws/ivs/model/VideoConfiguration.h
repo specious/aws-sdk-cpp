@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/VideoConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API VideoConfiguration
+  class VideoConfiguration
   {
   public:
-    VideoConfiguration();
-    VideoConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    VideoConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API VideoConfiguration();
+    AWS_IVS_API VideoConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API VideoConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -318,28 +318,28 @@ namespace Model
   private:
 
     Aws::String m_avcLevel;
-    bool m_avcLevelHasBeenSet;
+    bool m_avcLevelHasBeenSet = false;
 
     Aws::String m_avcProfile;
-    bool m_avcProfileHasBeenSet;
+    bool m_avcProfileHasBeenSet = false;
 
     Aws::String m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     Aws::String m_encoder;
-    bool m_encoderHasBeenSet;
+    bool m_encoderHasBeenSet = false;
 
     long long m_targetBitrate;
-    bool m_targetBitrateHasBeenSet;
+    bool m_targetBitrateHasBeenSet = false;
 
     long long m_targetFramerate;
-    bool m_targetFramerateHasBeenSet;
+    bool m_targetFramerateHasBeenSet = false;
 
     long long m_videoHeight;
-    bool m_videoHeightHasBeenSet;
+    bool m_videoHeightHasBeenSet = false;
 
     long long m_videoWidth;
-    bool m_videoWidthHasBeenSet;
+    bool m_videoWidthHasBeenSet = false;
   };
 
 } // namespace Model

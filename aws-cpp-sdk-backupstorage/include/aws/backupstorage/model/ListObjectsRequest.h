@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUPSTORAGE_API ListObjectsRequest : public BackupStorageRequest
+  class ListObjectsRequest : public BackupStorageRequest
   {
   public:
-    ListObjectsRequest();
+    AWS_BACKUPSTORAGE_API ListObjectsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListObjects"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUPSTORAGE_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_BACKUPSTORAGE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -304,25 +304,25 @@ namespace Model
   private:
 
     Aws::String m_storageJobId;
-    bool m_storageJobIdHasBeenSet;
+    bool m_storageJobIdHasBeenSet = false;
 
     Aws::String m_startingObjectName;
-    bool m_startingObjectNameHasBeenSet;
+    bool m_startingObjectNameHasBeenSet = false;
 
     Aws::String m_startingObjectPrefix;
-    bool m_startingObjectPrefixHasBeenSet;
+    bool m_startingObjectPrefixHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
-    bool m_createdBeforeHasBeenSet;
+    bool m_createdBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
-    bool m_createdAfterHasBeenSet;
+    bool m_createdAfterHasBeenSet = false;
   };
 
 } // namespace Model

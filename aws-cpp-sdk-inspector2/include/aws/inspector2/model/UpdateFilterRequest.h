@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_INSPECTOR2_API UpdateFilterRequest : public Inspector2Request
+  class UpdateFilterRequest : public Inspector2Request
   {
   public:
-    UpdateFilterRequest();
+    AWS_INSPECTOR2_API UpdateFilterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFilter"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -268,22 +268,22 @@ namespace Model
   private:
 
     FilterAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_filterArn;
-    bool m_filterArnHasBeenSet;
+    bool m_filterArnHasBeenSet = false;
 
     FilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet;
+    bool m_filterCriteriaHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

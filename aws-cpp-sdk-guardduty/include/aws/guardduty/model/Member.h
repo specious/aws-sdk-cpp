@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Member">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API Member
+  class Member
   {
   public:
-    Member();
-    Member(Aws::Utils::Json::JsonView jsonValue);
-    Member& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API Member();
+    AWS_GUARDDUTY_API Member(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Member& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -367,28 +367,28 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_masterId;
-    bool m_masterIdHasBeenSet;
+    bool m_masterIdHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_relationshipStatus;
-    bool m_relationshipStatusHasBeenSet;
+    bool m_relationshipStatusHasBeenSet = false;
 
     Aws::String m_invitedAt;
-    bool m_invitedAtHasBeenSet;
+    bool m_invitedAtHasBeenSet = false;
 
     Aws::String m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_administratorId;
-    bool m_administratorIdHasBeenSet;
+    bool m_administratorIdHasBeenSet = false;
   };
 
 } // namespace Model

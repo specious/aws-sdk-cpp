@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryRunConfigInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API CanaryRunConfigInput
+  class CanaryRunConfigInput
   {
   public:
-    CanaryRunConfigInput();
-    CanaryRunConfigInput(Aws::Utils::Json::JsonView jsonValue);
-    CanaryRunConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API CanaryRunConfigInput();
+    AWS_SYNTHETICS_API CanaryRunConfigInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API CanaryRunConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -335,16 +335,16 @@ namespace Model
   private:
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     int m_memoryInMB;
-    bool m_memoryInMBHasBeenSet;
+    bool m_memoryInMBHasBeenSet = false;
 
     bool m_activeTracing;
-    bool m_activeTracingHasBeenSet;
+    bool m_activeTracingHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet;
+    bool m_environmentVariablesHasBeenSet = false;
   };
 
 } // namespace Model

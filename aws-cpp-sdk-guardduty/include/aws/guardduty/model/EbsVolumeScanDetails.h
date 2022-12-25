@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EbsVolumeScanDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API EbsVolumeScanDetails
+  class EbsVolumeScanDetails
   {
   public:
-    EbsVolumeScanDetails();
-    EbsVolumeScanDetails(Aws::Utils::Json::JsonView jsonValue);
-    EbsVolumeScanDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API EbsVolumeScanDetails();
+    AWS_GUARDDUTY_API EbsVolumeScanDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API EbsVolumeScanDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -264,22 +264,22 @@ namespace Model
   private:
 
     Aws::String m_scanId;
-    bool m_scanIdHasBeenSet;
+    bool m_scanIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_scanStartedAt;
-    bool m_scanStartedAtHasBeenSet;
+    bool m_scanStartedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_scanCompletedAt;
-    bool m_scanCompletedAtHasBeenSet;
+    bool m_scanCompletedAtHasBeenSet = false;
 
     Aws::String m_triggerFindingId;
-    bool m_triggerFindingIdHasBeenSet;
+    bool m_triggerFindingIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
 
     ScanDetections m_scanDetections;
-    bool m_scanDetectionsHasBeenSet;
+    bool m_scanDetectionsHasBeenSet = false;
   };
 
 } // namespace Model

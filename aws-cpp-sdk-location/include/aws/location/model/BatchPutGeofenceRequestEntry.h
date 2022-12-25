@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchPutGeofenceRequestEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API BatchPutGeofenceRequestEntry
+  class BatchPutGeofenceRequestEntry
   {
   public:
-    BatchPutGeofenceRequestEntry();
-    BatchPutGeofenceRequestEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchPutGeofenceRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceRequestEntry();
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceRequestEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_geofenceId;
-    bool m_geofenceIdHasBeenSet;
+    bool m_geofenceIdHasBeenSet = false;
 
     GeofenceGeometry m_geometry;
-    bool m_geometryHasBeenSet;
+    bool m_geometryHasBeenSet = false;
   };
 
 } // namespace Model

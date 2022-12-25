@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryRuntimeStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API QueryRuntimeStatistics
+  class QueryRuntimeStatistics
   {
   public:
-    QueryRuntimeStatistics();
-    QueryRuntimeStatistics(Aws::Utils::Json::JsonView jsonValue);
-    QueryRuntimeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API QueryRuntimeStatistics();
+    AWS_ATHENA_API QueryRuntimeStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API QueryRuntimeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -124,13 +124,13 @@ namespace Model
   private:
 
     QueryRuntimeStatisticsTimeline m_timeline;
-    bool m_timelineHasBeenSet;
+    bool m_timelineHasBeenSet = false;
 
     QueryRuntimeStatisticsRows m_rows;
-    bool m_rowsHasBeenSet;
+    bool m_rowsHasBeenSet = false;
 
     QueryStage m_outputStage;
-    bool m_outputStageHasBeenSet;
+    bool m_outputStageHasBeenSet = false;
   };
 
 } // namespace Model

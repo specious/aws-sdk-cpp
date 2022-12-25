@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SignupResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SignupResponse
+  class SignupResponse
   {
   public:
-    SignupResponse();
-    SignupResponse(Aws::Utils::Json::JsonView jsonValue);
-    SignupResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SignupResponse();
+    AWS_QUICKSIGHT_API SignupResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SignupResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     bool m_iAMUser;
-    bool m_iAMUserHasBeenSet;
+    bool m_iAMUserHasBeenSet = false;
 
     Aws::String m_userLoginName;
-    bool m_userLoginNameHasBeenSet;
+    bool m_userLoginNameHasBeenSet = false;
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Aws::String m_directoryType;
-    bool m_directoryTypeHasBeenSet;
+    bool m_directoryTypeHasBeenSet = false;
   };
 
 } // namespace Model

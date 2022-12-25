@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_OUTPOSTS_API StartConnectionRequest : public OutpostsRequest
+  class StartConnectionRequest : public OutpostsRequest
   {
   public:
-    StartConnectionRequest();
+    AWS_OUTPOSTS_API StartConnectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartConnection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OUTPOSTS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -178,16 +178,16 @@ namespace Model
   private:
 
     Aws::String m_deviceSerialNumber;
-    bool m_deviceSerialNumberHasBeenSet;
+    bool m_deviceSerialNumberHasBeenSet = false;
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_clientPublicKey;
-    bool m_clientPublicKeyHasBeenSet;
+    bool m_clientPublicKeyHasBeenSet = false;
 
     int m_networkInterfaceDeviceIndex;
-    bool m_networkInterfaceDeviceIndexHasBeenSet;
+    bool m_networkInterfaceDeviceIndexHasBeenSet = false;
   };
 
 } // namespace Model
